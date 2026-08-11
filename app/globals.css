@@ -457,7 +457,7 @@ a {
 }
 
 .type-profile {
-  margin-bottom: 72px;
+  margin-bottom: 0;
   border: 2px solid var(--ink);
   box-shadow: 10px 10px 0 var(--acid);
 }
@@ -674,50 +674,6 @@ a {
 
 .theory-caveat > span { color: var(--acid); }
 .theory-caveat p { margin: 0; color: rgba(255,255,255,.72); font-size: 11px; line-height: 1.65; }
-
-.constellation-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 2px solid var(--ink);
-  border-left: 2px solid var(--ink);
-}
-
-.trait-card {
-  min-height: 350px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  border-right: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  transition: background 220ms ease, color 220ms ease, transform 220ms ease;
-}
-
-.trait-card:nth-child(2) { background: var(--violet); color: #fff; }
-.trait-card:nth-child(4) { background: var(--pink); color: #fff; }
-.trait-card:hover { background: var(--ink); color: var(--acid); transform: translateY(-8px); }
-
-.trait-topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-}
-
-.trait-topline b { font-size: 38px; line-height: 1; }
-
-.trait-card h3 {
-  margin: auto 0 20px;
-  font-size: clamp(36px, 3.4vw, 58px);
-  letter-spacing: -.08em;
-}
-
-.trait-card p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.7;
-}
 
 .myth-section {
   display: grid;
@@ -1680,8 +1636,6 @@ footer > p {
   .type-grid { grid-template-columns: repeat(2, 1fr); }
   .type-code:nth-child(2) { border-right: 0; }
   .type-code:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
-  .constellation-grid { grid-template-columns: repeat(2, 1fr); }
-  .trait-card { min-height: 290px; }
   .theory-header { grid-template-columns: 1fr; }
   .theory-header > p { margin-right: 0; max-width: 430px; }
   .theory-sections { grid-template-columns: 1fr; }
@@ -1720,13 +1674,11 @@ footer > p {
   .section-heading { grid-template-columns: 1fr; margin-bottom: 48px; }
   .section-heading h2, .myth-copy h2, .oracle-heading h2 { font-size: clamp(48px, 16vw, 72px); }
   .section-heading p { font-size: 15px; }
-  .type-profile { margin-bottom: 55px; box-shadow: 6px 6px 0 var(--acid); }
+  .type-profile { box-shadow: 6px 6px 0 var(--acid); }
   .type-profile-head { align-items: flex-start; flex-direction: column; gap: 5px; }
   .type-grid { grid-template-columns: 1fr; }
   .type-code, .type-code:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--ink); }
   .type-code:last-child { border-bottom: 0; }
-  .constellation-grid { grid-template-columns: 1fr; }
-  .trait-card { min-height: 250px; }
   .theory-overlay { padding: 9px; }
   .theory-dialog { max-height: calc(100svh - 18px); box-shadow: 6px 6px 0 var(--acid); }
   .theory-header { margin-top: -48px; padding: 72px 20px 24px; }

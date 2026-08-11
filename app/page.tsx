@@ -294,13 +294,6 @@ const typeCoordinates = [
   },
 ];
 
-const constellations = [
-  { index: "01", title: "发疯", note: "不是失控，是精神世界的超频模式。", symbol: "↗" },
-  { index: "02", title: "类型学", note: "观察、拆解、乱炖：人类说明书真好玩。", symbol: "⌁" },
-  { index: "03", title: "Ne 夯爆", note: "从一个点出发，同时撞向一百种可能。", symbol: "✳" },
-  { index: "04", title: "神话", note: "古老故事不是过去，是反复重启的精神原型。", symbol: "☼" },
-];
-
 export default function Home() {
   const [oracleIndex, setOracleIndex] = useState(0);
   const [oracleOpen, setOracleOpen] = useState(false);
@@ -460,18 +453,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="constellation-grid">
-          {constellations.map((item) => (
-            <article className="trait-card" key={item.index}>
-              <div className="trait-topline">
-                <span>{item.index}</span>
-                <b aria-hidden="true">{item.symbol}</b>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.note}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="myth-section" id="myth">
