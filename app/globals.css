@@ -1674,7 +1674,7 @@ footer > p {
 .myth-detail-heading > span,
 .myth-detail-intro > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
 .myth-detail-heading > span { color: var(--acid); }
-.myth-detail-heading h1 { margin: 30px 0 14px; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 150px); font-weight: 500; line-height: .82; letter-spacing: -.08em; }
+.myth-detail-heading h1 { margin: 30px 0 14px; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 150px); font-weight: 500; line-height: 1.06; letter-spacing: -.06em; }
 .myth-detail-heading p { margin: 0; color: rgba(255,255,255,.55); font-family: var(--font-geist-mono), monospace; font-size: 11px; font-weight: 800; letter-spacing: .18em; }
 
 .myth-detail-intro { padding-left: 26px; border-left: 3px solid var(--detail-accent); }
@@ -1686,7 +1686,7 @@ footer > p {
 .myth-detail-preview { padding: 110px clamp(22px, 7vw, 108px) 130px; }
 .myth-detail-preview > header { margin-bottom: 70px; display: grid; grid-template-columns: .42fr 1fr .75fr; align-items: end; gap: 36px; }
 .myth-detail-preview > header > span { align-self: start; color: var(--detail-accent); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
-.myth-detail-preview > header h2 { margin: 0; font-size: clamp(56px, 7vw, 100px); line-height: .86; letter-spacing: -.09em; }
+.myth-detail-preview > header h2 { margin: 0; font-size: clamp(56px, 7vw, 100px); line-height: 1.12; letter-spacing: -.07em; }
 .myth-detail-preview > header p { margin: 0; color: #676269; font-size: 15px; font-weight: 620; line-height: 1.8; }
 
 .myth-detail-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); box-shadow: 12px 12px 0 var(--detail-accent); }
