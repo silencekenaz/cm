@@ -783,19 +783,30 @@ a {
   outline: none;
 }
 
-.myth-entry-cue {
+.myth-click {
   position: absolute;
-  z-index: 3;
-  top: 24px;
-  right: 24px;
-  color: rgba(255,255,255,.72);
+  z-index: 4;
+  top: calc(50% + 112px);
+  left: 50%;
+  padding: 11px 22px 10px;
+  border: 2px solid #f1df9e;
+  background: var(--acid);
+  box-shadow: 7px 7px 0 var(--pink);
+  color: #182433;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: .14em;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: .2em;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
-.myth-entry-cue b { color: var(--acid); font-size: 15px; }
+.myth-poster:hover .myth-click,
+.myth-poster:focus-visible .myth-click {
+  box-shadow: 10px 10px 0 var(--pink);
+  transform: translate(-50%, -50%) rotate(2deg) scale(1.08);
+}
 
 .myth-poster::after {
   content: "";
@@ -1783,7 +1794,7 @@ footer > p {
 }
 
 @media (max-width: 620px) {
-  .myth-entry-cue { top: 23px; right: 20px; }
+  .myth-click { top: calc(50% + 88px); font-size: 14px; }
   .myth-atlas-nav { min-height: 64px; padding-inline: 18px; }
   .myth-atlas-nav > a:first-child { font-size: 8px; }
   .myth-atlas-hero { min-height: 700px; padding: 88px 22px 68px; gap: 54px; }

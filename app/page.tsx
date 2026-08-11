@@ -491,10 +491,10 @@ export default function Home() {
 
         <a className="myth-poster" href={siteBasePath ? `${siteBasePath}/myths.html` : "/myths"} aria-label="进入神话体系索引">
           <span className="poster-label">ARCHIVE No. 000∞</span>
-          <span className="myth-entry-cue">ENTER ARCHIVE <b aria-hidden="true">↗</b></span>
           <div className="sun-symbol" aria-hidden="true">
             <span>✦</span>
           </div>
+          <span className="myth-click" aria-hidden="true">CLICK</span>
           <div className="poster-words" aria-hidden="true">
             <span>FATE</span>
             <span>METAMORPHOSIS</span>
