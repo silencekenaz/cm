@@ -786,7 +786,7 @@ a {
 .myth-click {
   position: absolute;
   z-index: 4;
-  top: calc(50% + 112px);
+  top: calc(50% + 145px);
   left: 50%;
   padding: 11px 22px 10px;
   border: 2px solid #f1df9e;
@@ -1794,7 +1794,7 @@ footer > p {
 }
 
 @media (max-width: 620px) {
-  .myth-click { top: calc(50% + 88px); font-size: 14px; }
+  .myth-click { top: calc(50% + 116px); font-size: 14px; }
   .myth-atlas-nav { min-height: 64px; padding-inline: 18px; }
   .myth-atlas-nav > a:first-child { font-size: 8px; }
   .myth-atlas-hero { min-height: 700px; padding: 88px 22px 68px; gap: 54px; }
