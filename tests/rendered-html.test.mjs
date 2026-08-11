@@ -11,7 +11,19 @@ test("exports the homepage as static HTML", async () => {
   assert.match(html, /<title>Q = cmΔt｜神人/);
   assert.match(html, /德尔斐神谕/);
   assert.match(html, /TYPE COORDINATES/);
+  assert.match(html, /href="\/cm\/styles\.css"/);
   assert.doesNotMatch(html, /\/api\//);
+});
+
+test("exports a stable stylesheet for cached Pages HTML", async () => {
+  const css = await readFile(
+    new URL("../dist/client/styles.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(css, /\.myth-atlas-page/);
+  assert.match(css, /\.myth-detail-page/);
+  assert.match(css, /\.hero/);
 });
 
 test("exports the mythology archive as static HTML", async () => {
@@ -20,6 +32,8 @@ test("exports the mythology archive as static HTML", async () => {
     "utf8",
   );
   const documentHtml = html.split('<script type="module"')[0];
+
+  assert.match(documentHtml, /href="\/cm\/styles\.css"/);
 
   const systems = [
     ["greek", "希腊"],

@@ -6,8 +6,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build && node scripts/normalize-pages-assets.mjs",
+    "sync:styles": "node scripts/sync-static-styles.mjs",
+    "dev": "npm run sync:styles && vinext dev",
+    "build": "npm run sync:styles && vinext build && node scripts/normalize-pages-assets.mjs",
     "preview": "vite preview --outDir dist/client",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
