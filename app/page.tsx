@@ -3,11 +3,20 @@
 import { useState } from "react";
 
 const oracles = [
-  "你不是想太多，你只是一次性看见了十七种可能。",
-  "今日宜：把无聊的规则改写成神话。",
-  "灵感已经敲门了。别问是谁，先让它进来。",
-  "宇宙没有跑题，它只是在进行超长联想。",
-  "保持怪诞。正常只是尚未展开的支线。",
+  "当月桂无风而动，向左走。那条看似离题的路，正通往你的答案。",
+  "太阳不会替你选择，但会照亮你一直假装没看见的欲望。",
+  "你担心的混乱并非灾兆；它只是新秩序诞生前，诸神重新洗牌。",
+  "今日不要向唯一答案献祭。阿波罗说：你的第七个念头最接近真相。",
+  "一扇门将在笑声中打开。请认出那个让你兴奋、而非安心的方向。",
+  "皮提亚看见三团火：一团是野心，一团是好奇，最后一团就是你。",
+  "神谕从不命令。它只把你早已知道的事，说得像一道闪电。",
+];
+
+const typeCoordinates = [
+  { system: "MBTI", code: "ENTP", note: "Ne–Ti｜可能性永动机" },
+  { system: "ENNEAGRAM", code: "7w8", note: "快乐与力量，双引擎启动" },
+  { system: "TRITYPE", code: "784", note: "脑、腹、心：拒绝无聊联合体" },
+  { system: "INSTINCT", code: "sp/so", note: "先建基地，再把世界喊过来" },
 ];
 
 const constellations = [
@@ -111,6 +120,22 @@ export default function Home() {
           </p>
         </header>
 
+        <div className="type-profile" aria-label="神人 cm 的类型学坐标">
+          <div className="type-profile-head">
+            <span>TYPE COORDINATES / VERIFIED</span>
+            <p>不是盒子，是四组打开方式。</p>
+          </div>
+          <div className="type-grid">
+            {typeCoordinates.map((item) => (
+              <article className="type-code" key={item.system}>
+                <span>{item.system}</span>
+                <strong>{item.code}</strong>
+                <p>{item.note}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
         <div className="constellation-grid">
           {constellations.map((item) => (
             <article className="trait-card" key={item.index}>
@@ -154,20 +179,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="oracle-section" aria-live="polite">
+      <section className="oracle-section">
+        <div className="delphi-word" aria-hidden="true">ΔΕΛΦΟΙ</div>
+        <div className="apollo-seal" aria-hidden="true">
+          <span className="apollo-rays" />
+          <span className="apollo-sun">☼</span>
+          <i>APOLLO</i>
+        </div>
+
         <div className="oracle-heading">
-          <span className="section-number">03 / DAILY TRANSMISSION</span>
-          <h2>要不要接收<br />一条今日神谕？</h2>
+          <span className="section-number">03 / THE ORACLE OF DELPHI</span>
+          <p className="greek-motto">ΓΝΩΘΙ ΣΕΑΥΤΟΝ · KNOW THYSELF</p>
+          <h2>向皮提亚<br />问一个问题</h2>
+          <p className="oracle-lead">
+            月桂正在燃烧，裂隙中升起甜雾。<br />
+            阿波罗允许你偷听一次命运。
+          </p>
         </div>
-        <div className={`oracle-result ${oracleOpen ? "is-open" : ""}`}>
-          <span aria-hidden="true">“</span>
-          <p>{oracleOpen ? oracles[oracleIndex] : "信号等待接收……"}</p>
-          <small>— 来自神人 cm 的随机脑电波</small>
+
+        <div className="oracle-ritual">
+          <div className="temple-pediment" aria-hidden="true">
+            <span>☙</span><b>THE SUN SEES ALL</b><span>❧</span>
+          </div>
+          <div className="oracle-chamber">
+            <i className="temple-column" aria-hidden="true" />
+            <div className={`oracle-result ${oracleOpen ? "is-open" : ""}`} aria-live="polite">
+              <span className="prophecy-label">PYTHIA TRANSMISSION № {String(oracleIndex + 1).padStart(2, "0")}</span>
+              <span className="laurel" aria-hidden="true">☙</span>
+              <p>{oracleOpen ? oracles[oracleIndex] : "问题在心中成形，然后触碰日轮。"}</p>
+              <small>— 德尔斐，神人 cm 私人转译版</small>
+            </div>
+            <i className="temple-column" aria-hidden="true" />
+          </div>
+          <button type="button" className="oracle-button" onClick={summonOracle}>
+            <span>{oracleOpen ? "再次求问" : "触碰日轮"}</span>
+            <b aria-hidden="true">☼</b>
+          </button>
         </div>
-        <button type="button" className="oracle-button" onClick={summonOracle}>
-          <span>{oracleOpen ? "再来一条" : "点击接收"}</span>
-          <b aria-hidden="true">↻</b>
-        </button>
       </section>
 
       <footer>

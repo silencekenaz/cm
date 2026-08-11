@@ -442,6 +442,47 @@ a {
   font-weight: 650;
 }
 
+.type-profile {
+  margin-bottom: 72px;
+  border: 2px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--acid);
+}
+
+.type-profile-head {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.type-profile-head p { margin: 0; color: var(--acid); }
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.type-code {
+  min-width: 0;
+  padding: 23px 20px 26px;
+  border-right: 1px solid var(--ink);
+}
+
+.type-code:last-child { border-right: 0; }
+.type-code > span { font-family: var(--font-geist-mono), monospace; color: #6a636b; font-size: 9px; letter-spacing: .14em; }
+.type-code strong { display: block; margin: 8px 0 13px; font-size: clamp(34px, 4vw, 58px); line-height: .9; letter-spacing: -.08em; }
+.type-code:nth-child(2) strong { color: var(--pink); }
+.type-code:nth-child(3) strong { color: var(--violet); }
+.type-code p { margin: 0; font-size: 11px; font-weight: 700; line-height: 1.5; }
+
 .constellation-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -590,55 +631,197 @@ a {
 }
 
 .oracle-section {
+  position: relative;
+  min-height: 820px;
   display: grid;
-  grid-template-columns: 1.05fr .9fr auto;
-  align-items: end;
-  gap: 5vw;
-  background: var(--violet);
+  grid-template-columns: minmax(330px, .75fr) minmax(480px, 1.25fr);
+  align-items: center;
+  gap: 7vw;
+  background:
+    linear-gradient(90deg, rgba(215,255,57,.055) 1px, transparent 1px),
+    linear-gradient(rgba(215,255,57,.055) 1px, transparent 1px),
+    radial-gradient(circle at 76% 42%, rgba(255,59,141,.24), transparent 26%),
+    #17111d;
+  background-size: 48px 48px, 48px 48px, auto, auto;
   color: #fff;
+  overflow: hidden;
 }
 
-.oracle-heading .section-number { color: rgba(255,255,255,.6); }
-.oracle-heading h2 { font-size: clamp(52px, 5.8vw, 86px); }
+.delphi-word {
+  position: absolute;
+  right: -2vw;
+  bottom: -0.18em;
+  color: rgba(255,255,255,.035);
+  font-family: Georgia, serif;
+  font-size: clamp(150px, 24vw, 370px);
+  font-weight: 900;
+  line-height: .8;
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+
+.apollo-seal {
+  position: absolute;
+  z-index: 1;
+  top: 52px;
+  right: 7vw;
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(215,255,57,.55);
+  border-radius: 50%;
+  color: var(--acid);
+}
+
+.apollo-rays {
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed currentColor;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+.apollo-sun { font-family: Georgia, serif; font-size: 58px; line-height: 1; }
+.apollo-seal i { position: absolute; bottom: -19px; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-style: normal; letter-spacing: .3em; }
+
+.oracle-heading,
+.oracle-ritual { position: relative; z-index: 2; }
+
+.oracle-heading .section-number { color: rgba(255,255,255,.5); }
+.oracle-heading h2 { font-size: clamp(55px, 6.2vw, 94px); color: var(--acid); }
+
+.greek-motto {
+  width: fit-content;
+  margin: 0 0 25px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,.45);
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  letter-spacing: .15em;
+}
+
+.oracle-lead {
+  margin: 34px 0 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--pink);
+  color: rgba(255,255,255,.68);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.8;
+}
+
+.oracle-ritual {
+  padding-top: 80px;
+}
+
+.temple-pediment {
+  position: relative;
+  width: 92%;
+  height: 100px;
+  margin: 0 auto -1px;
+  padding-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  background: var(--acid);
+  color: var(--ink);
+  clip-path: polygon(50% 0, 100% 73%, 100% 100%, 0 100%, 0 73%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+.temple-pediment span { color: var(--pink); font-size: 22px; }
+
+.oracle-chamber {
+  min-height: 330px;
+  padding: 0 18px 24px;
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  gap: 15px;
+  align-items: stretch;
+  border: 2px solid var(--acid);
+  border-top-width: 10px;
+  background: rgba(143,107,255,.13);
+}
+
+.temple-column {
+  position: relative;
+  display: block;
+  margin: 18px 0;
+  border-inline: 5px double rgba(215,255,57,.7);
+  background: repeating-linear-gradient(90deg, transparent 0 5px, rgba(215,255,57,.16) 6px 8px);
+}
+
+.temple-column::before,
+.temple-column::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  width: 44px;
+  height: 9px;
+  border: 1px solid var(--acid);
+  background: #17111d;
+}
+
+.temple-column::before { top: -7px; }
+.temple-column::after { bottom: -7px; }
 
 .oracle-result {
-  min-height: 220px;
-  padding: 30px;
+  position: relative;
+  min-height: 278px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid #fff;
-  background: rgba(18,15,18,.12);
-  transform: rotate(-1.5deg);
-  transition: background 220ms ease, transform 220ms ease;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(143,107,255,.34), transparent 58%),
+    rgba(18,15,18,.55);
+  transition: background 350ms ease, color 350ms ease, transform 350ms ease;
 }
 
-.oracle-result.is-open { background: var(--acid); color: var(--ink); transform: rotate(1deg); }
-.oracle-result > span { color: var(--pink); font-family: Georgia, serif; font-size: 70px; line-height: .4; }
-.oracle-result p { margin: 12px 0 20px; font-size: clamp(18px, 2vw, 27px); font-weight: 850; line-height: 1.45; }
-.oracle-result small { font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .1em; }
+.oracle-result.is-open {
+  color: #fff;
+  background:
+    radial-gradient(circle at center, rgba(255,59,141,.4), transparent 58%),
+    rgba(18,15,18,.75);
+  animation: prophecy-arrives 500ms ease both;
+}
+
+.prophecy-label { color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: .17em; }
+.oracle-result .laurel { margin: 8px 0 -3px; color: var(--pink); font-family: Georgia, serif; font-size: 43px; line-height: 1; transform: rotate(-16deg); }
+.oracle-result p { margin: 14px auto 22px; max-width: 520px; font-family: Georgia, "Songti SC", serif; font-size: clamp(19px, 2.1vw, 28px); font-weight: 700; line-height: 1.65; }
+.oracle-result small { color: rgba(255,255,255,.5); font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: .1em; }
 
 .oracle-button {
-  width: 136px;
-  height: 136px;
-  padding: 16px;
+  width: 152px;
+  height: 152px;
+  margin: -10px auto 0;
+  padding: 18px;
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--acid);
   border-radius: 50%;
   background: var(--pink);
-  color: #fff;
+  color: var(--acid);
   cursor: pointer;
   font-weight: 900;
-  box-shadow: 8px 8px 0 var(--ink);
+  box-shadow: 0 0 0 8px #17111d, 0 0 0 10px var(--pink), 0 0 40px rgba(255,59,141,.55);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.oracle-button b { font-size: 28px; }
-.oracle-button:hover, .oracle-button:focus-visible { transform: translate(5px, 5px) rotate(6deg); box-shadow: 3px 3px 0 var(--ink); }
+.oracle-button span { font-size: 12px; letter-spacing: .08em; }
+.oracle-button b { font-family: Georgia, serif; font-size: 42px; line-height: 1; }
+.oracle-button:hover, .oracle-button:focus-visible { transform: rotate(8deg) scale(1.04); box-shadow: 0 0 0 8px #17111d, 0 0 0 10px var(--acid), 0 0 55px rgba(215,255,57,.45); }
 
 footer {
   min-height: 390px;
@@ -684,6 +867,7 @@ footer > p {
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes float { 50% { transform: translateY(-12px) rotate(18deg); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes prophecy-arrives { from { opacity: .35; filter: blur(8px); transform: translateY(8px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
 
 @media (max-width: 900px) {
   .site-nav { grid-template-columns: 1fr auto; height: 74px; }
@@ -694,12 +878,17 @@ footer > p {
   .hero-copy { max-width: 680px; }
   .oracle-card { justify-self: center; width: min(88%, 390px); }
   .scroll-cue { display: none; }
+  .type-grid { grid-template-columns: repeat(2, 1fr); }
+  .type-code:nth-child(2) { border-right: 0; }
+  .type-code:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
   .constellation-grid { grid-template-columns: repeat(2, 1fr); }
   .trait-card { min-height: 290px; }
   .myth-section { grid-template-columns: 1fr; }
   .myth-poster { width: min(100%, 560px); justify-self: center; }
-  .oracle-section { grid-template-columns: 1fr 1fr; }
-  .oracle-button { grid-column: 2; justify-self: end; }
+  .oracle-section { grid-template-columns: 1fr; gap: 18px; }
+  .oracle-heading { max-width: 680px; }
+  .oracle-ritual { padding-top: 125px; }
+  .apollo-seal { top: 44%; right: 7vw; }
 }
 
 @media (max-width: 620px) {
@@ -718,12 +907,24 @@ footer > p {
   .section-heading { grid-template-columns: 1fr; margin-bottom: 48px; }
   .section-heading h2, .myth-copy h2, .oracle-heading h2 { font-size: clamp(48px, 16vw, 72px); }
   .section-heading p { font-size: 15px; }
+  .type-profile { margin-bottom: 55px; box-shadow: 6px 6px 0 var(--acid); }
+  .type-profile-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .type-grid { grid-template-columns: 1fr; }
+  .type-code, .type-code:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--ink); }
+  .type-code:last-child { border-bottom: 0; }
   .constellation-grid { grid-template-columns: 1fr; }
   .trait-card { min-height: 250px; }
   .myth-poster { min-height: 480px; box-shadow: 9px 9px 0 var(--violet); }
   .sun-symbol { width: 170px; height: 170px; }
-  .oracle-section { grid-template-columns: 1fr; gap: 36px; }
-  .oracle-button { grid-column: auto; justify-self: center; }
+  .oracle-section { min-height: auto; gap: 42px; }
+  .apollo-seal { top: 43%; right: 22px; width: 96px; height: 96px; }
+  .apollo-sun { font-size: 43px; }
+  .oracle-ritual { padding-top: 65px; }
+  .temple-pediment { width: 100%; }
+  .oracle-chamber { padding-inline: 8px; grid-template-columns: 20px 1fr 20px; gap: 8px; }
+  .temple-column::before, .temple-column::after { left: -7px; width: 28px; }
+  .oracle-result { padding: 28px 13px; }
+  .oracle-button { width: 132px; height: 132px; }
   footer { min-height: 420px; grid-template-columns: 1fr; gap: 50px; }
   footer > p { justify-self: start; }
 }
