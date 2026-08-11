@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "神人 cm｜ENTP 的德尔斐神谕",
+  title: "Q = cmΔt｜神人",
   description: "ENTP · sp/so · 7w8 · 784。神人 cm 的精神宇宙，以及阿波罗特别授权的德尔斐神谕。",
   openGraph: {
-    title: "神人 cm｜ENTP 的德尔斐神谕",
+    title: "Q = cmΔt｜神人",
     description: "ENTP · 7w8 · 784 · sp/so｜THE ORACLE OF DELPHI",
     type: "website",
     locale: "zh_CN",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "神人 cm｜ENTP 的德尔斐神谕",
+    title: "Q = cmΔt｜神人",
     description: "ENTP · 7w8 · 784 · sp/so｜THE ORACLE OF DELPHI",
     images: ["/og.png"],
   },

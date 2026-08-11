@@ -8,7 +8,7 @@ test("exports the homepage as static HTML", async () => {
     "utf8",
   );
 
-  assert.match(html, /<title>神人 cm/);
+  assert.match(html, /<title>Q = cmΔt｜神人/);
   assert.match(html, /德尔斐神谕/);
   assert.match(html, /TYPE COORDINATES/);
   assert.doesNotMatch(html, /\/api\//);
