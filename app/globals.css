@@ -1550,6 +1550,7 @@ footer > p {
 
 .myth-system-card {
   --system-accent: #a35f51;
+  position: relative;
   min-height: 390px;
   padding: clamp(24px, 2.6vw, 36px);
   display: flex;
@@ -1557,11 +1558,25 @@ footer > p {
   border-right: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
   background: #f5f2ec;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .myth-system-card:nth-child(2n) { --system-accent: #70879c; }
 .myth-system-card:nth-child(3n) { --system-accent: #9b8147; }
 .myth-system-card:nth-child(4n) { --system-accent: #655b85; }
+
+.myth-system-card:hover,
+.myth-system-card:focus-visible {
+  z-index: 2;
+  background: #fff;
+  box-shadow: 10px 10px 0 var(--system-accent);
+  outline: 3px solid var(--system-accent);
+  outline-offset: -3px;
+  transform: translate(-5px, -5px);
+}
 
 .myth-system-card-top { min-height: 54px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 .myth-system-card-top > span { color: #6d6870; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: .12em; }
@@ -1583,6 +1598,112 @@ footer > p {
 .myth-reading-list ul { margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 14px; list-style: none; }
 .myth-reading-list li { position: relative; padding-left: 11px; font-size: 11px; font-weight: 720; line-height: 1.55; }
 .myth-reading-list li::before { content: "·"; position: absolute; left: 0; color: var(--system-accent); }
+
+.myth-system-enter {
+  margin-top: 20px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: var(--system-accent);
+  color: #fff;
+  font-family: var(--font-geist-mono), monospace;
+  line-height: 1;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.myth-system-enter strong { font-size: 9px; letter-spacing: .16em; }
+.myth-system-enter b { font-size: 21px; }
+.myth-system-card:hover .myth-system-enter,
+.myth-system-card:focus-visible .myth-system-enter { background: var(--ink); color: var(--acid); }
+
+.myth-detail-page {
+  --detail-accent: #a35f51;
+  min-height: 100vh;
+  background: #f3f1eb;
+  color: var(--ink);
+}
+
+.myth-detail-page[data-system="norse"] { --detail-accent: #70879c; }
+.myth-detail-page[data-system="egyptian"] { --detail-accent: #9b8147; }
+.myth-detail-page[data-system="mesopotamian"] { --detail-accent: #655b85; }
+.myth-detail-page[data-system="celtic"] { --detail-accent: #537b68; }
+.myth-detail-page[data-system="chinese"] { --detail-accent: #a35f51; }
+
+.myth-detail-hero {
+  position: relative;
+  min-height: calc(100svh - 78px);
+  padding: 110px clamp(22px, 7vw, 108px) 90px;
+  display: grid;
+  grid-template-columns: .45fr 1.1fr .72fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 76px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 20%, color-mix(in srgb, var(--detail-accent) 28%, transparent), transparent 34%),
+    var(--ink);
+  color: #fff;
+}
+
+.myth-detail-hero::after {
+  content: "";
+  position: absolute;
+  width: min(72vw, 900px);
+  aspect-ratio: 1;
+  right: -28%;
+  bottom: -70%;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(255,255,255,.025), 0 0 0 96px rgba(255,255,255,.018);
+  pointer-events: none;
+}
+
+.myth-detail-sigil {
+  position: relative;
+  z-index: 1;
+  color: var(--detail-accent);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(110px, 16vw, 250px);
+  line-height: .75;
+  text-align: center;
+}
+
+.myth-detail-heading,
+.myth-detail-intro { position: relative; z-index: 1; }
+.myth-detail-heading > span,
+.myth-detail-intro > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+.myth-detail-heading > span { color: var(--acid); }
+.myth-detail-heading h1 { margin: 30px 0 14px; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 150px); font-weight: 500; line-height: .82; letter-spacing: -.08em; }
+.myth-detail-heading p { margin: 0; color: rgba(255,255,255,.55); font-family: var(--font-geist-mono), monospace; font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+
+.myth-detail-intro { padding-left: 26px; border-left: 3px solid var(--detail-accent); }
+.myth-detail-intro > span { color: var(--detail-accent); }
+.myth-detail-intro p { margin: 22px 0 30px; color: rgba(255,255,255,.72); font-size: 15px; font-weight: 620; line-height: 1.9; }
+.myth-detail-intro a { padding-bottom: 7px; display: inline-flex; align-items: center; gap: 22px; border-bottom: 1px solid currentColor; color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; text-decoration: none; }
+.myth-detail-intro a b { color: var(--acid); font-size: 18px; }
+
+.myth-detail-preview { padding: 110px clamp(22px, 7vw, 108px) 130px; }
+.myth-detail-preview > header { margin-bottom: 70px; display: grid; grid-template-columns: .42fr 1fr .75fr; align-items: end; gap: 36px; }
+.myth-detail-preview > header > span { align-self: start; color: var(--detail-accent); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.myth-detail-preview > header h2 { margin: 0; font-size: clamp(56px, 7vw, 100px); line-height: .86; letter-spacing: -.09em; }
+.myth-detail-preview > header p { margin: 0; color: #676269; font-size: 15px; font-weight: 620; line-height: 1.8; }
+
+.myth-detail-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); box-shadow: 12px 12px 0 var(--detail-accent); }
+.myth-detail-panels article { min-height: 340px; padding: clamp(26px, 3vw, 42px); display: flex; flex-direction: column; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: #f8f5ef; }
+.myth-detail-panels article:nth-child(2) { background: var(--detail-accent); color: #fff; }
+.myth-detail-panels article > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.myth-detail-panels h3 { margin: auto 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(34px, 3.8vw, 58px); font-weight: 500; letter-spacing: -.06em; }
+.myth-detail-panels p,
+.myth-detail-panels li { font-size: 13px; font-weight: 620; line-height: 1.8; }
+.myth-detail-panels p { margin: 0; }
+.myth-detail-panels ul { margin: 0; padding-left: 18px; }
+
+.myth-detail-back { margin-top: 64px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; background: var(--ink); color: #fff; font-family: var(--font-geist-mono), monospace; text-decoration: none; transition: background 180ms ease, color 180ms ease, transform 180ms ease; }
+.myth-detail-back span { font-size: 10px; font-weight: 850; letter-spacing: .16em; }
+.myth-detail-back b { color: var(--acid); font-size: 26px; }
+.myth-detail-back:hover,
+.myth-detail-back:focus-visible { background: var(--detail-accent); color: #fff; outline: none; transform: translateY(-4px); }
 
 .atlas-method-note {
   min-height: 590px;
@@ -1740,6 +1861,12 @@ footer > p {
   .myth-system-index > header p { max-width: 500px; }
   .myth-system-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .myth-system-card { min-height: 390px; }
+  .myth-detail-hero { min-height: 760px; grid-template-columns: .4fr 1fr; align-content: center; }
+  .myth-detail-intro { grid-column: 2; max-width: 560px; }
+  .myth-detail-preview > header { grid-template-columns: 1fr; align-items: start; }
+  .myth-detail-preview > header p { max-width: 560px; }
+  .myth-detail-panels { grid-template-columns: 1fr; }
+  .myth-detail-panels article { min-height: 280px; }
   .atlas-method-note { grid-template-columns: 1fr; align-content: center; }
   .atlas-method-note > span { align-self: auto; }
   .atlas-method-note p { max-width: 540px; }
@@ -1765,6 +1892,17 @@ footer > p {
   .myth-system-card-top { min-height: 60px; }
   .myth-system-title h3 { font-size: 42px; }
   .myth-reading-list ul { grid-template-columns: 1fr; }
+  .myth-system-enter { padding-block: 14px; }
+  .myth-detail-hero { min-height: 760px; padding: 92px 22px 70px; grid-template-columns: 1fr; gap: 50px; }
+  .myth-detail-sigil { text-align: left; font-size: 120px; }
+  .myth-detail-heading h1 { font-size: clamp(70px, 22vw, 104px); }
+  .myth-detail-intro { grid-column: auto; }
+  .myth-detail-preview { padding: 82px 22px 100px; }
+  .myth-detail-preview > header { margin-bottom: 46px; }
+  .myth-detail-preview > header h2 { font-size: 58px; }
+  .myth-detail-panels { box-shadow: 7px 7px 0 var(--detail-accent); }
+  .myth-detail-panels article { min-height: 250px; padding: 28px 24px; }
+  .myth-detail-back { margin-top: 46px; }
   .atlas-method-note { min-height: 620px; padding: 90px 22px; gap: 38px; }
   .atlas-method-note h2 { font-size: 58px; }
   .atlas-method-note p { font-size: 14px; }
