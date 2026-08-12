@@ -78,6 +78,7 @@ test("exports six static mythology detail pages", async () => {
       for (const name of ["弗蕾雅", "尼弗尔海姆", "海姆冥界"]) {
         assert.match(html, new RegExp(name));
       }
+      assert.equal((html.match(/OPEN ARCHIVE/g) ?? []).length, 6);
       for (const section of ["命运之井", "诸神与命运", "世界树", "诸神黄昏", "诗歌记忆"]) {
         assert.match(html, new RegExp(section));
       }

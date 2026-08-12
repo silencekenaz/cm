@@ -1,12 +1,36 @@
-import type { CSSProperties } from "react";
+"use client";
 
-const gods = [
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+
+type GodArchive = {
+  rune: string;
+  name: string;
+  oldNorse: string;
+  role: string;
+  text: string;
+  identity: string;
+  archive: string[];
+  fate: string;
+  sources: { label: string; href: string }[];
+};
+
+const gods: GodArchive[] = [
   {
     rune: "ᚨ",
     name: "奥丁",
     oldNorse: "ÓÐINN",
     role: "求知者",
     text: "为了看得更远，他用眼睛、身体与安宁交换知识。知道结局，并没有终止他的追问。",
+    identity: "战争、诗歌、死者与知识的多面神祇；不同诗篇强调的面向并不完全相同。",
+    archive: [
+      "《至高者箴言》让奥丁以第一人称回忆：他在风中的树上悬挂九夜，被长矛所伤，也没有得到食物与饮酒，最终拾得符文。这段诗把知识写成一次危险的自我献祭，而不是无代价的全知。",
+      "《女先知的预言》把他置于无法取消的终局里：奥丁会在诸神黄昏与芬里尔相遇。预知没有令他退出故事；他仍召集战士、寻求智慧，并走向已经听闻的命运。",
+    ],
+    fate: "知道结局，仍为理解结局付出代价。",
+    sources: [
+      { label: "《至高者箴言》138–141节", href: "https://sacred-texts.com/neu/poe/poe04.htm" },
+      { label: "《女先知的预言》", href: "https://sacred-texts.com/neu/poe/poe03.htm" },
+    ],
   },
   {
     rune: "ᚦ",
@@ -14,6 +38,16 @@ const gods = [
     oldNorse: "ÞÓRR",
     role: "守界者",
     text: "他以雷霆维持人与巨人之间脆弱的边界；最终仍将走向那条早已被预言的海蛇。",
+    identity: "持有米约尔尼尔的雷神，也是埃达诗歌中反复与巨人交锋的保护性力量。",
+    archive: [
+      "《海米斯之歌》写索尔随船出海，以牛头为饵钓起尘世巨蛇。他挥锤击打怪物，海与大地为之震动；这次相遇没有结束双方的纠葛，却预演了末日的对手关系。",
+      "《女先知的预言》预告索尔在诸神黄昏杀死巨蛇，随后只走九步便因蛇毒倒下。胜利与死亡落在同一段诗句里，因此他的力量从来不是免死的保证。",
+    ],
+    fate: "击败尘世巨蛇，也被它留下的毒带走。",
+    sources: [
+      { label: "《海米斯之歌》22–24节", href: "https://sacred-texts.com/neu/poe/poe09.htm" },
+      { label: "《女先知的预言》56节", href: "https://sacred-texts.com/neu/poe/poe03.htm" },
+    ],
   },
   {
     rune: "ᛏ",
@@ -21,6 +55,16 @@ const gods = [
     oldNorse: "TÝR",
     role: "立约者",
     text: "为了让芬里尔受缚，他把手放进狼口。秩序从来不是免费的，它要求有人先承担代价。",
+    identity: "与勇武、契约和裁断相关的神祇；现存材料关于他的叙事比奥丁或索尔少得多。",
+    archive: [
+      "《欺骗古鲁菲》叙述诸神试图用格莱普尼尔缚住芬里尔。狼怀疑细带有诈，要求一位神把手放进它口中作为担保；只有提尔上前。束缚收紧后，芬里尔咬断了他的手。",
+      "《洛基的争辩》也提到这只失去的手，说明故事并非只存在于斯诺里的散文整理中。原典留下的是一次带有欺骗的集体行动，以及提尔独自承担的可见代价。",
+    ],
+    fate: "用自己的手，为诸神不可靠的保证作担保。",
+    sources: [
+      { label: "《散文埃达·欺骗古鲁菲》第34章", href: "https://vsnr.org/editions/snorri-sturluson-edda-prologue-and-gylfaginning/" },
+      { label: "《洛基的争辩》38–40节", href: "https://archive.sacred-texts.com/neu/poe/poe10.htm" },
+    ],
   },
   {
     rune: "ᚠ",
@@ -28,6 +72,16 @@ const gods = [
     oldNorse: "FREYJA",
     role: "欲望与战死",
     text: "爱情、魔法、金与战场在她身上并不矛盾；她提醒人们，生命的丰盛从不排除失去。",
+    identity: "华纳神族女神；与爱欲、赛德魔法、财富和战死者相关，但不能被缩减为单一的“爱神”。",
+    archive: [
+      "《格里姆尼尔之歌》说，弗蕾雅居于福尔克范格，每日选择一半战死者，另一半归奥丁。这里的她直接参与战死者的归属，而不只是宴饮与爱情故事的角色。",
+      "《索列姆之歌》中，巨人索列姆以归还米约尔尼尔为条件索要弗蕾雅。她听闻后震怒并拒绝，随后诸神让索尔乔装成她去取回锤子。诗歌的笑剧结构不等于她同意成为交易对象。",
+    ],
+    fate: "在爱欲、魔法与战死之间保有不可简化的位置。",
+    sources: [
+      { label: "《格里姆尼尔之歌》第14节", href: "https://www.gutenberg.org/cache/epub/73533/pg73533-images.html" },
+      { label: "《索列姆之歌》", href: "https://www.gutenberg.org/cache/epub/73533/pg73533-images.html" },
+    ],
   },
   {
     rune: "ᛃ",
@@ -35,6 +89,16 @@ const gods = [
     oldNorse: "FREYR",
     role: "丰饶者",
     text: "他曾为渴望交出宝剑，于是将在末日面对烈焰。一个选择，会在遥远的未来继续发声。",
+    identity: "华纳神族男神；与丰饶、和平、好年景相关，也是《史基尼尔之歌》欲望叙事的中心。",
+    archive: [
+      "《史基尼尔之歌》的序言写弗雷从至高座望见巨人之女葛德，因渴望而苦恼。他让侍从史基尼尔前去求婚，并把自己的宝剑交给使者。诗中随后的劝说与威胁，也使这段结合并非轻盈的爱情童话。",
+      "《欺骗古鲁菲》把失去宝剑与诸神黄昏连接起来：弗雷将面对持火而来的苏尔特，却缺少那把能够自行战斗的好剑。不同文本的拼接应被看作斯诺里的叙事整理，而不是一份无缝传记。",
+    ],
+    fate: "曾交给使者的宝剑，在末日成为无法忽略的缺席。",
+    sources: [
+      { label: "《史基尼尔之歌》序言及相关诗节", href: "https://www.gutenberg.org/cache/epub/73533/pg73533-images.html" },
+      { label: "《散文埃达·欺骗古鲁菲》", href: "https://vsnr.org/editions/snorri-sturluson-edda-prologue-and-gylfaginning/" },
+    ],
   },
   {
     rune: "ᚲ",
@@ -42,6 +106,16 @@ const gods = [
     oldNorse: "LOKI",
     role: "越界者",
     text: "他使秩序得以运转，也令它从内部开裂。诸神的敌人与同伴，常常是同一个人。",
+    identity: "与诸神同行、又最终站到他们对面的复杂人物；原典没有把他稳定地归入现代意义的“恶神”类型。",
+    archive: [
+      "在《索列姆之歌》等诗篇里，洛基能替诸神找出办法：他借来羽衣探查锤子下落，又陪索尔完成伪装。可在《洛基的争辩》中，他以言语揭露、羞辱宴席上的诸神，关系早已处于破裂边缘。",
+      "《欺骗古鲁菲》将巴德尔之死、洛基受缚和诸神黄昏串成因果链，并写他最终驾船加入诸神的敌方。需要注意：关于洛基的材料来自不同体裁与时代，不能自动拼成一个动机始终一致的人物弧光。",
+    ],
+    fate: "既参与修补秩序，也成为秩序最终裂开的接缝。",
+    sources: [
+      { label: "《洛基的争辩》", href: "https://archive.sacred-texts.com/neu/poe/poe10.htm" },
+      { label: "《散文埃达·欺骗古鲁菲》第49–51章", href: "https://vsnr.org/editions/snorri-sturluson-edda-prologue-and-gylfaginning/" },
+    ],
   },
 ];
 
@@ -58,6 +132,28 @@ const realms = [
 ];
 
 export default function NorseArchiveSections() {
+  const [selectedGod, setSelectedGod] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const activeGod = selectedGod === null ? null : gods[selectedGod];
+
+  useEffect(() => {
+    if (!activeGod) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedGod(null);
+      if (event.key === "ArrowRight") setSelectedGod((current) => current === null ? 0 : (current + 1) % gods.length);
+      if (event.key === "ArrowLeft") setSelectedGod((current) => current === null ? 0 : (current - 1 + gods.length) % gods.length);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.cancelAnimationFrame(focusFrame);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeGod]);
+
   return (
     <>
       <nav className="norse-section-nav" aria-label="北欧神话专区目录">
@@ -128,10 +224,47 @@ export default function NorseArchiveSections() {
               <small>{god.oldNorse} / {god.role}</small>
               <h3>{god.name}</h3>
               <p>{god.text}</p>
+              <button type="button" onClick={() => setSelectedGod(index)} aria-label={`打开${god.name}的详细档案`}>
+                OPEN ARCHIVE <span aria-hidden="true">↗</span>
+              </button>
             </article>
           ))}
         </div>
       </section>
+
+      {activeGod && (
+        <div className="norse-god-overlay" role="presentation" onMouseDown={(event) => {
+          if (event.currentTarget === event.target) setSelectedGod(null);
+        }}>
+          <article className="norse-god-dialog" role="dialog" aria-modal="true" aria-labelledby="norse-god-title">
+            <button ref={closeButtonRef} className="norse-god-close" type="button" onClick={() => setSelectedGod(null)} aria-label="关闭诸神档案">×</button>
+            <header>
+              <span>GOD ARCHIVE / {String((selectedGod ?? 0) + 1).padStart(2, "0")}</span>
+              <b aria-hidden="true">{activeGod.rune}</b>
+              <div>
+                <small>{activeGod.oldNorse} / {activeGod.role}</small>
+                <h2 id="norse-god-title">{activeGod.name}</h2>
+                <p>{activeGod.identity}</p>
+              </div>
+            </header>
+            <div className="norse-god-archive-copy">
+              <span>据原典整理</span>
+              <div>{activeGod.archive.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+            </div>
+            <div className="norse-god-fate-note"><span>命运节点</span><p>{activeGod.fate}</p></div>
+            <footer>
+              <div>
+                <span>原典索引</span>
+                {activeGod.sources.map((source) => <a key={source.label} href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a>)}
+              </div>
+              <nav aria-label="切换神祇档案">
+                <button type="button" onClick={() => setSelectedGod(((selectedGod ?? 0) - 1 + gods.length) % gods.length)}>← PREV</button>
+                <button type="button" onClick={() => setSelectedGod(((selectedGod ?? 0) + 1) % gods.length)}>NEXT →</button>
+              </nav>
+            </footer>
+          </article>
+        </div>
+      )}
 
       <section className="norse-tree-section" id="world-tree">
         <header>

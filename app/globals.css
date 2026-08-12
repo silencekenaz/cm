@@ -2103,7 +2103,7 @@ footer > p {
 .norse-hammer::before { content: ""; position: absolute; top: 40px; left: 50%; width: 10px; height: 76px; border-inline: 3px solid currentColor; transform: translateX(-50%); }
 .norse-hammer::after { content: ""; position: absolute; top: 109px; left: 50%; width: 22px; height: 10px; border: 3px solid currentColor; transform: translateX(-50%); }
 .norse-gods-grid { position: relative; z-index: 2; margin-top: 110px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--norse-fjord); border-left: 1px solid var(--norse-fjord); box-shadow: 14px 14px 0 #8da3ad; }
-.norse-gods-grid article { min-height: 370px; padding: 32px; display: flex; flex-direction: column; border-right: 1px solid var(--norse-fjord); border-bottom: 1px solid var(--norse-fjord); background: rgba(241,244,240,.9); transition: transform 180ms ease, background 180ms ease, color 180ms ease; }
+.norse-gods-grid article { position: relative; min-height: 390px; padding: 32px; display: flex; flex-direction: column; border-right: 1px solid var(--norse-fjord); border-bottom: 1px solid var(--norse-fjord); background: rgba(241,244,240,.9); transition: transform 180ms ease, background 180ms ease, color 180ms ease; }
 .norse-gods-grid article:nth-child(2),
 .norse-gods-grid article:nth-child(6) { background: var(--norse-fjord); color: #fff; }
 .norse-gods-grid article:nth-child(4) { background: #c5d0ce; }
@@ -2112,8 +2112,39 @@ footer > p {
 .norse-gods-grid article > div span { font-family: var(--font-geist-mono), monospace; font-size: 9px; }
 .norse-gods-grid article > div b { font-family: Georgia, serif; font-size: 54px; font-weight: 400; line-height: .8; }
 .norse-gods-grid small { margin-top: 28px; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
-.norse-gods-grid h3 { margin: auto 0 22px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 4vw, 64px); font-weight: 500; line-height: 1; }
+.norse-gods-grid h3 { margin: auto 0 18px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 4vw, 64px); font-weight: 500; line-height: 1; }
 .norse-gods-grid p { margin: 0; font-size: 13px; font-weight: 620; line-height: 1.85; }
+.norse-gods-grid article > button { width: 100%; margin-top: 24px; padding: 13px 0 8px; display: flex; justify-content: space-between; border: 0; border-top: 1px solid currentColor; background: transparent; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; cursor: pointer; }
+.norse-gods-grid article > button span { font-size: 15px; transition: transform 160ms ease; }
+.norse-gods-grid article > button:hover span,
+.norse-gods-grid article > button:focus-visible span { transform: translate(4px, -3px); }
+.norse-gods-grid article > button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+
+.norse-god-overlay { position: fixed; z-index: 1000; inset: 0; padding: clamp(12px, 3vw, 44px); display: grid; place-items: center; overflow-y: auto; background: rgba(5,13,22,.82); backdrop-filter: blur(12px); animation: theory-fade 180ms ease-out; }
+.norse-god-dialog { position: relative; width: min(1120px, 100%); max-height: calc(100svh - clamp(24px, 6vw, 88px)); overflow-y: auto; border: 1px solid #8da3ad; background: #e7eae5; color: var(--norse-fjord); box-shadow: 18px 18px 0 rgba(142,167,184,.3); animation: theory-rise 220ms ease-out; }
+.norse-god-close { position: sticky; z-index: 4; top: 18px; float: right; width: 52px; height: 52px; margin: 18px 18px -70px 0; border: 1px solid rgba(237,241,237,.5); border-radius: 50%; background: var(--norse-night); color: #edf1ed; font-size: 32px; line-height: 1; cursor: pointer; }
+.norse-god-dialog > header { min-height: 360px; padding: clamp(42px, 6vw, 78px); display: grid; grid-template-columns: .38fr .34fr 1.15fr; gap: clamp(24px, 5vw, 80px); align-items: center; background: var(--norse-night); color: #edf1ed; }
+.norse-god-dialog > header > span { align-self: start; color: #c4a96d; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .17em; }
+.norse-god-dialog > header > b { color: rgba(142,167,184,.72); font-family: Georgia, serif; font-size: clamp(100px, 14vw, 210px); font-weight: 400; line-height: 1; text-align: center; }
+.norse-god-dialog > header small { color: #c4a96d; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .15em; }
+.norse-god-dialog > header h2 { margin: 24px 0 22px; color: #f1f2ed; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 140px); font-weight: 500; line-height: .82; letter-spacing: -.08em; }
+.norse-god-dialog > header p { max-width: 540px; margin: 0; color: rgba(237,241,237,.67); font-size: 14px; line-height: 1.95; }
+.norse-god-archive-copy { padding: clamp(44px, 7vw, 90px); display: grid; grid-template-columns: .34fr 1fr; gap: clamp(30px, 7vw, 110px); }
+.norse-god-archive-copy > span,
+.norse-god-fate-note > span,
+.norse-god-dialog > footer span { color: #78909e; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .15em; }
+.norse-god-archive-copy p { margin: 0 0 26px; font-family: Georgia, "Songti SC", serif; font-size: clamp(18px, 2vw, 25px); line-height: 2; }
+.norse-god-archive-copy p:last-child { margin-bottom: 0; }
+.norse-god-fate-note { margin-inline: clamp(44px, 7vw, 90px); padding: 34px 38px; display: grid; grid-template-columns: .3fr 1fr; gap: 28px; border: 1px solid var(--norse-fjord); background: #c4a96d; }
+.norse-god-fate-note span { color: rgba(16,29,41,.65); }
+.norse-god-fate-note p { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(20px, 2.4vw, 32px); font-weight: 650; line-height: 1.6; }
+.norse-god-dialog > footer { margin-top: clamp(44px, 6vw, 74px); padding: 34px clamp(44px, 7vw, 90px); display: grid; grid-template-columns: 1fr auto; gap: 34px; border-top: 1px solid rgba(38,60,77,.28); background: #d8dfdc; }
+.norse-god-dialog > footer > div { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 22px; }
+.norse-god-dialog > footer a { color: var(--norse-fjord); font-size: 11px; font-weight: 750; text-underline-offset: 4px; }
+.norse-god-dialog > footer nav { display: flex; gap: 8px; }
+.norse-god-dialog > footer nav button { padding: 13px 17px; border: 1px solid var(--norse-fjord); background: transparent; color: var(--norse-fjord); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; cursor: pointer; }
+.norse-god-dialog > footer nav button:hover,
+.norse-god-dialog > footer nav button:focus-visible { background: var(--norse-fjord); color: #fff; outline: none; }
 
 .norse-tree-section {
   min-height: 1250px;
@@ -2514,6 +2545,21 @@ footer > p {
   .norse-gods-grid { margin-top: 72px; grid-template-columns: 1fr; box-shadow: 8px 8px 0 #8da3ad; }
   .norse-gods-grid article { min-height: 320px; padding: 28px 24px; }
   .norse-gods-grid article:hover { transform: none; }
+  .norse-god-overlay { padding: 8px; }
+  .norse-god-dialog { max-height: calc(100svh - 16px); box-shadow: 7px 8px 0 rgba(142,167,184,.25); }
+  .norse-god-close { top: 10px; width: 44px; height: 44px; margin: 10px 10px -54px 0; }
+  .norse-god-dialog > header { min-height: 520px; padding: 64px 24px 44px; grid-template-columns: .38fr 1fr; gap: 20px; align-content: center; }
+  .norse-god-dialog > header > span { grid-column: 1 / -1; }
+  .norse-god-dialog > header > b { font-size: 100px; }
+  .norse-god-dialog > header h2 { margin-top: 18px; font-size: 72px; }
+  .norse-god-dialog > header p { font-size: 13px; }
+  .norse-god-archive-copy { padding: 44px 24px; grid-template-columns: 1fr; gap: 24px; }
+  .norse-god-archive-copy p { font-size: 18px; line-height: 2; }
+  .norse-god-fate-note { margin-inline: 24px; padding: 25px 22px; grid-template-columns: 1fr; gap: 14px; }
+  .norse-god-dialog > footer { padding: 28px 24px; grid-template-columns: 1fr; }
+  .norse-god-dialog > footer > div { align-items: flex-start; flex-direction: column; }
+  .norse-god-dialog > footer nav { width: 100%; }
+  .norse-god-dialog > footer nav button { flex: 1; }
   .norse-tree-map { margin-top: 70px; min-height: auto; }
   .norse-tree-branches { display: none; }
   .norse-tree-trunk { left: 15px; right: auto; }
