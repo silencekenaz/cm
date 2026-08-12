@@ -1639,7 +1639,14 @@ footer > p {
   color: var(--ink);
 }
 
-.myth-detail-page[data-system="norse"] { --detail-accent: #70879c; }
+.myth-detail-page[data-system="norse"] {
+  --detail-accent: #8ea7b8;
+  --norse-night: #101d29;
+  --norse-fjord: #263c4d;
+  --norse-ice: #dce7e9;
+  --norse-moss: #7e9489;
+  background: #dce3e2;
+}
 .myth-detail-page[data-system="egyptian"] { --detail-accent: #9b8147; }
 .myth-detail-page[data-system="mesopotamian"] { --detail-accent: #655b85; }
 .myth-detail-page[data-system="celtic"] { --detail-accent: #537b68; }
@@ -1672,6 +1679,163 @@ footer > p {
   box-shadow: 0 0 0 48px rgba(255,255,255,.025), 0 0 0 96px rgba(255,255,255,.018);
   pointer-events: none;
 }
+
+.myth-detail-page[data-system="norse"] .myth-atlas-nav {
+  border-bottom-color: rgba(220,231,233,.28);
+  background: var(--norse-night);
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-hero {
+  min-height: calc(100svh - 78px);
+  padding-bottom: 136px;
+  background:
+    linear-gradient(116deg, transparent 0 13%, rgba(220,231,233,.035) 13.1% 13.35%, transparent 13.45% 100%),
+    linear-gradient(63deg, transparent 0 77%, rgba(220,231,233,.035) 77.1% 77.3%, transparent 77.4% 100%),
+    radial-gradient(ellipse at 78% 14%, rgba(184,211,218,.25), transparent 24%),
+    radial-gradient(ellipse at 58% 102%, rgba(126,148,137,.18), transparent 39%),
+    linear-gradient(148deg, #0d1823, #192c3c 58%, #101d29);
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: .34;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(220,231,233,.028) 5px 6px),
+    linear-gradient(90deg, transparent, rgba(220,231,233,.06), transparent);
+  mask-image: linear-gradient(to bottom, #000, transparent 74%);
+  pointer-events: none;
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-hero::after {
+  right: auto;
+  bottom: -73%;
+  left: -22%;
+  border-color: rgba(220,231,233,.12);
+  border-radius: 48% 52% 44% 56%;
+  box-shadow: 0 0 0 48px rgba(220,231,233,.018), 0 0 0 96px rgba(220,231,233,.012);
+  transform: rotate(17deg);
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-sigil {
+  color: var(--norse-ice);
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(130px, 17vw, 260px);
+  font-weight: 400;
+  opacity: .78;
+  text-shadow: 7px 8px 0 rgba(6,15,23,.38);
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-heading > span { color: #c4a96d; }
+.myth-detail-page[data-system="norse"] .myth-detail-heading h1 {
+  color: #f0f2ed;
+  text-shadow: 0 14px 35px rgba(3,9,15,.32);
+}
+.myth-detail-page[data-system="norse"] .myth-detail-heading p { color: rgba(220,231,233,.62); }
+.myth-detail-page[data-system="norse"] .myth-detail-intro {
+  border-left: 1px solid var(--norse-ice);
+  background: linear-gradient(90deg, rgba(220,231,233,.045), transparent 80%);
+}
+.myth-detail-page[data-system="norse"] .myth-detail-intro > span { color: #9eb7c6; }
+.myth-detail-page[data-system="norse"] .myth-detail-intro a b { color: #c4a96d; }
+
+.norse-world-tree {
+  position: absolute;
+  z-index: 0;
+  top: -10%;
+  right: -2%;
+  width: min(40vw, 560px);
+  height: 88%;
+  opacity: .2;
+  pointer-events: none;
+}
+
+.norse-world-tree::before,
+.norse-world-tree::after,
+.norse-world-tree i {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--norse-ice));
+  transform-origin: right center;
+}
+.norse-world-tree::before { top: 0; right: 24%; width: 1px; height: 114%; background: linear-gradient(var(--norse-ice), transparent); transform: rotate(7deg); }
+.norse-world-tree::after { top: 28%; right: 24%; width: 62%; transform: rotate(24deg); }
+.norse-world-tree i:nth-child(1) { top: 40%; right: 20%; width: 78%; transform: rotate(-23deg); }
+.norse-world-tree i:nth-child(2) { top: 55%; right: 12%; width: 52%; transform: rotate(31deg); }
+.norse-world-tree i:nth-child(3) { top: 68%; right: 19%; width: 88%; transform: rotate(-15deg); }
+.norse-world-tree i:nth-child(4) { top: 80%; right: 15%; width: 62%; transform: rotate(38deg); }
+
+.norse-rune-band {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 74px;
+  padding: 18px clamp(22px, 7vw, 108px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+  border-top: 1px solid rgba(220,231,233,.2);
+  background: rgba(8,18,27,.58);
+  color: #a9bec8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  letter-spacing: .22em;
+  backdrop-filter: blur(8px);
+}
+.norse-rune-band span:last-child { text-align: right; }
+.norse-rune-band b {
+  color: rgba(220,231,233,.58);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: .19em;
+}
+
+.myth-detail-page[data-system="norse"] .myth-detail-preview {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, transparent 48.8%, rgba(38,60,77,.07) 49%, transparent 49.2%) 0 0 / 66px 66px,
+    #dce3e2;
+}
+.myth-detail-page[data-system="norse"] .myth-detail-preview::before {
+  content: "ᚠ  ᚢ  ᚦ  ᚬ  ᚱ  ᚴ";
+  position: absolute;
+  top: 68px;
+  right: -20px;
+  color: rgba(38,60,77,.075);
+  font-family: Georgia, serif;
+  font-size: clamp(70px, 11vw, 170px);
+  letter-spacing: -.08em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.myth-detail-page[data-system="norse"] .myth-detail-preview > header { position: relative; z-index: 1; }
+.myth-detail-page[data-system="norse"] .myth-detail-preview > header h2 { color: var(--norse-fjord); }
+.myth-detail-page[data-system="norse"] .myth-detail-panels {
+  position: relative;
+  z-index: 1;
+  border-color: var(--norse-fjord);
+  box-shadow: 12px 12px 0 #8ba0aa;
+}
+.myth-detail-page[data-system="norse"] .myth-detail-panels article {
+  border-color: var(--norse-fjord);
+  background: rgba(240,243,239,.94);
+}
+.myth-detail-page[data-system="norse"] .myth-detail-panels article:nth-child(2) {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.05), transparent 45%),
+    var(--norse-fjord);
+}
+.myth-detail-page[data-system="norse"] .myth-detail-panels article > span { color: #718998; }
+.myth-detail-page[data-system="norse"] .myth-detail-panels article:nth-child(2) > span { color: #c4a96d; }
+.myth-detail-page[data-system="norse"] .myth-detail-back { background: var(--norse-night); }
 
 .myth-detail-sigil {
   position: relative;
@@ -1878,6 +2042,10 @@ footer > p {
   .myth-system-card { min-height: 390px; }
   .myth-detail-hero { min-height: 760px; grid-template-columns: .4fr 1fr; align-content: center; }
   .myth-detail-intro { grid-column: 2; max-width: 560px; }
+  .myth-detail-page[data-system="norse"] .myth-detail-hero { padding-bottom: 136px; }
+  .norse-world-tree { right: -18%; width: 60vw; }
+  .norse-rune-band { grid-template-columns: 1fr auto; }
+  .norse-rune-band span:last-child { display: none; }
   .myth-detail-preview > header { grid-template-columns: 1fr; align-items: start; }
   .myth-detail-preview > header p { max-width: 560px; }
   .myth-detail-panels { grid-template-columns: 1fr; }
@@ -1909,6 +2077,11 @@ footer > p {
   .myth-reading-list ul { grid-template-columns: 1fr; }
   .myth-system-enter { padding-block: 14px; }
   .myth-detail-hero { min-height: 760px; padding: 92px 22px 70px; grid-template-columns: 1fr; gap: 50px; }
+  .myth-detail-page[data-system="norse"] .myth-detail-hero { min-height: 860px; padding-bottom: 122px; }
+  .myth-detail-page[data-system="norse"] .myth-detail-sigil { font-size: 132px; }
+  .norse-world-tree { top: 0; right: -45%; width: 120vw; height: 70%; opacity: .15; }
+  .norse-rune-band { min-height: 58px; padding: 14px 22px; grid-template-columns: 1fr; gap: 0; font-size: 14px; }
+  .norse-rune-band b { display: none; }
   .myth-detail-sigil { text-align: left; font-size: 120px; }
   .myth-detail-heading h1 { font-size: clamp(70px, 22vw, 104px); }
   .myth-detail-intro { grid-column: auto; }

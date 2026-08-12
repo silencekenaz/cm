@@ -70,7 +70,13 @@ test("exports six static mythology detail pages", async () => {
     );
 
     assert.match(html, new RegExp(title));
-    assert.match(html, /CONTENT IN PROGRESS/);
+    if (slug === "norse") {
+      assert.match(html, /NORTH ATLANTIC ARCHIVE/);
+      assert.match(html, /霜线之下/);
+      assert.match(html, /THE NORTH REMEMBERS IN VERSE/);
+    } else {
+      assert.match(html, /CONTENT IN PROGRESS/);
+    }
     assert.match(html, /href="\/cm\/myths\.html#systems"/);
     assert.doesNotMatch(html, /\/api\//);
   }
