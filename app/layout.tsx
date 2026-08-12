@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetVersion = process.env.NEXT_PUBLIC_ASSET_VERSION ?? "dev";
 
 export const dynamic = "force-static";
 
@@ -43,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <head>
-        <link rel="stylesheet" href={`${siteBasePath}/styles.css`} />
+        <link rel="stylesheet" href={`${siteBasePath}/styles.css?v=${assetVersion}`} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}

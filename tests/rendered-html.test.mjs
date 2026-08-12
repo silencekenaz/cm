@@ -11,7 +11,7 @@ test("exports the homepage as static HTML", async () => {
   assert.match(html, /<title>Q = cmΔt｜神人/);
   assert.match(html, /德尔斐神谕/);
   assert.match(html, /TYPE COORDINATES/);
-  assert.match(html, /href="\/cm\/styles\.css"/);
+  assert.match(html, /href="\/cm\/styles\.css\?v=[^"]+"/);
   assert.match(html, /src="\/cm\/pythia-priestess\.png"/);
   assert.doesNotMatch(html, /\/api\//);
 });
@@ -34,7 +34,7 @@ test("exports the mythology archive as static HTML", async () => {
   );
   const documentHtml = html.split('<script type="module"')[0];
 
-  assert.match(documentHtml, /href="\/cm\/styles\.css"/);
+  assert.match(documentHtml, /href="\/cm\/styles\.css\?v=[^"]+"/);
 
   const systems = [
     ["greek", "希腊"],
