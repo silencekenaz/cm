@@ -2511,12 +2511,15 @@ footer > p {
   .myth-detail-back { margin-top: 46px; }
   .norse-section-nav { min-height: auto; margin-top: 46px; padding: 28px 20px 58px; grid-template-columns: 1fr; gap: 10px; }
   .norse-section-nav::before { inset: 10px; }
-  .norse-nav-tree { inset: 20px auto 30px 31px; width: 70px; height: calc(100% - 50px); opacity: .6; }
+  .norse-nav-tree { display: none; }
+  .norse-section-nav::after { content: ""; position: absolute; z-index: 0; top: 34px; bottom: 58px; left: 40px; width: 1px; background: linear-gradient(transparent, rgba(38,60,77,.46) 8% 92%, transparent); }
   .norse-section-nav a,
   .norse-section-nav a:nth-of-type(1),
   .norse-section-nav a:nth-of-type(2),
   .norse-section-nav a:nth-of-type(4),
   .norse-section-nav a:nth-of-type(5) { min-height: 72px; margin: 0 0 0 42px; padding: 16px 18px; grid-column: auto; align-items: flex-start; justify-content: center; }
+  .norse-section-nav a::before { content: ""; position: absolute; top: 50%; left: -33px; width: 10px; height: 10px; border: 1px solid rgba(38,60,77,.68); background: #edf1ed; transform: translateY(-50%) rotate(45deg); box-shadow: 0 0 0 5px rgba(220,227,226,.9); }
+  .norse-section-nav a::after { content: ""; position: absolute; top: 50%; left: -23px; width: 23px; height: 1px; background: rgba(38,60,77,.42); }
   .norse-section-nav a b { top: 18px; right: 18px; font-size: 30px; }
   .norse-section-nav > p { bottom: 19px; font-size: 5px; }
   .norse-fate-section,

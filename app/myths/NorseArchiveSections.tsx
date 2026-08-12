@@ -14,7 +14,7 @@ type GodArchive = {
   sources: { label: string; href: string }[];
 };
 
-const gods: GodArchive[] = [
+const godArchives: GodArchive[] = [
   {
     rune: "ᚨ",
     name: "奥丁",
@@ -118,6 +118,10 @@ const gods: GodArchive[] = [
     ],
   },
 ];
+
+const gods = ["ÓÐINN", "LOKI", "ÞÓRR", "TÝR", "FREYR", "FREYJA"].map(
+  (name) => godArchives.find((god) => god.oldNorse === name) as GodArchive,
+);
 
 const realms = [
   ["ASGARD", "阿斯加德", "诸神的议事与秩序"],

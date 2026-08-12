@@ -79,6 +79,10 @@ test("exports six static mythology detail pages", async () => {
         assert.match(html, new RegExp(name));
       }
       assert.equal((html.match(/OPEN ARCHIVE/g) ?? []).length, 6);
+      const godOrder = ["奥丁", "洛基", "索尔", "提尔", "弗雷", "弗蕾雅"];
+      const godPositions = godOrder.map((name) => html.indexOf(`<h3>${name}</h3>`));
+      assert.ok(godPositions.every((position) => position >= 0));
+      assert.deepEqual([...godPositions].sort((a, b) => a - b), godPositions);
       for (const section of ["命运之井", "诸神与命运", "世界树", "诸神黄昏", "诗歌记忆"]) {
         assert.match(html, new RegExp(section));
       }
