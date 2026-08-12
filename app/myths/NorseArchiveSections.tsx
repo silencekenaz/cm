@@ -24,7 +24,7 @@ const gods = [
   },
   {
     rune: "ᚠ",
-    name: "弗雷亚",
+    name: "弗蕾雅",
     oldNorse: "FREYJA",
     role: "欲望与战死",
     text: "爱情、魔法、金与战场在她身上并不矛盾；她提醒人们，生命的丰盛从不排除失去。",
@@ -52,9 +52,9 @@ const realms = [
   ["MIDGARD", "米德加德", "人类被海与蛇环绕的中庭"],
   ["JOTUNHEIM", "约顿海姆", "巨人与边界之外的力量"],
   ["SVARTALFHEIM", "斯瓦塔尔夫海姆", "工艺、地下与暧昧的名称"],
-  ["NIFLHEIM", "尼福尔海姆", "雾、寒冷与原初之北"],
+  ["NIFLHEIM", "尼弗尔海姆", "雾、寒冷与原初之北"],
   ["MUSPELHEIM", "穆斯贝尔海姆", "火焰与原初之南"],
-  ["HEL", "赫尔", "部分死者抵达的领域"],
+  ["HEL", "海姆冥界", "部分死者抵达的领域"],
 ];
 
 export default function NorseArchiveSections() {

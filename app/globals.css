@@ -1844,6 +1844,7 @@ footer > p {
     linear-gradient(135deg, transparent 48.8%, rgba(38,60,77,.07) 49%, transparent 49.2%) 0 0 / 66px 66px,
     #dce3e2;
 }
+.myth-detail-page[data-system="norse"] .myth-detail-preview { padding-top: 0; }
 .myth-detail-page[data-system="norse"] .myth-detail-preview::before {
   content: "ᚠ  ᚢ  ᚦ  ᚬ  ᚱ  ᚴ";
   position: absolute;
@@ -1941,7 +1942,7 @@ footer > p {
 .norse-section-nav {
   position: relative;
   z-index: 2;
-  margin: 120px 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   border-top: 1px solid var(--norse-fjord);
@@ -2417,7 +2418,7 @@ footer > p {
   .myth-detail-panels { box-shadow: 7px 7px 0 var(--detail-accent); }
   .myth-detail-panels article { min-height: 250px; padding: 28px 24px; }
   .myth-detail-back { margin-top: 46px; }
-  .norse-section-nav { margin-top: 82px; grid-template-columns: 1fr; }
+  .norse-section-nav { margin-top: 0; grid-template-columns: 1fr; }
   .norse-section-nav a { min-height: 62px; align-items: center; }
   .norse-section-nav a span { align-self: auto; }
   .norse-fate-section,

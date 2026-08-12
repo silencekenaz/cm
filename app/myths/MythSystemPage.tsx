@@ -42,7 +42,7 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
         <div className="myth-detail-intro">
           <span>{isNorse ? "NORTH ATLANTIC ARCHIVE / ICE · INK · MEMORY" : "PREVIEW EDITION / CONTENT IN PROGRESS"}</span>
           <p>{system.framing}</p>
-          <a href="#preview">打开临时档案 <b aria-hidden="true">↓</b></a>
+          <a href="#preview">{isNorse ? "进入五章档案" : "打开临时档案"} <b aria-hidden="true">↓</b></a>
         </div>
         {isNorse && (
           <div className="norse-rune-band" aria-hidden="true">
@@ -54,36 +54,35 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
       </header>
 
       <section className="myth-detail-preview" id="preview">
-        {isNorse && (
-          <div className="norse-knot-border" aria-hidden="true">
-            <i /><i /><i /><i /><i /><i /><i /><i />
-          </div>
-        )}
-        <header>
-          <span>{isNorse ? "FIELD NOTES / NORTH 02" : "TEMPORARY INDEX"}</span>
-          <h2>{isNorse ? <>霜线之下<br />档案展开</> : <>档案正在<br />展开</>}</h2>
-          <p>{isNorse ? "从冰岛手稿、诗歌语言与口述记忆留下的层次开始。这里先建立一张冷海之北的阅读地图。" : "这里先搭好阅读结构。正式的文本脉络、故事专题与版本辨析会在下一阶段补入。"}</p>
-        </header>
+        {!isNorse && (
+          <>
+            <header>
+              <span>TEMPORARY INDEX</span>
+              <h2>档案正在<br />展开</h2>
+              <p>这里先搭好阅读结构。正式的文本脉络、故事专题与版本辨析会在下一阶段补入。</p>
+            </header>
 
-        <div className="myth-detail-panels">
-          <article>
-            <span>{isNorse ? "01 / SOURCE LAYERS" : "01 / SCOPE"}</span>
-            <h3>{isNorse ? "文本来处" : "传承范围"}</h3>
-            <p>{system.region.replaceAll(" / ", "、")}。暂以文本来源与历史层次为入口，不把传统压缩成单一神谱。</p>
-          </article>
-          <article>
-            <span>{isNorse ? "02 / THE SHELF" : "02 / READING"}</span>
-            <h3>{isNorse ? "冷海书架" : "当前书架"}</h3>
-            <ul>
-              {system.books.map((book) => <li key={book}>{book}</li>)}
-            </ul>
-          </article>
-          <article>
-            <span>{isNorse ? "03 / THREADS" : "03 / NEXT"}</span>
-            <h3>{isNorse ? "待循之线" : "下一步"}</h3>
-            <p>将补充核心文本的来历、重要母题、版本差异，以及适合继续阅读的研究书目。</p>
-          </article>
-        </div>
+            <div className="myth-detail-panels">
+              <article>
+                <span>01 / SCOPE</span>
+                <h3>传承范围</h3>
+                <p>{system.region.replaceAll(" / ", "、")}。暂以文本来源与历史层次为入口，不把传统压缩成单一神谱。</p>
+              </article>
+              <article>
+                <span>02 / READING</span>
+                <h3>当前书架</h3>
+                <ul>
+                  {system.books.map((book) => <li key={book}>{book}</li>)}
+                </ul>
+              </article>
+              <article>
+                <span>03 / NEXT</span>
+                <h3>下一步</h3>
+                <p>将补充核心文本的来历、重要母题、版本差异，以及适合继续阅读的研究书目。</p>
+              </article>
+            </div>
+          </>
+        )}
 
         {isNorse && <NorseArchiveSections />}
 
