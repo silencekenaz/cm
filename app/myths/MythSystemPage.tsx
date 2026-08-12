@@ -21,6 +21,17 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
             <i /><i /><i /><i />
           </div>
         )}
+        {isNorse && (
+          <>
+            <div className="norse-fjord-ridge" aria-hidden="true">
+              <i /><i /><i /><i /><i />
+            </div>
+            <svg className="norse-ravens" viewBox="0 0 180 80" aria-hidden="true">
+              <path d="M10 49c19-3 28-12 38-26 4 15 14 23 31 27-20 1-30 8-38 20-4-11-13-17-31-21Z" />
+              <path d="M101 45c18-4 28-12 39-28 3 16 13 25 30 30-18 0-29 7-39 19-3-11-12-17-30-21Z" />
+            </svg>
+          </>
+        )}
         <div className="myth-detail-sigil" aria-hidden="true">{system.symbol}</div>
         <div className="myth-detail-heading">
           <span>ARCHIVE {system.index} / {system.region}</span>
@@ -42,6 +53,11 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
       </header>
 
       <section className="myth-detail-preview" id="preview">
+        {isNorse && (
+          <div className="norse-knot-border" aria-hidden="true">
+            <i /><i /><i /><i /><i /><i /><i /><i />
+          </div>
+        )}
         <header>
           <span>{isNorse ? "FIELD NOTES / NORTH 02" : "TEMPORARY INDEX"}</span>
           <h2>{isNorse ? <>霜线之下<br />档案展开</> : <>档案正在<br />展开</>}</h2>
