@@ -61,15 +61,26 @@ export default function NorseArchiveSections() {
   return (
     <>
       <nav className="norse-section-nav" aria-label="北欧神话专区目录">
-        <a href="#fate-well"><span>01</span>命运之井</a>
-        <a href="#gods-and-fate"><span>02</span>诸神与命运</a>
-        <a href="#world-tree"><span>03</span>世界树</a>
-        <a href="#ragnarok"><span>04</span>诸神黄昏</a>
-        <a href="#norse-memory"><span>05</span>诗歌记忆</a>
+        <svg className="norse-nav-tree" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+          <path className="norse-nav-trunk" d="M500 344C496 278 504 216 500 142C498 98 500 54 500 10" />
+          <path d="M500 286C408 270 286 288 116 258" />
+          <path d="M500 232C416 198 330 174 250 108" />
+          <path d="M500 190C574 145 665 124 758 72" />
+          <path d="M500 262C616 250 741 268 888 226" />
+          <path d="M500 120C500 92 500 66 500 36" />
+          <path className="norse-nav-root" d="M500 344C420 334 352 344 292 358M500 344C580 330 648 342 714 358M500 344C474 326 454 304 434 284M500 344C530 324 554 306 578 284" />
+        </svg>
+        <a href="#fate-well"><b aria-hidden="true">ᚢ</b><span>01</span>命运之井</a>
+        <a href="#gods-and-fate"><b aria-hidden="true">ᚨ</b><span>02</span>诸神与命运</a>
+        <a href="#world-tree"><b aria-hidden="true">ᛇ</b><span>03</span>世界树</a>
+        <a href="#ragnarok"><b aria-hidden="true">ᚱ</b><span>04</span>诸神黄昏</a>
+        <a href="#norse-memory"><b aria-hidden="true">ᛟ</b><span>05</span>诗歌记忆</a>
+        <p aria-hidden="true"><span>YGGDRASILL</span> / FIVE PATHS BENEATH ONE CROWN</p>
       </nav>
 
       <section className="norse-fate-section" id="fate-well">
         <div className="norse-fate-lines" aria-hidden="true"><i /><i /><i /></div>
+        <div className="norse-well-rings" aria-hidden="true"><i /><i /><i /><b>URÐR</b></div>
         <header>
           <span>01 / URÐARBRUNNR</span>
           <p>THE WELL BENEATH THE TREE</p>
@@ -105,6 +116,11 @@ export default function NorseArchiveSections() {
           <p>他们不是全能者。知识、力量、盟约、欲望与诡计，都只能改变抵达结局的道路。</p>
         </header>
         <div className="norse-god-orbit" aria-hidden="true"><i /><i /><span>ᛟ</span></div>
+        <div className="norse-god-emblems" aria-hidden="true">
+          <svg viewBox="0 0 130 70"><path d="M4 46c19-1 34-10 47-31 4 17 13 27 29 30l14-5-8 10 10 9c-23-9-39-6-51 10-8-14-21-20-41-23Z" /><path d="M78 35c12-2 23-9 32-23 2 10 8 17 17 20" /></svg>
+          <i className="norse-hammer" />
+          <svg viewBox="0 0 130 70"><path d="M126 46c-19-1-34-10-47-31-4 17-13 27-29 30l-14-5 8 10-10 9c23-9 39-6 51 10 8-14 21-20 41-23Z" /><path d="M52 35c-12-2-23-9-32-23-2 10-8 17-17 20" /></svg>
+        </div>
         <div className="norse-gods-grid">
           {gods.map((god, index) => (
             <article key={god.oldNorse}>
@@ -124,6 +140,14 @@ export default function NorseArchiveSections() {
           <p>九界并非一张在原始材料中固定不变的地图。这里把常见名称作为阅读坐标，而非唯一正确的宇宙平面图。</p>
         </header>
         <div className="norse-tree-map">
+          <svg className="norse-tree-branches" viewBox="0 0 1000 760" preserveAspectRatio="none" aria-hidden="true">
+            <path className="tree-core" d="M500 742C492 640 510 548 500 448C492 348 510 260 500 38" />
+            <path d="M500 588C428 558 338 550 188 560M500 588C584 550 690 556 850 524" />
+            <path d="M500 452C405 428 326 372 158 344M500 452C594 414 674 365 848 324" />
+            <path d="M500 302C418 260 344 206 238 150M500 302C592 250 680 205 790 138" />
+            <path d="M500 168C448 130 410 82 378 20M500 168C556 124 596 78 630 16" />
+            <path className="tree-roots" d="M500 742C424 710 336 720 242 756M500 742C570 704 652 716 754 756M500 742C470 704 444 672 388 650M500 742C534 698 566 670 620 644" />
+          </svg>
           <div className="norse-tree-trunk" aria-hidden="true"><i /><i /><i /><i /><b>ᛇ</b></div>
           <div className="norse-realms">
             {realms.map(([latin, chinese, note], index) => (
@@ -139,6 +163,11 @@ export default function NorseArchiveSections() {
 
       <section className="norse-ragnarok-section" id="ragnarok">
         <div className="norse-wolf" aria-hidden="true"><i /><i /><b>ᚱ</b></div>
+        <svg className="norse-serpent" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-70 238C110 48 270 348 470 174C636 28 762 294 1018 90" />
+          <path className="serpent-head" d="M930 135l84-54-12 72-70 36Z" />
+          <circle cx="989" cy="120" r="5" />
+        </svg>
         <header>
           <span>04 / RAGNA RÖK</span>
           <h2>诸神的命运</h2>
@@ -154,6 +183,12 @@ export default function NorseArchiveSections() {
       </section>
 
       <section className="norse-memory-section" id="norse-memory">
+        <svg className="norse-longship" viewBox="0 0 420 210" aria-hidden="true">
+          <path d="M34 148h337c-26 34-73 49-168 49-87 0-139-16-169-49Z" />
+          <path d="M203 18v131M203 28l-112 95h112ZM210 30l102 92H210Z" />
+          <path d="M15 198c53-18 96 18 149 0s98 18 151 0 78 8 101-2" />
+          <path d="M60 148 35 112M349 148l31-40" />
+        </svg>
         <header>
           <span>05 / WHAT THE POEMS KEEP</span>
           <h2>火会熄灭，<br />诗歌继续记得。</h2>
