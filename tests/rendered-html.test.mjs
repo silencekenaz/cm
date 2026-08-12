@@ -78,7 +78,9 @@ test("exports six static mythology detail pages", async () => {
       for (const name of ["弗蕾雅", "尼弗尔海姆", "海姆冥界"]) {
         assert.match(html, new RegExp(name));
       }
-      assert.equal((html.match(/OPEN ARCHIVE/g) ?? []).length, 6);
+      for (const slug of ["odin", "loki", "thor", "tyr", "freyr", "freyja"]) {
+        assert.match(html, new RegExp(`href="/cm/myths/norse/${slug}\\.html"`));
+      }
       const godOrder = ["奥丁", "洛基", "索尔", "提尔", "弗雷", "弗蕾雅"];
       const godPositions = godOrder.map((name) => html.indexOf(`<h3>${name}</h3>`));
       assert.ok(godPositions.every((position) => position >= 0));
@@ -93,6 +95,31 @@ test("exports six static mythology detail pages", async () => {
       assert.match(html, /CONTENT IN PROGRESS/);
     }
     assert.match(html, /href="\/cm\/myths\.html#systems"/);
+    assert.doesNotMatch(html, /\/api\//);
+  }
+});
+
+test("exports six source-based Norse god subpages", async () => {
+  const gods = [
+    ["odin", "奥丁"],
+    ["loki", "洛基"],
+    ["thor", "索尔"],
+    ["tyr", "提尔"],
+    ["freyr", "弗雷"],
+    ["freyja", "弗蕾雅"],
+  ];
+
+  for (const [slug, name] of gods) {
+    const html = await readFile(
+      new URL(`../dist/client/myths/norse/${slug}.html`, import.meta.url),
+      "utf8",
+    );
+    assert.match(html, new RegExp(`<h1>${name}</h1>`));
+    assert.match(html, /据原典整理/);
+    assert.match(html, /命运节点/);
+    assert.match(html, /READING NOTE/);
+    assert.match(html, /原典索引/);
+    assert.match(html, /href="\/cm\/myths\/norse\.html#gods-and-fate"/);
     assert.doesNotMatch(html, /\/api\//);
   }
 });

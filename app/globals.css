@@ -2114,11 +2114,11 @@ footer > p {
 .norse-gods-grid small { margin-top: 28px; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
 .norse-gods-grid h3 { margin: auto 0 18px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 4vw, 64px); font-weight: 500; line-height: 1; }
 .norse-gods-grid p { margin: 0; font-size: 13px; font-weight: 620; line-height: 1.85; }
-.norse-gods-grid article > button { width: 100%; margin-top: 24px; padding: 13px 0 8px; display: flex; justify-content: space-between; border: 0; border-top: 1px solid currentColor; background: transparent; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; cursor: pointer; }
-.norse-gods-grid article > button span { font-size: 15px; transition: transform 160ms ease; }
-.norse-gods-grid article > button:hover span,
-.norse-gods-grid article > button:focus-visible span { transform: translate(4px, -3px); }
-.norse-gods-grid article > button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.norse-gods-grid article > a { width: 100%; margin-top: 24px; padding: 13px 0 8px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; text-decoration: none; }
+.norse-gods-grid article > a span { font-size: 15px; transition: transform 160ms ease; }
+.norse-gods-grid article > a:hover span,
+.norse-gods-grid article > a:focus-visible span { transform: translate(4px, -3px); }
+.norse-gods-grid article > a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 
 .norse-god-overlay { position: fixed; z-index: 1000; inset: 0; padding: clamp(12px, 3vw, 44px); display: grid; place-items: center; overflow-y: auto; background: rgba(5,13,22,.82); backdrop-filter: blur(12px); animation: theory-fade 180ms ease-out; }
 .norse-god-dialog { position: relative; width: min(1120px, 100%); max-height: calc(100svh - clamp(24px, 6vw, 88px)); overflow-y: auto; border: 1px solid #8da3ad; background: #e7eae5; color: var(--norse-fjord); box-shadow: 18px 18px 0 rgba(142,167,184,.3); animation: theory-rise 220ms ease-out; }
@@ -2127,7 +2127,7 @@ footer > p {
 .norse-god-dialog > header > span { align-self: start; color: #c4a96d; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .17em; }
 .norse-god-dialog > header > b { color: rgba(142,167,184,.72); font-family: Georgia, serif; font-size: clamp(100px, 14vw, 210px); font-weight: 400; line-height: 1; text-align: center; }
 .norse-god-dialog > header small { color: #c4a96d; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .15em; }
-.norse-god-dialog > header h2 { margin: 24px 0 22px; color: #f1f2ed; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 140px); font-weight: 500; line-height: .82; letter-spacing: -.08em; }
+.norse-god-dialog > header :is(h1, h2) { margin: 24px 0 22px; color: #f1f2ed; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 10vw, 140px); font-weight: 500; line-height: .82; letter-spacing: -.08em; }
 .norse-god-dialog > header p { max-width: 540px; margin: 0; color: rgba(237,241,237,.67); font-size: 14px; line-height: 1.95; }
 .norse-god-archive-copy { padding: clamp(44px, 7vw, 90px); display: grid; grid-template-columns: .34fr 1fr; gap: clamp(30px, 7vw, 110px); }
 .norse-god-archive-copy > span,
@@ -2145,6 +2145,21 @@ footer > p {
 .norse-god-dialog > footer nav button { padding: 13px 17px; border: 1px solid var(--norse-fjord); background: transparent; color: var(--norse-fjord); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; cursor: pointer; }
 .norse-god-dialog > footer nav button:hover,
 .norse-god-dialog > footer nav button:focus-visible { background: var(--norse-fjord); color: #fff; outline: none; }
+.norse-god-dialog > footer nav > a { padding: 13px 17px; border: 1px solid var(--norse-fjord); color: var(--norse-fjord); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .1em; text-decoration: none; }
+.norse-god-dialog > footer nav > a:hover,
+.norse-god-dialog > footer nav > a:focus-visible { background: var(--norse-fjord); color: #fff; outline: none; }
+
+.norse-god-page { --norse-night: #101d29; --norse-fjord: #263c4d; --norse-ice: #dce7e9; --norse-moss: #7e9489; min-height: 100svh; padding: 104px clamp(18px, 6vw, 92px) 90px; background:
+  linear-gradient(145deg, transparent 49.5%, rgba(142,167,184,.045) 49.7% 50.2%, transparent 50.4%) 0 0 / 90px 90px,
+  #0d1924; }
+.norse-god-page-nav { position: fixed; z-index: 10; top: 0; left: 0; right: 0; min-height: 72px; padding: 18px clamp(18px, 6vw, 92px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(220,231,233,.2); background: rgba(13,25,36,.92); backdrop-filter: blur(12px); }
+.norse-god-page-nav a { color: #dce3e2; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; text-decoration: none; }
+.norse-god-page-nav a:last-child { color: #c4a96d; }
+.norse-god-subpage { max-height: none; margin-inline: auto; overflow: visible; box-shadow: 18px 18px 0 rgba(142,167,184,.22); animation: none; }
+.norse-god-subpage > header { min-height: 520px; }
+.norse-god-method-note { margin: clamp(54px, 7vw, 90px) clamp(44px, 7vw, 90px) 0; padding: 32px 38px; display: grid; grid-template-columns: .3fr 1fr; gap: 28px; border-left: 5px solid #8da3ad; background: rgba(142,167,184,.13); }
+.norse-god-method-note span { color: #718998; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .15em; }
+.norse-god-method-note p { margin: 0; font-size: 13px; line-height: 1.9; }
 
 .norse-tree-section {
   min-height: 1250px;
@@ -2554,7 +2569,7 @@ footer > p {
   .norse-god-dialog > header { min-height: 520px; padding: 64px 24px 44px; grid-template-columns: .38fr 1fr; gap: 20px; align-content: center; }
   .norse-god-dialog > header > span { grid-column: 1 / -1; }
   .norse-god-dialog > header > b { font-size: 100px; }
-  .norse-god-dialog > header h2 { margin-top: 18px; font-size: 72px; }
+  .norse-god-dialog > header :is(h1, h2) { margin-top: 18px; font-size: 72px; }
   .norse-god-dialog > header p { font-size: 13px; }
   .norse-god-archive-copy { padding: 44px 24px; grid-template-columns: 1fr; gap: 24px; }
   .norse-god-archive-copy p { font-size: 18px; line-height: 2; }
@@ -2562,7 +2577,12 @@ footer > p {
   .norse-god-dialog > footer { padding: 28px 24px; grid-template-columns: 1fr; }
   .norse-god-dialog > footer > div { align-items: flex-start; flex-direction: column; }
   .norse-god-dialog > footer nav { width: 100%; }
-  .norse-god-dialog > footer nav button { flex: 1; }
+  .norse-god-dialog > footer nav :is(button, a) { flex: 1; text-align: center; }
+  .norse-god-page { padding: 80px 8px 28px; }
+  .norse-god-page-nav { min-height: 64px; padding-inline: 18px; }
+  .norse-god-page-nav a:last-child { display: none; }
+  .norse-god-subpage { max-height: none; box-shadow: 7px 8px 0 rgba(142,167,184,.25); }
+  .norse-god-method-note { margin: 48px 24px 0; padding: 25px 22px; grid-template-columns: 1fr; gap: 14px; }
   .norse-tree-map { margin-top: 70px; min-height: auto; }
   .norse-tree-branches { display: none; }
   .norse-tree-trunk { left: 15px; right: auto; }
