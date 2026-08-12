@@ -1,4 +1,5 @@
 import type { MythSystem } from "./myth-data";
+import NorseArchiveSections from "./NorseArchiveSections";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -83,6 +84,8 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
             <p>将补充核心文本的来历、重要母题、版本差异，以及适合继续阅读的研究书目。</p>
           </article>
         </div>
+
+        {isNorse && <NorseArchiveSections />}
 
         <a className="myth-detail-back" href={atlasHref}>
           <span>BACK TO ALL SYSTEMS</span>

@@ -74,6 +74,12 @@ test("exports six static mythology detail pages", async () => {
       assert.match(html, /NORTH ATLANTIC ARCHIVE/);
       assert.match(html, /霜线之下/);
       assert.match(html, /THE NORTH REMEMBERS IN VERSE/);
+      for (const section of ["命运之井", "诸神与命运", "世界树", "诸神黄昏", "诗歌记忆"]) {
+        assert.match(html, new RegExp(section));
+      }
+      for (const anchor of ["fate-well", "gods-and-fate", "world-tree", "ragnarok", "norse-memory"]) {
+        assert.match(html, new RegExp(`id="${anchor}"`));
+      }
     } else {
       assert.match(html, /CONTENT IN PROGRESS/);
     }
