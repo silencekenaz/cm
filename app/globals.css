@@ -1086,11 +1086,27 @@ a {
   pointer-events: none;
 }
 
-.prophecy-label { position: relative; color: #806b3e; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .16em; }
+.pythia-priestess {
+  position: absolute;
+  z-index: 0;
+  left: clamp(6px, 1.3vw, 18px);
+  bottom: 0;
+  width: clamp(112px, 17vw, 210px);
+  max-height: 82%;
+  object-fit: contain;
+  object-position: left bottom;
+  opacity: .2;
+  filter: saturate(.72) contrast(.9);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+}
+
+.prophecy-label { position: relative; z-index: 1; color: #806b3e; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .16em; }
 .oracle-result .laurel { position: relative; margin: 12px 0 2px; color: #9c8249; font-family: Georgia, serif; font-size: 36px; line-height: 1; transform: rotate(-12deg); }
-.oracle-form { position: relative; color: #756f68; font-family: Georgia, "Songti SC", serif; font-size: 11px; letter-spacing: .1em; }
-.oracle-result p { position: relative; margin: 17px auto 24px; max-width: 560px; white-space: pre-line; font-family: Georgia, "Songti SC", serif; font-size: clamp(18px, 1.65vw, 24px); font-weight: 600; line-height: 1.95; letter-spacing: .015em; }
-.oracle-result small { position: relative; color: rgba(24,36,51,.58); font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.7; letter-spacing: .08em; }
+.oracle-form { position: relative; z-index: 1; color: #756f68; font-family: Georgia, "Songti SC", serif; font-size: 11px; letter-spacing: .1em; }
+.oracle-result p { position: relative; z-index: 1; margin: 17px auto 24px; max-width: 560px; white-space: pre-line; font-family: Georgia, "Songti SC", serif; font-size: clamp(18px, 1.65vw, 24px); font-weight: 600; line-height: 1.95; letter-spacing: .015em; }
+.oracle-result small { position: relative; z-index: 1; color: rgba(24,36,51,.58); font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.7; letter-spacing: .08em; }
 
 .sanctum-foot {
   position: relative;
@@ -1831,6 +1847,7 @@ footer > p {
   .oracle-chamber::before { left: -21px; }
   .oracle-chamber::after { right: -21px; }
   .oracle-result { padding: 36px 22px; }
+  .pythia-priestess { left: -4px; width: 108px; max-height: 68%; opacity: .14; }
   .oracle-result p { font-size: 18px; line-height: 1.95; }
   .oracle-button { width: 116px; height: 116px; }
   .apollo-story-overlay { padding: 10px; }

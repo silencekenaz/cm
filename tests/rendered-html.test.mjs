@@ -12,6 +12,7 @@ test("exports the homepage as static HTML", async () => {
   assert.match(html, /德尔斐神谕/);
   assert.match(html, /TYPE COORDINATES/);
   assert.match(html, /href="\/cm\/styles\.css"/);
+  assert.match(html, /src="\/cm\/pythia-priestess\.png"/);
   assert.doesNotMatch(html, /\/api\//);
 });
 

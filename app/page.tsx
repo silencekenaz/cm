@@ -528,6 +528,12 @@ export default function Home() {
           </div>
           <div className="oracle-chamber">
             <div className={`oracle-result ${oracleOpen ? "is-open" : ""} ${isSeventhSeal ? "is-secret" : ""}`} aria-live="polite">
+              <img
+                className="pythia-priestess"
+                src={`${siteBasePath}/pythia-priestess.png`}
+                alt=""
+                aria-hidden="true"
+              />
               <span className="prophecy-label">
                 {oracleOpen ? currentOracle.voice : "PYTHIA · ORACLE CHAMBER"}
               </span>
