@@ -1475,12 +1475,12 @@ footer > p {
 .easter-archive-page > header > span { position: relative; color: var(--egg-gold); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 850; letter-spacing: .18em; }
 .easter-archive-page > header h1 { position: relative; max-width: 1000px; margin: 32px 0 42px; font-size: clamp(64px, 10vw, 146px); line-height: .93; letter-spacing: -.075em; }
 .easter-archive-page > header p { position: relative; max-width: 650px; margin: 0 0 0 auto; color: rgba(242,239,231,.68); font-size: 16px; font-weight: 600; line-height: 2; }
-.easter-duck-mascot { position: absolute; z-index: 3; top: 64px; right: clamp(-64px, -2vw, -18px); width: clamp(230px, 25vw, 390px); }
+.easter-duck-mascot { position: absolute; z-index: 3; top: 64px; right: clamp(18px, 3vw, 48px); width: clamp(220px, 23vw, 340px); }
 .easter-duck-mascot > button { width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(14px 18px 0 rgba(4,10,17,.22)); transition: transform 180ms ease, filter 180ms ease; }
 .easter-duck-mascot > button:hover { transform: translateY(-7px) rotate(1deg); filter: drop-shadow(18px 24px 0 rgba(4,10,17,.18)); }
 .easter-duck-mascot > button:active { transform: translateY(2px) rotate(-2deg) scale(.98); }
 .easter-duck-mascot > button:focus-visible { outline: 2px solid var(--egg-gold); outline-offset: -20px; }
-.easter-duck-mascot img { width: 100%; height: auto; display: block; }
+.easter-duck-mascot img { width: 100%; height: auto; display: block; transform: scaleX(-1); }
 .easter-duck-speech { position: absolute !important; z-index: 4; top: 32%; right: 78%; width: max-content; max-width: 210px !important; margin: 0 !important; padding: 15px 18px; border: 1px solid var(--egg-gold); background: #f2efe7; box-shadow: 7px 7px 0 var(--egg-gold); color: var(--egg-night) !important; font-family: var(--font-geist-mono), monospace; font-size: clamp(13px, 1.4vw, 17px) !important; font-weight: 850 !important; line-height: 1.4 !important; letter-spacing: .04em; animation: duck-speech-pop 240ms cubic-bezier(.2,.8,.2,1); }
 .easter-duck-speech::after { content: ""; position: absolute; right: -13px; bottom: 15px; width: 22px; height: 22px; border-top: 1px solid var(--egg-gold); border-right: 1px solid var(--egg-gold); background: #f2efe7; transform: rotate(45deg); }
 @keyframes duck-speech-pop { from { opacity: 0; transform: translate(14px, 8px) scale(.82); } to { opacity: 1; transform: none; } }
@@ -1503,17 +1503,24 @@ footer > p {
 .easter-archive-footer p { max-width: 920px; margin: 0; font-size: clamp(38px, 5.5vw, 78px); font-weight: 850; line-height: 1.18; letter-spacing: -.055em; }
 .easter-archive-footer a { align-self: flex-end; padding-bottom: 7px; border-bottom: 2px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 900; letter-spacing: .13em; }
 
+@media (max-width: 900px) {
+  .easter-archive-page > header h1 { max-width: 68%; }
+  .easter-archive-page > header p { max-width: 54%; margin-left: 0; }
+  .easter-duck-mascot { top: 74px; right: 22px; width: clamp(210px, 29vw, 260px); }
+  .easter-duck-speech { right: 72%; max-width: 170px !important; }
+}
+
 @media (max-width: 620px) {
   .easter-gate-dialog { padding: 54px 22px 34px; box-shadow: 8px 8px 0 rgba(207,174,102,.16); }
   .easter-gate-dialog h2 { margin: 24px 0 38px; font-size: 52px; }
   .easter-gate-dialog form > div { grid-template-columns: auto 1fr; }
   .easter-gate-dialog form button { grid-column: 1 / -1; min-height: 52px; }
   .easter-archive-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
-  .easter-archive-page > header { min-height: 670px; padding: 110px 22px 72px; }
-  .easter-duck-mascot { top: 58px; right: -82px; width: 250px; opacity: .92; }
-  .easter-duck-speech { top: 20%; right: 64%; max-width: 150px !important; padding: 11px 13px; font-size: 12px !important; }
-  .easter-archive-page > header h1 { font-size: 62px; line-height: 1; }
-  .easter-archive-page > header p { font-size: 14px; line-height: 1.9; }
+  .easter-archive-page > header { min-height: 820px; padding: 330px 22px 72px; align-content: start; }
+  .easter-duck-mascot { top: 48px; right: 12px; width: min(46vw, 190px); opacity: .96; }
+  .easter-duck-speech { top: 23%; right: 68%; max-width: 132px !important; padding: 10px 12px; box-shadow: 5px 5px 0 var(--egg-gold); font-size: 11px !important; }
+  .easter-archive-page > header h1 { max-width: 100%; font-size: 62px; line-height: 1; }
+  .easter-archive-page > header p { max-width: 100%; margin-left: 0; font-size: 14px; line-height: 1.9; }
   .easter-archive-log { grid-template-columns: 1fr; }
   .easter-archive-log article { min-height: 0; padding: 42px 22px 58px; border-right: 0; border-bottom: 1px solid rgba(203,174,102,.35) !important; }
   .easter-archive-log article:last-child { border-bottom: 0 !important; }
@@ -1521,6 +1528,10 @@ footer > p {
   .easter-archive-terminal { padding: 76px 22px; }
   .easter-archive-footer { min-height: 400px; padding: 64px 22px 36px; }
   .easter-archive-footer p { font-size: 40px; }
+}
+
+@media (max-width: 420px) {
+  .easter-duck-speech { right: auto; left: -96px; width: 124px; max-width: 124px !important; }
 }
 
 .myth-atlas-page {
