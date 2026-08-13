@@ -208,7 +208,7 @@ test("exports separate Norse myth and heroic paths", async () => {
 
   const tales = [
     ["world-from-ymer", "世界从尤弥尔身上醒来", "尤弥尔的头骨"],
-    ["old-oaths", "旧誓与和约", "混合鲜血"],
+    ["old-oaths", "旧誓与和约", "结义兄弟仪式"],
     ["mead-of-poetry", "诗蜜酒", "贡萝德"],
     ["wall-of-asgard", "阿斯加德的城墙", "斯瓦迪尔法利"],
     ["sifs-golden-hair", "希芙的金发", "妙尔尼尔"],
@@ -232,6 +232,8 @@ test("exports separate Norse myth and heroic paths", async () => {
     assert.match(html, /TEXTUAL AFTERWORD/);
     assert.doesNotMatch(html, /行动记录|节点档案|逐项拆解/);
   }
+  assert.match(await readFile(new URL("../dist/client/myths/norse/myths/old-oaths.html", import.meta.url), "utf8"), /吉斯利萨迦[\s\S]*血一同滴入掀开的草皮下/);
+  for (const preferredName of ["海尼尔", "洛德尔", "希亚费", "海拉", "芬利斯"]) assert.match(`${morning}${noon}${dusk}${await readFile(new URL("../dist/client/myths/norse/myths/world-from-ymer.html", import.meta.url), "utf8")}${await readFile(new URL("../dist/client/myths/norse/myths/utgard.html", import.meta.url), "utf8")}`, new RegExp(preferredName));
 
   const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
   for (const section of ["英雄不是", "维兰德之歌", "沃尔松格谱系", "西格鲁德与法夫尼尔", "布伦希尔德的誓言", "古德伦的余生"]) {
