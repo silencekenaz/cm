@@ -74,6 +74,33 @@ const hours = [
   },
 ];
 
+const journeyStations = [
+  {
+    label: "STATION 01 / EASTERN HORIZON",
+    title: "生成",
+    note: "凯布利托起日轮：黎明不是回到原点，而是一次新的成为。",
+    image: "egypt-dawn-khepri.webp",
+    alt: "原创插画：凯布利以圣甲虫形态从原初水域托起初生太阳",
+    hours: hours.slice(0, 2),
+  },
+  {
+    label: "STATION 02 / THE DEEPEST HOUR",
+    title: "接近",
+    note: "太阳的运动与奥西里斯的再生在杜阿特深处彼此作用。",
+    image: "egypt-midnight-union.webp",
+    alt: "原创插画：夜形态的拉乘船接近神龛中的奥西里斯",
+    hours: hours.slice(2, 4),
+  },
+  {
+    label: "STATION 03 / THE WAY OUT",
+    title: "通过",
+    note: "蛇在这里是再生的通道；船穿过黑夜，凯布利在东方出现。",
+    image: "egypt-rebirth-east.webp",
+    alt: "原创插画：太阳船穿过蛇形通道，凯布利在东方托起新生日轮",
+    hours: hours.slice(4, 6),
+  },
+];
+
 const gods = [
   ["RꜤ", "拉", "不是静止的太阳肖像，而是不断变换形态、穿过天空与杜阿特的行动者。"],
   ["MꜢꜤT", "玛特", "既是女神，也是正确、正当、秩序与有效性的概念；她不是装饰在秩序旁边，而是秩序得以成立的条件。"],
@@ -132,21 +159,35 @@ export default function EgyptianArchiveSections() {
         </header>
 
         <figure className="egypt-barque-figure">
-          <img src={`${siteBasePath}/ra-night-barque.png`} alt="原创插画：拉的太阳船在杜阿特夜航，玛特之羽立于船首，阿佩普盘踞在下方水域" />
+          <img src={`${siteBasePath}/ra-night-barque.webp`} alt="原创插画：拉的太阳船在杜阿特夜航，玛特之羽立于船首，阿佩普盘踞在下方水域" />
           <figcaption>
             <span>CONTEMPORARY VISUAL INTERPRETATION</span>
             <p>太阳船不是孤独英雄的交通工具：它是一套由众神、咒语、门与正确知识共同维持的宇宙机制。</p>
           </figcaption>
         </figure>
 
-        <div className="egypt-hour-track">
-          {hours.map((hour) => (
-            <article className={`is-${hour.tone}`} key={hour.number}>
-              <div><span>{hour.number}</span><small>{hour.phase}</small></div>
-              <h3>{hour.title}</h3>
-              <b>{hour.deity}</b>
-              <p>{hour.body}</p>
-            </article>
+        <div className="egypt-journey-weave">
+          {journeyStations.map((station, stationIndex) => (
+            <section id={`journey-station-${stationIndex + 1}`} className={stationIndex % 2 === 1 ? "is-reversed" : ""} key={station.label}>
+              <figure>
+                <img src={`${siteBasePath}/${station.image}`} alt={station.alt} />
+                <figcaption>
+                  <span>{station.label}</span>
+                  <h3>{station.title}</h3>
+                  <p>{station.note}</p>
+                </figcaption>
+              </figure>
+              <div className="egypt-station-hours">
+                {station.hours.map((hour) => (
+                  <article className={`is-${hour.tone}`} key={hour.number}>
+                    <div><span>{hour.number}</span><small>{hour.phase}</small></div>
+                    <h3>{hour.title}</h3>
+                    <b>{hour.deity}</b>
+                    <p>{hour.body}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       </section>
