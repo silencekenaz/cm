@@ -30,6 +30,8 @@ test("exports the hidden command archive as static HTML", async () => {
     assert.match(html, new RegExp(phrase));
   }
   assert.match(html, /太阳可以堕落，城墙可以碎裂/);
+  assert.match(html, /他名义上跟随公主/);
+  assert.doesNotMatch(html, /它名义上跟随公主/);
   assert.doesNotMatch(html, /小沙沙住在盐罐/);
   assert.match(html, /src="\/cm\/easter-duck\.png"/);
   assert.match(html, /href="\/cm\/"/);
