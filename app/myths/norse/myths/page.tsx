@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cycles } from "./CycleArchive";
+import { cycleMeta, storiesByCycle } from "./StoryArchive";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const staticPageSuffix = siteBasePath ? ".html" : "";
@@ -12,8 +12,8 @@ export default function Page() {
   return <main className="norse-myth-threads-page norse-day-index">
     <nav className="myth-atlas-nav" aria-label="北欧神话篇页面导航"><a href={hubHref}>← 返回北欧总览</a><a className="myth-atlas-wordmark" href={`${siteBasePath}/`} aria-label="返回神人 cm 首页">神人<span>cm</span></a></nav>
     <header className="norse-day-hero"><span>PATH 01 / ONE MYTHIC DAY</span><h1>清晨，正午，<br /><b>然后是黄昏。</b></h1><p>把北欧神话读成一天：世界与盟约在清晨成形，诸神的力量在正午抵达高处，巴德尔倒下以后，所有未偿之债在黄昏一同回来。</p><a href="#three-cycles">选择时刻 <i>↓</i></a></header>
-    <aside className="norse-thread-method"><b>METHOD / 不是原典年表</b><p>这是一套主题化阅读顺序，不声称所有诗篇共享精确年代。血誓只保留《洛卡塞纳》的追述，华纳盟约并列不同版本，布里辛项链则明确标记残篇与晚期叙事的边界。</p></aside>
-    <section className="norse-day-cycles" id="three-cycles"><header><span>THREE VOLUMES / 三卷分读</span><h2>太阳走过的地方，<br />债务也跟着移动。</h2></header><div>{(["morning","noon","dusk"] as const).map((key,index)=>{const cycle=cycles[key];return <a href={`${siteBasePath}/myths/norse/myths/${cycle.path}${staticPageSuffix}`} className={`norse-day-gate norse-day-gate-${cycle.path}`} key={key}><div><span>0{index+1}</span><b>{cycle.mark}</b></div><small>{cycle.kicker}</small><h3>{cycle.title}</h3><h4>{cycle.subtitle}</h4><p>{cycle.summary}</p><strong>{cycle.chapters.length} 个阅读节点 <i>↗</i></strong></a>;})}</div></section>
+    <aside className="norse-thread-method"><b>READING ORDER / 一日三卷</b><p>这里不把神话硬排成一张年表，而是让它们像一天那样展开。先选一个时刻，再选一篇故事；文本出处与版本差异留到每篇结尾，正文只负责把你带进故事。</p></aside>
+    <section className="norse-day-cycles" id="three-cycles"><header><span>THREE VOLUMES / 三卷分读</span><h2>太阳走过的地方，<br />旧债也跟着移动。</h2></header><div>{(["morning","noon","dusk"] as const).map((key,index)=>{const cycle=cycleMeta[key];const count=storiesByCycle(key).length;return <a href={`${siteBasePath}/myths/norse/myths/${key}${staticPageSuffix}`} className={`norse-day-gate norse-day-gate-${key}`} key={key}><div><span>0{index+1}</span><b>{cycle.mark}</b></div><small>{cycle.kicker}</small><h3>{cycle.title}</h3><h4>{cycle.subtitle}</h4><p>{cycle.intro}</p><strong>{count} 篇独立故事 <i>↗</i></strong></a>;})}</div></section>
     <section className="norse-day-method"><span>THE SHAPE OF THE DAY</span><h2>这一天不是直线，<br />而是一次回环。</h2><div><p><b>清晨</b>创造世界，却也制造第一批边界、交换与亏欠。</p><p><b>正午</b>看似控制了危险，其实把狼、蛇与海姆冥界安置成未来结构。</p><p><b>黄昏</b>让预言兑现；火后大地重生，巴德尔归来，下一次清晨因此成立。</p></div></section>
     <div className="norse-thread-footer-links"><a href={hubHref}>← 返回九界与北欧总览</a><a href={heroesHref}>前往英雄传说 →</a></div>
   </main>;

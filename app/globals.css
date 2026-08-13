@@ -3854,6 +3854,82 @@ footer > p {
 .norse-cycle-next i { align-self: end; font-size: 20px; font-style: normal; }
 .norse-cycle-next a:hover, .norse-cycle-next a:focus-visible { background: var(--thread-night); color: #fff; outline: 0; }
 
+/* Norse story library: atmosphere in the index, continuous prose in each tale */
+.norse-cycle-prologue { padding: 88px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .34fr 1fr; gap: 44px; background: var(--thread-gold); color: var(--thread-night); }
+.norse-cycle-prologue > span,
+.norse-cycle-stories > header span,
+.norse-tale-hero > span,
+.norse-tale-coda > span,
+.norse-tale-sources > header span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; line-height: 1.7; letter-spacing: .14em; }
+.norse-cycle-prologue h2 { margin: 0 0 20px; font-family: Georgia, "Songti SC", serif; font-size: clamp(44px, 5.4vw, 76px); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
+.norse-cycle-prologue p { max-width: 760px; margin: 0; font-size: 14px; line-height: 2.1; }
+.norse-cycle-stories { padding: 126px clamp(22px, 7vw, 108px); background: #e1e7e4; color: var(--thread-night); }
+.norse-cycle-dusk .norse-cycle-stories { background: #101f2b; color: #eef2ed; }
+.norse-cycle-stories > header { display: grid; grid-template-columns: .34fr 1fr; gap: 44px; align-items: end; margin-bottom: 64px; }
+.norse-cycle-stories > header span { color: #7e6740; }
+.norse-cycle-dusk .norse-cycle-stories > header span { color: var(--thread-gold); }
+.norse-cycle-stories > header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(62px, 7.4vw, 108px); font-weight: 500; line-height: 1.01; letter-spacing: -.07em; }
+.norse-cycle-stories > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid currentColor; border-left: 1px solid currentColor; }
+.norse-tale-card { min-height: 570px; padding: clamp(26px, 3.2vw, 46px); display: flex; flex-direction: column; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; color: inherit; transition: background-color .18s ease, color .18s ease, transform .18s ease; }
+.norse-tale-card > div { display: flex; justify-content: space-between; align-items: start; }
+.norse-tale-card > div span,
+.norse-tale-card > small,
+.norse-tale-card > strong { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; line-height: 1.7; letter-spacing: .13em; }
+.norse-tale-card > div b { opacity: .24; font-family: Georgia, serif; font-size: 68px; font-weight: 400; line-height: .78; }
+.norse-tale-card > small { margin-top: 74px; opacity: .54; }
+.norse-tale-card h3 { margin: 18px 0 10px; font-family: Georgia, "Songti SC", serif; font-size: clamp(43px, 4.2vw, 68px); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
+.norse-tale-card h4 { margin: 0 0 28px; font-family: Georgia, "Songti SC", serif; font-size: 20px; font-weight: 500; line-height: 1.5; }
+.norse-tale-card p { margin: 0 0 38px; color: #58636a; font-size: 14px; line-height: 2.05; }
+.norse-cycle-dusk .norse-tale-card p { color: rgba(238,242,237,.64); }
+.norse-tale-card > strong { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; }
+.norse-tale-card > strong i { font-size: 18px; font-style: normal; }
+.norse-tale-card:hover,
+.norse-tale-card:focus-visible { position: relative; z-index: 1; background: var(--thread-red); color: #fff; outline: 0; transform: translate(-5px, -5px); box-shadow: 10px 10px 0 var(--thread-gold); }
+.norse-tale-card:hover p,
+.norse-tale-card:focus-visible p { color: rgba(255,255,255,.75); }
+
+.norse-tale-page { background: #e2e8e5; color: var(--thread-night); }
+.norse-tale-hero { min-height: 940px; padding: 154px clamp(22px, 7vw, 108px) 92px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.norse-tale-morning .norse-tale-hero { background: linear-gradient(122deg, #eee8db 0 66%, #bb8b60 66% 100%); }
+.norse-tale-noon .norse-tale-hero { background: linear-gradient(122deg, #d1b56f 0 64%, #f1e2ba 64% 100%); }
+.norse-tale-dusk .norse-tale-hero { background: linear-gradient(122deg, #0b1924 0 66%, #633f45 66% 100%); color: #f2f2eb; }
+.norse-tale-hero::before { content: ""; position: absolute; inset: 0; opacity: .1; background-image: linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px); background-size: 92px 92px; }
+.norse-tale-hero > * { position: relative; z-index: 1; }
+.norse-tale-hero > span { color: #846a35; }
+.norse-tale-dusk .norse-tale-hero > span { color: var(--thread-gold); }
+.norse-tale-hero > b { position: absolute; z-index: 0; top: 11%; right: 4%; opacity: .14; font-family: Georgia, serif; font-size: clamp(300px, 42vw, 630px); font-weight: 400; line-height: .82; }
+.norse-tale-hero h1 { max-width: 1120px; margin: 40px 0 16px; font-family: Georgia, "Songti SC", serif; font-size: clamp(76px, 10.6vw, 164px); font-weight: 500; line-height: .96; letter-spacing: -.075em; text-wrap: balance; }
+.norse-tale-hero h2 { margin: 0 0 50px; font-family: Georgia, "Songti SC", serif; font-size: clamp(28px, 3vw, 44px); font-weight: 500; line-height: 1.35; }
+.norse-tale-hero p { max-width: 760px; margin: 0 0 40px auto; font-family: Georgia, "Songti SC", serif; font-size: 18px; line-height: 2.05; opacity: .78; }
+.norse-tale-hero > a { width: min(360px, 100%); margin-left: auto; padding: 20px 0; display: flex; justify-content: space-between; border-top: 1px solid currentColor; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-tale-hero > a i { font-size: 20px; font-style: normal; }
+.norse-tale-body { padding: clamp(96px, 10vw, 156px) clamp(22px, 7vw, 108px); display: grid; grid-template-columns: minmax(110px, .28fr) minmax(0, 860px) 1fr; gap: 42px; background: #eef0eb; }
+.norse-tale-body > div:last-child { grid-column: 2; }
+.norse-tale-dropcap { color: rgba(37,59,73,.15); font-family: Georgia, serif; font-size: clamp(110px, 13vw, 190px); line-height: .8; }
+.norse-tale-body p { margin: 0 0 1.85em; color: #3f4b52; font-family: Georgia, "Songti SC", "STSong", serif; font-size: clamp(17px, 1.3vw, 20px); font-weight: 400; line-height: 2.15; letter-spacing: .01em; text-align: justify; }
+.norse-tale-body p:first-child::first-letter { float: left; margin: .05em .14em 0 0; color: var(--thread-red); font-size: 4.2em; line-height: .78; }
+.norse-tale-coda { padding: 86px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .28fr minmax(0, 860px) 1fr; gap: 42px; background: var(--thread-gold); }
+.norse-tale-coda p { grid-column: 2; margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(27px, 3vw, 42px); line-height: 1.75; letter-spacing: -.025em; }
+.norse-tale-sources { padding: 118px clamp(22px, 7vw, 108px); background: #142635; color: #edf1ec; }
+.norse-tale-sources > header { display: grid; grid-template-columns: .34fr 1fr; gap: 44px; align-items: end; }
+.norse-tale-sources > header span { color: var(--thread-gold); }
+.norse-tale-sources h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(58px, 7vw, 100px); font-weight: 500; line-height: 1.02; letter-spacing: -.068em; }
+.norse-tale-sources > p { max-width: 760px; margin: 46px 0 52px 34%; color: rgba(237,241,236,.64); font-size: 14px; line-height: 2.05; }
+.norse-tale-sources > div { margin-left: 34%; border-top: 1px solid rgba(237,241,236,.4); }
+.norse-tale-sources a { padding: 24px 18px; display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; border-bottom: 1px solid rgba(237,241,236,.4); color: #edf1ec; }
+.norse-tale-sources a span { color: var(--thread-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; }
+.norse-tale-sources a b { font-family: Georgia, "Songti SC", serif; font-size: 18px; font-weight: 500; }
+.norse-tale-sources a i { font-style: normal; }
+.norse-tale-sources a:hover,
+.norse-tale-sources a:focus-visible { background: var(--thread-red); outline: 0; }
+.norse-tale-adjacent { display: grid; grid-template-columns: repeat(2, 1fr); background: #d8e1df; }
+.norse-tale-adjacent a { min-height: 250px; padding: 34px clamp(22px, 5vw, 74px); display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid var(--thread-night); color: var(--thread-night); }
+.norse-tale-adjacent a + a { align-items: flex-end; border-left: 1px solid var(--thread-night); text-align: right; }
+.norse-tale-adjacent small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-tale-adjacent b { font-family: Georgia, "Songti SC", serif; font-size: clamp(26px, 3vw, 44px); font-weight: 500; }
+.norse-tale-adjacent a:hover,
+.norse-tale-adjacent a:focus-visible { background: var(--thread-red); color: #fff; outline: 0; }
+
 @media (max-width: 900px) {
   .norse-hub-hero { min-height: 980px; grid-template-columns: 1fr; align-content: end; }
   .norse-hub-lead { max-width: 640px; }
@@ -3876,6 +3952,11 @@ footer > p {
   .norse-thread-gates > header { grid-template-columns: 1fr; align-items: start; }
   .norse-day-cycles > div { grid-template-columns: 1fr; }
   .norse-day-gate + .norse-day-gate { border-top: 1px solid var(--thread-night); border-left: 0; }
+  .norse-cycle-stories > div { grid-template-columns: 1fr; }
+  .norse-tale-body { grid-template-columns: 100px minmax(0, 1fr); }
+  .norse-tale-body > div:last-child { grid-column: 2; }
+  .norse-tale-coda { grid-template-columns: 100px minmax(0, 1fr); }
+  .norse-tale-coda p { grid-column: 2; }
 }
 
 @media (max-width: 620px) {
@@ -3998,6 +4079,34 @@ footer > p {
   .norse-cycle-hero h1 { font-size: 126px; }
   .norse-cycle-hero h2 { font-size: 34px; }
   .norse-cycle-hero p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .norse-cycle-prologue { padding: 68px 22px; grid-template-columns: 1fr; gap: 20px; }
+  .norse-cycle-prologue h2 { font-size: 46px; }
+  .norse-cycle-stories { padding: 82px 22px; }
+  .norse-cycle-stories > header { grid-template-columns: 1fr; gap: 20px; margin-bottom: 44px; }
+  .norse-cycle-stories > header h2 { font-size: 54px; line-height: 1.08; }
+  .norse-tale-card { min-height: 480px; padding: 28px 24px; }
+  .norse-tale-card > small { margin-top: 54px; }
+  .norse-tale-card h3 { font-size: 44px; }
+  .norse-tale-card:hover, .norse-tale-card:focus-visible { transform: none; box-shadow: none; }
+  .norse-tale-hero { min-height: 850px; padding: 130px 22px 70px; }
+  .norse-tale-hero > b { top: 15%; right: -8%; font-size: 260px; }
+  .norse-tale-hero h1 { font-size: 62px; line-height: 1.02; letter-spacing: -.06em; }
+  .norse-tale-hero h2 { font-size: 25px; }
+  .norse-tale-hero p { margin-left: 0; font-size: 17px; line-height: 2; }
+  .norse-tale-body { padding: 82px 22px; display: block; }
+  .norse-tale-dropcap { margin-bottom: 46px; font-size: 112px; }
+  .norse-tale-body p { font-size: 17px; line-height: 2.08; text-align: left; }
+  .norse-tale-coda { padding: 68px 22px; display: block; }
+  .norse-tale-coda > span { display: block; margin-bottom: 28px; }
+  .norse-tale-coda p { font-size: 26px; line-height: 1.72; }
+  .norse-tale-sources { padding: 82px 22px; }
+  .norse-tale-sources > header { grid-template-columns: 1fr; gap: 20px; }
+  .norse-tale-sources h2 { font-size: 50px; line-height: 1.08; }
+  .norse-tale-sources > p, .norse-tale-sources > div { margin-left: 0; }
+  .norse-tale-sources a { padding-inline: 10px; grid-template-columns: 38px 1fr auto; }
+  .norse-tale-adjacent { grid-template-columns: 1fr; }
+  .norse-tale-adjacent a { min-height: 190px; }
+  .norse-tale-adjacent a + a { border-top: 0; border-left: 0; align-items: flex-start; text-align: left; }
   .norse-cycle-next { padding: 64px 22px; grid-template-columns: 1fr; }
   .norse-cycle-next a + a { border-top: 0; border-left: 1px solid var(--thread-night); }
 }

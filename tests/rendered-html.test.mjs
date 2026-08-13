@@ -191,20 +191,47 @@ test("exports six source-based Norse god subpages", async () => {
 
 test("exports separate Norse myth and heroic paths", async () => {
   const mythology = await readFile(new URL("../dist/client/myths/norse/myths.html", import.meta.url), "utf8");
-  for (const section of ["清晨，正午", "三卷分读", "创造世界", "远行、宝物与被安置的危险", "巴德尔、宴席与诸神黄昏"]) {
+  for (const section of ["清晨，正午", "三卷分读", "世界尚且年轻", "力量升至高处", "所有旧债归来"]) {
     assert.match(mythology, new RegExp(section));
   }
   assert.match(mythology, /href="\/cm\/myths\/norse\.html"/);
   for (const path of ["morning", "noon", "dusk"]) assert.match(mythology, new RegExp(`href="/cm/myths/norse/myths/${path}\\.html"`));
 
   const morning = await readFile(new URL("../dist/client/myths/norse/myths/morning.html", import.meta.url), "utf8");
-  for (const section of ["奥丁、威利与维", "血曾混在一起", "华纳盟约", "卡瓦希尔死去", "城墙几乎", "希芙失去金发", "夏基拐走伊登"]) assert.match(morning, new RegExp(section));
+  for (const section of ["世界从尤弥尔身上醒来", "旧誓与和约", "诗蜜酒", "阿斯加德的城墙", "希芙的金发", "伊登与夏基"]) assert.match(morning, new RegExp(section));
 
   const noon = await readFile(new URL("../dist/client/myths/norse/myths/noon.html", import.meta.url), "utf8");
-  for (const section of ["洛基的三个孩子", "锁住芬里尔", "巨人国诸行", "弗蕾雅的项链"]) assert.match(noon, new RegExp(section));
+  for (const section of ["预言的孩子们", "乌特加德的五场比赛", "特里姆的婚宴", "希米尔的巨锅", "布里辛项链残篇"]) assert.match(noon, new RegExp(section));
 
   const dusk = await readFile(new URL("../dist/client/myths/norse/myths/dusk.html", import.meta.url), "utf8");
-  for (const section of ["槲寄生被漏过", "赫尔提出最后一个条件", "洛卡塞纳", "发明渔网", "诸神黄昏"]) assert.match(dusk, new RegExp(section));
+  for (const section of ["巴德尔之死", "洛卡塞纳", "洛基受缚", "诸神黄昏"]) assert.match(dusk, new RegExp(section));
+
+  const tales = [
+    ["world-from-ymer", "世界从尤弥尔身上醒来", "尤弥尔的头骨"],
+    ["old-oaths", "旧誓与和约", "混合鲜血"],
+    ["mead-of-poetry", "诗蜜酒", "贡萝德"],
+    ["wall-of-asgard", "阿斯加德的城墙", "斯瓦迪尔法利"],
+    ["sifs-golden-hair", "希芙的金发", "妙尔尼尔"],
+    ["idunn-and-thjazi", "伊登与夏基", "特里姆海姆"],
+    ["children-of-prophecy", "预言的孩子们", "格莱普尼尔"],
+    ["utgard", "乌特加德的五场比赛", "埃莉"],
+    ["thryms-wedding", "特里姆的婚宴", "新娘膝上"],
+    ["hymirs-cauldron", "希米尔的巨锅", "巨牛希敏赫里奥特"],
+    ["brisingamen", "布里辛项链残篇", "辛加斯坦"],
+    ["death-of-baldr", "巴德尔之死", "赫林霍尼"],
+    ["lokasenna-feast", "洛卡塞纳", "菲马芬"],
+    ["loki-bound", "洛基受缚", "西格恩"],
+    ["ragnarok", "诸神黄昏", "维格利德"],
+  ];
+  for (const [slug, title, marker] of tales) {
+    const html = await readFile(new URL(`../dist/client/myths/norse/myths/${slug}.html`, import.meta.url), "utf8");
+    assert.match(html, new RegExp(title));
+    assert.match(html, new RegExp(marker));
+    assert.match(html, /CODA \/ 余音/);
+    assert.match(html, /故事讲完以后/);
+    assert.match(html, /TEXTUAL AFTERWORD/);
+    assert.doesNotMatch(html, /行动记录|节点档案|逐项拆解/);
+  }
 
   const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
   for (const section of ["英雄不是", "维兰德之歌", "沃尔松格谱系", "西格鲁德与法夫尼尔", "布伦希尔德的誓言", "古德伦的余生"]) {
