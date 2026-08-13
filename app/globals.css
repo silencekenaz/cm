@@ -2939,18 +2939,96 @@ footer > p {
 
 .egypt-crew { background: #dfe4df; }
 .egypt-crew > header { display: grid; grid-template-columns: .36fr 1fr .72fr; align-items: end; gap: 40px; }
-.egypt-god-grid { margin-top: 84px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--egypt-ink); border-left: 1px solid var(--egypt-ink); box-shadow: 12px 12px 0 var(--egypt-gold); }
-.egypt-god-grid article { min-height: 350px; padding: 32px clamp(24px, 3vw, 42px); display: flex; flex-direction: column; border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); background: rgba(244,240,229,.72); transition: background 180ms ease, color 180ms ease, transform 180ms ease; }
-.egypt-god-grid article:nth-child(2),
-.egypt-god-grid article:nth-child(5) { background: var(--egypt-blue); color: #fff; }
-.egypt-god-grid article:hover { z-index: 1; background: var(--egypt-gold); color: var(--egypt-ink); transform: translate(-5px, -5px); }
-.egypt-god-grid article > div { display: flex; justify-content: space-between; color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .12em; }
-.egypt-god-grid article > div b { font-family: Georgia, serif; font-size: 22px; font-weight: 500; }
-.egypt-god-grid h3 { margin: auto 0 20px; font-family: Georgia, "Songti SC", serif; font-size: clamp(44px, 4.5vw, 68px); font-weight: 500; line-height: .9; }
-.egypt-god-grid p { margin: 0; font-size: 13px; font-weight: 560; line-height: 1.9; }
-.egypt-god-grid article:nth-child(2) p,
-.egypt-god-grid article:nth-child(5) p { color: rgba(255,255,255,.68); }
-.egypt-god-grid article:hover p { color: inherit; }
+.egypt-barque-map {
+  position: relative;
+  margin-top: 84px;
+  padding: clamp(28px, 4vw, 58px);
+  overflow: hidden;
+  border: 1px solid var(--egypt-ink);
+  background:
+    radial-gradient(circle at 62% 34%, rgba(197,157,75,.12), transparent 29%),
+    repeating-linear-gradient(0deg, transparent 0 71px, rgba(197,157,75,.045) 72px),
+    var(--egypt-night);
+  color: #f3e9d7;
+  box-shadow: 14px 14px 0 var(--egypt-gold);
+}
+.egypt-barque-map::before { content: "RA IN MOTION"; position: absolute; top: 23%; right: -2%; color: rgba(232,224,209,.035); font-family: Georgia, serif; font-size: clamp(70px, 10vw, 160px); white-space: nowrap; }
+.egypt-barque-map-intro { position: relative; z-index: 2; display: grid; grid-template-columns: .45fr 1fr; gap: 32px; padding-bottom: 34px; border-bottom: 1px solid rgba(197,157,75,.36); }
+.egypt-barque-map-intro span { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
+.egypt-barque-map-intro p { max-width: 720px; margin: 0; color: rgba(232,224,209,.66); font-size: 12px; line-height: 1.9; }
+.egypt-barque-deck { position: relative; z-index: 1; min-width: 0; margin-top: 68px; padding: 0 3.5% 108px; display: grid; grid-template-columns: repeat(5, minmax(118px, 1fr)); align-items: end; gap: clamp(10px, 1.7vw, 24px); }
+.egypt-barque-deck::before { content: ""; position: absolute; right: 2.5%; bottom: 89px; left: 2.5%; height: 2px; background: var(--egypt-gold); opacity: .7; }
+.egypt-god-portrait { position: relative; min-width: 0; padding: 0; display: flex; flex-direction: column; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; isolation: isolate; }
+.egypt-god-portrait::before { content: ""; position: absolute; z-index: -1; inset: 38px -5px 58px; border: 1px solid rgba(197,157,75,.28); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+.egypt-god-portrait:hover::before,
+.egypt-god-portrait:focus-visible::before { border-color: var(--egypt-gold); background: rgba(197,157,75,.11); transform: translateY(-7px); }
+.egypt-god-portrait:focus-visible { outline: 2px solid var(--egypt-gold); outline-offset: 7px; }
+.egypt-god-portrait img { width: 100%; display: block; aspect-ratio: 1; border: 1px solid rgba(197,157,75,.58); border-radius: 50%; object-fit: cover; filter: saturate(.86) contrast(1.03); transition: transform 280ms cubic-bezier(.2,.7,.2,1), border-radius 280ms ease; }
+.egypt-god-portrait:hover img,
+.egypt-god-portrait:focus-visible img { border-radius: 42% 42% 12% 12%; transform: translateY(-7px); }
+.egypt-god-portrait.is-ra { margin-bottom: 22px; }
+.egypt-god-portrait.is-ra img { border-width: 3px; box-shadow: 0 0 0 8px rgba(197,157,75,.09), 0 0 42px rgba(197,157,75,.17); }
+.egypt-god-position { min-height: 44px; margin-bottom: 10px; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 800; line-height: 1.6; letter-spacing: .1em; }
+.egypt-god-label { padding: 14px 4px 4px; display: flex; flex-direction: column; gap: 5px; }
+.egypt-god-label b { font-family: Georgia, "Songti SC", serif; font-size: clamp(25px, 2.3vw, 36px); font-weight: 500; line-height: 1; }
+.egypt-god-label small { min-height: 32px; color: rgba(232,224,209,.58); font-size: 9px; line-height: 1.7; }
+.egypt-god-portrait > i { margin: 9px 4px 0; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-style: normal; font-weight: 850; letter-spacing: .14em; }
+.egypt-god-portrait > em { position: absolute; top: 51px; right: 8px; padding: 4px 6px; background: var(--egypt-night); color: var(--egypt-gold); font-family: Georgia, serif; font-size: 12px; font-style: normal; }
+.egypt-barque-hull { position: absolute; right: 0; bottom: 0; left: 0; height: 102px; display: grid; place-items: center; clip-path: polygon(0 0, 100% 0, 91% 64%, 77% 86%, 50% 100%, 23% 86%, 9% 64%); background: linear-gradient(#d0ad62 0 14px, #9a4635 14px 27px, #c59d4b 27px 36px, #886c35 36px); color: var(--egypt-night); }
+.egypt-barque-hull::before { content: ""; position: absolute; inset: 46px 12% 28px; border-block: 2px solid rgba(23,36,49,.42); }
+.egypt-barque-hull span { position: relative; z-index: 1; margin-top: -18px; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 900; letter-spacing: .22em; }
+.egypt-barque-water { position: absolute; right: 0; bottom: 34%; left: 0; height: 80px; opacity: .2; pointer-events: none; }
+.egypt-barque-water i { position: absolute; right: -8%; left: -8%; height: 28px; border-top: 1px solid var(--egypt-blue); border-radius: 50%; }
+.egypt-barque-water i:nth-child(1) { top: 0; }
+.egypt-barque-water i:nth-child(2) { top: 24px; transform: translateX(7%); }
+.egypt-barque-water i:nth-child(3) { top: 48px; transform: translateX(-5%); }
+.egypt-duat-encounter { position: relative; z-index: 1; margin: 34px auto 0; padding-top: 86px; display: grid; grid-template-columns: .55fr minmax(220px, 330px) .7fr; align-items: center; gap: clamp(26px, 5vw, 76px); border-top: 1px solid rgba(197,157,75,.34); }
+.egypt-duat-path { color: rgba(232,224,209,.42); font-family: var(--font-geist-mono), monospace; font-size: 8px; line-height: 1.8; letter-spacing: .12em; }
+.egypt-duat-encounter .egypt-god-portrait { padding: 0 14px 18px; border: 1px solid rgba(197,157,75,.38); background: rgba(0,0,0,.16); }
+.egypt-duat-encounter .egypt-god-portrait::before { display: none; }
+.egypt-duat-encounter .egypt-god-portrait img { border-radius: 2px; }
+.egypt-duat-encounter .egypt-god-portrait:hover img,
+.egypt-duat-encounter .egypt-god-portrait:focus-visible img { border-radius: 2px; }
+.egypt-duat-encounter .egypt-god-position { margin: 14px 0 10px; min-height: 0; order: -1; }
+.egypt-duat-encounter .egypt-god-portrait > em { top: 62px; right: 24px; }
+.egypt-duat-encounter > p { margin: 0; color: rgba(232,224,209,.7); font-family: Georgia, "Songti SC", serif; font-size: 17px; line-height: 2; }
+.egypt-more-gods { margin-top: 60px; }
+.egypt-more-gods > button { width: 100%; min-height: 84px; padding: 22px 30px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--egypt-ink); border-radius: 0; background: var(--egypt-gold); color: var(--egypt-ink); font: inherit; cursor: pointer; transition: background 180ms ease, color 180ms ease; }
+.egypt-more-gods > button:hover,
+.egypt-more-gods > button:focus-visible { background: var(--egypt-ink); color: #fff; outline: 0; }
+.egypt-more-gods > button span { font-family: Georgia, "Songti SC", serif; font-size: clamp(25px, 3vw, 38px); font-weight: 600; }
+.egypt-more-gods > button b { font-size: 28px; }
+.egypt-more-gods > div { display: grid; grid-template-columns: repeat(3, 1fr); border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); border-left: 1px solid var(--egypt-ink); }
+.egypt-more-gods > div > header { grid-column: 1 / -1; padding: 24px 28px; display: grid; grid-template-columns: .35fr 1fr; gap: 30px; border-bottom: 1px solid var(--egypt-ink); background: rgba(244,240,229,.65); }
+.egypt-more-gods > div > header span { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.egypt-more-gods > div > header p { margin: 0; font-size: 12px; line-height: 1.8; }
+.egypt-more-gods article { min-height: 170px; padding: 24px; border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); }
+.egypt-more-gods article:nth-last-child(-n+3) { border-bottom: 0; }
+.egypt-more-gods article:nth-child(3n+1) { border-right: 0; }
+.egypt-more-gods article span { color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 8px; }
+.egypt-more-gods article h3 { margin: 34px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: 29px; font-weight: 500; }
+.egypt-more-gods article p { margin: 0; color: #625d54; font-size: 11px; line-height: 1.8; }
+
+.egypt-god-dialog-backdrop { position: fixed; z-index: 200; inset: 0; padding: clamp(12px, 3vw, 42px); display: grid; place-items: center; overflow-y: auto; background: rgba(4,10,16,.88); backdrop-filter: blur(10px); }
+.egypt-god-dialog { position: relative; width: min(1120px, 100%); max-height: calc(100vh - 40px); display: grid; grid-template-columns: minmax(290px, .78fr) 1.22fr; overflow: auto; border: 1px solid var(--egypt-gold); background: #e9e2d4; color: var(--egypt-ink); box-shadow: 18px 18px 0 rgba(197,157,75,.3); }
+.egypt-god-dialog-close { position: absolute; z-index: 3; top: 14px; right: 14px; width: 48px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--egypt-ink); border-radius: 50%; background: #e9e2d4; color: var(--egypt-ink); font: 300 32px/1 Georgia, serif; cursor: pointer; }
+.egypt-god-dialog-close:hover,
+.egypt-god-dialog-close:focus-visible { background: var(--egypt-gold); outline: 0; }
+.egypt-god-dialog figure { position: relative; min-width: 0; margin: 0; background: var(--egypt-night); }
+.egypt-god-dialog figure img { width: 100%; height: 100%; min-height: 620px; display: block; object-fit: cover; }
+.egypt-god-dialog figcaption { position: absolute; right: 22px; bottom: 18px; padding: 7px 10px; background: var(--egypt-night); color: var(--egypt-gold); font-family: Georgia, serif; font-size: 18px; }
+.egypt-god-dialog-copy { padding: clamp(42px, 6vw, 82px); }
+.egypt-god-dialog-copy > span { color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
+.egypt-god-dialog-copy h2 { margin: 18px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: clamp(60px, 7vw, 96px); font-weight: 500; line-height: 1; letter-spacing: -.06em; }
+.egypt-god-dialog-copy > b { color: #8c4538; font-size: 13px; letter-spacing: .07em; }
+.egypt-god-dialog-copy dl { margin: 30px 0; padding: 20px 0; display: grid; grid-template-columns: 88px 1fr; gap: 18px; border-block: 1px solid rgba(23,36,49,.35); }
+.egypt-god-dialog-copy dt { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.egypt-god-dialog-copy dd { margin: 0; color: #5f5a52; font-size: 12px; line-height: 1.8; }
+.egypt-god-dialog-copy p { margin: 0 0 17px; color: #5f5a52; font-size: 13px; line-height: 2; }
+.egypt-god-dialog-copy .egypt-god-dialog-summary { color: var(--egypt-ink); font-family: Georgia, "Songti SC", serif; font-size: 18px; font-weight: 650; }
+.egypt-god-dialog-copy a { margin-top: 16px; padding: 16px 0; display: inline-block; border-bottom: 1px solid var(--egypt-ink); color: var(--egypt-ink); font-size: 11px; font-weight: 750; line-height: 1.7; }
+.egypt-god-dialog-copy a:hover,
+.egypt-god-dialog-copy a:focus-visible { color: #8c4538; outline: 0; }
 
 .egypt-sources { background: var(--egypt-sand); }
 .egypt-sources > header { display: grid; grid-template-columns: 1fr .62fr; align-items: end; gap: 60px; }
@@ -2995,7 +3073,12 @@ footer > p {
   .egypt-sources > header p { max-width: 600px; }
   .egypt-journey-weave > section,
   .egypt-journey-weave > section.is-reversed { min-height: 610px; grid-template-columns: 1fr 1fr; }
-  .egypt-god-grid { grid-template-columns: repeat(2, 1fr); }
+  .egypt-barque-map { padding: 34px 26px; box-shadow: 10px 10px 0 var(--egypt-gold); }
+  .egypt-barque-deck { padding-inline: 0; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; }
+  .egypt-god-label b { font-size: 25px; }
+  .egypt-duat-encounter { grid-template-columns: .52fr minmax(210px, 280px) .7fr; }
+  .egypt-god-dialog { grid-template-columns: minmax(280px, .72fr) 1.28fr; }
+  .egypt-god-dialog-copy { padding: 48px 42px; }
   .egypt-source-timeline { grid-template-columns: repeat(2, 1fr); border-left: 1px solid var(--egypt-ink); }
   .egypt-source-timeline article { min-height: 280px; border-bottom: 1px solid var(--egypt-ink); }
   .egypt-source-timeline article:nth-child(2n) { border-right: 0; }
@@ -3053,9 +3136,36 @@ footer > p {
   .egypt-station-hours article { min-height: 330px; padding: 28px 24px; }
   .egypt-station-hours h3 { font-size: 40px; }
   .egypt-station-hours p { font-size: 13px; line-height: 1.9; }
-  .egypt-god-grid { margin-top: 56px; grid-template-columns: 1fr; box-shadow: 8px 8px 0 var(--egypt-gold); }
-  .egypt-god-grid article { min-height: 300px; padding: 28px 24px; }
-  .egypt-god-grid article:hover { transform: none; }
+  .egypt-barque-map { margin-top: 56px; padding: 26px 18px; box-shadow: 7px 7px 0 var(--egypt-gold); }
+  .egypt-barque-map-intro { grid-template-columns: 1fr; gap: 12px; }
+  .egypt-barque-map-intro p { font-size: 12px; line-height: 1.9; }
+  .egypt-barque-deck { margin-top: 44px; padding: 0 0 86px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; }
+  .egypt-barque-deck::before { bottom: 72px; }
+  .egypt-god-portrait.is-ra { margin-bottom: 0; }
+  .egypt-god-position { min-height: 38px; font-size: 6px; }
+  .egypt-god-label { padding-top: 11px; }
+  .egypt-god-label b { font-size: 28px; }
+  .egypt-god-label small { min-height: 48px; line-height: 1.75; }
+  .egypt-barque-hull { height: 80px; }
+  .egypt-barque-hull span { margin-top: -10px; }
+  .egypt-duat-encounter { padding-top: 58px; grid-template-columns: 1fr; gap: 22px; }
+  .egypt-duat-path { text-align: center; }
+  .egypt-duat-encounter .egypt-god-portrait { width: min(270px, 86%); justify-self: center; }
+  .egypt-duat-encounter > p { font-size: 15px; line-height: 2; }
+  .egypt-more-gods { margin-top: 46px; }
+  .egypt-more-gods > button { min-height: 72px; padding: 18px 20px; }
+  .egypt-more-gods > div { grid-template-columns: 1fr; }
+  .egypt-more-gods > div > header { grid-template-columns: 1fr; gap: 10px; }
+  .egypt-more-gods article { min-height: 140px; border-right: 0; border-bottom: 1px solid var(--egypt-ink) !important; }
+  .egypt-more-gods article:last-child { border-bottom: 0 !important; }
+  .egypt-more-gods article h3 { margin-top: 24px; }
+  .egypt-god-dialog-backdrop { padding: 9px; place-items: start center; }
+  .egypt-god-dialog { max-height: none; grid-template-columns: 1fr; box-shadow: 7px 7px 0 rgba(197,157,75,.3); }
+  .egypt-god-dialog figure img { height: auto; min-height: 0; aspect-ratio: 1; }
+  .egypt-god-dialog-copy { padding: 34px 24px 42px; }
+  .egypt-god-dialog-copy h2 { font-size: 64px; }
+  .egypt-god-dialog-copy dl { grid-template-columns: 1fr; gap: 8px; }
+  .egypt-god-dialog-copy p { font-size: 14px; line-height: 2; }
   .egypt-source-timeline { margin-top: 56px; grid-template-columns: 1fr; }
   .egypt-source-timeline article,
   .egypt-source-timeline article:last-child { grid-column: auto; min-height: 240px; border-right: 0; }

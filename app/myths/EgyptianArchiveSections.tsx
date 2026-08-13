@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const sourceLinks = [
   {
     label: "《阿姆杜亚特书》纸草（第十夜时）",
@@ -101,16 +105,145 @@ const journeyStations = [
   },
 ];
 
-const gods = [
-  ["RꜤ", "拉", "不是静止的太阳肖像，而是不断变换形态、穿过天空与杜亚特的行动者。"],
-  ["MꜢꜤT", "玛特", "既是女神，也是正确、正当、秩序与有效性的概念；她不是装饰在秩序旁边，而是秩序得以成立的条件。"],
-  ["WSJR", "欧西里斯", "死亡与再生的王；在夜航最深处，他让太阳的更新具有身体与冥界的维度。"],
-  ["ꜢST", "伊西斯", "以言语、知识与护卫之力参与对抗危险；不同文本赋予她的岗位并不完全相同。"],
-  ["STẖ", "塞特", "既可能是冲突者，也能站在太阳船上抵御阿波菲斯。埃及材料允许同一神祇拥有彼此紧张的角色。"],
-  ["ḎḤWTJ", "托特", "书写、计算与有效言说的神；记录与命名不是行政附属，而是维持宇宙可理解性的技术。"],
+type GodProfile = {
+  slug: string;
+  code: string;
+  name: string;
+  image: string;
+  alt: string;
+  position: string;
+  role: string;
+  form: string;
+  summary: string;
+  details: string[];
+  source: { label: string; href: string };
+};
+
+const gods: GodProfile[] = [
+  {
+    slug: "seth",
+    code: "STẖ",
+    name: "塞特",
+    image: "egypt-god-seth.webp",
+    alt: "原创插画：塞特以长吻、方耳的塞特动物头形象持矛守卫太阳船",
+    position: "PROW / 船首外侧",
+    role: "持矛迎向危险",
+    form: "人身与独特的“塞特动物”复合头形；并非胡狼。",
+    summary: "在部分太阳船图像里，塞特不是单纯的破坏者，而是站在船首刺击阿波菲斯的护卫。",
+    details: [
+      "塞特的角色会随文本、时代与场景改变。他既能代表暴力、沙漠、冲突与王权竞争，也能把自身的强悍转向太阳神的敌人。把他压缩成固定的“邪神”，会抹去埃及材料容纳矛盾角色的方式。",
+      "这里把他置于船首外侧，依据的是太阳船防御图像所强调的动作：矛尖朝向使航程停滞的阿波菲斯。他的岗位不是宣告道德清白，而是让危险的力量暂时服务于玛特。",
+    ],
+    source: { label: "大都会艺术博物馆：太阳船船首的塞特", href: "https://www.metmuseum.org/art/collection/search/590745" },
+  },
+  {
+    slug: "maat",
+    code: "MꜢꜤT",
+    name: "玛特",
+    image: "egypt-god-maat.webp",
+    alt: "原创插画：人形女神玛特佩戴一根鸵鸟羽",
+    position: "PROW / 船首与航向",
+    role: "使航程保持正确尺度",
+    form: "人形女神，最鲜明的标识是一根鸵鸟羽。",
+    summary: "她既是神祇，也是“正确、正当、有效”的原则；太阳每日运行本身就是维持玛特的行动。",
+    details: [
+      "玛特不是抽象秩序被拟人化之后的装饰。对古埃及材料而言，宇宙运行、正当统治、真实言说与有效仪式互相连通；太阳神携玛特而行，也意味着世界必须一次次被校准。",
+      "某些太阳船图像把玛特置于引导航程的位置。本页借用这一关系，让她靠近船首，但不声称她在每一部冥界书、每一个夜时都占据同一个固定座位。",
+    ],
+    source: { label: "大都会艺术博物馆：玛特与太阳的航程", href: "https://www.metmuseum.org/de/exhibitions/divine-egypt/inside-the-exhibition" },
+  },
+  {
+    slug: "ra",
+    code: "RꜤ",
+    name: "拉",
+    image: "egypt-god-ra.webp",
+    alt: "原创插画：鹰隼头的拉佩戴带圣蛇的日轮",
+    position: "CENTER / 中央神龛",
+    role: "航程的核心与被护卫者",
+    form: "常见为鹰隼头、头顶日轮；夜间也可呈羊首形态。",
+    summary: "拉不是一幅静止的太阳肖像，而是在形态转换中穿过天空、杜亚特与再生节点的行动者。",
+    details: [
+      "太阳船把拉的运行表现成协作：神龛中的太阳神是航程核心，但航行依赖引导、护卫、知识、门与准确的言说。日落因此不是消失，而是进入另一套可被命名的空间秩序。",
+      "本页肖像采用最易识别的鹰隼头与日轮；《阿姆杜亚特书》的深夜场景则常强调拉的夜形态。不同形象不是互相否定，而是神在不同时间与关系中显现的方式。",
+    ],
+    source: { label: "大都会艺术博物馆：拉的昼夜航程", href: "https://www.metmuseum.org/de/exhibitions/divine-egypt/inside-the-exhibition" },
+  },
+  {
+    slug: "thoth",
+    code: "ḎḤWTJ",
+    name: "托特",
+    image: "egypt-god-thoth.webp",
+    alt: "原创插画：朱鹭头的托特佩戴月轮并进行书写",
+    position: "MIDSHIP / 船中记录位",
+    role: "计算、书写与有效言说",
+    form: "常见为朱鹭头人身，也可呈狒狒形。",
+    summary: "记录与命名不是航程之外的行政工作，而是让时间、仪式与宇宙保持可理解的技术。",
+    details: [
+      "托特与书写、计算、月亮和有效言说相连。在审判场景中他记录结果，在太阳传统中则能作为神圣知识与秩序运行的参与者。朱鹭头是他最常见、也最容易辨认的图像之一。",
+      "一件《亡灵书》纸草残片把朱鹭头托特与凯布利、舒、泰芙努特、伊西斯共同画在太阳船上。本页把他安排在船中“记录位”，是对这一关系的可视化阅读，而非一份跨时代通用的船员名单。",
+    ],
+    source: { label: "大都会艺术博物馆：太阳船上的托特与伊西斯", href: "https://www.metmuseum.org/art/collection/search/553484" },
+  },
+  {
+    slug: "isis",
+    code: "ꜢST",
+    name: "伊西斯",
+    image: "egypt-god-isis.webp",
+    alt: "原创插画：人形女神伊西斯佩戴王座形头饰并举手护卫",
+    position: "MIDSHIP / 船中护卫位",
+    role: "以知识、言语与魔力护航",
+    form: "人形女神；这里采用与名字相连的王座形头饰。",
+    summary: "她的力量来自知道、说出并使言语生效；在不同太阳文本里，她的具体岗位并不完全相同。",
+    details: [
+      "伊西斯的叙事常把魔力写成精确知识的实践：知道名字、组织言语、保护身体、恢复关系。她不是单一的母神标签，也不能只用与欧西里斯或荷鲁斯的亲属关系来解释。",
+      "太阳船材料中确有伊西斯随行的图像，而夜航传统也把她放进对抗阿波菲斯的护卫网络。本页让她靠近托特，是在强调知识与有效言说的协作，并不暗示两者始终拥有固定相邻座位。",
+    ],
+    source: { label: "大都会艺术博物馆：太阳船纸草残片", href: "https://www.metmuseum.org/art/collection/search/553484" },
+  },
+  {
+    slug: "osiris",
+    code: "WSJR",
+    name: "欧西里斯",
+    image: "egypt-god-osiris.webp",
+    alt: "原创插画：木乃伊形人神欧西里斯佩戴阿特夫冠并持曲柄杖与连枷",
+    position: "DUAT / 船外的第六夜时",
+    role: "被航程抵达，而非普通船员",
+    form: "木乃伊形人神，常戴阿特夫冠，持曲柄杖与连枷。",
+    summary: "他没有被硬塞进船员列队；太阳在杜亚特深处与他的再生领域接近，航程才获得更新的身体维度。",
+    details: [
+      "欧西里斯是死亡者之王，也是死亡之后生命延续与再生的中心。他通常以包裹身体的人形神出现，而不是动物头神。绿色或深色面容、阿特夫冠、曲柄杖与连枷共同构成常见识别线索。",
+      "《阿姆杜亚特书》的中夜时把拉与欧西里斯的领域推向关键接近：太阳带来运动，欧西里斯带来可再生的身体。页面因此把他放在船体下方的神龛，而不是伪造一个六神同船的固定场景。",
+    ],
+    source: { label: "大都会艺术博物馆：《阿姆杜亚特书》纸草", href: "https://www.metmuseum.org/art/collection/search/551100" },
+  },
+];
+
+const moreGods = [
+  ["凯布利", "清晨太阳的“生成”形态"],
+  ["舒", "分隔天地，并在黎明承接太阳"],
+  ["泰芙努特", "与湿气及太阳神谱系相连"],
+  ["哈索尔", "天空、音乐、护佑与太阳之眼的多重关系"],
+  ["奈特", "古老的创生与护卫女神"],
+  ["赫卡", "使神力与仪式得以发生的力量"],
 ];
 
 export default function EgyptianArchiveSections() {
+  const [activeGod, setActiveGod] = useState<GodProfile | null>(null);
+  const [showMoreGods, setShowMoreGods] = useState(false);
+
+  useEffect(() => {
+    if (!activeGod) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveGod(null);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [activeGod]);
+
   return (
     <>
       <nav className="egypt-route-nav" aria-label="拉的旅程章节导航">
@@ -198,16 +331,85 @@ export default function EgyptianArchiveSections() {
           <h2>不是一张神谱，<br />是一组岗位。</h2>
           <p>沿着拉的航程认识诸神，可以避免把埃及神话压成“谁是谁的孩子”列表。神祇首先通过行为、地点、仪式和彼此关系显现。</p>
         </header>
-        <div className="egypt-god-grid">
-          {gods.map(([code, name, body], index) => (
-            <article key={name}>
-              <div><span>0{index + 1}</span><b>{code}</b></div>
-              <h3>{name}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
+
+        <div className="egypt-barque-map" aria-label="太阳船岗位关系图">
+          <div className="egypt-barque-map-intro">
+            <span>COMPOSITE READING MAP / 跨文本阅读图</span>
+            <p>船首在左。头像呈现的是不同材料中的岗位关系，不声称六位神祇曾以这套顺序同时出现在同一幅古代图像里。</p>
+          </div>
+
+          <div className="egypt-barque-water" aria-hidden="true"><i /><i /><i /></div>
+          <div className="egypt-barque-deck">
+            {gods.filter((god) => god.slug !== "osiris").map((god, index) => (
+              <button
+                className={`egypt-god-portrait is-${god.slug}`}
+                type="button"
+                onClick={() => setActiveGod(god)}
+                aria-haspopup="dialog"
+                aria-label={`查看${god.name}的详细介绍`}
+                key={god.slug}
+              >
+                <span className="egypt-god-position">{god.position}</span>
+                <img src={`${siteBasePath}/${god.image}`} alt={god.alt} />
+                <span className="egypt-god-label"><b>{god.name}</b><small>{god.role}</small></span>
+                <i aria-hidden="true">OPEN ↗</i>
+                <em>0{index + 1}</em>
+              </button>
+            ))}
+            <div className="egypt-barque-hull" aria-hidden="true"><span>THE BARQUE OF RA</span></div>
+          </div>
+
+          <div className="egypt-duat-encounter">
+            <span className="egypt-duat-path" aria-hidden="true">↓ 04 — 06 HOURS / DESCENT INTO DUAT</span>
+            <button
+              className="egypt-god-portrait is-osiris"
+              type="button"
+              onClick={() => setActiveGod(gods.find((god) => god.slug === "osiris") ?? null)}
+              aria-haspopup="dialog"
+              aria-label="查看欧西里斯的详细介绍"
+            >
+              <span className="egypt-god-position">{gods[5].position}</span>
+              <img src={`${siteBasePath}/${gods[5].image}`} alt={gods[5].alt} />
+              <span className="egypt-god-label"><b>{gods[5].name}</b><small>{gods[5].role}</small></span>
+              <i aria-hidden="true">OPEN ↗</i>
+              <em>06</em>
+            </button>
+            <p>“不在船上”也是一种位置：欧西里斯是太阳在最深夜时抵达的再生节点。</p>
+          </div>
+        </div>
+
+        <div className="egypt-more-gods">
+          <button type="button" onClick={() => setShowMoreGods((visible) => !visible)} aria-expanded={showMoreGods} aria-controls="egypt-more-gods-list">
+            <span>{showMoreGods ? "收起神名册" : "认识更多神明"}</span><b aria-hidden="true">{showMoreGods ? "↑" : "↓"}</b>
+          </button>
+          {showMoreGods && (
+            <div id="egypt-more-gods-list">
+              <header><span>NEXT ARCHIVE / 待展开</span><p>这些名字会在后续沿航程进入独立档案；当前先保留它们与太阳旅程的连接点。</p></header>
+              {moreGods.map(([name, note], index) => <article key={name}><span>0{index + 1}</span><h3>{name}</h3><p>{note}</p></article>)}
+            </div>
+          )}
         </div>
       </section>
+
+      {activeGod && (
+        <div className="egypt-god-dialog-backdrop" role="presentation" onMouseDown={(event) => {
+          if (event.currentTarget === event.target) setActiveGod(null);
+        }}>
+          <article className="egypt-god-dialog" role="dialog" aria-modal="true" aria-labelledby={`egypt-god-dialog-${activeGod.slug}`}>
+            <button className="egypt-god-dialog-close" type="button" onClick={() => setActiveGod(null)} aria-label="关闭神祇介绍">×</button>
+            <figure><img src={`${siteBasePath}/${activeGod.image}`} alt={activeGod.alt} /><figcaption>{activeGod.code}</figcaption></figure>
+            <div className="egypt-god-dialog-copy">
+              <span>{activeGod.position}</span>
+              <h2 id={`egypt-god-dialog-${activeGod.slug}`}>{activeGod.name}</h2>
+              <b>{activeGod.role}</b>
+              <dl><dt>图像形态</dt><dd>{activeGod.form}</dd></dl>
+              <p className="egypt-god-dialog-summary">{activeGod.summary}</p>
+              {activeGod.details.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <a href={activeGod.source.href} target="_blank" rel="noreferrer">原典与馆藏坐标：{activeGod.source.label} ↗</a>
+            </div>
+          </article>
+        </div>
+      )}
 
       <section className="egypt-sources" id="egypt-sources">
         <header>

@@ -107,6 +107,13 @@ test("exports six static mythology detail pages", async () => {
       for (const asset of ["egypt-dawn-khepri", "egypt-midnight-union", "egypt-rebirth-east"]) {
         assert.match(html, new RegExp(`src="/cm/${asset}\\.webp"`));
       }
+      for (const god of ["ra", "maat", "thoth", "seth", "isis", "osiris"]) {
+        assert.match(html, new RegExp(`src="/cm/egypt-god-${god}\\.webp"`));
+      }
+      assert.match(html, /跨文本阅读图/);
+      assert.match(html, /太阳船岗位关系图/);
+      assert.match(html, /认识更多神明/);
+      assert.match(html, /查看欧西里斯的详细介绍/);
       for (const station of ["STATION 01", "STATION 02", "STATION 03"]) {
         assert.match(html, new RegExp(station));
       }
