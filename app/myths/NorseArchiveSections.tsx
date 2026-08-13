@@ -102,7 +102,7 @@ const godArchives: GodArchive[] = [
   },
   {
     slug: "freyr",
-    rune: "ᛃ",
+    rune: "ᛜ",
     name: "弗雷",
     oldNorse: "FREYR",
     role: "丰饶者",
