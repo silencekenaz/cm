@@ -2956,8 +2956,8 @@ footer > p {
 .egypt-barque-map-intro { position: relative; z-index: 2; display: grid; grid-template-columns: .45fr 1fr; gap: 32px; padding-bottom: 34px; border-bottom: 1px solid rgba(197,157,75,.36); }
 .egypt-barque-map-intro span { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
 .egypt-barque-map-intro p { max-width: 720px; margin: 0; color: rgba(232,224,209,.66); font-size: 12px; line-height: 1.9; }
-.egypt-barque-deck { position: relative; z-index: 1; min-width: 0; margin-top: 68px; padding: 0 3.5% 108px; display: grid; grid-template-columns: repeat(5, minmax(118px, 1fr)); align-items: end; gap: clamp(10px, 1.7vw, 24px); }
-.egypt-barque-deck::before { content: ""; position: absolute; right: 2.5%; bottom: 89px; left: 2.5%; height: 2px; background: var(--egypt-gold); opacity: .7; }
+.egypt-barque-deck { position: relative; z-index: 1; min-width: 0; margin-top: 68px; padding: 0 3.5% 148px; display: grid; grid-template-columns: repeat(5, minmax(118px, 1fr)); align-items: end; gap: clamp(10px, 1.7vw, 24px); }
+.egypt-barque-deck::before { content: ""; position: absolute; right: 4.5%; bottom: 128px; left: 4.5%; height: 1px; background: var(--egypt-gold); opacity: .78; }
 .egypt-god-portrait { position: relative; min-width: 0; padding: 0; display: flex; flex-direction: column; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; isolation: isolate; }
 .egypt-god-portrait::before { content: ""; position: absolute; z-index: -1; inset: 38px -5px 58px; border: 1px solid rgba(197,157,75,.28); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
 .egypt-god-portrait:hover::before,
@@ -2974,9 +2974,21 @@ footer > p {
 .egypt-god-label small { min-height: 32px; color: rgba(232,224,209,.58); font-size: 9px; line-height: 1.7; }
 .egypt-god-portrait > i { margin: 9px 4px 0; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-style: normal; font-weight: 850; letter-spacing: .14em; }
 .egypt-god-portrait > em { position: absolute; top: 51px; right: 8px; padding: 4px 6px; background: var(--egypt-night); color: var(--egypt-gold); font-family: Georgia, serif; font-size: 12px; font-style: normal; }
-.egypt-barque-hull { position: absolute; right: 0; bottom: 0; left: 0; height: 102px; display: grid; place-items: center; clip-path: polygon(0 0, 100% 0, 91% 64%, 77% 86%, 50% 100%, 23% 86%, 9% 64%); background: linear-gradient(#d0ad62 0 14px, #9a4635 14px 27px, #c59d4b 27px 36px, #886c35 36px); color: var(--egypt-night); }
-.egypt-barque-hull::before { content: ""; position: absolute; inset: 46px 12% 28px; border-block: 2px solid rgba(23,36,49,.42); }
-.egypt-barque-hull span { position: relative; z-index: 1; margin-top: -18px; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 900; letter-spacing: .22em; }
+.egypt-barque-hull { position: absolute; right: -1.5%; bottom: 0; left: -1.5%; height: 146px; color: var(--egypt-night); }
+.egypt-barque-hull svg { width: 100%; height: 100%; display: block; overflow: visible; filter: drop-shadow(0 9px 0 rgba(0,0,0,.17)); }
+.egypt-barque-hull .hull-body { fill: #866b3a; stroke: var(--egypt-gold); stroke-width: 3; }
+.egypt-barque-hull .hull-red-band { fill: #98483a; opacity: .94; }
+.egypt-barque-hull .hull-gold-band { fill: #b99752; }
+.egypt-barque-hull .hull-rail,
+.egypt-barque-hull .hull-inner,
+.egypt-barque-hull .hull-prow,
+.egypt-barque-hull .hull-stern,
+.egypt-barque-hull .hull-reeds path { fill: none; stroke: #d9b867; stroke-width: 4; vector-effect: non-scaling-stroke; }
+.egypt-barque-hull .hull-inner { stroke: rgba(23,36,49,.58); stroke-width: 2; }
+.egypt-barque-hull .hull-prow,
+.egypt-barque-hull .hull-stern { stroke-linecap: round; stroke-width: 3; }
+.egypt-barque-hull .hull-reeds path { stroke: rgba(23,36,49,.54); stroke-width: 1.5; }
+.egypt-barque-hull span { position: absolute; right: 0; bottom: 11px; left: 0; color: rgba(232,224,209,.56); font-family: var(--font-geist-mono), monospace; font-size: 6px; font-weight: 800; letter-spacing: .2em; text-align: center; }
 .egypt-barque-water { position: absolute; right: 0; bottom: 34%; left: 0; height: 80px; opacity: .2; pointer-events: none; }
 .egypt-barque-water i { position: absolute; right: -8%; left: -8%; height: 28px; border-top: 1px solid var(--egypt-blue); border-radius: 50%; }
 .egypt-barque-water i:nth-child(1) { top: 0; }
@@ -3109,6 +3121,7 @@ footer > p {
   .egypt-voyage > header h2,
   .egypt-crew > header h2,
   .egypt-sources > header h2 { font-size: 54px; line-height: 1.14; }
+  .egypt-crew > header h2 { font-size: 48px; line-height: 1.18; letter-spacing: -.055em; }
   .egypt-balance > header p,
   .egypt-voyage > header p,
   .egypt-crew > header p,
@@ -3139,18 +3152,32 @@ footer > p {
   .egypt-barque-map { margin-top: 56px; padding: 26px 18px; box-shadow: 7px 7px 0 var(--egypt-gold); }
   .egypt-barque-map-intro { grid-template-columns: 1fr; gap: 12px; }
   .egypt-barque-map-intro p { font-size: 12px; line-height: 1.9; }
-  .egypt-barque-deck { margin-top: 44px; padding: 0 0 86px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; }
-  .egypt-barque-deck::before { bottom: 72px; }
-  .egypt-god-portrait.is-ra { margin-bottom: 0; }
-  .egypt-god-position { min-height: 38px; font-size: 6px; }
-  .egypt-god-label { padding-top: 11px; }
-  .egypt-god-label b { font-size: 28px; }
-  .egypt-god-label small { min-height: 48px; line-height: 1.75; }
-  .egypt-barque-hull { height: 80px; }
-  .egypt-barque-hull span { margin-top: -10px; }
+  .egypt-barque-deck { margin-top: 34px; padding: 34px 0 0 26px; display: flex; flex-direction: column; gap: 14px; }
+  .egypt-barque-deck::before { top: 0; right: auto; bottom: 0; left: 7px; width: 1px; height: auto; opacity: .6; }
+  .egypt-barque-deck::after { content: "PROW  ↓  MIDSHIP  ↓  CENTRAL SHRINE"; position: absolute; top: 0; left: 26px; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 6px; font-weight: 850; letter-spacing: .1em; }
+  .egypt-god-portrait,
+  .egypt-god-portrait.is-ra { width: 100%; margin: 0; padding: 12px; display: grid; grid-template-columns: 94px minmax(0, 1fr); grid-template-areas: "image position" "image label" "image open"; column-gap: 14px; align-items: center; border: 1px solid rgba(197,157,75,.28); background: rgba(5,12,18,.4); }
+  .egypt-god-portrait.is-ra { border-color: rgba(197,157,75,.72); background: rgba(197,157,75,.1); }
+  .egypt-god-portrait::before { display: none; }
+  .egypt-god-portrait img,
+  .egypt-god-portrait.is-ra img { grid-area: image; width: 94px; border-width: 1px; border-radius: 50%; box-shadow: none; }
+  .egypt-god-portrait:hover img,
+  .egypt-god-portrait:focus-visible img { border-radius: 50%; transform: none; }
+  .egypt-god-position { grid-area: position; min-height: 0; margin: 0 0 5px; font-size: 6px; line-height: 1.6; }
+  .egypt-god-label { grid-area: label; padding: 0; gap: 4px; }
+  .egypt-god-label b { font-size: 28px; line-height: 1.12; }
+  .egypt-god-label small { min-height: 0; font-size: 9px; line-height: 1.75; }
+  .egypt-god-portrait > i { grid-area: open; margin: 8px 0 0; }
+  .egypt-god-portrait > em { top: 7px; right: 7px; }
+  .egypt-barque-hull { display: none; }
   .egypt-duat-encounter { padding-top: 58px; grid-template-columns: 1fr; gap: 22px; }
   .egypt-duat-path { text-align: center; }
-  .egypt-duat-encounter .egypt-god-portrait { width: min(270px, 86%); justify-self: center; }
+  .egypt-duat-encounter .egypt-god-portrait { width: 100%; padding: 12px; justify-self: center; }
+  .egypt-duat-encounter .egypt-god-portrait img { width: 94px; height: 94px; border-radius: 50%; }
+  .egypt-duat-encounter .egypt-god-portrait:hover img,
+  .egypt-duat-encounter .egypt-god-portrait:focus-visible img { border-radius: 50%; }
+  .egypt-duat-encounter .egypt-god-position { margin: 0 0 5px; order: initial; }
+  .egypt-duat-encounter .egypt-god-portrait > em { top: 7px; right: 7px; }
   .egypt-duat-encounter > p { font-size: 15px; line-height: 2; }
   .egypt-more-gods { margin-top: 46px; }
   .egypt-more-gods > button { min-height: 72px; padding: 18px 20px; }

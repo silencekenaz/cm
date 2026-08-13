@@ -112,6 +112,7 @@ test("exports six static mythology detail pages", async () => {
       }
       assert.match(html, /跨文本阅读图/);
       assert.match(html, /太阳船岗位关系图/);
+      assert.match(html, /THE SOLAR BARQUE · PROW TO THE LEFT/);
       assert.match(html, /认识更多神明/);
       assert.match(html, /查看欧西里斯的详细介绍/);
       for (const station of ["STATION 01", "STATION 02", "STATION 03"]) {
