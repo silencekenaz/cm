@@ -5,47 +5,59 @@ const cast = [
     name: "荷鲁斯",
     role: "THE CLAIMANT / 王位请求人",
     image: "egypt-god-horus.webp",
-    body: "伊西斯与欧西里斯之子，也是人间王权最重要的神圣模型之一。《争斗》开头故意把他写成坐在法庭前的年轻请求人：他有父子继承的强大名分，却会被拉—哈拉胡提讥为身体软弱的孩子。他会哭泣、受伤、施计，也会因暴怒攻击母亲；直到经历证明、惩罚与复原，他才成为能够戴上白冠的王。这里的成长不是“力量升级”，而是把血统主张转化为公开裁决。",
+    domain: "王权、天空与王的守护；在神学语言中，在位君王可被理解为地上的荷鲁斯。",
+    position: "他把活着的王与已经成为冥界之王的欧西里斯连成连续的世代，使死亡不会让王位谱系断裂。",
+    motive: "要求父位不是单纯替父复仇，而是让父子继承获得诸神公开承认，并把被谋杀与篡位打乱的玛特重新落到人间王权。",
   },
   {
     name: "塞特",
     role: "THE RIVAL / 竞争者",
     image: "egypt-god-seth.webp",
-    body: "欧西里斯的兄弟、荷鲁斯的叔父，也是风暴、荒漠、异域与猛烈力量的神。他的王位论据并不只是“我更强”：他强调自己每日站在百万年之船的前方，击杀太阳神的敌人，而别的神做不到。因此塞特代表一种真实且不可缺少的宇宙能力，只是这种能力不足以取代继承法。故事最终没有消灭他，而是把雷霆与威慑重新安置到天空。",
+    domain: "荒漠、风暴、异域与破坏性力量；在另一些传统里，他也以强悍武力守卫太阳船、抵御阿波菲斯。",
+    position: "他不是可以从宇宙中删去的“恶神”，而是秩序边界上危险却有用的力量：既能威胁玛特，也能被玛特调用。",
+    motive: "他把成年、资历、力量与守护太阳秩序的功绩视为统治资格，因此拒绝让一个年轻侄子仅凭血统取得自己正在占有的职位。",
   },
   {
     name: "伊西斯",
     role: "THE STRATEGIST / 保护者与谋略者",
     image: "egypt-god-isis.webp",
-    body: "她以魔法、辩辞与母职贯穿整个谱系：取得拉的隐名，寻找并重整欧西里斯的尸身，在三角洲保护幼年荷鲁斯，又以变形、寓言、贿赂和证据设计迫使法庭前进。她既会算计，也会因亲缘而心软；在河马比试中放过兄弟塞特，反而激怒儿子。伊西斯从来不是站在男性英雄身后哀悼的人，她本身就是继承权得以成立的行动者。",
+    domain: "魔法（赫卡）、疗愈、保护、母职与王座；她的名字与王座符号相连，也是授予和维持王权的神圣力量。",
+    position: "她把死去的欧西里斯、隐藏的幼年继承人和未来王权接在一起；谱系若要穿过死亡继续运作，必须经过她的知识与行动。",
+    motive: "她要确保儿子承继父位，也要使被打断的家族与王权秩序恢复连续；当法庭长期失灵时，她便以隐名、变形、寓言和证据迫使程序前进。",
   },
   {
     name: "欧西里斯",
     role: "THE ABSENT KING / 缺席的王",
     image: "egypt-god-osiris.webp",
-    body: "被杀并进入冥界以后，他不再亲临九神法庭，却仍是继承权的来源、谷物丰饶的保障与所有死者最终抵达的王。在长篇末尾，他先以自己供养诸神的谷物反驳法庭，又警告说冥界的使者能够取走作恶者的心。缺席没有削弱他的政治重量；恰恰因为每一位神与人最终都会来到西方，来自地下的信才迫使地上的僵局结束。",
+    domain: "死者、冥界、更新、谷物与逝去的王；他既是被杀的前王，也是死亡之后仍然有效的主权。",
+    position: "他统治“西方”，所有神与人最终都要进入他的领域；地上的荷鲁斯王权因此不是取代欧西里斯，而是与冥界王权互为两端。",
+    motive: "他维护儿子的继承权，也维护死者之王对生者秩序的约束：若诸神可以无视合法后嗣与玛特，死亡领域便会向法庭追索责任。",
   },
   {
     name: "拉—哈拉胡提",
     role: "THE PRESIDING POWER / 法庭权威",
     image: "egypt-god-ra.webp",
-    body: "作为太阳神与会议的最高权威，他主持审理，却明显欣赏塞特保卫太阳船的力量，并多次质疑年轻的荷鲁斯。他会被巴巴一句冒犯的话气得退庭，也会被哈托尔逗笑后重新开庭；他甚至与欧西里斯隔着生死领域互致尖锐书信。正因为最高权威也会偏爱、动摇与维护自尊，这个故事才不是答案预先写好的道德题。",
+    domain: "太阳、创造、天空王权与昼夜航行；拉—哈拉胡提是“地平线中的荷鲁斯”与拉结合的太阳形态。",
+    position: "作为会议最高权威，他代表当前仍在运转的天上秩序；太阳船对武力保护的依赖，也使他无法轻易否定塞特。",
+    motive: "他优先考虑成熟力量、太阳秩序的安全与自身裁决权，因而反复质疑年轻继承人的能力；这种保守并非无理由，却使他把维持现状置于执行继承原则之前。",
   },
   {
     name: "托特",
     role: "THE SCRIBE / 书记与证据召唤者",
     image: "egypt-god-thoth.webp",
-    body: "他是九神法庭的书记、书信起草者和最稳定的程序维护者。开庭之初，他便称荷鲁斯的主张“正确百万次”；之后又代太阳神写信给涅伊特与欧西里斯。在最离奇的一场证明中，他召唤双方的精液回答，并把从塞特额头出现的金色圆盘取作自己的冠饰。托特并不总能直接裁决，却不断让发言变成文书、身体变成证据、僵局变成可追责的记录。",
+    domain: "知识、书写、计量、历法、月亮与神圣言辞；他让世界可以被命名、计算、记录和复核。",
+    position: "他是诸神法庭的书记与调停者，把口头主张变成文书，把身体迹象变成证据，并让不同宇宙领域能够通过书信相互问责。",
+    motive: "他要维护可验证的程序与言辞的准确性。支持荷鲁斯并非私人忠诚，而是因为父子继承的主张一次次通过发言、外部意见与证据得到确认。",
   },
 ];
 
 const supportingFigures = [
-  ["舒", "FIRST OPINION", "最早公开支持荷鲁斯的发言者之一。他把问题表述为“正义具有力量”，并在末段赞同向欧西里斯发函。"],
-  ["涅伊特", "THE ELDER VERDICT", "居于塞易斯的古老女神。她在回信中要求把欧西里斯的职位交给荷鲁斯，同时以加倍财产和阿娜特、阿斯塔蒂安置塞特。"],
-  ["巴涅布杰代特", "THE HESITANT ARBITER", "门德斯的羊神，被召来判断两位竞争者，却拒绝在无知中仓促行动，转而建议询问涅伊特。"],
-  ["安赫尔", "ANHUR / ONURIS · THE PARTISAN", "又称奥努里斯，是提尼斯的战士与猎神，代表制服危险和混沌的武力。他在法庭上多次站在荷鲁斯一方；当太阳神轻视年轻请求人时，他与法庭成员一同激烈反对。"],
-  ["哈托尔", "THE RESTORER", "她先用喜剧性的举动让负气退庭的太阳神重新发笑，后来又以羚羊乳治愈荷鲁斯被挖出的双眼。"],
-  ["安提", "THE FERRYMAN", "奉命阻止伊西斯渡河，却收下她的金环。阴谋败露后，他受到惩罚，并在故事中立誓让自己的城厌弃黄金。"],
+  { name: "舒", role: "AIR / GENERATIONAL ORDER", domain: "空气、生命与天地分离", motive: "支持父位传子，因为世代有序更接近他所维持的宇宙间隔与秩序。" },
+  { name: "涅伊特", role: "PRIMORDIAL ELDER / SAIS", domain: "原初水域、创造、战争与织造", motive: "作为法庭外的古老权威，她寻求兼顾继承与危险力量的方案：王位归荷鲁斯，同时补偿并安置塞特。" },
+  { name: "巴涅布杰代特", role: "RAM OF MENDES / BA", domain: "门德斯的公羊神、丰饶与神圣显现", motive: "他拒绝在不了解案件时仓促背书，因而把程序转向资历更古老的涅伊特。" },
+  { name: "安赫尔", role: "ANHUR / ONURIS · WARRIOR", domain: "战争、狩猎与把远方危险带回秩序", motive: "他承认武力的必要，却主张武力必须服务合法秩序，因而在法庭中支持荷鲁斯。" },
+  { name: "哈托尔", role: "SOLAR DAUGHTER / RESTORATION", domain: "天空、欢愉、性爱、母性、太阳力量与疗愈", motive: "她使失衡的神重新获得生命力：既修复会议的情绪，也修复荷鲁斯受损的视觉。" },
+  { name: "安提", role: "NEMTY / THE THRESHOLD", domain: "渡口、通行边界与执行禁令", motive: "他体现守门者的两难：职责要求阻止伊西斯，黄金诱惑却让边界失效；因此也是程序会被收买的警示。" },
 ];
 
 const chapters = [
@@ -97,6 +109,8 @@ const chapters = [
     number: "05",
     label: "THE EYE RESTORED",
     title: "受伤的眼睛重新完整",
+    art: "egypt-vignette-eye-restored.webp",
+    artAlt: "哈托尔手持羚羊乳容器，为受伤的荷鲁斯恢复视力",
     body: [
       "九神进入山地搜捕荷鲁斯时，他正躺在绿洲的一棵树下。塞特先找到他，把他仰面按倒，挖出两只眼睛并埋在山中，然后回到太阳神面前谎称没有找到荷鲁斯。被埋的眼球却化作两枚球茎，长成莲花，仿佛失去的天体之光转入大地，又从植物中重新出现。",
       "哈托尔在沙漠中找到哭泣的荷鲁斯。她挤取羚羊乳，依次滴入他的左右眼眶，命他睁眼；荷鲁斯恢复视力以后，她才回到法庭揭露塞特的所为。太阳神要求两人停止每日争吵、同桌吃喝、重新和解，这一过早的和平提议随即把故事引向下一场更隐秘的攻击。",
@@ -130,6 +144,8 @@ const chapters = [
     number: "08",
     label: "A LETTER FROM BELOW",
     title: "冥界来信终结拖延",
+    art: "egypt-vignette-settlement.webp",
+    artAlt: "戴白冠的荷鲁斯与手持权杖的塞特分立于天平两侧",
     body: [
       "托特终于建议向死去的前王本人发函。欧西里斯的第一封回信直截了当：为什么欺骗我的儿子？是我使诸神强健，也是我创造大麦与斯佩耳特小麦供养诸神和其后的生灵。拉—哈拉胡提不肯退让，回信讥刺说，即使欧西里斯从未出生，谷物也照样存在。两位宇宙君王隔着昼世与冥界发生了一次并不客气的权威冲突。",
       "欧西里斯第二次回信，把争论提高到死亡秩序。他责问诸神为何让玛特沉入冥界，声称西方充满面目凶猛的使者，他们会取走作恶者的心；天上的星每夜都要到欧西里斯处休息，而神、贵族和平民最终也无一例外。太阳神可以轻视谷物论据，却不能否认所有存在都会进入死亡领域。",
@@ -203,6 +219,9 @@ export default function EgyptianConflictPage() {
           <img src={`${siteBasePath}/egypt-conflict-secret-name.webp`} alt="伊西斯用泥土与拉的唾液造蛇，并准备为中毒的拉施咒疗愈" />
           <figcaption>THE SECRET NAME / 这是一则解毒咒文中的神话，不是《争斗》长篇的第一章。</figcaption>
         </figure>
+        <figure className="egypt-conflict-prologue-vignette" aria-label="隐名故事叙事图章">
+          <img src={`${siteBasePath}/egypt-vignette-secret-name.webp`} alt="伊西斯持卷面对衰老的拉，泥土所造的蛇伏在两神之间" />
+        </figure>
         <div className="egypt-conflict-prologue-grid">
           <article>
             <span>00.A / THE SECRET NAME</span>
@@ -228,23 +247,31 @@ export default function EgyptianConflictPage() {
       <section className="egypt-conflict-cast" aria-labelledby="conflict-cast-title">
         <header>
           <span>DRAMATIS DIVINAE / 神明档案</span>
-          <h2 id="conflict-cast-title">谁在这场争讼里说话？</h2>
-          <p>荷鲁斯与塞特是两位竞争者；伊西斯、欧西里斯、拉—哈拉胡提与托特则分别改变证据、权威与裁决的走向。</p>
+          <h2 id="conflict-cast-title">他们为何站在这里？</h2>
+          <p>人物档案不再复述情节，而是回答三件事：神明掌管什么、在宇宙秩序中处于哪里，以及什么动机使他／她介入王位争讼。</p>
         </header>
         <div className="egypt-conflict-cast-grid">
           {cast.map((figure) => (
             <article key={figure.name}>
               <img src={`${siteBasePath}/${figure.image}`} alt={`${figure.name}的古埃及壁画风格画像`} />
-              <div><small>{figure.role}</small><h3>{figure.name}</h3><p>{figure.body}</p></div>
+              <div>
+                <small>{figure.role}</small><h3>{figure.name}</h3>
+                <dl>
+                  <div><dt>神职 / DOMAIN</dt><dd>{figure.domain}</dd></div>
+                  <div><dt>宇宙位置 / POSITION</dt><dd>{figure.position}</dd></div>
+                  <div><dt>争讼动机 / MOTIVE</dt><dd>{figure.motive}</dd></div>
+                </dl>
+              </div>
             </article>
           ))}
         </div>
         <section className="egypt-conflict-supporting" aria-labelledby="supporting-cast-title">
           <header><span>THE COUNCIL &amp; ITS EDGES</span><h3 id="supporting-cast-title">法庭并不只有六位神</h3></header>
           <div>
-            {supportingFigures.map(([name, role, body], index) => (
-              <article key={name}>
-                <b>0{index + 1}</b><small>{role}</small><h4>{name}</h4><p>{body}</p>
+            {supportingFigures.map((figure, index) => (
+              <article key={figure.name}>
+                <b>0{index + 1}</b><small>{figure.role}</small><h4>{figure.name}</h4>
+                <dl><div><dt>神职</dt><dd>{figure.domain}</dd></div><div><dt>立场动机</dt><dd>{figure.motive}</dd></div></dl>
               </article>
             ))}
           </div>
@@ -266,7 +293,13 @@ export default function EgyptianConflictPage() {
                 {chapter.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 {chapter.note ? <aside>{chapter.note}</aside> : null}
               </div>
-              <span className="egypt-conflict-chapter-mark" aria-hidden="true">{["𓂀", "☉", "♙", "≋", "◉", "✦", "⌁", "𓇳"][index]}</span>
+              {chapter.art ? (
+                <figure className="egypt-conflict-chapter-art">
+                  <img src={`${siteBasePath}/${chapter.art}`} alt={chapter.artAlt} />
+                </figure>
+              ) : (
+                <span className="egypt-conflict-chapter-mark" aria-hidden="true">{["𓂀", "☉", "♙", "≋", "◉", "✦", "⌁", "𓇳"][index]}</span>
+              )}
             </article>
           ))}
         </div>

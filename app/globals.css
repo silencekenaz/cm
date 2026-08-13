@@ -3308,12 +3308,14 @@ footer > p {
 .egypt-conflict-method > span { color: var(--egypt-ink); }
 .egypt-conflict-method p { max-width: 960px; margin: 0; font-size: 14px; font-weight: 570; line-height: 2; }
 .egypt-conflict-method p b { font-weight: 800; }
-.egypt-conflict-prologue { padding: 124px clamp(22px, 7vw, 108px); background: #eee8dc; }
+.egypt-conflict-prologue { position: relative; padding: 124px clamp(22px, 7vw, 108px); background: #eee8dc; }
 .egypt-conflict-prologue > header { margin-bottom: 64px; display: grid; grid-template-columns: .3fr 1fr; gap: 44px; align-items: start; }
 .egypt-conflict-prologue > header h2 { max-width: 960px; margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(46px, 6.8vw, 96px); font-weight: 500; line-height: 1.12; letter-spacing: -.055em; text-wrap: balance; }
 .egypt-conflict-prologue > figure { margin: 0; border: 1px solid rgba(23,36,49,.64); background: var(--egypt-sand); }
 .egypt-conflict-prologue > figure img { width: 100%; aspect-ratio: 2 / 1; display: block; object-fit: cover; }
 .egypt-conflict-prologue > figure figcaption { padding: 16px 20px; border-top: 1px solid rgba(23,36,49,.64); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 760; line-height: 1.7; letter-spacing: .1em; }
+.egypt-conflict-prologue > .egypt-conflict-prologue-vignette { position: absolute; width: min(500px, 42vw); margin: 0; right: 4vw; transform: translateY(-86%); pointer-events: none; border: 0; background: transparent; opacity: .2; mix-blend-mode: multiply; mask-image: radial-gradient(ellipse at center, #000 40%, transparent 78%); }
+.egypt-conflict-prologue-vignette img { width: 100%; height: auto; display: block; }
 .egypt-conflict-prologue-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid var(--egypt-ink); }
 .egypt-conflict-prologue-grid article { min-width: 0; padding: 46px clamp(24px, 3vw, 46px); border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); }
 .egypt-conflict-prologue-grid h3 { margin: 52px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 500; line-height: 1.18; letter-spacing: -.045em; }
@@ -3326,10 +3328,13 @@ footer > p {
 .egypt-conflict-cast-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(197,157,75,.54); border-left: 1px solid rgba(197,157,75,.54); }
 .egypt-conflict-cast-grid article { min-width: 0; border-right: 1px solid rgba(197,157,75,.54); border-bottom: 1px solid rgba(197,157,75,.54); }
 .egypt-conflict-cast-grid article img { width: 100%; aspect-ratio: 1; display: block; object-fit: cover; filter: saturate(.82) contrast(1.02); }
-.egypt-conflict-cast-grid article > div { padding: 28px 28px 36px; }
+.egypt-conflict-cast-grid article > div { padding: 28px 28px 38px; }
 .egypt-conflict-cast-grid small { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .1em; }
 .egypt-conflict-cast-grid h3 { margin: 16px 0 18px; font-family: Georgia, "Songti SC", serif; font-size: 46px; font-weight: 500; line-height: 1.05; }
-.egypt-conflict-cast-grid p { margin: 0; color: rgba(243,234,217,.67); font-size: 13px; font-weight: 540; line-height: 2; }
+.egypt-conflict-cast-grid dl { margin: 0; display: grid; gap: 0; }
+.egypt-conflict-cast-grid dl > div { padding: 17px 0; border-top: 1px solid rgba(197,157,75,.25); }
+.egypt-conflict-cast-grid dt { margin-bottom: 8px; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; line-height: 1.6; letter-spacing: .12em; }
+.egypt-conflict-cast-grid dd { margin: 0; color: rgba(243,234,217,.72); font-size: 13px; font-weight: 540; line-height: 2; }
 .egypt-conflict-supporting { margin-top: 74px; border-top: 1px solid rgba(197,157,75,.54); }
 .egypt-conflict-supporting > header { padding: 34px 0; display: grid; grid-template-columns: .3fr 1fr; gap: 44px; align-items: end; }
 .egypt-conflict-supporting > header span { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
@@ -3339,7 +3344,10 @@ footer > p {
 .egypt-conflict-supporting article b { color: var(--egypt-gold); font-family: Georgia, serif; font-size: 22px; font-weight: 500; }
 .egypt-conflict-supporting article small { align-self: center; color: rgba(243,234,217,.52); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; line-height: 1.6; letter-spacing: .1em; }
 .egypt-conflict-supporting article h4 { grid-column: 1 / -1; margin: 38px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: 34px; font-weight: 500; line-height: 1.1; }
-.egypt-conflict-supporting article p { grid-column: 1 / -1; margin: 0; color: rgba(243,234,217,.65); font-size: 12px; font-weight: 540; line-height: 2; }
+.egypt-conflict-supporting article dl { grid-column: 1 / -1; margin: 0; }
+.egypt-conflict-supporting article dl > div { padding: 13px 0; display: grid; grid-template-columns: 74px 1fr; gap: 14px; border-top: 1px solid rgba(197,157,75,.2); }
+.egypt-conflict-supporting article dt { color: var(--egypt-gold); font-size: 10px; font-weight: 780; line-height: 1.9; }
+.egypt-conflict-supporting article dd { margin: 0; color: rgba(243,234,217,.68); font-size: 12px; font-weight: 540; line-height: 2; }
 .egypt-conflict-case { background: #dfe4df; }
 .egypt-conflict-case > header { padding: 126px clamp(22px, 7vw, 108px) 96px; display: grid; grid-template-columns: .3fr 1fr .6fr; gap: 44px; align-items: end; }
 .egypt-conflict-case > header > span { align-self: start; }
@@ -3355,6 +3363,10 @@ footer > p {
 .egypt-conflict-chapter-copy p { margin: 0 0 18px; color: #51585d; font-size: 15px; font-weight: 540; line-height: 2.15; }
 .egypt-conflict-chapter-copy aside { margin-top: 30px; padding: 20px 22px; border-left: 4px solid var(--egypt-gold); background: rgba(197,157,75,.12); color: #4f5356; font-size: 13px; font-weight: 620; line-height: 1.9; }
 .egypt-conflict-chapter-mark { align-self: center; color: rgba(128,101,50,.16); font-family: Georgia, serif; font-size: clamp(88px, 10vw, 156px); line-height: 1; text-align: right; }
+.egypt-conflict-chapter-art { align-self: center; margin: 0; position: relative; }
+.egypt-conflict-chapter-art::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 35%, var(--chapter-bg, #dfe4df) 82%); pointer-events: none; }
+.egypt-conflict-chapters article:nth-child(even) .egypt-conflict-chapter-art { --chapter-bg: #eee8dc; }
+.egypt-conflict-chapter-art img { width: min(100%, 360px); height: auto; display: block; opacity: .72; filter: saturate(.7) contrast(.95); mix-blend-mode: multiply; }
 .egypt-conflict-trials-figure { margin: 0; padding: clamp(26px, 5vw, 70px); background: var(--egypt-night); color: #f3ead9; }
 .egypt-conflict-trials-figure img { width: 100%; aspect-ratio: 2 / 1; display: block; object-fit: cover; border: 1px solid rgba(197,157,75,.68); }
 .egypt-conflict-trials-figure figcaption { padding: 26px 2px 2px; display: grid; grid-template-columns: .3fr 1fr; gap: 40px; align-items: start; }
@@ -3392,6 +3404,7 @@ footer > p {
   .egypt-conflict-supporting > div { grid-template-columns: repeat(2, 1fr); }
   .egypt-conflict-chapters article { grid-template-columns: .24fr minmax(0, 1fr); }
   .egypt-conflict-chapter-mark { display: none; }
+  .egypt-conflict-chapter-art { grid-column: 2; width: min(420px, 65vw); opacity: .8; }
 }
 
 @media (max-width: 620px) {
@@ -3422,6 +3435,7 @@ footer > p {
   .egypt-conflict-prologue > figure { margin-inline: -22px; border-inline: 0; }
   .egypt-conflict-prologue > figure img { aspect-ratio: 1.45 / 1; }
   .egypt-conflict-prologue > figure figcaption { font-size: 8px; }
+  .egypt-conflict-prologue > .egypt-conflict-prologue-vignette { width: 72vw; right: 0; transform: translateY(-95%); opacity: .13; }
   .egypt-conflict-prologue-grid { border-left: 0; }
   .egypt-conflict-prologue-grid article { padding: 42px 2px; border-right: 0; }
   .egypt-conflict-prologue-grid h3 { margin-top: 35px; font-size: 39px; line-height: 1.2; }
@@ -3440,6 +3454,8 @@ footer > p {
   .egypt-conflict-chapter-meta { flex-direction: row; align-items: center; justify-content: space-between; }
   .egypt-conflict-chapter-copy h3 { margin-bottom: 24px; font-size: 40px; line-height: 1.22; }
   .egypt-conflict-chapter-copy p { font-size: 14px; line-height: 2; }
+  .egypt-conflict-chapter-art { grid-column: 1; width: 100%; margin-top: 4px; }
+  .egypt-conflict-chapter-art img { width: 100%; opacity: .8; }
   .egypt-conflict-trials-figure { padding: 22px 0 34px; }
   .egypt-conflict-trials-figure img { aspect-ratio: 1.36 / 1; border-inline: 0; }
   .egypt-conflict-trials-figure figcaption { padding: 24px 22px 0; grid-template-columns: 1fr; gap: 15px; }
