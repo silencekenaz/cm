@@ -72,8 +72,7 @@ export default function EasterEggPage() {
             <h2>{fragment.title}</h2>
             <p>{fragment.text}</p>
             <aside className="redfur-graffiti" aria-label={`小红毛对第 ${fragment.no} 号档案的篡改`}>
-              <img className="redfur-hand-underline" src={`${siteBasePath}/kenaz-underline.png`} alt="" aria-hidden="true" />
-              <img className="redfur-hand-arrow" src={`${siteBasePath}/kenaz-arrow.png`} alt="" aria-hidden="true" />
+              <img className="redfur-hand-arrow" src={`${siteBasePath}/kenaz-arrow-light.png`} alt="" aria-hidden="true" />
               <span>{fragment.mark}</span>
               <p>{fragment.graffiti}</p>
               <b>— {fragment.signature === "KENAZ" ? "ᚲ KENAZ" : fragment.signature} 擅自批注</b>

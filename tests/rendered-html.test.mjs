@@ -37,8 +37,8 @@ test("exports the hidden command archive as static HTML", async () => {
   assert.equal(html.match(/小红毛<!-- --> 擅自批注/g)?.length, 3);
   assert.equal(html.match(/ᚲ KENAZ<!-- --> 擅自批注/g)?.length, 1);
   assert.match(html, /src="\/cm\/kenaz-doodle-light\.png"/);
-  assert.match(html, /src="\/cm\/kenaz-underline\.png"/);
-  assert.match(html, /src="\/cm\/kenaz-arrow\.png"/);
+  assert.match(html, /src="\/cm\/kenaz-arrow-light\.png"/);
+  assert.doesNotMatch(html, /kenaz-underline\.png/);
   assert.doesNotMatch(html, /RED FUR WAS HERE/);
   assert.doesNotMatch(html, /它的阵营随心情移动/);
   assert.doesNotMatch(html, /小沙沙住在盐罐/);
