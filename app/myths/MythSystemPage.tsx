@@ -1,11 +1,13 @@
 import type { MythSystem } from "./myth-data";
 import NorseArchiveSections from "./NorseArchiveSections";
+import EgyptianArchiveSections from "./EgyptianArchiveSections";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function MythSystemPage({ system }: { system: MythSystem }) {
   const atlasHref = siteBasePath ? `${siteBasePath}/myths.html#systems` : "/myths#systems";
   const isNorse = system.slug === "norse";
+  const isEgyptian = system.slug === "egyptian";
 
   return (
     <main className="myth-detail-page" data-system={system.slug}>
@@ -33,16 +35,23 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
             </svg>
           </>
         )}
+        {isEgyptian && (
+          <div className="egypt-hero-cosmos" aria-hidden="true">
+            <span className="egypt-hero-sun"><i /></span>
+            <span className="egypt-hero-horizon" />
+            <span className="egypt-hero-night" />
+          </div>
+        )}
         <div className="myth-detail-sigil" aria-hidden="true">{system.symbol}</div>
         <div className="myth-detail-heading">
-          <span>ARCHIVE {system.index} / {system.region}</span>
+          <span>{isEgyptian ? "ARCHIVE 03 / THE SUN MUST RETURN" : `ARCHIVE ${system.index} / ${system.region}`}</span>
           <h1>{system.title}</h1>
           <p>{system.subtitle}</p>
         </div>
         <div className="myth-detail-intro">
-          <span>{isNorse ? "NORTH ATLANTIC ARCHIVE / ICE · INK · MEMORY" : "PREVIEW EDITION / CONTENT IN PROGRESS"}</span>
+          <span>{isNorse ? "NORTH ATLANTIC ARCHIVE / ICE · INK · MEMORY" : isEgyptian ? "FOLLOW THE BARQUE / DAY → DUAT → DAWN" : "PREVIEW EDITION / CONTENT IN PROGRESS"}</span>
           <p>{system.framing}</p>
-          <a href="#preview">{isNorse ? "进入五章档案" : "打开临时档案"} <b aria-hidden="true">↓</b></a>
+          <a href="#preview">{isNorse ? "进入五章档案" : isEgyptian ? "随拉进入十二夜时" : "打开临时档案"} <b aria-hidden="true">↓</b></a>
         </div>
         {isNorse && (
           <div className="norse-rune-band" aria-hidden="true">
@@ -51,10 +60,17 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
             <span>ᚼ ᚾ ᛁ ᛅ ᛋ ᛏ ᛒ ᛘ ᛚ ᛦ</span>
           </div>
         )}
+        {isEgyptian && (
+          <div className="egypt-balance-band" aria-hidden="true">
+            <span>MAAT / CORRECTNESS</span>
+            <b>☀</b>
+            <span>ISFET / DISRUPTION</span>
+          </div>
+        )}
       </header>
 
       <section className="myth-detail-preview" id="preview">
-        {!isNorse && (
+        {!isNorse && !isEgyptian && (
           <>
             <header>
               <span>TEMPORARY INDEX</span>
@@ -85,6 +101,7 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
         )}
 
         {isNorse && <NorseArchiveSections />}
+        {isEgyptian && <EgyptianArchiveSections />}
 
         <a className="myth-detail-back" href={atlasHref}>
           <span>BACK TO ALL SYSTEMS</span>

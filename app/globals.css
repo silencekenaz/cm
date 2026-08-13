@@ -2613,6 +2613,435 @@ footer > p {
   .myth-atlas-footer { min-height: 110px; align-items: flex-start; flex-direction: column; gap: 18px; }
 }
 
+/* Egyptian archive — the solar journey as a system of renewed balance */
+.myth-detail-page[data-system="egyptian"] {
+  --egypt-night: #0b1721;
+  --egypt-blue: #17364a;
+  --egypt-gold: #c59d4b;
+  --egypt-sand: #e9dfc9;
+  --egypt-papyrus: #f3eddf;
+  --egypt-red: #9a4635;
+  --egypt-ink: #172431;
+  --detail-accent: var(--egypt-gold);
+  background: var(--egypt-papyrus);
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-atlas-nav {
+  border-bottom-color: rgba(197,157,75,.34);
+  background: rgba(8,20,29,.96);
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-hero {
+  min-height: calc(100svh - 78px);
+  padding-bottom: 136px;
+  background:
+    linear-gradient(90deg, rgba(8,19,28,.98) 0 57%, rgba(18,44,59,.94) 57% 100%),
+    var(--egypt-night);
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(233,223,201,.035) 31px 32px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(233,223,201,.028) 31px 32px);
+  mask-image: linear-gradient(90deg, #000, transparent 76%);
+  pointer-events: none;
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-hero::after {
+  right: -22%;
+  bottom: -62%;
+  border-color: rgba(197,157,75,.18);
+  box-shadow: 0 0 0 50px rgba(197,157,75,.035), 0 0 0 102px rgba(197,157,75,.02);
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-sigil,
+.myth-detail-page[data-system="egyptian"] .myth-detail-heading,
+.myth-detail-page[data-system="egyptian"] .myth-detail-intro { position: relative; z-index: 2; }
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-sigil {
+  color: var(--egypt-gold);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(122px, 15vw, 228px);
+  opacity: .9;
+  text-shadow: 8px 9px 0 rgba(0,0,0,.22);
+}
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-heading > span { color: var(--egypt-gold); }
+.myth-detail-page[data-system="egyptian"] .myth-detail-heading h1 {
+  color: #f5ecda;
+  font-family: Georgia, "Songti SC", serif;
+  font-weight: 600;
+  text-shadow: 0 14px 32px rgba(0,0,0,.25);
+}
+.myth-detail-page[data-system="egyptian"] .myth-detail-heading p { color: rgba(233,223,201,.6); }
+.myth-detail-page[data-system="egyptian"] .myth-detail-intro {
+  border-left-color: var(--egypt-gold);
+  background: linear-gradient(90deg, rgba(197,157,75,.08), transparent);
+}
+.myth-detail-page[data-system="egyptian"] .myth-detail-intro > span,
+.myth-detail-page[data-system="egyptian"] .myth-detail-intro a b { color: var(--egypt-gold); }
+
+.egypt-hero-cosmos { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+.egypt-hero-sun {
+  position: absolute;
+  top: 12%;
+  right: 7%;
+  width: min(24vw, 350px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(197,157,75,.48);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(197,157,75,.04), 0 0 0 54px rgba(197,157,75,.025);
+}
+.egypt-hero-sun::before,
+.egypt-hero-sun::after { content: ""; position: absolute; background: rgba(197,157,75,.26); }
+.egypt-hero-sun::before { width: 150%; height: 1px; }
+.egypt-hero-sun::after { width: 1px; height: 150%; }
+.egypt-hero-sun i { width: 43%; aspect-ratio: 1; border-radius: 50%; background: var(--egypt-red); box-shadow: inset 0 0 0 2px var(--egypt-gold); }
+.egypt-hero-horizon {
+  position: absolute;
+  right: -4%;
+  bottom: 20%;
+  width: 48%;
+  height: 18%;
+  border-top: 1px solid rgba(197,157,75,.22);
+  background: linear-gradient(164deg, transparent 0 49%, rgba(197,157,75,.13) 49.3% 50.2%, transparent 50.5%);
+}
+.egypt-hero-night {
+  position: absolute;
+  top: 9%;
+  right: 2%;
+  width: 43%;
+  height: 52%;
+  opacity: .42;
+  background-image: radial-gradient(circle, var(--egypt-gold) 0 1px, transparent 1.5px);
+  background-size: 72px 64px;
+  mask-image: radial-gradient(circle at 60% 40%, #000, transparent 70%);
+}
+
+.egypt-balance-band {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 72px;
+  padding: 0 clamp(22px, 7vw, 108px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-top: 1px solid rgba(197,157,75,.44);
+  background: rgba(7,18,27,.72);
+  color: rgba(233,223,201,.66);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  backdrop-filter: blur(8px);
+}
+.egypt-balance-band b { color: var(--egypt-gold); font-size: 25px; }
+.egypt-balance-band span:last-child { text-align: right; }
+
+.myth-detail-page[data-system="egyptian"] .myth-detail-preview {
+  padding: 0 0 130px;
+  background: var(--egypt-papyrus);
+}
+
+.egypt-route-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--egypt-ink);
+  background: var(--egypt-sand);
+}
+.egypt-route-nav a {
+  min-height: 122px;
+  padding: 24px clamp(18px, 2.8vw, 42px);
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  border-right: 1px solid var(--egypt-ink);
+  color: var(--egypt-ink);
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.5;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+.egypt-route-nav a:last-child { border-right: 0; }
+.egypt-route-nav a span { color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .12em; }
+.egypt-route-nav a:hover,
+.egypt-route-nav a:focus-visible { background: var(--egypt-ink); color: #fff; outline: 0; transform: translateY(-5px); }
+
+.egypt-balance,
+.egypt-voyage,
+.egypt-crew,
+.egypt-sources { padding: 126px clamp(22px, 7vw, 108px); }
+
+.egypt-balance { position: relative; overflow: hidden; background: var(--egypt-papyrus); }
+.egypt-balance::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: -120px;
+  width: 430px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(23,36,49,.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 40px rgba(23,36,49,.026), 0 0 0 80px rgba(23,36,49,.018);
+}
+.egypt-balance > header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: .36fr 1fr .76fr;
+  align-items: end;
+  gap: 40px;
+}
+.egypt-balance > header > span,
+.egypt-voyage > header span,
+.egypt-crew > header > span,
+.egypt-sources > header span {
+  align-self: start;
+  color: #88703e;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .15em;
+}
+.egypt-balance > header h2,
+.egypt-voyage > header h2,
+.egypt-crew > header h2,
+.egypt-sources > header h2 {
+  margin: 0;
+  color: var(--egypt-ink);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(54px, 7.4vw, 112px);
+  font-weight: 550;
+  line-height: 1.08;
+  letter-spacing: -.065em;
+}
+.egypt-balance > header p,
+.egypt-voyage > header p,
+.egypt-crew > header p,
+.egypt-sources > header p {
+  margin: 0;
+  color: #615d56;
+  font-size: 15px;
+  font-weight: 580;
+  line-height: 2;
+}
+
+.egypt-balance-scale {
+  position: relative;
+  margin-top: 86px;
+  display: grid;
+  grid-template-columns: 1fr 86px 1fr;
+  border-block: 1px solid var(--egypt-ink);
+}
+.egypt-balance-scale article { min-height: 470px; padding: 46px clamp(26px, 4vw, 60px); display: flex; flex-direction: column; }
+.egypt-balance-scale article > span { margin-top: auto; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+.egypt-balance-scale h3 { margin: 12px 0 18px; font-family: Georgia, "Songti SC", serif; font-size: clamp(52px, 6vw, 88px); font-weight: 500; line-height: .9; }
+.egypt-balance-scale p { max-width: 470px; margin: 0; font-size: 14px; font-weight: 570; line-height: 2; }
+.maat-panel { background: #efe4cb; color: var(--egypt-ink); }
+.isfet-panel { background: var(--egypt-night); color: #e8e0d1; }
+.isfet-panel p { color: rgba(232,224,209,.68); }
+.balance-axis { position: relative; display: grid; place-items: center; border-inline: 1px solid var(--egypt-ink); background: var(--egypt-gold); color: var(--egypt-ink); }
+.balance-axis span { position: relative; z-index: 1; width: 54px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--egypt-ink); border-radius: 50%; background: var(--egypt-gold); font-size: 24px; }
+.balance-axis i { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--egypt-ink); }
+
+.egypt-feather { position: relative; width: 96px; height: 190px; margin-bottom: 30px; transform: rotate(8deg); }
+.egypt-feather::before { content: ""; position: absolute; top: 5px; bottom: 0; left: 48%; width: 2px; background: var(--egypt-gold); transform: rotate(5deg); }
+.egypt-feather::after { content: ""; position: absolute; inset: 0 8px 20px; border: 2px solid var(--egypt-gold); border-radius: 90% 8% 80% 14%; transform: skew(-12deg); }
+.egypt-feather i { position: absolute; z-index: 1; left: 22px; width: 54px; height: 1px; background: var(--egypt-gold); transform-origin: center; }
+.egypt-feather i:nth-child(1) { top: 34px; transform: rotate(18deg); }
+.egypt-feather i:nth-child(2) { top: 62px; transform: rotate(11deg); }
+.egypt-feather i:nth-child(3) { top: 90px; transform: rotate(4deg); }
+.egypt-feather i:nth-child(4) { top: 118px; transform: rotate(-6deg); }
+.egypt-feather i:nth-child(5) { top: 146px; transform: rotate(-14deg); }
+
+.egypt-serpent-mark { position: relative; width: 220px; height: 142px; margin-bottom: 48px; overflow: hidden; }
+.egypt-serpent-mark::before { content: ""; position: absolute; top: 32px; left: -20px; width: 225px; height: 82px; border: 10px solid var(--egypt-red); border-inline-color: transparent; border-radius: 50%; transform: rotate(-8deg); }
+.egypt-serpent-mark::after { content: ""; position: absolute; top: 30px; right: 4px; width: 31px; height: 22px; border: 2px solid var(--egypt-red); border-radius: 70% 35% 55% 40%; transform: rotate(18deg); }
+.egypt-serpent-mark i { position: absolute; z-index: 2; top: 38px; right: 12px; width: 3px; height: 3px; border-radius: 50%; background: #e8e0d1; }
+
+.egypt-nun-note {
+  padding: 30px 34px;
+  display: grid;
+  grid-template-columns: .35fr 1fr;
+  gap: 36px;
+  border-bottom: 1px solid var(--egypt-ink);
+  background: #d9e0dd;
+}
+.egypt-nun-note span { color: #56707a; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.egypt-nun-note p { margin: 0; color: #34454d; font-size: 14px; line-height: 1.9; }
+
+.egypt-voyage {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 13%, rgba(197,157,75,.11), transparent 24%),
+    var(--egypt-night);
+  color: #fff;
+}
+.egypt-voyage::before { content: "TWELVE HOURS"; position: absolute; top: 56px; right: -18px; color: rgba(197,157,75,.06); font-family: Georgia, serif; font-size: clamp(70px, 12vw, 190px); white-space: nowrap; }
+.egypt-voyage > header { position: relative; display: grid; grid-template-columns: 1fr .62fr; align-items: end; gap: 60px; }
+.egypt-voyage > header h2 { color: #f1e7d4; }
+.egypt-voyage > header p { color: rgba(232,224,209,.62); }
+.egypt-barque-figure { position: relative; margin: 76px 0 0; border: 1px solid rgba(197,157,75,.52); background: #060d13; box-shadow: 14px 14px 0 rgba(197,157,75,.12); }
+.egypt-barque-figure img { width: 100%; display: block; aspect-ratio: 1.9 / 1; object-fit: cover; object-position: center; filter: saturate(.88) contrast(1.02); }
+.egypt-barque-figure figcaption {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: .36fr 1fr;
+  gap: 34px;
+  border-top: 1px solid rgba(197,157,75,.34);
+}
+.egypt-barque-figure figcaption span { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
+.egypt-barque-figure figcaption p { max-width: 660px; margin: 0; color: rgba(232,224,209,.68); font-size: 13px; line-height: 1.8; }
+
+.egypt-hour-track { margin-top: 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(232,224,209,.36); border-left: 1px solid rgba(232,224,209,.36); }
+.egypt-hour-track article { position: relative; min-height: 420px; padding: 34px clamp(24px, 3vw, 42px); display: flex; flex-direction: column; border-right: 1px solid rgba(232,224,209,.36); border-bottom: 1px solid rgba(232,224,209,.36); overflow: hidden; }
+.egypt-hour-track article::after { content: ""; position: absolute; right: -55px; bottom: -55px; width: 150px; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; opacity: .12; box-shadow: 0 0 0 22px currentColor; }
+.egypt-hour-track article > div { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+.egypt-hour-track article > div span { color: var(--egypt-gold); font-family: Georgia, serif; font-size: 32px; }
+.egypt-hour-track article > div small { color: rgba(232,224,209,.48); font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: .12em; text-align: right; }
+.egypt-hour-track h3 { margin: auto 0 13px; color: #f3e9d7; font-family: Georgia, "Songti SC", serif; font-size: clamp(34px, 3.5vw, 54px); font-weight: 500; line-height: 1.08; letter-spacing: -.05em; }
+.egypt-hour-track b { margin-bottom: 20px; color: var(--egypt-gold); font-size: 11px; letter-spacing: .08em; }
+.egypt-hour-track p { margin: 0; color: rgba(232,224,209,.66); font-size: 13px; font-weight: 540; line-height: 1.9; }
+.egypt-hour-track .is-gold { background: rgba(197,157,75,.1); }
+.egypt-hour-track .is-ochre { background: rgba(154,70,53,.13); }
+.egypt-hour-track .is-blue { background: rgba(37,80,102,.24); }
+.egypt-hour-track .is-red { background: rgba(154,70,53,.22); }
+.egypt-hour-track .is-dawn { background: #d6b267; color: var(--egypt-ink); }
+.egypt-hour-track .is-dawn h3,
+.egypt-hour-track .is-dawn b,
+.egypt-hour-track .is-dawn > div span { color: var(--egypt-ink); }
+.egypt-hour-track .is-dawn p,
+.egypt-hour-track .is-dawn > div small { color: rgba(23,36,49,.72); }
+
+.egypt-crew { background: #dfe4df; }
+.egypt-crew > header { display: grid; grid-template-columns: .36fr 1fr .72fr; align-items: end; gap: 40px; }
+.egypt-god-grid { margin-top: 84px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--egypt-ink); border-left: 1px solid var(--egypt-ink); box-shadow: 12px 12px 0 var(--egypt-gold); }
+.egypt-god-grid article { min-height: 350px; padding: 32px clamp(24px, 3vw, 42px); display: flex; flex-direction: column; border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); background: rgba(244,240,229,.72); transition: background 180ms ease, color 180ms ease, transform 180ms ease; }
+.egypt-god-grid article:nth-child(2),
+.egypt-god-grid article:nth-child(5) { background: var(--egypt-blue); color: #fff; }
+.egypt-god-grid article:hover { z-index: 1; background: var(--egypt-gold); color: var(--egypt-ink); transform: translate(-5px, -5px); }
+.egypt-god-grid article > div { display: flex; justify-content: space-between; color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .12em; }
+.egypt-god-grid article > div b { font-family: Georgia, serif; font-size: 22px; font-weight: 500; }
+.egypt-god-grid h3 { margin: auto 0 20px; font-family: Georgia, "Songti SC", serif; font-size: clamp(44px, 4.5vw, 68px); font-weight: 500; line-height: .9; }
+.egypt-god-grid p { margin: 0; font-size: 13px; font-weight: 560; line-height: 1.9; }
+.egypt-god-grid article:nth-child(2) p,
+.egypt-god-grid article:nth-child(5) p { color: rgba(255,255,255,.68); }
+.egypt-god-grid article:hover p { color: inherit; }
+
+.egypt-sources { background: var(--egypt-sand); }
+.egypt-sources > header { display: grid; grid-template-columns: 1fr .62fr; align-items: end; gap: 60px; }
+.egypt-source-timeline { margin-top: 84px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--egypt-ink); }
+.egypt-source-timeline article { position: relative; min-height: 330px; padding: 30px 24px; display: flex; flex-direction: column; border-right: 1px solid var(--egypt-ink); }
+.egypt-source-timeline article:last-child { border-right: 0; }
+.egypt-source-timeline article::before { content: ""; position: absolute; top: -6px; left: 24px; width: 11px; height: 11px; border-radius: 50%; background: var(--egypt-red); box-shadow: 0 0 0 5px var(--egypt-sand); }
+.egypt-source-timeline span { color: #88703e; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .12em; }
+.egypt-source-timeline h3 { margin: auto 0 18px; font-family: Georgia, "Songti SC", serif; font-size: 31px; font-weight: 500; line-height: 1.1; }
+.egypt-source-timeline p { margin: 0; color: #625d54; font-size: 12px; line-height: 1.85; }
+.egypt-source-links { margin-top: 70px; border-top: 1px solid var(--egypt-ink); }
+.egypt-source-links a { padding: 24px 4px; display: grid; grid-template-columns: .7fr 1fr auto; align-items: center; gap: 34px; border-bottom: 1px solid var(--egypt-ink); color: var(--egypt-ink); transition: padding 180ms ease, background 180ms ease; }
+.egypt-source-links a:hover,
+.egypt-source-links a:focus-visible { padding-inline: 22px; background: var(--egypt-gold); outline: 0; }
+.egypt-source-links a span { font-family: Georgia, "Songti SC", serif; font-size: 20px; font-weight: 650; }
+.egypt-source-links a small { color: #665f54; font-size: 11px; line-height: 1.7; }
+.egypt-source-links a b { font-size: 22px; }
+.egypt-sources > aside { margin-top: 60px; padding: 30px 34px; display: grid; grid-template-columns: .3fr 1fr; gap: 34px; background: var(--egypt-ink); color: #fff; }
+.egypt-sources > aside span { color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.egypt-sources > aside p { margin: 0; color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.9; }
+.myth-detail-page[data-system="egyptian"] .myth-detail-back { margin: 70px clamp(22px, 7vw, 108px) 0; background: var(--egypt-ink); }
+.myth-detail-page[data-system="egyptian"] .myth-detail-back:hover,
+.myth-detail-page[data-system="egyptian"] .myth-detail-back:focus-visible { background: var(--egypt-gold); color: var(--egypt-ink); }
+
+@media (max-width: 900px) {
+  .myth-detail-page[data-system="egyptian"] .myth-detail-hero { min-height: 850px; padding-bottom: 118px; }
+  .myth-detail-page[data-system="egyptian"] .myth-detail-intro { grid-column: 2; }
+  .egypt-hero-sun { top: 9%; right: -5%; width: 42vw; opacity: .68; }
+  .egypt-hero-horizon { width: 62%; }
+  .egypt-route-nav { grid-template-columns: repeat(2, 1fr); }
+  .egypt-route-nav a:nth-child(2) { border-right: 0; }
+  .egypt-route-nav a:nth-child(-n+2) { border-bottom: 1px solid var(--egypt-ink); }
+  .egypt-balance > header,
+  .egypt-crew > header { grid-template-columns: 1fr; align-items: start; }
+  .egypt-balance > header p,
+  .egypt-crew > header p { max-width: 580px; }
+  .egypt-balance-scale { grid-template-columns: 1fr 66px 1fr; }
+  .egypt-balance-scale article { min-height: 440px; }
+  .egypt-voyage > header,
+  .egypt-sources > header { grid-template-columns: 1fr; align-items: start; }
+  .egypt-voyage > header p,
+  .egypt-sources > header p { max-width: 600px; }
+  .egypt-hour-track { grid-template-columns: repeat(2, 1fr); }
+  .egypt-god-grid { grid-template-columns: repeat(2, 1fr); }
+  .egypt-source-timeline { grid-template-columns: repeat(2, 1fr); border-left: 1px solid var(--egypt-ink); }
+  .egypt-source-timeline article { min-height: 280px; border-bottom: 1px solid var(--egypt-ink); }
+  .egypt-source-timeline article:nth-child(2n) { border-right: 0; }
+  .egypt-source-timeline article:last-child { grid-column: 1 / -1; min-height: 230px; }
+}
+
+@media (max-width: 620px) {
+  .myth-detail-page[data-system="egyptian"] .myth-detail-hero { min-height: 840px; padding-bottom: 106px; }
+  .myth-detail-page[data-system="egyptian"] .myth-detail-sigil { font-size: 112px; text-align: left; }
+  .myth-detail-page[data-system="egyptian"] .myth-detail-heading h1 { font-size: clamp(66px, 21vw, 94px); line-height: .96; }
+  .myth-detail-page[data-system="egyptian"] .myth-detail-intro { grid-column: auto; }
+  .egypt-hero-sun { top: 8%; right: -26%; width: 84vw; opacity: .45; }
+  .egypt-hero-horizon { right: -12%; width: 100%; }
+  .egypt-balance-band { min-height: 58px; grid-template-columns: 1fr auto; font-size: 7px; }
+  .egypt-balance-band span:last-child { display: none; }
+  .egypt-route-nav { grid-template-columns: 1fr; }
+  .egypt-route-nav a { min-height: 76px; padding: 18px 22px; align-items: center; border-right: 0; border-bottom: 1px solid var(--egypt-ink); }
+  .egypt-route-nav a:last-child { border-bottom: 0; }
+  .egypt-balance,
+  .egypt-voyage,
+  .egypt-crew,
+  .egypt-sources { padding: 88px 22px; }
+  .egypt-balance > header,
+  .egypt-crew > header,
+  .egypt-voyage > header,
+  .egypt-sources > header { gap: 22px; }
+  .egypt-balance > header h2,
+  .egypt-voyage > header h2,
+  .egypt-crew > header h2,
+  .egypt-sources > header h2 { font-size: 54px; line-height: 1.14; }
+  .egypt-balance > header p,
+  .egypt-voyage > header p,
+  .egypt-crew > header p,
+  .egypt-sources > header p { font-size: 14px; line-height: 1.9; }
+  .egypt-balance-scale { margin-top: 54px; grid-template-columns: 1fr; border: 1px solid var(--egypt-ink); }
+  .egypt-balance-scale article { min-height: 390px; padding: 32px 26px; }
+  .balance-axis { min-height: 64px; border-inline: 0; border-block: 1px solid var(--egypt-ink); }
+  .balance-axis i { top: 50%; right: 0; bottom: auto; left: 0; width: auto; height: 1px; }
+  .egypt-feather { height: 160px; }
+  .egypt-serpent-mark { width: 190px; margin-bottom: 30px; }
+  .egypt-nun-note { padding: 26px 22px; grid-template-columns: 1fr; gap: 12px; }
+  .egypt-barque-figure { margin-top: 54px; box-shadow: 8px 8px 0 rgba(197,157,75,.12); }
+  .egypt-barque-figure img { aspect-ratio: .95 / 1; object-position: center; }
+  .egypt-barque-figure figcaption { padding: 20px; grid-template-columns: 1fr; gap: 10px; }
+  .egypt-hour-track { margin-top: 58px; grid-template-columns: 1fr; }
+  .egypt-hour-track article { min-height: 340px; padding: 28px 24px; }
+  .egypt-hour-track h3 { font-size: 42px; }
+  .egypt-hour-track p { line-height: 1.9; }
+  .egypt-god-grid { margin-top: 56px; grid-template-columns: 1fr; box-shadow: 8px 8px 0 var(--egypt-gold); }
+  .egypt-god-grid article { min-height: 300px; padding: 28px 24px; }
+  .egypt-god-grid article:hover { transform: none; }
+  .egypt-source-timeline { margin-top: 56px; grid-template-columns: 1fr; }
+  .egypt-source-timeline article,
+  .egypt-source-timeline article:last-child { grid-column: auto; min-height: 240px; border-right: 0; }
+  .egypt-source-links { margin-top: 52px; }
+  .egypt-source-links a { padding: 22px 4px; grid-template-columns: 1fr auto; gap: 10px 18px; }
+  .egypt-source-links a small { grid-column: 1; }
+  .egypt-source-links a b { grid-column: 2; grid-row: 1 / 3; }
+  .egypt-sources > aside { padding: 26px 22px; grid-template-columns: 1fr; gap: 12px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }

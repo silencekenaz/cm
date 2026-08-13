@@ -37,8 +37,8 @@ export const mythSystems: MythSystem[] = [
     title: "埃及神话",
     subtitle: "ANCIENT EGYPTIAN TRADITIONS",
     symbol: "☥",
-    framing: "不同城市拥有可以并存的创世传统，文本跨越三千余年。",
-    books: ["《金字塔文》", "《棺椁文》", "《亡灵书》", "杰拉尔丁·平奇《埃及神话》"],
+    framing: "拉每一次归来，都重新把玛特从失序中建立起来；沿太阳船的昼夜航程，诸神与杜阿特逐步显现。",
+    books: ["《金字塔文》", "《棺材文》", "《阿姆杜阿特书》", "《门之书》"],
   },
   {
     index: "04",

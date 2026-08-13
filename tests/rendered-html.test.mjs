@@ -91,6 +91,17 @@ test("exports six static mythology detail pages", async () => {
       for (const anchor of ["fate-well", "gods-and-fate", "world-tree", "ragnarok", "norse-memory"]) {
         assert.match(html, new RegExp(`id="${anchor}"`));
       }
+    } else if (slug === "egyptian") {
+      assert.match(html, /FOLLOW THE BARQUE/);
+      assert.match(html, /玛特与伊斯菲特/);
+      assert.match(html, /拉的旅程/);
+      assert.match(html, /不是一张神谱/);
+      assert.match(html, /原典坐标/);
+      assert.match(html, /src="\/cm\/ra-night-barque\.png"/);
+      assert.doesNotMatch(html, /CONTENT IN PROGRESS/);
+      for (const anchor of ["maat-balance", "solar-voyage", "barque-crew", "egypt-sources"]) {
+        assert.match(html, new RegExp(`id="${anchor}"`));
+      }
     } else {
       assert.match(html, /CONTENT IN PROGRESS/);
     }
