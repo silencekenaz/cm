@@ -191,12 +191,21 @@ test("exports six source-based Norse god subpages", async () => {
 
 test("exports separate Norse myth and heroic paths", async () => {
   const mythology = await readFile(new URL("../dist/client/myths/norse/myths.html", import.meta.url), "utf8");
-  assert.match(mythology, /旧版五章内容已经清除/);
-  assert.match(mythology, /从原典重建中/);
-  assert.match(mythology, /href="\/cm\/myths\/norse\.html#nine-worlds"/);
-  for (const removedSection of ["命运之井", "诸神与命运", "诸神黄昏", "诗歌记忆"]) {
-    assert.doesNotMatch(mythology, new RegExp(removedSection));
+  for (const section of ["人物坐标", "巨人国诸行", "知识的价码", "两卷分读", "力量需要尺度"]) {
+    assert.match(mythology, new RegExp(section));
   }
+  assert.match(mythology, /href="\/cm\/myths\/norse\.html"/);
+  assert.match(mythology, /href="\/cm\/myths\/norse\/myths\/thor\.html"/);
+  assert.match(mythology, /href="\/cm\/myths\/norse\/myths\/odin\.html"/);
+  assert.doesNotMatch(mythology, /LOKI CHECK|于是洛基又出现了/);
+
+  const thorThread = await readFile(new URL("../dist/client/myths/norse/myths/thor.html", import.meta.url), "utf8");
+  for (const section of ["一根被敲裂的骨头", "五场比赛", "婚宴把锤送回", "海中巨蛇", "原典坐标"]) assert.match(thorThread, new RegExp(section));
+  assert.match(thorThread, /href="\/cm\/myths\/norse\/myths\.html"/);
+
+  const odinThread = await readFile(new URL("../dist/client/myths/norse/myths/odin.html", import.meta.url), "utf8");
+  for (const section of ["密米尔守泉", "弗丽嘉劝阻", "诗蜜酒", "贡萝德给三口", "原典坐标"]) assert.match(odinThread, new RegExp(section));
+  assert.match(odinThread, /href="\/cm\/myths\/norse\/myths\.html"/);
 
   const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
   for (const section of ["英雄不是", "维兰德之歌", "沃尔松格谱系", "西格鲁德与法夫尼尔", "布伦希尔德的誓言", "古德伦的余生"]) {
