@@ -105,7 +105,7 @@ test("exports six static mythology detail pages", async () => {
       assert.match(html, /ARCHIVE 02 \/ SCANDINAVIA \/ NORTH ATLANTIC/);
       assert.match(html, /NORTH ATLANTIC ARCHIVE \/ ICE · INK · MEMORY/);
       assert.match(html, /冰与火之间/);
-      assert.match(html, /一份不假装完整的/);
+      assert.match(html, /下面先从九界建立坐标/);
       assert.match(html, /NÍU HEIMAR \/ CLICK TO UNFOLD/);
       assert.match(html, /九个世界/);
       for (const world of ["阿斯加德", "华纳海姆", "亚尔夫海姆", "米德加德", "约顿海姆", "斯瓦塔尔夫海姆", "尼弗尔海姆", "穆斯贝尔海姆", "海姆冥界"]) {
@@ -116,6 +116,7 @@ test("exports six static mythology detail pages", async () => {
       assert.match(html, /英雄传说/);
       assert.match(html, /href="\/cm\/myths\/norse\/myths\.html"/);
       assert.match(html, /href="\/cm\/myths\/norse\/heroes\.html"/);
+      assert.doesNotMatch(html, /TEXT BEFORE MAP|一份不假装完整的|世界从间隙开始|阵营不是善恶名单/);
       assert.doesNotMatch(html, /霜线之下/);
       assert.doesNotMatch(html, /冷海书架/);
       assert.doesNotMatch(html, /id="gods-and-fate"/);

@@ -1,44 +1,6 @@
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const staticPageSuffix = siteBasePath ? ".html" : "";
 
-const worldAxes = [
-  {
-    number: "01",
-    oldNorse: "GAP · ÍSS · ELDUR",
-    title: "世界从间隙开始",
-    body: "《女先知的预言》先说沙、海、凉浪、天地与青草都尚不存在，只有张开的鸿沟。斯诺里随后把尼弗尔海姆的寒与穆斯贝尔的热放在鸿沟两侧：冰河的毒滴与南方热气相遇，伊米尔与牝牛欧德姆布拉由此进入叙事。冰与火不是装饰色，而是生成世界的第一组张力。",
-    rune: "ᚺ",
-  },
-  {
-    number: "02",
-    oldNorse: "YMIR · MÍÐGARÐR",
-    title: "秩序由身体搭成",
-    body: "奥丁、维利与维杀死伊米尔，用他的肉造大地、血造海、骨造山、颅骨造天空，并以眉毛围出米德加德。世界不是从虚无中无损地完成：可居住的秩序建立在原初生命被拆解、重新安排的代价上。人类则由诸神在海岸发现的树木获得气息、意识、温度与形貌。",
-    rune: "ᛗ",
-  },
-  {
-    number: "03",
-    oldNorse: "YGGDRASILL · BRÚ",
-    title: "诸界以道路相通",
-    body: "世界树是诸神议事、泉井、根系与生灵相遇的宇宙结构，却不是一张由原典给出的标准九宫格地图。阿斯加德、米德加德、约顿海姆与海姆冥界等地通过桥、河、骑行、航海和越界行动彼此相连；阅读重点应放在谁能够跨越边界，以及跨越要付出什么。",
-    rune: "ᛇ",
-  },
-  {
-    number: "04",
-    oldNorse: "ÆSIR · VANIR · JÖTNAR",
-    title: "阵营不是善恶名单",
-    body: "阿萨神族与华纳神族曾战争、和解并交换人质；诸神又不断与巨人结亲、求知、争斗。洛基能替诸神解决危机，也会使秩序从内部破裂。北欧叙事中的边界真实存在，却具有亲缘、盟约与互相依赖，不宜直接翻译成“善神对恶魔”。",
-    rune: "ᚷ",
-  },
-  {
-    number: "05",
-    oldNorse: "URÐR · RAGNARÖK",
-    title: "知道命运，仍然选择",
-    body: "诺伦、预言和梦把未来提前带到诸神面前。奥丁求知、提尔立约、索尔守界，都不能取消诸神黄昏；意义存在于他们如何走向已知结局。《女先知的预言》又让海中重现绿色大地，使毁灭与余世并置，而不是把末日写成简单的失败结算。",
-    rune: "ᚾ",
-  },
-];
-
 const nineWorlds = [
   {
     number: "01",
@@ -160,7 +122,7 @@ export default function NorseHubPage() {
         <div className="myth-detail-intro">
           <span>NORTH ATLANTIC ARCHIVE / ICE · INK · MEMORY</span>
           <p>主要书面材料在中世纪冰岛记录，保存了更早的诗歌与口述传统。</p>
-          <a href="#worldview">进入整体世界观 <b aria-hidden="true">↓</b></a>
+          <a href="#nine-worlds">展开九界索引 <b aria-hidden="true">↓</b></a>
         </div>
         <div className="norse-rune-band" aria-hidden="true">
           <span>ᚠ ᚢ ᚦ ᚬ ᚱ ᚴ</span><b>THE NORTH REMEMBERS IN VERSE</b><span>ᚼ ᚾ ᛁ ᛅ ᛋ ᛏ ᛒ ᛘ ᛚ ᛦ</span>
@@ -170,31 +132,7 @@ export default function NorseHubPage() {
       <section className="norse-hub-opening">
         <span>READING THE NORTH / 00</span>
         <h2>冰与火之间，<br />故事开始生长。</h2>
-        <p>今天所谓“北欧神话”，主要由中世纪冰岛写本保存的神话诗、英雄诗、散文埃达与萨迦抵达我们。它不是一部作者统一、设定严密的小说，而是一座由诗句、谱系、地名与反复讲述构成的北方档案。</p>
-      </section>
-
-      <aside className="norse-hub-method">
-        <span>TEXT BEFORE MAP / 阅读原则</span>
-        <p><b>先读文本，再画地图。</b>“九界”、诸神谱系与末日次序在不同材料中并不总能拼成唯一版本。这个入口页只建立可靠的阅读坐标；具体故事会在神话篇与英雄篇中分别展开，并保留两者交叉的地方。</p>
-      </aside>
-
-      <section className="norse-hub-world" id="worldview">
-        <header>
-          <span>COSMIC ORIENTATION / 01—05</span>
-          <h2>一份不假装完整的<br />北方世界观</h2>
-          <p>从冰与火的相遇，到诸神明知结局仍继续行动：五条轴线足以开始阅读，但不把变化的传统钉死为设定表。</p>
-        </header>
-        <div className="norse-hub-tree" aria-hidden="true"><i /><i /><i /><i /><b>YGGDRASILL</b></div>
-        <div className="norse-hub-world-list">
-          {worldAxes.map((axis) => (
-            <article key={axis.number}>
-              <div><span>{axis.number}</span><small>{axis.oldNorse}</small></div>
-              <b aria-hidden="true">{axis.rune}</b>
-              <h3>{axis.title}</h3>
-              <p>{axis.body}</p>
-            </article>
-          ))}
-        </div>
+        <p>今天所谓“北欧神话”，主要由中世纪冰岛写本保存的神话诗、英雄诗、《散文埃达》与萨迦抵达我们。它不是一部作者统一、设定严密的小说：“九界”、诸神谱系与末日次序在不同材料中并不总能拼成唯一版本。所以下面先从九界建立坐标，再分别进入诸神的神话与凡人的英雄传说。</p>
       </section>
 
       <section className="norse-hub-sources">
