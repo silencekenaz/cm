@@ -122,6 +122,7 @@ test("exports two independent Egyptian story paths", async () => {
   for (const detail of ["八十年", "百万年之船", "阿娜特", "安提", "一百三十八肘", "玛特沉入冥界"]) {
     assert.match(conflict, new RegExp(detail));
   }
+  assert.match(conflict, /安赫尔（希腊化名称为奥努里斯）/);
   for (const asset of ["egypt-conflict-hero.webp", "egypt-conflict-secret-name.webp", "egypt-conflict-trials.webp", "egypt-god-horus.webp"]) {
     assert.match(conflict, new RegExp(`src="/cm/${asset}"`));
   }
