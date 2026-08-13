@@ -1491,16 +1491,25 @@ footer > p {
 .easter-archive-log article > div { display: flex; justify-content: space-between; color: var(--egg-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
 .easter-archive-log article h2 { max-width: 590px; margin: 100px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(36px, 4.6vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
 .easter-archive-log article p { max-width: 590px; margin: 0; color: rgba(242,239,231,.63); font-size: 14px; line-height: 2; }
+.redfur-graffiti { position: relative; z-index: 2; width: min(330px, 86%); margin: 34px 0 0 auto; padding: 18px 5px 4px 20px; border-top: 3px solid #b84c46; color: #d96a61; font-family: "Kaiti SC", "STKaiti", cursive; transform: rotate(-1.6deg); }
+.redfur-graffiti::before { content: "↳"; position: absolute; left: -11px; top: -30px; font-size: 34px; transform: rotate(18deg); }
+.redfur-graffiti span { display: block; font-size: 16px; font-weight: 750; line-height: 1.5; text-decoration: line-through; text-decoration-thickness: 1px; }
+.redfur-graffiti p { margin: 9px 0 6px !important; color: #d96a61 !important; font-size: 16px !important; font-weight: 720; line-height: 1.55 !important; }
+.redfur-graffiti b { font-size: 11px; font-weight: 700; }
+.easter-archive-log article:nth-child(even) .redfur-graffiti { margin-left: 0; margin-right: auto; transform: rotate(1.4deg); }
 .easter-archive-log article > b { position: absolute; right: 28px; bottom: -50px; color: rgba(203,174,102,.08); font-size: 170px; line-height: 1; }
-.easter-archive-terminal { padding: 100px clamp(22px, 10vw, 150px); background: #d9d5c9; color: var(--egg-night); }
+.easter-archive-terminal { position: relative; padding: 100px clamp(22px, 10vw, 150px); overflow: hidden; background: #d9d5c9; color: var(--egg-night); }
 .easter-archive-terminal > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
 .easter-archive-terminal p { margin: 44px 0 0; font-family: var(--font-geist-mono), monospace; font-size: clamp(17px, 2.3vw, 30px); line-height: 1.6; }
 .easter-archive-terminal p b { color: #8a6b2e; }
 .easter-archive-terminal .easter-terminal-answer { margin-top: 10px; color: #8f4f45; }
+.redfur-terminal-hack { position: absolute; right: clamp(24px, 6vw, 96px); top: 34px; padding: 14px 18px; border: 3px double #a43f3b; color: #a43f3b; font-family: var(--font-geist-mono), monospace; font-size: 11px; font-weight: 900; line-height: 1.6; letter-spacing: .09em; text-align: center; transform: rotate(4deg); }
+.redfur-terminal-hack span { font-family: "Kaiti SC", "STKaiti", cursive; letter-spacing: 0; }
 .easter-archive-terminal i { width: 12px; height: 24px; margin-top: 18px; display: block; background: var(--egg-night); animation: egg-blink 1s steps(1) infinite; }
 @keyframes egg-blink { 50% { opacity: 0; } }
 .easter-archive-footer { min-height: 360px; padding: 80px clamp(22px, 8vw, 126px) 48px; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; background: var(--egg-gold); color: var(--egg-night); }
 .easter-archive-footer p { max-width: 920px; margin: 0; font-size: clamp(38px, 5.5vw, 78px); font-weight: 850; line-height: 1.18; letter-spacing: -.055em; }
+.redfur-footer-note { align-self: center; margin: -20px 0 26px 35%; color: #9c3433; font-family: "Kaiti SC", "STKaiti", cursive; font-size: clamp(17px, 2vw, 27px); font-weight: 800; line-height: 1.45; transform: rotate(-3deg); }
 .easter-archive-footer a { align-self: flex-end; padding-bottom: 7px; border-bottom: 2px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 900; letter-spacing: .13em; }
 
 @media (max-width: 900px) {
@@ -1525,9 +1534,12 @@ footer > p {
   .easter-archive-log article { min-height: 0; padding: 42px 22px 58px; border-right: 0; border-bottom: 1px solid rgba(203,174,102,.35) !important; }
   .easter-archive-log article:last-child { border-bottom: 0 !important; }
   .easter-archive-log article h2 { margin-top: 66px; font-size: 42px; }
+  .redfur-graffiti { width: 92%; margin-top: 28px; }
   .easter-archive-terminal { padding: 76px 22px; }
+  .redfur-terminal-hack { position: relative; top: auto; right: auto; width: max-content; max-width: 100%; margin: 34px 0 0 auto; font-size: 9px; }
   .easter-archive-footer { min-height: 400px; padding: 64px 22px 36px; }
   .easter-archive-footer p { font-size: 40px; }
+  .redfur-footer-note { align-self: flex-start; margin: 34px 0; font-size: 18px; }
 }
 
 @media (max-width: 420px) {

@@ -31,6 +31,9 @@ test("exports the hidden command archive as static HTML", async () => {
   }
   assert.match(html, /小红毛暂时没有叛变/);
   assert.match(html, /他的阵营随心情移动/);
+  for (const graffiti of ["小红毛擅自批注", "国界我顺手往外画了三寸", "本段可信度：37%", "RED FUR WAS HERE", "有效期至读完本行"]) {
+    assert.match(html, new RegExp(graffiti));
+  }
   assert.doesNotMatch(html, /它的阵营随心情移动/);
   assert.doesNotMatch(html, /小沙沙住在盐罐/);
   assert.match(html, /src="\/cm\/easter-duck\.png"/);
