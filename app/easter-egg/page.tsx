@@ -68,10 +68,17 @@ export default function EasterEggPage() {
             <h2>{fragment.title}</h2>
             <p>{fragment.text}</p>
             <aside className="redfur-graffiti" aria-label={`小红毛对第 ${fragment.no} 号档案的篡改`}>
+              <img className="redfur-hand-marks" src={`${siteBasePath}/kenaz-marks.png`} alt="" aria-hidden="true" />
               <span>{fragment.mark}</span>
               <p>{fragment.graffiti}</p>
-              <b>— 小红毛擅自批注</b>
+              <b>— ᚲ KENAZ 擅自批注</b>
             </aside>
+            {fragment.no === "04" && (
+              <figure className="kenaz-self-portrait">
+                <img src={`${siteBasePath}/kenaz-doodle.png`} alt="小红毛用红笔画下的滑稽自画像，耳后低低扎着一小撮头发" />
+                <figcaption>ᚲ KENAZ / 本人比画像可靠一点</figcaption>
+              </figure>
+            )}
             <b aria-hidden="true">✦</b>
           </article>
         ))}
@@ -82,7 +89,7 @@ export default function EasterEggPage() {
         <p><b>princess@pickle-kingdom</b>:~$ identify --allies false-men barbarians</p>
         <p className="easter-terminal-answer">warning: 伪神已越过枯河。小沙沙说铁轮还有七里；小红毛说有三条妙计，但拒绝说明哪两条是给敌人的。</p>
         <aside className="redfur-terminal-hack" aria-label="小红毛篡改了终端记录">
-          <del>ROYAL EYES ONLY</del><br />RED FUR WAS HERE<br /><span>第四条妙计不存在。别找了。</span>
+          <del>ROYAL EYES ONLY</del><br />ᚲ KENAZ WAS HERE<br /><span>第四条妙计不存在。别找了。</span>
         </aside>
         <i aria-hidden="true" />
       </section>
