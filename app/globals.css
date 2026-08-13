@@ -1500,9 +1500,9 @@ footer > p {
 .easter-archive-log article:nth-child(even) .redfur-graffiti { margin-left: 0; margin-right: auto; transform: rotate(1.4deg); }
 .easter-archive-log article:nth-child(even) .redfur-hand-underline { left: 10px; transform: rotate(2deg) scaleX(.9); }
 .easter-archive-log article:nth-child(even) .redfur-hand-arrow { right: 9px; transform: rotate(9deg) scaleX(-1); }
-.kenaz-self-portrait { position: absolute; z-index: 1; right: -10px; bottom: -22px; width: clamp(150px, 31%, 235px); margin: 0; color: #d96a61; opacity: .72; transform: rotate(4deg); pointer-events: none; }
+.kenaz-self-portrait { position: absolute; z-index: 1; right: -10px; bottom: 12px; width: clamp(170px, 34%, 255px); margin: 0; color: #f0d38e; opacity: .96; transform: rotate(4deg); pointer-events: none; filter: drop-shadow(0 0 9px rgba(240,211,142,.2)); }
 .kenaz-self-portrait img { display: block; width: 100%; height: auto; }
-.kenaz-self-portrait figcaption { margin: -5px 8px 0 0; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; line-height: 1.35; letter-spacing: .08em; text-align: right; }
+.kenaz-self-portrait figcaption { margin: -5px 8px 0 0; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; line-height: 1.35; letter-spacing: .06em; text-align: right; }
 .easter-archive-log article > b { position: absolute; right: 28px; bottom: -50px; color: rgba(203,174,102,.08); font-size: 170px; line-height: 1; }
 .easter-archive-terminal { position: relative; padding: 100px clamp(22px, 10vw, 150px); overflow: hidden; background: #d9d5c9; color: var(--egg-night); }
 .easter-archive-terminal > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
@@ -1541,7 +1541,7 @@ footer > p {
   .easter-archive-log article:last-child { border-bottom: 0 !important; }
   .easter-archive-log article h2 { margin-top: 66px; font-size: 42px; }
   .redfur-graffiti { width: 92%; margin-top: 28px; }
-  .kenaz-self-portrait { position: relative; right: auto; bottom: auto; width: min(240px, 72vw); margin: 34px 0 -28px auto; opacity: .76; }
+  .kenaz-self-portrait { position: relative; right: auto; bottom: auto; width: min(260px, 76vw); margin: 34px 0 -28px auto; opacity: .96; }
   .easter-archive-terminal { padding: 76px 22px; }
   .redfur-terminal-hack { position: relative; top: auto; right: auto; width: max-content; max-width: 100%; margin: 34px 0 0 auto; font-size: 9px; }
   .easter-archive-footer { min-height: 400px; padding: 64px 22px 36px; }

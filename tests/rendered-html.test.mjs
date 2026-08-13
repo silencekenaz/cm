@@ -31,10 +31,12 @@ test("exports the hidden command archive as static HTML", async () => {
   }
   assert.match(html, /小红毛暂时没有叛变/);
   assert.match(html, /他的阵营随心情移动/);
-  for (const graffiti of ["KENAZ 擅自批注", "国界我顺手往外画了三寸", "本段可信度：37%", "KENAZ WAS HERE", "有效期至读完本行"]) {
+  for (const graffiti of ["国界我顺手往外画了三寸", "本段可信度：37%", "KENAZ WAS HERE", "有效期至读完本行"]) {
     assert.match(html, new RegExp(graffiti));
   }
-  assert.match(html, /src="\/cm\/kenaz-doodle\.png"/);
+  assert.equal(html.match(/小红毛<!-- --> 擅自批注/g)?.length, 3);
+  assert.equal(html.match(/ᚲ KENAZ<!-- --> 擅自批注/g)?.length, 1);
+  assert.match(html, /src="\/cm\/kenaz-doodle-light\.png"/);
   assert.match(html, /src="\/cm\/kenaz-underline\.png"/);
   assert.match(html, /src="\/cm\/kenaz-arrow\.png"/);
   assert.doesNotMatch(html, /RED FUR WAS HERE/);

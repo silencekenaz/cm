@@ -18,6 +18,7 @@ const fragments = [
     text: "太阳掉下去的第三天，河水开始发咸，幸存者围着一口石锅，认真讨论世界是不是已经完了。女王尝了一勺汤，说：“还差点酸。”她倒进最后一坛酸菜，汤立刻沸腾，鱼片一片片浮上来，像一群及时赶到的白旗。众人刚松口气，女王便把长勺往锅沿一敲：“既然还有晚饭，这里就还是个国家。”酸菜国由此建立。后来他们以汤沸计算日子，以花椒浮沉判断季节；至于国界，大致就是香味能飘到的地方。",
     graffiti: "国界我顺手往外画了三寸。没人发现。",
     mark: "← 这锅我尝过，酸度尚可",
+    signature: "小红毛",
   },
   {
     no: "02",
@@ -26,6 +27,7 @@ const fragments = [
     text: "伪人与蛮夷在枯河第七座桥下会面。蛮夷嫌伪人笑得太像自己，伪人嫌蛮夷连假笑都学不会，谈判眼看就要变成斗殴。伪神只好起身，把旁边的攻城柱徒手折成两截，问：“现在可以谈正事了吗？”四周顿时非常有外交礼仪。盟约很快写成：蛮夷出铁轮、道路与军械，伪人出假面、口音与城门里的内应；双方共同进攻酸菜国。史官在末尾补了一行：伪神武力惊人，本条绝无修辞。",
     graffiti: "柱子是不是提前锯过？我只负责提出问题。",
     mark: "外交礼仪（物理）↗",
+    signature: "小红毛",
   },
   {
     no: "03",
@@ -34,6 +36,7 @@ const fragments = [
     text: "黄焖鸡丞相奉命巡边，回来时少了一匹马，多了一个裹在香菇披风里的孩子。他说是在翻倒的腌菜车旁捡的；女王问她多大，丞相报出年岁，朝堂安静了片刻——她只比女王小一岁，显然不适合被写进任何母女故事。女王于是分给她半顶王冠，叫她公主。多年后敌军压境，女王守着永沸之锅调动酸汤水道，公主提刀出城揭伪人的脸。两人偶尔争吵，但总能在蛮夷撞门前吵出一个更好的办法。",
     graffiti: "“少了一匹马”至今没有结案。丞相拒绝解释。",
     mark: "半顶王冠也算全额工伤",
+    signature: "KENAZ",
   },
   {
     no: "04",
@@ -42,6 +45,7 @@ const fragments = [
     text: "小沙沙白天伏在王座上方的旧旗穗间，看起来只负责可爱；入夜后，他沿城墙走一圈，把耳朵贴在砖上，便能报出蛮夷铁轮还有几里。小红毛从不贴墙，也很少亲自动手。他坐在公主的地图上，把真情报改成假情报，再把假情报改得像被识破的真情报。麻烦在于，他的阵营随心情移动：昨天诱敌救了全城，今天就可能为了验证新计策反坑酸菜。于是公主每次问“能信他吗”，大臣们都回答：“能，但请先准备第二个计划。”",
     graffiti: "本段可信度：37%。因为剩下的也是我写的。",
     mark: "删掉“反坑”二字。算了，留着更有威慑力。",
+    signature: "小红毛",
   },
 ];
 
@@ -72,12 +76,12 @@ export default function EasterEggPage() {
               <img className="redfur-hand-arrow" src={`${siteBasePath}/kenaz-arrow.png`} alt="" aria-hidden="true" />
               <span>{fragment.mark}</span>
               <p>{fragment.graffiti}</p>
-              <b>— ᚲ KENAZ 擅自批注</b>
+              <b>— {fragment.signature === "KENAZ" ? "ᚲ KENAZ" : fragment.signature} 擅自批注</b>
             </aside>
             {fragment.no === "04" && (
               <figure className="kenaz-self-portrait">
-                <img src={`${siteBasePath}/kenaz-doodle.png`} alt="小红毛用红笔画下的滑稽自画像，耳后低低扎着一小撮头发" />
-                <figcaption>ᚲ KENAZ / 本人比画像可靠一点</figcaption>
+                <img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色笔画下的滑稽自画像，耳后低低扎着一小撮头发" />
+                <figcaption>小红毛 / 又名 ᚲ KENAZ / 本人比画像可靠一点</figcaption>
               </figure>
             )}
             <b aria-hidden="true">✦</b>
