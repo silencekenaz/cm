@@ -1492,12 +1492,14 @@ footer > p {
 .easter-archive-log article h2 { max-width: 590px; margin: 100px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(36px, 4.6vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
 .easter-archive-log article p { max-width: 590px; margin: 0; color: rgba(242,239,231,.63); font-size: 14px; line-height: 2; }
 .redfur-graffiti { position: relative; z-index: 2; width: min(330px, 86%); margin: 34px 0 0 auto; padding: 30px 5px 4px 20px; color: #d96a61; font-family: "Kaiti SC", "STKaiti", cursive; transform: rotate(-1.6deg); }
-.redfur-hand-marks { position: absolute; z-index: -1; left: -30px; top: -17px; width: calc(100% + 52px); height: 84px; object-fit: cover; object-position: 9% 4%; opacity: .74; transform: rotate(-1.5deg) scaleY(.58); transform-origin: left top; pointer-events: none; }
-.redfur-graffiti span { display: block; font-size: 16px; font-weight: 750; line-height: 1.5; text-decoration-line: line-through; text-decoration-style: wavy; text-decoration-thickness: 1.5px; }
+.redfur-hand-underline { position: absolute; z-index: -1; left: -8px; top: -9px; width: min(84%, 275px); height: 34px; object-fit: fill; opacity: .68; transform: rotate(-2deg); transform-origin: left center; pointer-events: none; }
+.redfur-hand-arrow { position: absolute; z-index: -1; right: -5px; top: -18px; width: 68px; height: 48px; object-fit: contain; opacity: .7; transform: rotate(-8deg); pointer-events: none; }
+.redfur-graffiti span { display: block; font-size: 16px; font-weight: 750; line-height: 1.5; }
 .redfur-graffiti p { margin: 9px 0 6px !important; color: #d96a61 !important; font-size: 16px !important; font-weight: 720; line-height: 1.55 !important; }
 .redfur-graffiti b { font-size: 11px; font-weight: 700; }
 .easter-archive-log article:nth-child(even) .redfur-graffiti { margin-left: 0; margin-right: auto; transform: rotate(1.4deg); }
-.easter-archive-log article:nth-child(even) .redfur-hand-marks { object-position: 77% 4%; transform: rotate(2deg) scale(-1, .58); }
+.easter-archive-log article:nth-child(even) .redfur-hand-underline { left: 10px; transform: rotate(2deg) scaleX(.9); }
+.easter-archive-log article:nth-child(even) .redfur-hand-arrow { right: 9px; transform: rotate(9deg) scaleX(-1); }
 .kenaz-self-portrait { position: absolute; z-index: 1; right: -10px; bottom: -22px; width: clamp(150px, 31%, 235px); margin: 0; color: #d96a61; opacity: .72; transform: rotate(4deg); pointer-events: none; }
 .kenaz-self-portrait img { display: block; width: 100%; height: auto; }
 .kenaz-self-portrait figcaption { margin: -5px 8px 0 0; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; line-height: 1.35; letter-spacing: .08em; text-align: right; }

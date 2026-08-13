@@ -35,7 +35,8 @@ test("exports the hidden command archive as static HTML", async () => {
     assert.match(html, new RegExp(graffiti));
   }
   assert.match(html, /src="\/cm\/kenaz-doodle\.png"/);
-  assert.match(html, /src="\/cm\/kenaz-marks\.png"/);
+  assert.match(html, /src="\/cm\/kenaz-underline\.png"/);
+  assert.match(html, /src="\/cm\/kenaz-arrow\.png"/);
   assert.doesNotMatch(html, /RED FUR WAS HERE/);
   assert.doesNotMatch(html, /它的阵营随心情移动/);
   assert.doesNotMatch(html, /小沙沙住在盐罐/);
