@@ -116,8 +116,11 @@ test("exports two independent Egyptian story paths", async () => {
 
   const conflict = await readFile(new URL("../dist/client/myths/egyptian/horus-seth.html", import.meta.url), "utf8");
   assert.match(conflict, /荷鲁斯[\s\S]*塞特之争/);
-  for (const section of ["伊西斯骗取拉的隐名", "谁在这场争讼里说话", "继承权争夺", "身体被带进法庭", "冥界来信终结拖延", "原典坐标"]) {
+  for (const section of ["伊西斯骗取拉的隐名", "谁在这场争讼里说话", "法庭并不只有六位神", "继承权争夺", "身体被带进法庭", "冥界来信终结拖延", "原典坐标"]) {
     assert.match(conflict, new RegExp(section));
+  }
+  for (const detail of ["八十年", "百万年之船", "阿娜特", "安提", "一百三十八肘", "玛特沉入冥界"]) {
+    assert.match(conflict, new RegExp(detail));
   }
   for (const asset of ["egypt-conflict-hero.webp", "egypt-conflict-secret-name.webp", "egypt-conflict-trials.webp", "egypt-god-horus.webp"]) {
     assert.match(conflict, new RegExp(`src="/cm/${asset}"`));
