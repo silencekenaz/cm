@@ -92,43 +92,37 @@ test("exports six static mythology detail pages", async () => {
         assert.match(html, new RegExp(`id="${anchor}"`));
       }
     } else if (slug === "egyptian") {
-      assert.match(html, /FOLLOW THE BARQUE/);
-      assert.match(html, /玛特与伊斯菲特/);
+      assert.match(html, /埃及神话[\s\S]*叙事入口/);
       assert.match(html, /拉的旅程/);
-      assert.match(html, /不是一张神谱/);
-      assert.match(html, /原典坐标/);
-      for (const preferredName of ["欧西里斯", "阿波菲斯", "杜亚特"]) {
-        assert.match(html, new RegExp(preferredName));
-      }
-      for (const retiredName of ["奥西里斯", "阿佩普", "杜阿特"]) {
-        assert.doesNotMatch(html, new RegExp(retiredName));
-      }
-      assert.match(html, /src="\/cm\/ra-night-barque\.webp"/);
-      for (const asset of ["egypt-dawn-khepri", "egypt-midnight-union", "egypt-rebirth-east"]) {
-        assert.match(html, new RegExp(`src="/cm/${asset}\\.webp"`));
-      }
-      for (const god of ["ra", "maat", "thoth", "seth", "isis", "osiris"]) {
-        assert.match(html, new RegExp(`src="/cm/egypt-god-${god}\\.webp"`));
-      }
-      assert.match(html, /跨文本阅读图/);
-      assert.match(html, /太阳船岗位关系图/);
-      assert.match(html, /THE SOLAR BARQUE · PROW TO THE LEFT/);
-      assert.match(html, /src="\/cm\/egypt-solar-barque-v2\.png"/);
-      assert.match(html, /认识更多神明/);
-      assert.match(html, /查看欧西里斯的详细介绍/);
-      for (const station of ["STATION 01", "STATION 02", "STATION 03"]) {
-        assert.match(html, new RegExp(station));
-      }
-      assert.doesNotMatch(html, /CONTENT IN PROGRESS/);
-      for (const anchor of ["maat-balance", "solar-voyage", "barque-crew", "egypt-sources"]) {
-        assert.match(html, new RegExp(`id="${anchor}"`));
-      }
+      assert.match(html, /荷鲁斯与塞特之争/);
+      assert.match(html, /href="\/cm\/myths\/egyptian\/solar-journey"/);
+      assert.match(html, /href="\/cm\/myths\/egyptian\/horus-seth"/);
+      assert.doesNotMatch(html, /不是一张神谱/);
     } else {
       assert.match(html, /CONTENT IN PROGRESS/);
     }
     assert.match(html, /href="\/cm\/myths\.html#systems"/);
     assert.doesNotMatch(html, /\/api\//);
   }
+});
+
+test("exports two independent Egyptian story paths", async () => {
+  const journey = await readFile(new URL("../dist/client/myths/egyptian/solar-journey.html", import.meta.url), "utf8");
+  assert.match(journey, /FOLLOW THE BARQUE/);
+  assert.match(journey, /不是一张神谱/);
+  assert.match(journey, /src="\/cm\/egypt-solar-barque-v2\.png"/);
+  for (const name of ["欧西里斯", "阿波菲斯", "杜亚特"]) assert.match(journey, new RegExp(name));
+  assert.match(journey, /href="\/cm\/myths\/egyptian"/);
+
+  const conflict = await readFile(new URL("../dist/client/myths/egyptian/horus-seth.html", import.meta.url), "utf8");
+  assert.match(conflict, /荷鲁斯[\s\S]*塞特之争/);
+  for (const section of ["继承权来到九神法庭", "伊西斯让塞特说出自己的判决", "身体也被带进法庭", "原典坐标"]) {
+    assert.match(conflict, new RegExp(section));
+  }
+  assert.match(conflict, /PAPYRUS CHESTER BEATTY I/);
+  assert.match(conflict, /href="\/cm\/myths\/egyptian"/);
+  assert.doesNotMatch(conflict, /FOLLOW THE BARQUE/);
+  assert.doesNotMatch(conflict, /\/api\//);
 });
 
 test("exports six source-based Norse god subpages", async () => {

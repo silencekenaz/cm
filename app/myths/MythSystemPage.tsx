@@ -4,15 +4,15 @@ import EgyptianArchiveSections from "./EgyptianArchiveSections";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export default function MythSystemPage({ system }: { system: MythSystem }) {
+export default function MythSystemPage({ system, egyptianJourney = false }: { system: MythSystem; egyptianJourney?: boolean }) {
   const atlasHref = siteBasePath ? `${siteBasePath}/myths.html#systems` : "/myths#systems";
   const isNorse = system.slug === "norse";
-  const isEgyptian = system.slug === "egyptian";
+  const isEgyptian = system.slug === "egyptian" && egyptianJourney;
 
   return (
     <main className="myth-detail-page" data-system={system.slug}>
       <nav className="myth-atlas-nav" aria-label={`${system.title}页面导航`}>
-        <a href={atlasHref}>← 返回六个入口</a>
+        <a href={isEgyptian ? `${siteBasePath}/myths/egyptian` : atlasHref}>{isEgyptian ? "← 返回埃及叙事入口" : "← 返回六个入口"}</a>
         <a className="myth-atlas-wordmark" href={`${siteBasePath}/`} aria-label="返回神人 cm 首页">
           神人<span>cm</span>
         </a>
@@ -103,8 +103,8 @@ export default function MythSystemPage({ system }: { system: MythSystem }) {
         {isNorse && <NorseArchiveSections />}
         {isEgyptian && <EgyptianArchiveSections />}
 
-        <a className="myth-detail-back" href={atlasHref}>
-          <span>BACK TO ALL SYSTEMS</span>
+        <a className="myth-detail-back" href={isEgyptian ? `${siteBasePath}/myths/egyptian` : atlasHref}>
+          <span>{isEgyptian ? "BACK TO EGYPTIAN STORY PATHS" : "BACK TO ALL SYSTEMS"}</span>
           <b aria-hidden="true">↖</b>
         </a>
       </section>

@@ -3235,3 +3235,143 @@ footer > p {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Egyptian story-path hub */
+.egypt-story-hub,
+.egypt-conflict-page {
+  --egypt-night: #0b1721;
+  --egypt-blue: #17364a;
+  --egypt-gold: #c59d4b;
+  --egypt-sand: #e9dfc9;
+  --egypt-papyrus: #f3eddf;
+  --egypt-red: #9a4635;
+  --egypt-ink: #172431;
+  min-height: 100vh;
+  background: #dfe4df;
+  color: var(--egypt-ink);
+}
+.egypt-story-hub .myth-atlas-nav,
+.egypt-conflict-page .myth-atlas-nav { background: var(--egypt-night); color: #f2e8d6; }
+.egypt-story-hub .myth-atlas-nav a,
+.egypt-conflict-page .myth-atlas-nav a { color: inherit; }
+.egypt-hub-hero { position: relative; min-height: 720px; padding: 150px clamp(24px, 7vw, 108px) 100px; display: grid; grid-template-columns: .34fr 1fr .7fr; align-items: end; gap: 48px; overflow: hidden; background: var(--egypt-night); color: #f3ead9; }
+.egypt-hub-hero > span { align-self: start; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+.egypt-hub-hero > div:not(.egypt-hub-cosmos) { position: relative; z-index: 1; }
+.egypt-hub-hero > div > b { position: absolute; top: -100px; left: -90px; color: rgba(197,157,75,.16); font-family: Georgia, serif; font-size: 230px; font-weight: 400; }
+.egypt-hub-hero h1 { position: relative; margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(72px, 9vw, 138px); font-weight: 500; line-height: .95; letter-spacing: -.07em; }
+.egypt-hub-hero > p { position: relative; z-index: 1; margin: 0; color: rgba(243,234,217,.66); font-size: 15px; font-weight: 580; line-height: 2.05; }
+.egypt-hub-cosmos { position: absolute; inset: 0; pointer-events: none; }
+.egypt-hub-cosmos i:first-child { position: absolute; top: 12%; right: 8%; width: 280px; aspect-ratio: 1; border: 1px solid rgba(197,157,75,.28); border-radius: 50%; box-shadow: 0 0 0 38px rgba(197,157,75,.035), 0 0 0 76px rgba(197,157,75,.02); }
+.egypt-hub-cosmos i:nth-child(2) { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgba(197,157,75,.13); transform: rotate(24deg); }
+.egypt-hub-cosmos i:nth-child(3) { position: absolute; right: 0; bottom: 14%; width: 48%; height: 1px; background: rgba(197,157,75,.25); }
+.egypt-story-choices { padding: 0 clamp(22px, 7vw, 108px) 126px; display: grid; grid-template-columns: 1fr 1fr; background: var(--egypt-night); }
+.egypt-story-choices > a { position: relative; min-width: 0; min-height: 760px; padding: clamp(28px, 4vw, 58px); display: grid; grid-template-rows: auto 1fr auto auto; overflow: hidden; border: 1px solid rgba(197,157,75,.56); color: inherit; transition: transform 220ms ease, box-shadow 220ms ease; }
+.egypt-story-choices > a + a { border-left: 0; }
+.egypt-story-choices > a:hover,
+.egypt-story-choices > a:focus-visible { z-index: 2; outline: 0; transform: translateY(-12px); box-shadow: 14px 14px 0 var(--egypt-gold); }
+.egypt-story-choices .is-solar-journey { background: #0b1924; color: #f3ead9; }
+.egypt-story-choices .is-horus-seth { background: #e7dfcf; color: var(--egypt-ink); }
+.egypt-story-choice-head { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 24px; }
+.egypt-story-choice-head span { color: var(--egypt-gold); font-family: Georgia, serif; font-size: 28px; }
+.egypt-story-choice-head small { padding-top: 7px; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; line-height: 1.7; letter-spacing: .13em; }
+.egypt-story-choice-head > b { color: var(--egypt-gold); font-family: Georgia, serif; font-size: 54px; font-weight: 400; line-height: 1; }
+.egypt-story-choices figure { width: min(310px, 72%); margin: 48px auto 28px; align-self: center; }
+.egypt-story-choices figure img { width: 100%; display: block; border: 1px solid var(--egypt-gold); border-radius: 50%; filter: saturate(.84); transition: border-radius 260ms ease, transform 260ms ease; }
+.egypt-story-choices > a:hover figure img,
+.egypt-story-choices > a:focus-visible figure img { border-radius: 42% 42% 10% 10%; transform: scale(1.025); }
+.egypt-story-choice-copy h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(54px, 6vw, 88px); font-weight: 500; line-height: 1; letter-spacing: -.065em; }
+.egypt-story-choice-copy h3 { margin: 15px 0 22px; color: var(--egypt-gold); font-size: 13px; letter-spacing: .04em; }
+.egypt-story-choice-copy p { max-width: 570px; margin: 0; color: inherit; font-size: 13px; font-weight: 560; line-height: 2; opacity: .68; }
+.egypt-story-choice-enter { margin-top: 42px; padding-top: 20px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.egypt-story-choice-enter b { color: var(--egypt-gold); font-size: 22px; }
+.egypt-hub-method { padding: 34px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .34fr 1fr; gap: 42px; background: var(--egypt-gold); }
+.egypt-hub-method span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.egypt-hub-method p { max-width: 760px; margin: 0; font-size: 13px; font-weight: 620; line-height: 1.9; }
+
+/* Horus and Seth independent case file */
+.egypt-conflict-hero { position: relative; min-height: 900px; padding: 154px clamp(24px, 7vw, 108px) 110px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(90deg, #e7dfcf 0 50%, #14293a 50%); }
+.egypt-conflict-hero > span { position: absolute; top: 130px; left: clamp(24px, 7vw, 108px); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.egypt-conflict-hero h1 { position: relative; z-index: 2; width: min(880px, 82%); margin: 0 auto; color: var(--egypt-ink); font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 8.8vw, 132px); font-weight: 500; line-height: .88; letter-spacing: -.075em; text-align: center; }
+.egypt-conflict-hero h1 span { display: block; }
+.egypt-conflict-hero h1 span { background: linear-gradient(90deg, var(--egypt-ink) 0 49.7%, #f3ead9 50.3% 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
+.egypt-conflict-hero h1 i { margin-block: .08em; display: block; color: var(--egypt-gold); font-size: .34em; font-style: normal; line-height: 1; letter-spacing: .12em; }
+.egypt-conflict-hero > p { position: relative; z-index: 2; max-width: 690px; margin: 64px auto 0; padding: 24px 30px; background: rgba(231,223,207,.9); color: #47515a; font-size: 14px; font-weight: 620; line-height: 2; text-align: center; }
+.egypt-conflict-hero > a { position: relative; z-index: 2; width: 290px; margin: 30px auto 0; padding: 16px 0; display: flex; justify-content: space-between; border-bottom: 1px solid var(--egypt-ink); color: var(--egypt-ink); font-size: 12px; font-weight: 760; }
+.egypt-conflict-halves { position: absolute; inset: 0; pointer-events: none; }
+.egypt-conflict-halves i:first-child { position: absolute; top: 21%; left: 11%; width: 220px; aspect-ratio: 1; border: 1px solid rgba(23,36,49,.16); border-radius: 50%; box-shadow: 0 0 0 32px rgba(23,36,49,.025); }
+.egypt-conflict-halves i:nth-child(2) { position: absolute; right: 10%; bottom: 14%; width: 270px; height: 170px; border: 2px solid rgba(197,157,75,.2); border-radius: 58% 42% 50% 50%; transform: rotate(-12deg); }
+.egypt-conflict-halves i:nth-child(3) { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--egypt-gold); }
+.egypt-conflict-figures span { position: absolute; top: 33%; color: rgba(23,36,49,.14); font-family: Georgia, serif; font-size: clamp(110px, 15vw, 230px); }
+.egypt-conflict-figures .horus-mark { left: 8%; }
+.egypt-conflict-figures .seth-mark { right: 6%; color: rgba(197,157,75,.13); font-size: clamp(70px, 9vw, 140px); letter-spacing: .08em; }
+.egypt-conflict-thesis { padding: 126px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .32fr 1fr .7fr; align-items: end; gap: 46px; background: #dfe4df; }
+.egypt-conflict-thesis > span { align-self: start; color: #8e723a; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
+.egypt-conflict-thesis h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 8vw, 118px); font-weight: 500; line-height: .98; letter-spacing: -.07em; }
+.egypt-conflict-thesis p { margin: 0; color: #596069; font-size: 14px; font-weight: 570; line-height: 2; }
+.egypt-conflict-episodes { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--egypt-ink); border-left: 1px solid var(--egypt-ink); }
+.egypt-conflict-episodes article { min-height: 470px; padding: clamp(30px, 5vw, 70px); display: flex; flex-direction: column; border-right: 1px solid var(--egypt-ink); border-bottom: 1px solid var(--egypt-ink); background: #ece6d9; }
+.egypt-conflict-episodes article:nth-child(2),
+.egypt-conflict-episodes article:nth-child(5) { background: var(--egypt-night); color: #f3ead9; }
+.egypt-conflict-episodes article:last-child { grid-column: 1 / -1; min-height: 400px; }
+.egypt-conflict-episodes article > div { display: flex; justify-content: space-between; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
+.egypt-conflict-episodes h2 { max-width: 730px; margin: auto 0 28px; font-family: Georgia, "Songti SC", serif; font-size: clamp(39px, 4.6vw, 70px); font-weight: 500; line-height: 1.12; letter-spacing: -.055em; }
+.egypt-conflict-episodes p { max-width: 760px; margin: 0; color: inherit; font-size: 14px; font-weight: 550; line-height: 2.05; opacity: .7; }
+.egypt-conflict-caution { padding: 36px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .32fr 1fr; gap: 40px; background: var(--egypt-gold); }
+.egypt-conflict-caution span { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.egypt-conflict-caution p { max-width: 800px; margin: 0; font-size: 13px; font-weight: 620; line-height: 1.9; }
+.egypt-conflict-sources { padding: 110px clamp(22px, 7vw, 108px); background: #dfe4df; }
+.egypt-conflict-sources header { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-bottom: 40px; border-bottom: 1px solid var(--egypt-ink); }
+.egypt-conflict-sources header span { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .14em; }
+.egypt-conflict-sources header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(56px, 7vw, 96px); font-weight: 500; line-height: 1; }
+.egypt-conflict-sources > a { padding: 24px 4px; display: grid; grid-template-columns: 70px 1fr auto; align-items: center; gap: 24px; border-bottom: 1px solid var(--egypt-ink); color: var(--egypt-ink); }
+.egypt-conflict-sources > a:hover,
+.egypt-conflict-sources > a:focus-visible { padding-inline: 22px; background: var(--egypt-gold); outline: 0; }
+.egypt-conflict-sources > a span { color: #8e723a; font-family: Georgia, serif; }
+.egypt-conflict-sources > a b { font-size: 14px; line-height: 1.8; }
+.egypt-conflict-sources > a i { font-size: 22px; font-style: normal; }
+.egypt-conflict-back { margin: 0 clamp(22px, 7vw, 108px) 90px; padding: 25px 30px; display: flex; justify-content: space-between; background: var(--egypt-night); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 850; letter-spacing: .12em; }
+.egypt-conflict-back:hover,
+.egypt-conflict-back:focus-visible { background: var(--egypt-gold); color: var(--egypt-ink); outline: 0; }
+
+@media (max-width: 900px) {
+  .egypt-hub-hero { min-height: 650px; grid-template-columns: 1fr; align-items: start; gap: 28px; }
+  .egypt-hub-hero > p { max-width: 620px; }
+  .egypt-story-choices { grid-template-columns: 1fr; }
+  .egypt-story-choices > a { min-height: 680px; }
+  .egypt-story-choices > a + a { border-top: 0; border-left: 1px solid rgba(197,157,75,.56); }
+  .egypt-conflict-thesis { grid-template-columns: 1fr; align-items: start; }
+  .egypt-conflict-thesis p { max-width: 620px; }
+}
+
+@media (max-width: 620px) {
+  .egypt-hub-hero { min-height: 620px; padding: 112px 22px 70px; }
+  .egypt-hub-hero h1 { font-size: 68px; line-height: 1; }
+  .egypt-hub-hero > div > b { top: -55px; left: -22px; font-size: 140px; }
+  .egypt-hub-hero > p { font-size: 14px; line-height: 1.95; }
+  .egypt-story-choices { padding: 0 22px 84px; }
+  .egypt-story-choices > a { min-height: 0; padding: 28px 22px; }
+  .egypt-story-choice-head { grid-template-columns: auto 1fr; }
+  .egypt-story-choice-head > b { display: none; }
+  .egypt-story-choices figure { width: 66%; margin-block: 38px 28px; }
+  .egypt-story-choice-copy h2 { font-size: 54px; }
+  .egypt-story-choice-copy p { font-size: 13px; line-height: 1.95; }
+  .egypt-hub-method { grid-template-columns: 1fr; gap: 12px; }
+  .egypt-conflict-hero { min-height: 760px; padding: 126px 22px 80px; }
+  .egypt-conflict-hero > span { top: 102px; left: 22px; right: 22px; font-size: 7px; line-height: 1.7; }
+  .egypt-conflict-hero h1 { width: 100%; font-size: 64px; line-height: .96; }
+  .egypt-conflict-hero > p { margin-top: 48px; padding: 20px; font-size: 13px; line-height: 1.95; }
+  .egypt-conflict-figures span { opacity: .55; }
+  .egypt-conflict-thesis { padding: 88px 22px; gap: 24px; }
+  .egypt-conflict-thesis h2 { font-size: 58px; line-height: 1.08; }
+  .egypt-conflict-episodes { grid-template-columns: 1fr; }
+  .egypt-conflict-episodes article,
+  .egypt-conflict-episodes article:last-child { grid-column: auto; min-height: 420px; padding: 34px 24px; }
+  .egypt-conflict-episodes h2 { font-size: 42px; line-height: 1.16; }
+  .egypt-conflict-episodes p { font-size: 14px; line-height: 2; }
+  .egypt-conflict-caution { grid-template-columns: 1fr; gap: 12px; }
+  .egypt-conflict-sources { padding: 84px 22px; }
+  .egypt-conflict-sources header { align-items: start; flex-direction: column; }
+  .egypt-conflict-sources > a { grid-template-columns: 42px 1fr auto; gap: 12px; }
+  .egypt-conflict-sources > a b { font-size: 13px; }
+  .egypt-conflict-back { margin-inline: 22px; }
+}
