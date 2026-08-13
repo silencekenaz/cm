@@ -24,7 +24,8 @@ test("exports the hidden command archive as static HTML", async () => {
   );
 
   assert.match(html, /ROOM 24/);
-  assert.match(html, /不存在的档案室/);
+  assert.match(html, /你找到了[\s\S]*酸菜国/);
+  assert.match(html, /这里是酸菜鱼的国度，太阳已经堕落，一切分崩离析。但是好在，这里将是酸菜鱼永恒的土地。/);
   assert.match(html, /reality has too many open tabs/);
   assert.match(html, /src="\/cm\/easter-duck\.png"/);
   assert.match(html, /href="\/cm\/"/);

@@ -6,8 +6,8 @@ const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "ROOM 24｜XY ARCHIVE",
-  description: "一间理论上不存在的档案室。",
+  title: "酸菜国｜ROOM 24",
+  description: "这里是酸菜鱼永恒的土地。",
 };
 
 const fragments = [
@@ -29,8 +29,8 @@ export default function EasterEggPage() {
         <div className="easter-archive-number" aria-hidden="true">24</div>
         <DuckMascot />
         <span>UNLISTED FILE / 10—18</span>
-        <h1>你找到了<br />不存在的档案室。</h1>
-        <p>这里没有导航入口，也暂时没有正经内容。既然你输入了正确指令，就先允许一些没有归档价值的东西继续存在。</p>
+        <h1>你找到了<br />酸菜国。</h1>
+        <p>这里是酸菜鱼的国度，太阳已经堕落，一切分崩离析。但是好在，这里将是酸菜鱼永恒的土地。</p>
       </header>
 
       <section className="easter-archive-log" aria-label="异常档案记录">
