@@ -197,6 +197,18 @@ test("exports separate Norse myth and heroic paths", async () => {
   }
   assert.match(mythology, /href="\/cm\/myths\/norse\.html"/);
   for (const path of ["morning", "noon", "dusk"]) assert.match(mythology, new RegExp(`href="/cm/myths/norse/myths/${path}\\.html"`));
+  assert.match(mythology, /诸神名录/);
+  assert.match(mythology, /href="\/cm\/myths\/norse\/myths\/gods\.html"/);
+
+  const pantheon = await readFile(new URL("../dist/client/myths/norse/myths/gods.html", import.meta.url), "utf8");
+  assert.match(pantheon, /北欧原典并没有一份公认、固定的“十二主神”名单/);
+  for (const god of ["奥丁", "弗丽嘉", "索尔", "希芙", "巴德尔", "海姆达尔", "提尔", "尼约德", "弗雷", "弗蕾雅", "伊登", "洛基"]) {
+    assert.match(pantheon, new RegExp(`<h2>${god}</h2>`));
+  }
+  assert.equal((pantheon.match(/class="norse-pantheon-card"/g) ?? []).length, 12);
+  for (const field of ["关键关系", "代表故事", "故事之后", "诗体埃达", "欺骗古鲁菲", "诗语法"]) assert.match(pantheon, new RegExp(field));
+  assert.match(pantheon, /href="\/cm\/myths\/norse\/myths\.html"/);
+  assert.doesNotMatch(pantheon, /\/api\//);
 
   const morning = await readFile(new URL("../dist/client/myths/norse/myths/morning.html", import.meta.url), "utf8");
   for (const section of ["世界从尤弥尔身上醒来", "旧誓与和约", "诗蜜酒", "阿斯加德的城墙", "希芙的金发", "伊登与夏基"]) assert.match(morning, new RegExp(section));
