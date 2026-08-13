@@ -232,7 +232,10 @@ test("exports separate Norse myth and heroic paths", async () => {
     assert.match(html, /TEXTUAL AFTERWORD/);
     assert.doesNotMatch(html, /行动记录|节点档案|逐项拆解/);
   }
-  assert.match(await readFile(new URL("../dist/client/myths/norse/myths/old-oaths.html", import.meta.url), "utf8"), /吉斯利萨迦[\s\S]*血一同滴入掀开的草皮下/);
+  const oldOaths = await readFile(new URL("../dist/client/myths/norse/myths/old-oaths.html", import.meta.url), "utf8");
+  assert.match(oldOaths, /奥丁与洛基曾混合彼此的鲜血[\s\S]*吉斯利萨迦[\s\S]*鲜血一同滴进裸露的土里[\s\S]*阿萨与华纳两族/);
+  assert.match(oldOaths, /没有把宴会本身插进这段早期时间线/);
+  assert.doesNotMatch(oldOaths, /满厅诸神等着奥丁回答|堂堂正正坐进了最不欢迎他的宴会/);
   for (const preferredName of ["海尼尔", "洛德尔", "希亚费", "海拉", "芬利斯"]) assert.match(`${morning}${noon}${dusk}${await readFile(new URL("../dist/client/myths/norse/myths/world-from-ymer.html", import.meta.url), "utf8")}${await readFile(new URL("../dist/client/myths/norse/myths/utgard.html", import.meta.url), "utf8")}`, new RegExp(preferredName));
 
   const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
