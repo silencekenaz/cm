@@ -2958,7 +2958,7 @@ footer > p {
 .egypt-barque-map-intro p { max-width: 720px; margin: 0; color: rgba(232,224,209,.66); font-size: 12px; line-height: 1.9; }
 .egypt-barque-deck { position: relative; z-index: 1; min-width: 0; margin-top: 68px; padding: 0 3.5% 148px; display: grid; grid-template-columns: repeat(5, minmax(118px, 1fr)); align-items: end; gap: clamp(10px, 1.7vw, 24px); }
 .egypt-barque-deck::before { content: ""; position: absolute; right: 4.5%; bottom: 128px; left: 4.5%; height: 1px; background: var(--egypt-gold); opacity: .78; }
-.egypt-god-portrait { position: relative; min-width: 0; padding: 0; display: flex; flex-direction: column; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; isolation: isolate; }
+.egypt-god-portrait { position: relative; z-index: 2; min-width: 0; padding: 0; display: flex; flex-direction: column; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; isolation: isolate; }
 .egypt-god-portrait::before { content: ""; position: absolute; z-index: -1; inset: 38px -5px 58px; border: 1px solid rgba(197,157,75,.28); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
 .egypt-god-portrait:hover::before,
 .egypt-god-portrait:focus-visible::before { border-color: var(--egypt-gold); background: rgba(197,157,75,.11); transform: translateY(-7px); }
@@ -2974,21 +2974,9 @@ footer > p {
 .egypt-god-label small { min-height: 32px; color: rgba(232,224,209,.58); font-size: 9px; line-height: 1.7; }
 .egypt-god-portrait > i { margin: 9px 4px 0; color: var(--egypt-gold); font-family: var(--font-geist-mono), monospace; font-size: 7px; font-style: normal; font-weight: 850; letter-spacing: .14em; }
 .egypt-god-portrait > em { position: absolute; top: 51px; right: 8px; padding: 4px 6px; background: var(--egypt-night); color: var(--egypt-gold); font-family: Georgia, serif; font-size: 12px; font-style: normal; }
-.egypt-barque-hull { position: absolute; right: -1.5%; bottom: 0; left: -1.5%; height: 146px; color: var(--egypt-night); }
-.egypt-barque-hull svg { width: 100%; height: 100%; display: block; overflow: visible; filter: drop-shadow(0 9px 0 rgba(0,0,0,.17)); }
-.egypt-barque-hull .hull-body { fill: #866b3a; stroke: var(--egypt-gold); stroke-width: 3; }
-.egypt-barque-hull .hull-red-band { fill: #98483a; opacity: .94; }
-.egypt-barque-hull .hull-gold-band { fill: #b99752; }
-.egypt-barque-hull .hull-rail,
-.egypt-barque-hull .hull-inner,
-.egypt-barque-hull .hull-prow,
-.egypt-barque-hull .hull-stern,
-.egypt-barque-hull .hull-reeds path { fill: none; stroke: #d9b867; stroke-width: 4; vector-effect: non-scaling-stroke; }
-.egypt-barque-hull .hull-inner { stroke: rgba(23,36,49,.58); stroke-width: 2; }
-.egypt-barque-hull .hull-prow,
-.egypt-barque-hull .hull-stern { stroke-linecap: round; stroke-width: 3; }
-.egypt-barque-hull .hull-reeds path { stroke: rgba(23,36,49,.54); stroke-width: 1.5; }
-.egypt-barque-hull span { position: absolute; right: 0; bottom: 11px; left: 0; color: rgba(232,224,209,.56); font-family: var(--font-geist-mono), monospace; font-size: 6px; font-weight: 800; letter-spacing: .2em; text-align: center; }
+.egypt-barque-hull { position: absolute; z-index: 0; right: -2.5%; bottom: -62px; left: -2.5%; color: var(--egypt-night); pointer-events: none; }
+.egypt-barque-hull img { width: 100%; height: auto; display: block; filter: drop-shadow(0 12px 0 rgba(0,0,0,.18)) saturate(.9); }
+.egypt-barque-hull span { position: absolute; right: 0; bottom: 16px; left: 0; color: rgba(232,224,209,.56); font-family: var(--font-geist-mono), monospace; font-size: 6px; font-weight: 800; letter-spacing: .2em; text-align: center; text-shadow: 0 1px 0 var(--egypt-night); }
 .egypt-barque-water { position: absolute; right: 0; bottom: 34%; left: 0; height: 80px; opacity: .2; pointer-events: none; }
 .egypt-barque-water i { position: absolute; right: -8%; left: -8%; height: 28px; border-top: 1px solid var(--egypt-blue); border-radius: 50%; }
 .egypt-barque-water i:nth-child(1) { top: 0; }

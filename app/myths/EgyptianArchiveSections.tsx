@@ -357,19 +357,7 @@ export default function EgyptianArchiveSections() {
               </button>
             ))}
             <div className="egypt-barque-hull" aria-hidden="true">
-              <svg viewBox="0 0 1200 190" preserveAspectRatio="none">
-                <path className="hull-body" d="M32 39 C118 81 186 108 270 124 C487 166 713 166 930 124 C1014 108 1082 81 1168 39 C1128 105 1064 143 978 163 C740 204 460 204 222 163 C136 143 72 105 32 39Z" />
-                <path className="hull-red-band" d="M57 57 C155 97 218 116 292 131 C494 168 706 168 908 131 C982 116 1045 97 1143 57 C1117 83 1080 107 1032 127 C769 187 431 187 168 127 C120 107 83 83 57 57Z" />
-                <path className="hull-gold-band" d="M78 73 C169 104 232 121 307 135 C502 169 698 169 893 135 C968 121 1031 104 1122 73 C1085 105 1044 124 991 141 C752 192 448 192 209 141 C156 124 115 105 78 73Z" />
-                <path className="hull-rail" d="M34 39 C286 69 914 69 1166 39" />
-                <path className="hull-inner" d="M154 114 C388 163 812 163 1046 114" />
-                <path className="hull-prow" d="M34 39 C92 47 133 37 173 13 M34 39 C98 77 149 91 216 98" />
-                <path className="hull-stern" d="M1166 39 C1108 47 1067 37 1027 13 M1166 39 C1102 77 1051 91 984 98" />
-                <g className="hull-reeds">
-                  <path d="M116 71 L164 139 M144 81 L190 145 M172 90 L216 150" />
-                  <path d="M1084 71 L1036 139 M1056 81 L1010 145 M1028 90 L984 150" />
-                </g>
-              </svg>
+              <img src={`${siteBasePath}/egypt-solar-barque-v2.png`} alt="" />
               <span>THE SOLAR BARQUE · PROW TO THE LEFT</span>
             </div>
           </div>
