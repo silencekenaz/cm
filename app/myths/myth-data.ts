@@ -37,8 +37,8 @@ export const mythSystems: MythSystem[] = [
     title: "埃及神话",
     subtitle: "ANCIENT EGYPTIAN TRADITIONS",
     symbol: "☥",
-    framing: "拉每一次归来，都重新把玛特从失序中建立起来；沿太阳船的昼夜航程，诸神与杜阿特逐步显现。",
-    books: ["《金字塔文》", "《棺材文》", "《阿姆杜阿特书》", "《门之书》"],
+    framing: "拉每一次归来，都重新把玛特从失序中建立起来；沿太阳船的昼夜航程，诸神与杜亚特逐步显现。",
+    books: ["《金字塔文》", "《棺材文》", "《阿姆杜亚特书》", "《门之书》"],
   },
   {
     index: "04",

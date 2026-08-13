@@ -97,6 +97,12 @@ test("exports six static mythology detail pages", async () => {
       assert.match(html, /拉的旅程/);
       assert.match(html, /不是一张神谱/);
       assert.match(html, /原典坐标/);
+      for (const preferredName of ["欧西里斯", "阿波菲斯", "杜亚特"]) {
+        assert.match(html, new RegExp(preferredName));
+      }
+      for (const retiredName of ["奥西里斯", "阿佩普", "杜阿特"]) {
+        assert.doesNotMatch(html, new RegExp(retiredName));
+      }
       assert.match(html, /src="\/cm\/ra-night-barque\.webp"/);
       for (const asset of ["egypt-dawn-khepri", "egypt-midnight-union", "egypt-rebirth-east"]) {
         assert.match(html, new RegExp(`src="/cm/${asset}\\.webp"`));

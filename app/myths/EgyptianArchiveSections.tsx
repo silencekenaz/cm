@@ -1,12 +1,12 @@
 const sourceLinks = [
   {
-    label: "《阿姆杜阿特书》纸草（第十夜时）",
+    label: "《阿姆杜亚特书》纸草（第十夜时）",
     meta: "新王国王陵传统的后续传播｜大都会艺术博物馆",
     href: "https://www.metmuseum.org/art/collection/search/551100",
   },
   {
     label: "《亡灵书》第17咒",
-    meta: "拉、奥西里斯与再生的注释型文本｜UCL Digital Egypt",
+    meta: "拉、欧西里斯与再生的注释型文本｜UCL Digital Egypt",
     href: "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/bd17.html",
   },
   {
@@ -45,23 +45,23 @@ const hours = [
     phase: "DUSK / WEST",
     title: "进入西方之门",
     deity: "拉 · 西方女神",
-    body: "日落不是消失，而是转入不可见的航道。太阳在西方地平线衰老，船队进入杜阿特；从此每一段道路都有名字、门、守卫与必须被准确说出的知识。",
+    body: "日落不是消失，而是转入不可见的航道。太阳在西方地平线衰老，船队进入杜亚特；从此每一段道路都有名字、门、守卫与必须被准确说出的知识。",
     tone: "ochre",
   },
   {
     number: "04–06",
     phase: "DEEP NIGHT / DUAT",
-    title: "与奥西里斯相遇",
-    deity: "拉 · 奥西里斯",
-    body: "《阿姆杜阿特书》在最深夜时把太阳神与奥西里斯的领域并置。死者之王提供再生的身体维度，太阳带来运动与光；二者的接近令停滞的死亡转化为下一轮生命。",
+    title: "与欧西里斯相遇",
+    deity: "拉 · 欧西里斯",
+    body: "《阿姆杜亚特书》在最深夜时把太阳神与欧西里斯的领域并置。死者之王提供再生的身体维度，太阳带来运动与光；二者的接近令停滞的死亡转化为下一轮生命。",
     tone: "blue",
   },
   {
     number: "07–11",
     phase: "CRISIS / RESTORATION",
     title: "混沌并未消失",
-    deity: "阿佩普 · 伊西斯 · 塞特",
-    body: "巨蛇阿佩普试图使船停下，使时间无法继续。夜航图文把束缚、斩击和护卫分配给不同神力：胜利不是一次终结，而是一项每夜都必须重新完成的共同工作。",
+    deity: "阿波菲斯 · 伊西斯 · 塞特",
+    body: "巨蛇阿波菲斯试图使船停下，使时间无法继续。夜航图文把束缚、斩击和护卫分配给不同神力：胜利不是一次终结，而是一项每夜都必须重新完成的共同工作。",
     tone: "red",
   },
   {
@@ -86,9 +86,9 @@ const journeyStations = [
   {
     label: "STATION 02 / THE DEEPEST HOUR",
     title: "接近",
-    note: "太阳的运动与奥西里斯的再生在杜阿特深处彼此作用。",
+    note: "太阳的运动与欧西里斯的再生在杜亚特深处彼此作用。",
     image: "egypt-midnight-union.webp",
-    alt: "原创插画：夜形态的拉乘船接近神龛中的奥西里斯",
+    alt: "原创插画：夜形态的拉乘船接近神龛中的欧西里斯",
     hours: hours.slice(2, 4),
   },
   {
@@ -102,11 +102,11 @@ const journeyStations = [
 ];
 
 const gods = [
-  ["RꜤ", "拉", "不是静止的太阳肖像，而是不断变换形态、穿过天空与杜阿特的行动者。"],
+  ["RꜤ", "拉", "不是静止的太阳肖像，而是不断变换形态、穿过天空与杜亚特的行动者。"],
   ["MꜢꜤT", "玛特", "既是女神，也是正确、正当、秩序与有效性的概念；她不是装饰在秩序旁边，而是秩序得以成立的条件。"],
-  ["WSJR", "奥西里斯", "死亡与再生的王；在夜航最深处，他让太阳的更新具有身体与冥界的维度。"],
+  ["WSJR", "欧西里斯", "死亡与再生的王；在夜航最深处，他让太阳的更新具有身体与冥界的维度。"],
   ["ꜢST", "伊西斯", "以言语、知识与护卫之力参与对抗危险；不同文本赋予她的岗位并不完全相同。"],
-  ["STẖ", "塞特", "既可能是冲突者，也能站在太阳船上抵御阿佩普。埃及材料允许同一神祇拥有彼此紧张的角色。"],
+  ["STẖ", "塞特", "既可能是冲突者，也能站在太阳船上抵御阿波菲斯。埃及材料允许同一神祇拥有彼此紧张的角色。"],
   ["ḎḤWTJ", "托特", "书写、计算与有效言说的神；记录与命名不是行政附属，而是维持宇宙可理解性的技术。"],
 ];
 
@@ -139,13 +139,13 @@ export default function EgyptianArchiveSections() {
             <div className="egypt-serpent-mark" aria-hidden="true"><i /><i /><i /></div>
             <span>ISFET / DISRUPTION</span>
             <h3>伊斯菲特</h3>
-            <p>错误、破坏、失序与使航程停止的力量。阿佩普是它最醒目的叙事形象，却不是一个能够被永久消灭的“终极反派”。</p>
+            <p>错误、破坏、失序与使航程停止的力量。阿波菲斯是它最醒目的叙事形象，却不是一个能够被永久消灭的“终极反派”。</p>
           </article>
         </div>
 
         <aside className="egypt-nun-note">
           <span>IMPORTANT DISTINCTION</span>
-          <p><b>努恩不是阿佩普。</b>原初之水代表未分化与潜能，并不等同于应被摧毁的邪恶混沌。页面把“混沌”主要用于伊斯菲特式的失序，同时保留努恩作为创生背景。</p>
+          <p><b>努恩不是阿波菲斯。</b>原初之水代表未分化与潜能，并不等同于应被摧毁的邪恶混沌。页面把“混沌”主要用于伊斯菲特式的失序，同时保留努恩作为创生背景。</p>
         </aside>
       </section>
 
@@ -155,11 +155,11 @@ export default function EgyptianArchiveSections() {
             <span>02 / THE SOLAR BARQUE</span>
             <h2>拉的旅程</h2>
           </div>
-          <p>以《阿姆杜阿特书》的十二夜时为脊柱，但不假装所有材料来自同一时代。白昼、审判与创世的线索，会从其他文本中谨慎接入。</p>
+          <p>以《阿姆杜亚特书》的十二夜时为脊柱，但不假装所有材料来自同一时代。白昼、审判与创世的线索，会从其他文本中谨慎接入。</p>
         </header>
 
         <figure className="egypt-barque-figure">
-          <img src={`${siteBasePath}/ra-night-barque.webp`} alt="原创插画：拉的太阳船在杜阿特夜航，玛特之羽立于船首，阿佩普盘踞在下方水域" />
+          <img src={`${siteBasePath}/ra-night-barque.webp`} alt="原创插画：拉的太阳船在杜亚特夜航，玛特之羽立于船首，阿波菲斯盘踞在下方水域" />
           <figcaption>
             <span>CONTEMPORARY VISUAL INTERPRETATION</span>
             <p>太阳船不是孤独英雄的交通工具：它是一套由众神、咒语、门与正确知识共同维持的宇宙机制。</p>
@@ -221,7 +221,7 @@ export default function EgyptianArchiveSections() {
         <div className="egypt-source-timeline">
           <article><span>OLD KINGDOM</span><h3>金字塔文</h3><p>王室墓室墙面的咒语群，保存升天、太阳神与创生的早期书面层次。</p></article>
           <article><span>MIDDLE KINGDOM</span><h3>棺材文</h3><p>材料扩展到棺椁内部；“两路之书”等地图化传统让冥界道路变得可被辨认。</p></article>
-          <article><span>NEW KINGDOM</span><h3>阿姆杜阿特书</h3><p>以十二夜时描绘太阳穿越杜阿特；最初集中于王陵，后来进入非王室葬仪。</p></article>
+          <article><span>NEW KINGDOM</span><h3>阿姆杜亚特书</h3><p>以十二夜时描绘太阳穿越杜亚特；最初集中于王陵，后来进入非王室葬仪。</p></article>
           <article><span>NEW KINGDOM</span><h3>门之书</h3><p>同样组织夜航，却以连续关门、守卫与被分类的冥界群体形成自身结构。</p></article>
           <article><span>NEW KINGDOM →</span><h3>“出行于白昼”咒语</h3><p>现代所谓《亡灵书》是可选择、可重组的咒语集合；第17、125、136咒为本页提供补充。</p></article>
         </div>
