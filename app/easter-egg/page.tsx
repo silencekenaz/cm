@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DuckMascot from "./DuckMascot";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -25,7 +26,8 @@ export default function EasterEggPage() {
       </nav>
 
       <header>
-        <div aria-hidden="true">24</div>
+        <div className="easter-archive-number" aria-hidden="true">24</div>
+        <DuckMascot />
         <span>UNLISTED FILE / 10—18</span>
         <h1>你找到了<br />不存在的档案室。</h1>
         <p>这里没有导航入口，也暂时没有正经内容。既然你输入了正确指令，就先允许一些没有归档价值的东西继续存在。</p>

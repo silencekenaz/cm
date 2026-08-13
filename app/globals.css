@@ -1471,10 +1471,19 @@ footer > p {
 .easter-archive-page > nav a { color: var(--egg-gold); }
 .easter-archive-page > header { position: relative; min-height: 720px; padding: 130px clamp(22px, 8vw, 126px) 90px; display: grid; align-content: center; border-bottom: 1px solid rgba(203,174,102,.48); }
 .easter-archive-page > header::before { content: "XY / 1018 / XY / 1018 / XY / 1018"; position: absolute; right: -48px; top: 50%; color: rgba(203,174,102,.08); font-family: var(--font-geist-mono), monospace; font-size: clamp(42px, 7vw, 112px); font-weight: 900; letter-spacing: .08em; transform: rotate(90deg) translateX(50%); transform-origin: right top; white-space: nowrap; }
-.easter-archive-page > header > div { position: absolute; left: clamp(22px, 4vw, 64px); top: 60px; color: rgba(203,174,102,.12); font-size: clamp(210px, 33vw, 520px); font-weight: 950; line-height: 1; letter-spacing: -.12em; }
+.easter-archive-page > header > .easter-archive-number { position: absolute; left: clamp(22px, 4vw, 64px); top: 60px; color: rgba(203,174,102,.12); font-size: clamp(210px, 33vw, 520px); font-weight: 950; line-height: 1; letter-spacing: -.12em; }
 .easter-archive-page > header > span { position: relative; color: var(--egg-gold); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 850; letter-spacing: .18em; }
 .easter-archive-page > header h1 { position: relative; max-width: 1000px; margin: 32px 0 42px; font-size: clamp(64px, 10vw, 146px); line-height: .93; letter-spacing: -.075em; }
 .easter-archive-page > header p { position: relative; max-width: 650px; margin: 0 0 0 auto; color: rgba(242,239,231,.68); font-size: 16px; font-weight: 600; line-height: 2; }
+.easter-duck-mascot { position: absolute; z-index: 3; top: 64px; right: clamp(-64px, -2vw, -18px); width: clamp(230px, 25vw, 390px); }
+.easter-duck-mascot > button { width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(14px 18px 0 rgba(4,10,17,.22)); transition: transform 180ms ease, filter 180ms ease; }
+.easter-duck-mascot > button:hover { transform: translateY(-7px) rotate(1deg); filter: drop-shadow(18px 24px 0 rgba(4,10,17,.18)); }
+.easter-duck-mascot > button:active { transform: translateY(2px) rotate(-2deg) scale(.98); }
+.easter-duck-mascot > button:focus-visible { outline: 2px solid var(--egg-gold); outline-offset: -20px; }
+.easter-duck-mascot img { width: 100%; height: auto; display: block; }
+.easter-duck-speech { position: absolute !important; z-index: 4; top: 32%; right: 78%; width: max-content; max-width: 210px !important; margin: 0 !important; padding: 15px 18px; border: 1px solid var(--egg-gold); background: #f2efe7; box-shadow: 7px 7px 0 var(--egg-gold); color: var(--egg-night) !important; font-family: var(--font-geist-mono), monospace; font-size: clamp(13px, 1.4vw, 17px) !important; font-weight: 850 !important; line-height: 1.4 !important; letter-spacing: .04em; animation: duck-speech-pop 240ms cubic-bezier(.2,.8,.2,1); }
+.easter-duck-speech::after { content: ""; position: absolute; right: -13px; bottom: 15px; width: 22px; height: 22px; border-top: 1px solid var(--egg-gold); border-right: 1px solid var(--egg-gold); background: #f2efe7; transform: rotate(45deg); }
+@keyframes duck-speech-pop { from { opacity: 0; transform: translate(14px, 8px) scale(.82); } to { opacity: 1; transform: none; } }
 .easter-archive-log { display: grid; grid-template-columns: repeat(2, 1fr); border-bottom: 1px solid rgba(203,174,102,.48); }
 .easter-archive-log article { position: relative; min-height: 420px; padding: clamp(34px, 5vw, 70px); border-right: 1px solid rgba(203,174,102,.35); border-bottom: 1px solid rgba(203,174,102,.35); overflow: hidden; }
 .easter-archive-log article:nth-child(even) { border-right: 0; }
@@ -1501,6 +1510,8 @@ footer > p {
   .easter-gate-dialog form button { grid-column: 1 / -1; min-height: 52px; }
   .easter-archive-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
   .easter-archive-page > header { min-height: 670px; padding: 110px 22px 72px; }
+  .easter-duck-mascot { top: 58px; right: -82px; width: 250px; opacity: .92; }
+  .easter-duck-speech { top: 20%; right: 64%; max-width: 150px !important; padding: 11px 13px; font-size: 12px !important; }
   .easter-archive-page > header h1 { font-size: 62px; line-height: 1; }
   .easter-archive-page > header p { font-size: 14px; line-height: 1.9; }
   .easter-archive-log { grid-template-columns: 1fr; }

@@ -26,6 +26,7 @@ test("exports the hidden command archive as static HTML", async () => {
   assert.match(html, /ROOM 24/);
   assert.match(html, /不存在的档案室/);
   assert.match(html, /reality has too many open tabs/);
+  assert.match(html, /src="\/cm\/easter-duck\.png"/);
   assert.match(html, /href="\/cm\/"/);
   assert.doesNotMatch(html, /\/api\//);
 });
