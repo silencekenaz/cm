@@ -3791,6 +3791,69 @@ footer > p {
 .norse-thread-footer-links a { padding: 25px 28px; background: var(--thread-night); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
 .norse-thread-footer-links a:last-child { background: var(--thread-red); text-align: right; }
 
+/* Norse myth cycle: morning, noon, dusk */
+.norse-day-hero { min-height: 940px; padding: 150px clamp(22px, 7vw, 108px) 92px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(118deg, #0c1a25 0 52%, #4f6470 52% 75%, #aa6d54 75% 100%); color: #eef2ed; }
+.norse-day-hero > span, .norse-day-cycles > header span, .norse-day-method > span { color: var(--thread-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.norse-day-hero h1 { margin: 36px 0 46px; font-family: Georgia, "Songti SC", serif; font-size: clamp(80px, 11vw, 164px); font-weight: 500; line-height: .9; letter-spacing: -.085em; }
+.norse-day-hero h1 b { color: var(--thread-gold); font-weight: 500; }
+.norse-day-hero p { max-width: 730px; margin: 0 0 42px auto; color: rgba(238,242,237,.7); font-size: 15px; line-height: 2.1; }
+.norse-day-hero > a { width: min(360px, 100%); margin-left: auto; padding: 22px 0; display: flex; justify-content: space-between; border-top: 1px solid var(--thread-gold); color: #eef2ed; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-day-hero > a i { color: var(--thread-gold); font-size: 20px; font-style: normal; }
+.norse-day-cycles { padding: 126px clamp(22px, 7vw, 108px); background: #e5e9e5; }
+.norse-day-cycles > header { display: grid; grid-template-columns: .35fr 1fr; gap: 42px; align-items: end; margin-bottom: 68px; }
+.norse-day-cycles > header h2, .norse-day-method h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(68px, 8vw, 116px); font-weight: 500; line-height: .98; letter-spacing: -.075em; }
+.norse-day-cycles > div { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--thread-night); }
+.norse-day-gate { min-height: 650px; padding: 34px; display: flex; flex-direction: column; color: var(--thread-night); }
+.norse-day-gate + .norse-day-gate { border-left: 1px solid var(--thread-night); }
+.norse-day-gate-morning { background: #e9e2d2; }
+.norse-day-gate-noon { background: #c9aa63; }
+.norse-day-gate-dusk { background: #162736; color: #eef2ed; }
+.norse-day-gate > div { display: flex; justify-content: space-between; align-items: start; }
+.norse-day-gate > div span, .norse-day-gate > small, .norse-day-gate strong { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-day-gate > div b { font-family: Georgia, serif; font-size: 64px; font-weight: 400; line-height: .7; }
+.norse-day-gate > small { margin-top: 82px; opacity: .55; }
+.norse-day-gate h3 { margin: 18px 0 4px; font-family: Georgia, "Songti SC", serif; font-size: clamp(68px, 7vw, 104px); font-weight: 500; line-height: .95; letter-spacing: -.07em; }
+.norse-day-gate h4 { margin: 0 0 32px; font-family: Georgia, "Songti SC", serif; font-size: 24px; font-weight: 500; }
+.norse-day-gate p { margin: 0 0 40px; color: #59656a; font-size: 13px; line-height: 2; }
+.norse-day-gate-dusk p { color: rgba(238,242,237,.66); }
+.norse-day-gate strong { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; }
+.norse-day-gate strong i { font-size: 18px; font-style: normal; }
+.norse-day-gate:hover, .norse-day-gate:focus-visible { background: var(--thread-red); color: #fff; outline: 0; }
+.norse-day-gate:hover p, .norse-day-gate:focus-visible p { color: rgba(255,255,255,.72); }
+.norse-day-method { padding: 126px clamp(22px, 7vw, 108px); background: var(--thread-gold); }
+.norse-day-method h2 { max-width: 1100px; margin: 34px 0 68px; }
+.norse-day-method > div { margin-left: 22%; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid currentColor; border-left: 1px solid currentColor; }
+.norse-day-method p { margin: 0; padding: 28px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; font-size: 13px; line-height: 2; }
+.norse-day-method p b { font-family: Georgia, "Songti SC", serif; font-size: 27px; font-weight: 500; }
+.norse-cycle-hero { min-height: 920px; padding: 150px clamp(22px, 7vw, 108px) 88px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+.norse-cycle-morning .norse-cycle-hero { background: linear-gradient(120deg, #e9e2d2 0 68%, #b88b5f 68% 100%); color: var(--thread-night); }
+.norse-cycle-noon .norse-cycle-hero { background: linear-gradient(120deg, #c9aa63 0 65%, #e8d8a9 65% 100%); color: var(--thread-night); }
+.norse-cycle-dusk .norse-cycle-hero { background: linear-gradient(120deg, #0c1a25 0 64%, #643f43 64% 100%); color: #eef2ed; }
+.norse-cycle-hero::before { content: ""; position: absolute; inset: 0; opacity: .1; background-image: linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px); background-size: 92px 92px; }
+.norse-cycle-hero > span { position: relative; z-index: 2; color: #8c6e32; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+.norse-cycle-dusk .norse-cycle-hero > span { color: var(--thread-gold); }
+.norse-cycle-hero > b { position: absolute; right: 5%; top: 12%; opacity: .16; font-family: Georgia, serif; font-size: clamp(260px, 38vw, 560px); font-weight: 400; line-height: .8; }
+.norse-cycle-hero h1 { position: relative; z-index: 2; margin: 34px 0 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(150px, 22vw, 330px); font-weight: 500; line-height: .78; letter-spacing: -.09em; }
+.norse-cycle-hero h2 { position: relative; z-index: 2; margin: 24px 0 38px; font-family: Georgia, "Songti SC", serif; font-size: clamp(34px, 4vw, 58px); font-weight: 500; }
+.norse-cycle-hero p { position: relative; z-index: 2; max-width: 720px; margin: 0 0 38px auto; font-size: 15px; line-height: 2.1; opacity: .72; }
+.norse-cycle-hero > a { position: relative; z-index: 2; width: min(360px, 100%); margin-left: auto; padding: 20px 0; display: flex; justify-content: space-between; border-top: 1px solid currentColor; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-cycle-hero > a i { font-size: 20px; font-style: normal; }
+.norse-cycle-morning .norse-thread-section { background: #ebe7dc; }
+.norse-cycle-noon .norse-thread-section { background: #dbe2df; }
+.norse-cycle-dusk .norse-thread-section { background: var(--thread-night); color: #eef2ed; }
+.norse-cycle-dusk .norse-thread-section > header > p { color: rgba(238,242,237,.68); }
+.norse-cycle-dusk .norse-story-list article { background: rgba(220,231,232,.05); border-color: rgba(220,231,232,.42); }
+.norse-cycle-dusk .norse-story-list article:nth-child(even) { background: #d4dfdf; color: var(--thread-night); }
+.norse-cycle-dusk .norse-action-ledger p { color: rgba(238,242,237,.72); }
+.norse-cycle-dusk .norse-story-list article:nth-child(even) .norse-action-ledger p { color: #536169; }
+.norse-cycle-next { padding: 80px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: repeat(2, 1fr); background: #dce4e3; }
+.norse-cycle-next a { min-height: 220px; padding: 28px; display: grid; grid-template-columns: 1fr auto; align-content: space-between; border: 1px solid var(--thread-night); color: var(--thread-night); }
+.norse-cycle-next a + a { border-left: 0; }
+.norse-cycle-next span { grid-column: 1 / -1; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-cycle-next b { align-self: end; font-family: Georgia, "Songti SC", serif; font-size: 30px; font-weight: 500; }
+.norse-cycle-next i { align-self: end; font-size: 20px; font-style: normal; }
+.norse-cycle-next a:hover, .norse-cycle-next a:focus-visible { background: var(--thread-night); color: #fff; outline: 0; }
+
 @media (max-width: 900px) {
   .norse-hub-hero { min-height: 980px; grid-template-columns: 1fr; align-content: end; }
   .norse-hub-lead { max-width: 640px; }
@@ -3811,6 +3874,8 @@ footer > p {
   .norse-thread-cast > header { grid-template-columns: 1fr; align-items: start; }
   .norse-counterparts > div { grid-template-columns: repeat(2, 1fr); }
   .norse-thread-gates > header { grid-template-columns: 1fr; align-items: start; }
+  .norse-day-cycles > div { grid-template-columns: 1fr; }
+  .norse-day-gate + .norse-day-gate { border-top: 1px solid var(--thread-night); border-left: 0; }
 }
 
 @media (max-width: 620px) {
@@ -3920,6 +3985,21 @@ footer > p {
   .norse-thread-sources header { align-items: start; flex-direction: column; }
   .norse-thread-sources > div { grid-template-columns: 1fr; }
   .norse-thread-footer-links { padding: 0 22px 70px; grid-template-columns: 1fr; }
+  .norse-day-hero { min-height: 860px; padding: 130px 22px 70px; }
+  .norse-day-hero h1 { font-size: 67px; line-height: .98; }
+  .norse-day-hero p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .norse-day-cycles, .norse-day-method { padding: 82px 22px; }
+  .norse-day-cycles > header { grid-template-columns: 1fr; gap: 20px; }
+  .norse-day-cycles > header h2, .norse-day-method h2 { font-size: 54px; line-height: 1.08; }
+  .norse-day-gate { min-height: 520px; padding: 28px 24px; }
+  .norse-day-gate > small { margin-top: 58px; }
+  .norse-day-method > div { margin-left: 0; grid-template-columns: 1fr; }
+  .norse-cycle-hero { min-height: 820px; padding: 130px 22px 70px; }
+  .norse-cycle-hero h1 { font-size: 126px; }
+  .norse-cycle-hero h2 { font-size: 34px; }
+  .norse-cycle-hero p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .norse-cycle-next { padding: 64px 22px; grid-template-columns: 1fr; }
+  .norse-cycle-next a + a { border-top: 0; border-left: 1px solid var(--thread-night); }
 }
 
 /* Horus and Seth independent case file */

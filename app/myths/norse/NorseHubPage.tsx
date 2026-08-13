@@ -244,7 +244,7 @@ export default function NorseHubPage() {
             <div><span>PATH 01 / GOÐ</span><b aria-hidden="true">ᚨ</b></div>
             <small>MYTHOLOGICAL TRADITIONS</small>
             <h3>神话传说</h3>
-            <p>从索尔在巨人领域的行动，到奥丁为知识支付的价码。先认识参与者，再按事件追踪诸神、巨人、守护者与同行者各自做了什么。</p>
+            <p>把诸神世界读成一天：清晨建立世界、盟约与阿斯加德，正午安置宝物和怪物，黄昏从巴德尔之死走向诸神黄昏与更新。</p>
             <strong>进入神话篇 <i aria-hidden="true">↗</i></strong>
           </a>
           <a href={heroesHref} className="norse-hub-gate norse-hub-gate-hero">
