@@ -1360,10 +1360,30 @@ footer {
 }
 
 .footer-mark {
+  display: flex;
+  align-items: baseline;
   font-size: clamp(68px, 10vw, 154px);
   font-weight: 950;
   line-height: .8;
   letter-spacing: -.1em;
+}
+
+.footer-mark button {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: default;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.footer-mark button:focus-visible {
+  outline: 1px solid var(--acid);
+  outline-offset: 8px;
 }
 
 footer > p {
@@ -1388,6 +1408,109 @@ footer > p {
 }
 
 .footer-meta a { color: var(--acid); }
+
+.easter-gate-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 12, 22, .82);
+  backdrop-filter: blur(14px);
+}
+
+.easter-gate-dialog {
+  position: relative;
+  width: min(760px, 100%);
+  padding: clamp(32px, 6vw, 72px);
+  border: 1px solid rgba(207, 174, 102, .72);
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+    #101d2b;
+  background-size: 48px 48px;
+  box-shadow: 16px 16px 0 rgba(207, 174, 102, .16);
+  color: #f3f0e8;
+}
+
+.easter-gate-dialog > span,
+.easter-gate-dialog label,
+.easter-gate-dialog form > p {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.easter-gate-dialog > span { color: var(--acid); }
+.easter-gate-dialog h2 { margin: 32px 0 54px; font-size: clamp(46px, 7vw, 82px); line-height: .98; letter-spacing: -.07em; }
+.easter-gate-dialog form > div { margin-top: 14px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; border-bottom: 1px solid rgba(243,240,232,.55); }
+.easter-gate-dialog form > div > b { color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: 28px; }
+.easter-gate-dialog input { min-width: 0; padding: 18px 14px; border: 0; background: transparent; color: #fff; caret-color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: clamp(18px, 3vw, 28px); letter-spacing: .12em; outline: 0; }
+.easter-gate-dialog form button { align-self: stretch; padding: 0 18px; border: 0; background: var(--acid); color: var(--ink); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 900; letter-spacing: .12em; cursor: pointer; }
+.easter-gate-dialog form > p { min-height: 1.4em; margin: 18px 0 0; color: rgba(243,240,232,.5); }
+.easter-gate-dialog input[aria-invalid="true"] + button { background: #a75c4d; color: #fff; }
+.easter-gate-close { position: absolute; top: 20px; right: 22px; border: 0; background: transparent; color: rgba(255,255,255,.68); font-size: 30px; cursor: pointer; }
+
+.easter-archive-page {
+  --egg-night: #0d1926;
+  --egg-gold: #cbae66;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(134,163,181,.16), transparent 30%),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+    var(--egg-night);
+  background-size: auto, 74px 74px, 74px 74px, auto;
+  color: #f2efe7;
+}
+
+.easter-archive-page > nav { min-height: 74px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.16); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.easter-archive-page > nav a { color: var(--egg-gold); }
+.easter-archive-page > header { position: relative; min-height: 720px; padding: 130px clamp(22px, 8vw, 126px) 90px; display: grid; align-content: center; border-bottom: 1px solid rgba(203,174,102,.48); }
+.easter-archive-page > header::before { content: "XY / 1018 / XY / 1018 / XY / 1018"; position: absolute; right: -48px; top: 50%; color: rgba(203,174,102,.08); font-family: var(--font-geist-mono), monospace; font-size: clamp(42px, 7vw, 112px); font-weight: 900; letter-spacing: .08em; transform: rotate(90deg) translateX(50%); transform-origin: right top; white-space: nowrap; }
+.easter-archive-page > header > div { position: absolute; left: clamp(22px, 4vw, 64px); top: 60px; color: rgba(203,174,102,.12); font-size: clamp(210px, 33vw, 520px); font-weight: 950; line-height: 1; letter-spacing: -.12em; }
+.easter-archive-page > header > span { position: relative; color: var(--egg-gold); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 850; letter-spacing: .18em; }
+.easter-archive-page > header h1 { position: relative; max-width: 1000px; margin: 32px 0 42px; font-size: clamp(64px, 10vw, 146px); line-height: .93; letter-spacing: -.075em; }
+.easter-archive-page > header p { position: relative; max-width: 650px; margin: 0 0 0 auto; color: rgba(242,239,231,.68); font-size: 16px; font-weight: 600; line-height: 2; }
+.easter-archive-log { display: grid; grid-template-columns: repeat(2, 1fr); border-bottom: 1px solid rgba(203,174,102,.48); }
+.easter-archive-log article { position: relative; min-height: 420px; padding: clamp(34px, 5vw, 70px); border-right: 1px solid rgba(203,174,102,.35); border-bottom: 1px solid rgba(203,174,102,.35); overflow: hidden; }
+.easter-archive-log article:nth-child(even) { border-right: 0; }
+.easter-archive-log article:nth-last-child(-n+2) { border-bottom: 0; }
+.easter-archive-log article > div { display: flex; justify-content: space-between; color: var(--egg-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.easter-archive-log article h2 { max-width: 590px; margin: 100px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(36px, 4.6vw, 68px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
+.easter-archive-log article p { max-width: 590px; margin: 0; color: rgba(242,239,231,.63); font-size: 14px; line-height: 2; }
+.easter-archive-log article > b { position: absolute; right: 28px; bottom: -50px; color: rgba(203,174,102,.08); font-size: 170px; line-height: 1; }
+.easter-archive-terminal { padding: 100px clamp(22px, 10vw, 150px); background: #d9d5c9; color: var(--egg-night); }
+.easter-archive-terminal > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+.easter-archive-terminal p { margin: 44px 0 0; font-family: var(--font-geist-mono), monospace; font-size: clamp(17px, 2.3vw, 30px); line-height: 1.6; }
+.easter-archive-terminal p b { color: #8a6b2e; }
+.easter-archive-terminal .easter-terminal-answer { margin-top: 10px; color: #8f4f45; }
+.easter-archive-terminal i { width: 12px; height: 24px; margin-top: 18px; display: block; background: var(--egg-night); animation: egg-blink 1s steps(1) infinite; }
+@keyframes egg-blink { 50% { opacity: 0; } }
+.easter-archive-footer { min-height: 360px; padding: 80px clamp(22px, 8vw, 126px) 48px; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; background: var(--egg-gold); color: var(--egg-night); }
+.easter-archive-footer p { max-width: 920px; margin: 0; font-size: clamp(38px, 5.5vw, 78px); font-weight: 850; line-height: 1.18; letter-spacing: -.055em; }
+.easter-archive-footer a { align-self: flex-end; padding-bottom: 7px; border-bottom: 2px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 900; letter-spacing: .13em; }
+
+@media (max-width: 620px) {
+  .easter-gate-dialog { padding: 54px 22px 34px; box-shadow: 8px 8px 0 rgba(207,174,102,.16); }
+  .easter-gate-dialog h2 { margin: 24px 0 38px; font-size: 52px; }
+  .easter-gate-dialog form > div { grid-template-columns: auto 1fr; }
+  .easter-gate-dialog form button { grid-column: 1 / -1; min-height: 52px; }
+  .easter-archive-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
+  .easter-archive-page > header { min-height: 670px; padding: 110px 22px 72px; }
+  .easter-archive-page > header h1 { font-size: 62px; line-height: 1; }
+  .easter-archive-page > header p { font-size: 14px; line-height: 1.9; }
+  .easter-archive-log { grid-template-columns: 1fr; }
+  .easter-archive-log article { min-height: 0; padding: 42px 22px 58px; border-right: 0; border-bottom: 1px solid rgba(203,174,102,.35) !important; }
+  .easter-archive-log article:last-child { border-bottom: 0 !important; }
+  .easter-archive-log article h2 { margin-top: 66px; font-size: 42px; }
+  .easter-archive-terminal { padding: 76px 22px; }
+  .easter-archive-footer { min-height: 400px; padding: 64px 22px 36px; }
+  .easter-archive-footer p { font-size: 40px; }
+}
 
 .myth-atlas-page {
   min-height: 100vh;

@@ -13,6 +13,20 @@ test("exports the homepage as static HTML", async () => {
   assert.match(html, /TYPE COORDINATES/);
   assert.match(html, /href="\/cm\/styles\.css\?v=[^"]+"/);
   assert.match(html, /src="\/cm\/pythia-priestess\.png"/);
+  assert.match(html, /class="footer-mark"/);
+  assert.doesNotMatch(html, /\/api\//);
+});
+
+test("exports the hidden command archive as static HTML", async () => {
+  const html = await readFile(
+    new URL("../dist/client/easter-egg.html", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(html, /ROOM 24/);
+  assert.match(html, /不存在的档案室/);
+  assert.match(html, /reality has too many open tabs/);
+  assert.match(html, /href="\/cm\/"/);
   assert.doesNotMatch(html, /\/api\//);
 });
 

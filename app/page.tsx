@@ -2,7 +2,7 @@
 
 export const dynamic = "force-static";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -302,12 +302,17 @@ export default function Home() {
   const [apolloStoryIndex, setApolloStoryIndex] = useState(0);
   const [apolloStoryOpen, setApolloStoryOpen] = useState(false);
   const [apolloStoryExpanded, setApolloStoryExpanded] = useState(false);
+  const [easterSequence, setEasterSequence] = useState<0 | 1>(0);
+  const [easterGateOpen, setEasterGateOpen] = useState(false);
+  const [easterCommand, setEasterCommand] = useState("");
+  const [easterError, setEasterError] = useState(false);
+  const easterInputRef = useRef<HTMLInputElement>(null);
 
   const isSeventhSeal = oracleCount > 0 && oracleCount % 7 === 0;
   const currentOracle = isSeventhSeal ? seventhSeal : oracles[oracleIndex];
 
   useEffect(() => {
-    if (!activeTheory && !apolloStoryOpen) return;
+    if (!activeTheory && !apolloStoryOpen && !easterGateOpen) return;
 
     const previousOverflow = document.body.style.overflow;
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -315,17 +320,45 @@ export default function Home() {
         setActiveTheory(null);
         setApolloStoryOpen(false);
         setApolloStoryExpanded(false);
+        setEasterGateOpen(false);
+        setEasterCommand("");
+        setEasterError(false);
       }
     };
 
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", closeOnEscape);
+    if (easterGateOpen) window.requestAnimationFrame(() => easterInputRef.current?.focus());
 
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", closeOnEscape);
     };
-  }, [activeTheory, apolloStoryOpen]);
+  }, [activeTheory, apolloStoryOpen, easterGateOpen]);
+
+  const touchEasterCm = () => {
+    setEasterSequence(1);
+  };
+
+  const touchEasterName = () => {
+    if (easterSequence === 1) {
+      setEasterGateOpen(true);
+      setEasterCommand("");
+      setEasterError(false);
+    }
+    setEasterSequence(0);
+  };
+
+  const submitEasterCommand = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (easterCommand.trim().toLowerCase() === "24xy1018") {
+      const suffix = siteBasePath ? ".html" : "";
+      window.location.assign(`${siteBasePath}/easter-egg${suffix}`);
+      return;
+    }
+    setEasterError(true);
+    setEasterCommand("");
+  };
 
   const summonOracle = () => {
     setOracleIndex((current) => {
@@ -556,7 +589,10 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-mark">神人<span>cm</span></div>
+        <div className="footer-mark" aria-label="神人 cm">
+          <button type="button" onClick={touchEasterName}>神人</button>
+          <button type="button" onClick={touchEasterCm}><span>cm</span></button>
+        </div>
         <p>
           保持好奇，允许跑题，<br />
           随时准备被下一个想法击中。
@@ -566,6 +602,45 @@ export default function Home() {
           <a href="#top">BACK TO TOP ↑</a>
         </div>
       </footer>
+
+      {easterGateOpen && (
+        <div className="easter-gate-overlay" role="presentation">
+          <section className="easter-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="easter-gate-title">
+            <button
+              type="button"
+              className="easter-gate-close"
+              onClick={() => {
+                setEasterGateOpen(false);
+                setEasterCommand("");
+                setEasterError(false);
+              }}
+              aria-label="关闭隐秘入口"
+            >×</button>
+            <span>ARCHIVE LOCK / SEQUENCE ACCEPTED</span>
+            <h2 id="easter-gate-title">输入指令。</h2>
+            <form onSubmit={submitEasterCommand}>
+              <label htmlFor="easter-command">COMMAND</label>
+              <div>
+                <b aria-hidden="true">›</b>
+                <input
+                  id="easter-command"
+                  ref={easterInputRef}
+                  autoComplete="off"
+                  spellCheck={false}
+                  value={easterCommand}
+                  onChange={(event) => {
+                    setEasterCommand(event.target.value);
+                    setEasterError(false);
+                  }}
+                  aria-invalid={easterError}
+                />
+                <button type="submit">EXECUTE ↗</button>
+              </div>
+              <p aria-live="polite">{easterError ? "UNKNOWN COMMAND / 再想想。" : "THE TERMINAL IS LISTENING."}</p>
+            </form>
+          </section>
+        </div>
+      )}
 
       {activeTheory && (
         <div className="theory-overlay">
