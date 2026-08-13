@@ -12,8 +12,8 @@ export default function GodArchivePage({ slug }: { slug: string }) {
   return (
     <main className="norse-god-page">
       <nav className="norse-god-page-nav" aria-label={`${god.name}档案页面导航`}>
-        <a href={`${siteBasePath}/myths/norse${staticPageSuffix}#gods-and-fate`}>← 返回诸神与命运</a>
-        <a href={`${siteBasePath}/myths/norse${staticPageSuffix}#preview`}>NORTH ARCHIVE / 02</a>
+        <a href={`${siteBasePath}/myths/norse/myths${staticPageSuffix}#gods-and-fate`}>← 返回诸神与命运</a>
+        <a href={`${siteBasePath}/myths/norse/myths${staticPageSuffix}#preview`}>MYTH PATH / 01</a>
       </nav>
 
       <article className="norse-god-dialog norse-god-subpage">

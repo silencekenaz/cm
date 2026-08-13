@@ -164,6 +164,9 @@ const realms = [
 ];
 
 export default function NorseArchiveSections() {
+  const northHubHref = `${siteBasePath}/myths/norse${staticPageSuffix}`;
+  const heroesHref = `${siteBasePath}/myths/norse/heroes${staticPageSuffix}`;
+
   return (
     <>
       <nav className="norse-section-nav" aria-label="北欧神话专区目录">
@@ -181,7 +184,7 @@ export default function NorseArchiveSections() {
         <a href="#world-tree"><b aria-hidden="true">ᛇ</b><span>03</span>世界树</a>
         <a href="#ragnarok"><b aria-hidden="true">ᚱ</b><span>04</span>诸神黄昏</a>
         <a href="#norse-memory"><b aria-hidden="true">ᛟ</b><span>05</span>诗歌记忆</a>
-        <p aria-hidden="true"><span>YGGDRASILL</span> / FIVE PATHS BENEATH ONE CROWN</p>
+        <p aria-hidden="true"><span>YGGDRASILL</span> / FIVE MYTHIC PATHS BENEATH ONE CROWN</p>
       </nav>
 
       <section className="norse-fate-section" id="fate-well">
@@ -312,6 +315,11 @@ export default function NorseArchiveSections() {
           <article><span>PROSE EDDA</span><h3>《散文埃达》</h3><p>斯诺里的诗学工程保存了大量叙事，也需要结合其时代语境阅读。</p></article>
         </div>
       </section>
+
+      <nav className="norse-myth-path-switch" aria-label="切换北欧阅读路线">
+        <a href={northHubHref}><span>OVERVIEW</span><b>返回北欧总览</b><i aria-hidden="true">↖</i></a>
+        <a href={heroesHref}><span>NEXT THREAD</span><b>转入英雄传说</b><i aria-hidden="true">↗</i></a>
+      </nav>
     </>
   );
 }

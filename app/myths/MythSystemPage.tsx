@@ -4,7 +4,7 @@ import EgyptianArchiveSections from "./EgyptianArchiveSections";
 
 const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export default function MythSystemPage({ system, egyptianJourney = false }: { system: MythSystem; egyptianJourney?: boolean }) {
+export default function MythSystemPage({ system, egyptianJourney = false, norseMythology = false }: { system: MythSystem; egyptianJourney?: boolean; norseMythology?: boolean }) {
   const atlasHref = siteBasePath ? `${siteBasePath}/myths.html#systems` : "/myths#systems";
   const isNorse = system.slug === "norse";
   const isEgyptian = system.slug === "egyptian" && egyptianJourney;
@@ -12,7 +12,7 @@ export default function MythSystemPage({ system, egyptianJourney = false }: { sy
   return (
     <main className="myth-detail-page" data-system={system.slug}>
       <nav className="myth-atlas-nav" aria-label={`${system.title}页面导航`}>
-        <a href={isEgyptian ? `${siteBasePath}/myths/egyptian` : atlasHref}>{isEgyptian ? "← 返回埃及叙事入口" : "← 返回六个入口"}</a>
+        <a href={isEgyptian ? `${siteBasePath}/myths/egyptian` : norseMythology ? `${siteBasePath}/myths/norse${siteBasePath ? ".html" : ""}` : atlasHref}>{isEgyptian ? "← 返回埃及叙事入口" : norseMythology ? "← 返回北欧总览" : "← 返回六个入口"}</a>
         <a className="myth-atlas-wordmark" href={`${siteBasePath}/`} aria-label="返回神人 cm 首页">
           神人<span>cm</span>
         </a>
@@ -51,7 +51,7 @@ export default function MythSystemPage({ system, egyptianJourney = false }: { sy
         <div className="myth-detail-intro">
           <span>{isNorse ? "NORTH ATLANTIC ARCHIVE / ICE · INK · MEMORY" : isEgyptian ? "FOLLOW THE BARQUE / DAY → DUAT → DAWN" : "PREVIEW EDITION / CONTENT IN PROGRESS"}</span>
           <p>{system.framing}</p>
-          <a href="#preview">{isNorse ? "进入五章档案" : isEgyptian ? "随拉进入十二夜时" : "打开临时档案"} <b aria-hidden="true">↓</b></a>
+          <a href="#preview">{isNorse ? "进入神话篇档案" : isEgyptian ? "随拉进入十二夜时" : "打开临时档案"} <b aria-hidden="true">↓</b></a>
         </div>
         {isNorse && (
           <div className="norse-rune-band" aria-hidden="true">
@@ -103,8 +103,8 @@ export default function MythSystemPage({ system, egyptianJourney = false }: { sy
         {isNorse && <NorseArchiveSections />}
         {isEgyptian && <EgyptianArchiveSections />}
 
-        <a className="myth-detail-back" href={isEgyptian ? `${siteBasePath}/myths/egyptian` : atlasHref}>
-          <span>{isEgyptian ? "BACK TO EGYPTIAN STORY PATHS" : "BACK TO ALL SYSTEMS"}</span>
+        <a className="myth-detail-back" href={isEgyptian ? `${siteBasePath}/myths/egyptian` : norseMythology ? `${siteBasePath}/myths/norse${siteBasePath ? ".html" : ""}` : atlasHref}>
+          <span>{isEgyptian ? "BACK TO EGYPTIAN STORY PATHS" : norseMythology ? "BACK TO NORSE OVERVIEW" : "BACK TO ALL SYSTEMS"}</span>
           <b aria-hidden="true">↖</b>
         </a>
       </section>

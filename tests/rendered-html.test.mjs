@@ -71,26 +71,15 @@ test("exports six static mythology detail pages", async () => {
 
     assert.match(html, new RegExp(title));
     if (slug === "norse") {
-      assert.match(html, /NORTH ATLANTIC ARCHIVE/);
-      assert.match(html, /THE NORTH REMEMBERS IN VERSE/);
+      assert.match(html, /冰与火之间/);
+      assert.match(html, /一份不假装完整的/);
+      assert.match(html, /神话传说/);
+      assert.match(html, /英雄传说/);
+      assert.match(html, /href="\/cm\/myths\/norse\/myths\.html"/);
+      assert.match(html, /href="\/cm\/myths\/norse\/heroes\.html"/);
       assert.doesNotMatch(html, /霜线之下/);
       assert.doesNotMatch(html, /冷海书架/);
-      for (const name of ["弗蕾雅", "尼弗尔海姆", "海姆冥界"]) {
-        assert.match(html, new RegExp(name));
-      }
-      for (const slug of ["odin", "loki", "thor", "tyr", "freyr", "freyja"]) {
-        assert.match(html, new RegExp(`href="/cm/myths/norse/${slug}\\.html"`));
-      }
-      const godOrder = ["奥丁", "洛基", "索尔", "提尔", "弗雷", "弗蕾雅"];
-      const godPositions = godOrder.map((name) => html.indexOf(`<h3>${name}</h3>`));
-      assert.ok(godPositions.every((position) => position >= 0));
-      assert.deepEqual([...godPositions].sort((a, b) => a - b), godPositions);
-      for (const section of ["命运之井", "诸神与命运", "世界树", "诸神黄昏", "诗歌记忆"]) {
-        assert.match(html, new RegExp(section));
-      }
-      for (const anchor of ["fate-well", "gods-and-fate", "world-tree", "ragnarok", "norse-memory"]) {
-        assert.match(html, new RegExp(`id="${anchor}"`));
-      }
+      assert.doesNotMatch(html, /id="gods-and-fate"/);
     } else if (slug === "egyptian") {
       assert.match(html, /埃及神话[\s\S]*叙事入口/);
       assert.match(html, /拉的旅程/);
@@ -155,7 +144,23 @@ test("exports six source-based Norse god subpages", async () => {
     assert.match(html, /命运节点/);
     assert.match(html, /READING NOTE/);
     assert.match(html, /原典索引/);
-    assert.match(html, /href="\/cm\/myths\/norse\.html#gods-and-fate"/);
+    assert.match(html, /href="\/cm\/myths\/norse\/myths\.html#gods-and-fate"/);
     assert.doesNotMatch(html, /\/api\//);
   }
+});
+
+test("exports separate Norse myth and heroic paths", async () => {
+  const mythology = await readFile(new URL("../dist/client/myths/norse/myths.html", import.meta.url), "utf8");
+  assert.match(mythology, /诸神与命运/);
+  for (const section of ["命运之井", "世界树", "诸神黄昏", "诗歌记忆"]) assert.match(mythology, new RegExp(section));
+  for (const slug of ["odin", "loki", "thor", "tyr", "freyr", "freyja"]) {
+    assert.match(mythology, new RegExp(`href="/cm/myths/norse/${slug}\\.html"`));
+  }
+  assert.match(mythology, /href="\/cm\/myths\/norse\/heroes\.html"/);
+
+  const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
+  for (const section of ["英雄不是", "维兰德之歌", "沃尔松格谱系", "西格鲁德与法夫尼尔", "布伦希尔德的誓言", "古德伦的余生"]) {
+    assert.match(heroes, new RegExp(section));
+  }
+  assert.match(heroes, /href="\/cm\/myths\/norse\.html"/);
 });

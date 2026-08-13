@@ -3288,6 +3288,199 @@ footer > p {
 .egypt-hub-method span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
 .egypt-hub-method p { max-width: 760px; margin: 0; font-size: 13px; font-weight: 620; line-height: 1.9; }
 
+/* Norse overview: one world, two narrative routes */
+.norse-hub-page,
+.norse-hero-page { --north-night: #0d1b27; --north-fjord: #263f50; --north-ice: #dce7e8; --north-gold: #c5aa6b; --north-ember: #a95f4d; color: var(--north-night); background: #dce4e3; }
+.norse-hub-page .myth-atlas-nav,
+.norse-hero-page .myth-atlas-nav { background: rgba(9,21,31,.92); border-bottom-color: rgba(220,231,232,.2); }
+.norse-hub-hero { position: relative; min-height: 940px; padding: 148px clamp(22px, 7vw, 108px) 112px; display: grid; grid-template-columns: 1.08fr .62fr; align-items: end; gap: clamp(50px, 8vw, 130px); overflow: hidden; background:
+  radial-gradient(circle at 13% 15%, rgba(125,161,180,.14), transparent 28%),
+  radial-gradient(circle at 88% 72%, rgba(169,95,77,.2), transparent 30%),
+  var(--north-night); color: #eef2ed; }
+.norse-hub-hero::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(rgba(220,231,232,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(220,231,232,.5) 1px, transparent 1px); background-size: 92px 92px; }
+.norse-hub-heading,
+.norse-hub-lead { position: relative; z-index: 2; }
+.norse-hub-heading > span,
+.norse-hub-lead > span,
+.norse-hub-method > span,
+.norse-hub-world > header > span,
+.norse-hub-sources header span,
+.norse-hub-gates > header > span,
+.norse-hero-page > header > span { color: var(--north-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; line-height: 1.8; letter-spacing: .15em; }
+.norse-hub-heading h1 { max-width: 960px; margin: 28px 0 34px; font-family: Georgia, "Songti SC", serif; font-size: clamp(76px, 9vw, 138px); font-weight: 500; line-height: .96; letter-spacing: -.075em; text-wrap: balance; }
+.norse-hub-heading p { margin: 0; color: rgba(220,231,232,.46); font-family: var(--font-geist-mono), monospace; font-size: 11px; font-weight: 800; letter-spacing: .23em; }
+.norse-hub-lead { padding: 34px 0 4px 34px; border-left: 1px solid var(--north-gold); }
+.norse-hub-lead p { margin: 24px 0 32px; color: rgba(238,242,237,.7); font-size: 15px; font-weight: 520; line-height: 2.15; }
+.norse-hub-lead a { padding: 15px 2px; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(238,242,237,.72); color: #fff; font-size: 12px; font-weight: 760; }
+.norse-hub-lead a b { color: var(--north-gold); font-size: 20px; }
+.norse-hub-raven { position: absolute; z-index: 1; top: 86px; right: 7vw; color: rgba(220,231,232,.08); font-family: Georgia, serif; font-size: min(31vw, 440px); line-height: 1; transform: rotate(9deg); }
+.norse-hub-aurora { position: absolute; z-index: 0; inset: -22% -15% auto 18%; height: 64%; transform: rotate(-8deg); opacity: .32; filter: blur(22px); }
+.norse-hub-aurora i { position: absolute; inset: 0; border-radius: 50%; border-top: 44px solid rgba(95,142,136,.28); }
+.norse-hub-aurora i:nth-child(2) { inset: 18% -4% auto 7%; border-color: rgba(117,151,177,.24); transform: rotate(9deg); }
+.norse-hub-aurora i:nth-child(3) { inset: 37% -7% auto 15%; border-color: rgba(196,169,107,.13); transform: rotate(-4deg); }
+.norse-hub-fire { position: absolute; right: -6vw; bottom: -10vw; width: 40vw; aspect-ratio: 1; opacity: .36; }
+.norse-hub-fire::before,
+.norse-hub-fire::after,
+.norse-hub-fire i { content: ""; position: absolute; inset: 18%; border: 1px solid rgba(199,105,75,.36); transform: rotate(45deg); }
+.norse-hub-fire::after { inset: 32%; }
+.norse-hub-fire i:nth-child(1) { inset: 5%; }
+.norse-hub-fire i:nth-child(2) { inset: 44%; background: rgba(199,105,75,.18); }
+.norse-hub-ice { position: absolute; left: -10vw; bottom: -10vw; width: 40vw; aspect-ratio: 1; opacity: .24; }
+.norse-hub-ice i { position: absolute; left: 50%; bottom: 0; width: 1px; height: 100%; background: linear-gradient(transparent, var(--north-ice)); transform-origin: bottom; }
+.norse-hub-ice i:nth-child(1) { transform: rotate(-58deg); }
+.norse-hub-ice i:nth-child(2) { transform: rotate(-22deg); }
+.norse-hub-ice i:nth-child(3) { transform: rotate(20deg); }
+.norse-hub-method { padding: 38px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .34fr 1fr; gap: 44px; background: var(--north-gold); }
+.norse-hub-method > span { color: var(--north-night); }
+.norse-hub-method p { max-width: 1000px; margin: 0; font-size: 14px; line-height: 2; }
+.norse-hub-world { position: relative; padding: 126px clamp(22px, 7vw, 108px); overflow: hidden; background: #e5ebea; }
+.norse-hub-world > header { position: relative; z-index: 2; display: grid; grid-template-columns: .3fr 1fr .58fr; gap: 44px; align-items: end; margin-bottom: 82px; }
+.norse-hub-world > header > span { align-self: start; color: #718998; }
+.norse-hub-world > header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(58px, 7vw, 106px); font-weight: 500; line-height: 1.05; letter-spacing: -.065em; }
+.norse-hub-world > header p { margin: 0; color: #54616a; font-size: 14px; line-height: 2; }
+.norse-hub-tree { position: absolute; z-index: 0; inset: 30% 3vw 3% auto; width: 44%; opacity: .14; }
+.norse-hub-tree::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 5px; background: linear-gradient(transparent, var(--north-fjord) 12% 86%, transparent); }
+.norse-hub-tree i { position: absolute; left: 50%; width: 86%; height: 1px; background: linear-gradient(90deg, transparent, var(--north-fjord), transparent); transform: translateX(-50%); }
+.norse-hub-tree i:nth-child(1) { top: 14%; transform: translateX(-50%) rotate(24deg); }
+.norse-hub-tree i:nth-child(2) { top: 34%; transform: translateX(-50%) rotate(-17deg); }
+.norse-hub-tree i:nth-child(3) { top: 58%; transform: translateX(-50%) rotate(29deg); }
+.norse-hub-tree i:nth-child(4) { top: 80%; transform: translateX(-50%) rotate(-23deg); }
+.norse-hub-tree b { position: absolute; top: 50%; left: 50%; color: var(--north-fjord); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: .28em; writing-mode: vertical-rl; transform: translate(-50%, -50%); }
+.norse-hub-world-list { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--north-fjord); border-left: 1px solid var(--north-fjord); box-shadow: 14px 14px 0 #9baeb5; }
+.norse-hub-world-list article { position: relative; min-height: 390px; padding: 34px clamp(24px, 3vw, 44px) 42px; display: grid; grid-template-columns: 1fr auto; align-content: start; border-right: 1px solid var(--north-fjord); border-bottom: 1px solid var(--north-fjord); background: rgba(239,243,239,.9); }
+.norse-hub-world-list article:nth-child(2),
+.norse-hub-world-list article:nth-child(5) { background: var(--north-fjord); color: #eef2ed; }
+.norse-hub-world-list article:nth-child(5) { grid-column: 1 / -1; min-height: 330px; }
+.norse-hub-world-list article > div { display: flex; gap: 18px; align-items: center; }
+.norse-hub-world-list article span,
+.norse-hub-world-list article small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-hub-world-list article small { color: #78909d; }
+.norse-hub-world-list article > b { color: rgba(38,63,80,.23); font-family: Georgia, serif; font-size: 56px; font-weight: 400; line-height: .8; }
+.norse-hub-world-list article:nth-child(2) > b,
+.norse-hub-world-list article:nth-child(5) > b { color: rgba(220,231,232,.24); }
+.norse-hub-world-list h3 { grid-column: 1 / -1; margin: 70px 0 22px; font-family: Georgia, "Songti SC", serif; font-size: clamp(38px, 4vw, 58px); font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
+.norse-hub-world-list p { grid-column: 1 / -1; max-width: 780px; margin: 0; color: #566168; font-size: 14px; line-height: 2.05; }
+.norse-hub-world-list article:nth-child(2) p,
+.norse-hub-world-list article:nth-child(5) p { color: rgba(238,242,237,.68); }
+.norse-hub-sources { padding: 116px clamp(22px, 7vw, 108px); background: var(--north-night); color: #eef2ed; }
+.norse-hub-sources header { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 54px; }
+.norse-hub-sources header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(54px, 7vw, 98px); font-weight: 500; line-height: 1; }
+.norse-hub-sources > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(197,170,107,.5); border-left: 1px solid rgba(197,170,107,.5); }
+.norse-hub-sources article { min-height: 340px; padding: 34px; border-right: 1px solid rgba(197,170,107,.5); border-bottom: 1px solid rgba(197,170,107,.5); }
+.norse-hub-sources article span { color: var(--north-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-hub-sources article h3 { margin: 76px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: 38px; font-weight: 500; }
+.norse-hub-sources article p { margin: 0; color: rgba(238,242,237,.64); font-size: 13px; line-height: 2; }
+.norse-hub-gates { padding: 126px clamp(22px, 7vw, 108px); background: #dce4e3; }
+.norse-hub-gates > header { display: grid; grid-template-columns: .3fr 1fr .58fr; gap: 44px; align-items: end; margin-bottom: 58px; }
+.norse-hub-gates > header > span { align-self: start; color: #718998; }
+.norse-hub-gates > header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(54px, 7vw, 98px); font-weight: 500; line-height: 1.06; letter-spacing: -.06em; }
+.norse-hub-gates > header p { margin: 0; color: #58656c; font-size: 14px; line-height: 2; }
+.norse-hub-gates > div { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--north-fjord); box-shadow: 16px 16px 0 #91a6b0; }
+.norse-hub-gate { position: relative; min-height: 620px; padding: clamp(30px, 4vw, 58px); display: flex; flex-direction: column; color: var(--north-night); overflow: hidden; }
+.norse-hub-gate + .norse-hub-gate { border-left: 1px solid var(--north-fjord); }
+.norse-hub-gate::before { content: ""; position: absolute; inset: 20% auto auto 50%; width: 58%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; opacity: .1; transform: translateX(-50%); transition: transform 260ms ease, border-radius 260ms ease; }
+.norse-hub-gate:hover::before,
+.norse-hub-gate:focus-visible::before { border-radius: 12%; transform: translateX(-50%) rotate(45deg) scale(1.12); }
+.norse-hub-gate:hover,
+.norse-hub-gate:focus-visible { outline: 0; }
+.norse-hub-gate-myth { background: #e9eeeb; }
+.norse-hub-gate-hero { background: var(--north-ember); color: #fff4e7; }
+.norse-hub-gate > div { position: relative; z-index: 1; display: flex; justify-content: space-between; }
+.norse-hub-gate > div span,
+.norse-hub-gate > small { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.norse-hub-gate > div b { font-family: Georgia, serif; font-size: 84px; font-weight: 400; line-height: .8; opacity: .3; }
+.norse-hub-gate > small { position: relative; z-index: 1; margin-top: 48px; opacity: .58; }
+.norse-hub-gate h3 { position: relative; z-index: 1; margin: auto 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 7vw, 108px); font-weight: 500; line-height: .92; letter-spacing: -.075em; }
+.norse-hub-gate p { position: relative; z-index: 1; max-width: 560px; margin: 0; font-size: 14px; line-height: 2; opacity: .72; }
+.norse-hub-gate strong { position: relative; z-index: 1; margin-top: 36px; padding: 20px 3px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .13em; }
+.norse-hub-gate strong i { color: var(--north-gold); font-size: 24px; font-style: normal; }
+.norse-hub-back { margin: 0 clamp(22px, 7vw, 108px) 92px; padding: 25px 30px; display: flex; justify-content: space-between; background: var(--north-night); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-myth-path-switch { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--norse-fjord); }
+.norse-myth-path-switch a { min-height: 150px; padding: 28px; display: grid; grid-template-columns: 1fr auto; align-content: center; gap: 12px; color: var(--norse-fjord); }
+.norse-myth-path-switch a + a { border-left: 1px solid var(--norse-fjord); background: #c4a96d; }
+.norse-myth-path-switch span { grid-column: 1 / -1; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .15em; }
+.norse-myth-path-switch b { font-family: Georgia, "Songti SC", serif; font-size: 24px; font-weight: 500; }
+.norse-myth-path-switch i { font-size: 24px; font-style: normal; }
+.norse-myth-path-switch a:hover,
+.norse-myth-path-switch a:focus-visible { background: var(--norse-fjord); color: #fff; outline: 0; }
+.norse-hero-page { min-height: 100svh; padding-bottom: 90px; background: #e7e5dd; }
+.norse-hero-page > header { min-height: 760px; padding: 150px clamp(22px, 9vw, 140px) 100px; display: flex; flex-direction: column; justify-content: end; overflow: hidden; background:
+  linear-gradient(118deg, rgba(13,27,39,.98) 0 55%, rgba(116,52,45,.92) 55% 100%),
+  var(--north-night); color: #fff; }
+.norse-hero-page > header::after { content: "ᛋ"; position: absolute; right: 8vw; top: 130px; color: rgba(255,255,255,.07); font-family: Georgia, serif; font-size: min(38vw, 520px); }
+.norse-hero-page > header h1 { position: relative; z-index: 1; max-width: 1050px; margin: 28px 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(76px, 10vw, 150px); font-weight: 500; line-height: .92; letter-spacing: -.075em; }
+.norse-hero-page > header p { position: relative; z-index: 1; max-width: 720px; margin: 0 0 0 auto; color: rgba(255,255,255,.68); font-size: 15px; line-height: 2.1; }
+.norse-hero-page > aside { padding: 34px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .3fr 1fr; gap: 40px; background: var(--north-gold); }
+.norse-hero-page > aside b { font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .14em; }
+.norse-hero-page > aside p { margin: 0; font-size: 14px; line-height: 2; }
+.norse-hero-page > section { margin: 100px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--north-night); border-left: 1px solid var(--north-night); box-shadow: 14px 14px 0 #9e6a5f; }
+.norse-hero-page > section article { min-height: 390px; padding: 36px; display: flex; flex-direction: column; border-right: 1px solid var(--north-night); border-bottom: 1px solid var(--north-night); }
+.norse-hero-page > section article:nth-child(3) { grid-column: 1 / -1; background: var(--north-night); color: #fff; }
+.norse-hero-page > section article span,
+.norse-hero-page > section article small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-hero-page > section article h2 { margin: auto 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 5vw, 70px); font-weight: 500; line-height: 1; }
+.norse-hero-page > section article p { margin: 0 0 30px; color: #5a5e60; font-size: 14px; line-height: 2; }
+.norse-hero-page > section article:nth-child(3) p { color: rgba(255,255,255,.66); }
+.norse-hero-page > section article small { padding-top: 16px; border-top: 1px solid currentColor; opacity: .5; }
+.norse-hero-back { margin: 0 clamp(22px, 7vw, 108px); padding: 25px 30px; display: flex; justify-content: space-between; background: var(--north-night); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+
+@media (max-width: 900px) {
+  .norse-hub-hero { min-height: 980px; grid-template-columns: 1fr; align-content: end; }
+  .norse-hub-lead { max-width: 640px; }
+  .norse-hub-world > header,
+  .norse-hub-gates > header { grid-template-columns: 1fr; align-items: start; }
+  .norse-hub-world > header p,
+  .norse-hub-gates > header p { max-width: 620px; }
+  .norse-hub-sources > div { grid-template-columns: 1fr; }
+  .norse-hub-sources article { min-height: 260px; }
+  .norse-hub-sources article h3 { margin-top: 56px; }
+  .norse-hub-gates > div { grid-template-columns: 1fr; }
+  .norse-hub-gate + .norse-hub-gate { border-top: 1px solid var(--north-fjord); border-left: 0; }
+  .norse-hero-page > section { grid-template-columns: 1fr; }
+  .norse-hero-page > section article:nth-child(3) { grid-column: auto; }
+}
+
+@media (max-width: 620px) {
+  .norse-hub-hero { min-height: 880px; padding: 116px 22px 72px; gap: 48px; }
+  .norse-hub-heading h1 { font-size: 65px; line-height: 1.02; }
+  .norse-hub-heading p { font-size: 8px; line-height: 1.8; }
+  .norse-hub-lead { padding-left: 20px; }
+  .norse-hub-lead p { font-size: 14px; line-height: 2; }
+  .norse-hub-raven { top: 100px; right: -18px; font-size: 210px; }
+  .norse-hub-method { grid-template-columns: 1fr; gap: 12px; }
+  .norse-hub-world,
+  .norse-hub-sources,
+  .norse-hub-gates { padding: 86px 22px; }
+  .norse-hub-world > header,
+  .norse-hub-gates > header { gap: 18px; margin-bottom: 44px; }
+  .norse-hub-world > header h2,
+  .norse-hub-gates > header h2,
+  .norse-hub-sources header h2 { font-size: 50px; line-height: 1.12; }
+  .norse-hub-world-list { grid-template-columns: 1fr; box-shadow: 8px 8px 0 #9baeb5; }
+  .norse-hub-world-list article,
+  .norse-hub-world-list article:nth-child(5) { min-height: 0; grid-column: auto; padding: 28px 24px 34px; }
+  .norse-hub-world-list h3 { margin-top: 52px; font-size: 39px; line-height: 1.15; }
+  .norse-hub-world-list p { font-size: 13px; line-height: 2; }
+  .norse-hub-tree { display: none; }
+  .norse-hub-sources header { align-items: start; flex-direction: column; }
+  .norse-hub-sources article { min-height: 0; padding: 30px 24px 36px; }
+  .norse-hub-sources article h3 { margin: 52px 0 20px; font-size: 34px; }
+  .norse-hub-gates > div { box-shadow: 8px 8px 0 #91a6b0; }
+  .norse-hub-gate { min-height: 530px; padding: 30px 24px; }
+  .norse-hub-gate h3 { font-size: 62px; }
+  .norse-hub-back { margin: 0 22px 72px; }
+  .norse-myth-path-switch { grid-template-columns: 1fr; }
+  .norse-myth-path-switch a + a { border-top: 1px solid var(--norse-fjord); border-left: 0; }
+  .norse-hero-page > header { min-height: 720px; padding: 120px 22px 72px; }
+  .norse-hero-page > header h1 { font-size: 67px; line-height: 1; }
+  .norse-hero-page > header p { font-size: 14px; line-height: 2; }
+  .norse-hero-page > aside { grid-template-columns: 1fr; gap: 14px; }
+  .norse-hero-page > section { margin: 72px 22px; box-shadow: 8px 8px 0 #9e6a5f; }
+  .norse-hero-page > section article { min-height: 330px; padding: 28px 24px; }
+  .norse-hero-page > section article h2 { font-size: 44px; line-height: 1.12; }
+  .norse-hero-back { margin-inline: 22px; }
+}
+
 /* Horus and Seth independent case file */
 .egypt-conflict-page { background: #e6dfd1; }
 .egypt-conflict-hero { padding: 96px clamp(22px, 5vw, 76px) 0; background: var(--egypt-night); color: #f3ead9; }
