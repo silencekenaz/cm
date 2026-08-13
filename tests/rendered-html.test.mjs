@@ -71,8 +71,16 @@ test("exports six static mythology detail pages", async () => {
 
     assert.match(html, new RegExp(title));
     if (slug === "norse") {
+      assert.match(html, /ARCHIVE 02 \/ SCANDINAVIA \/ NORTH ATLANTIC/);
+      assert.match(html, /NORTH ATLANTIC ARCHIVE \/ ICE · INK · MEMORY/);
       assert.match(html, /冰与火之间/);
       assert.match(html, /一份不假装完整的/);
+      assert.match(html, /NÍU HEIMAR \/ CLICK TO UNFOLD/);
+      assert.match(html, /九个世界/);
+      for (const world of ["阿斯加德", "华纳海姆", "亚尔夫海姆", "米德加德", "约顿海姆", "斯瓦塔尔夫海姆", "尼弗尔海姆", "穆斯贝尔海姆", "海姆冥界"]) {
+        assert.match(html, new RegExp(world));
+      }
+      assert.equal(html.match(/class="norse-world-card"/g)?.length, 9);
       assert.match(html, /神话传说/);
       assert.match(html, /英雄传说/);
       assert.match(html, /href="\/cm\/myths\/norse\/myths\.html"/);
@@ -144,19 +152,20 @@ test("exports six source-based Norse god subpages", async () => {
     assert.match(html, /命运节点/);
     assert.match(html, /READING NOTE/);
     assert.match(html, /原典索引/);
-    assert.match(html, /href="\/cm\/myths\/norse\/myths\.html#gods-and-fate"/);
+    assert.match(html, /href="\/cm\/myths\/norse\.html"/);
+    assert.match(html, /href="\/cm\/myths\/norse\/myths\.html"/);
     assert.doesNotMatch(html, /\/api\//);
   }
 });
 
 test("exports separate Norse myth and heroic paths", async () => {
   const mythology = await readFile(new URL("../dist/client/myths/norse/myths.html", import.meta.url), "utf8");
-  assert.match(mythology, /诸神与命运/);
-  for (const section of ["命运之井", "世界树", "诸神黄昏", "诗歌记忆"]) assert.match(mythology, new RegExp(section));
-  for (const slug of ["odin", "loki", "thor", "tyr", "freyr", "freyja"]) {
-    assert.match(mythology, new RegExp(`href="/cm/myths/norse/${slug}\\.html"`));
+  assert.match(mythology, /旧版五章内容已经清除/);
+  assert.match(mythology, /从原典重建中/);
+  assert.match(mythology, /href="\/cm\/myths\/norse\.html#nine-worlds"/);
+  for (const removedSection of ["命运之井", "诸神与命运", "诸神黄昏", "诗歌记忆"]) {
+    assert.doesNotMatch(mythology, new RegExp(removedSection));
   }
-  assert.match(mythology, /href="\/cm\/myths\/norse\/heroes\.html"/);
 
   const heroes = await readFile(new URL("../dist/client/myths/norse/heroes.html", import.meta.url), "utf8");
   for (const section of ["英雄不是", "维兰德之歌", "沃尔松格谱系", "西格鲁德与法夫尼尔", "布伦希尔德的誓言", "古德伦的余生"]) {

@@ -3293,6 +3293,11 @@ footer > p {
 .norse-hero-page { --north-night: #0d1b27; --north-fjord: #263f50; --north-ice: #dce7e8; --north-gold: #c5aa6b; --north-ember: #a95f4d; color: var(--north-night); background: #dce4e3; }
 .norse-hub-page .myth-atlas-nav,
 .norse-hero-page .myth-atlas-nav { background: rgba(9,21,31,.92); border-bottom-color: rgba(220,231,232,.2); }
+.norse-hub-title-hero { min-height: 940px; }
+.norse-hub-opening { padding: 116px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .3fr 1fr .58fr; gap: 44px; align-items: end; background: var(--north-night); color: #eef2ed; }
+.norse-hub-opening > span { align-self: start; color: var(--north-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.norse-hub-opening h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(60px, 7.5vw, 112px); font-weight: 500; line-height: 1.04; letter-spacing: -.065em; }
+.norse-hub-opening p { margin: 0; color: rgba(238,242,237,.68); font-size: 14px; line-height: 2.05; }
 .norse-hub-hero { position: relative; min-height: 940px; padding: 148px clamp(22px, 7vw, 108px) 112px; display: grid; grid-template-columns: 1.08fr .62fr; align-items: end; gap: clamp(50px, 8vw, 130px); overflow: hidden; background:
   radial-gradient(circle at 13% 15%, rgba(125,161,180,.14), transparent 28%),
   radial-gradient(circle at 88% 72%, rgba(169,95,77,.2), transparent 30%),
@@ -3370,6 +3375,48 @@ footer > p {
 .norse-hub-sources article span { color: var(--north-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
 .norse-hub-sources article h3 { margin: 76px 0 24px; font-family: Georgia, "Songti SC", serif; font-size: 38px; font-weight: 500; }
 .norse-hub-sources article p { margin: 0; color: rgba(238,242,237,.64); font-size: 13px; line-height: 2; }
+.norse-nine-worlds { position: relative; padding: 126px clamp(22px, 7vw, 108px); overflow: hidden; background: #cfdada; }
+.norse-nine-worlds > header { position: relative; z-index: 2; display: grid; grid-template-columns: .3fr 1fr .58fr; gap: 44px; align-items: end; margin-bottom: 72px; }
+.norse-nine-worlds > header > span { align-self: start; color: #6f8795; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.norse-nine-worlds > header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(58px, 7.5vw, 108px); font-weight: 500; line-height: 1.02; letter-spacing: -.065em; }
+.norse-nine-worlds > header p { margin: 0; color: #53636b; font-size: 14px; line-height: 2; }
+.norse-nine-worlds-map { position: absolute; z-index: 0; inset: 20% -7vw auto auto; width: 54vw; height: 72%; opacity: .09; pointer-events: none; }
+.norse-nine-worlds-map::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 6px; background: var(--north-fjord); }
+.norse-nine-worlds-map i { position: absolute; top: calc(var(--branch, 1) * 18%); left: 50%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--north-fjord), transparent); transform: translateX(-50%) rotate(24deg); }
+.norse-nine-worlds-map i:nth-child(1) { top: 16%; transform: translateX(-50%) rotate(-28deg); }
+.norse-nine-worlds-map i:nth-child(2) { top: 38%; transform: translateX(-50%) rotate(22deg); }
+.norse-nine-worlds-map i:nth-child(3) { top: 62%; transform: translateX(-50%) rotate(-17deg); }
+.norse-nine-worlds-map i:nth-child(4) { top: 82%; transform: translateX(-50%) rotate(29deg); }
+.norse-nine-worlds-map b { position: absolute; top: 50%; left: 50%; color: var(--north-fjord); font-family: Georgia, serif; font-size: 120px; font-weight: 400; transform: translate(-50%, -50%); }
+.norse-nine-worlds-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--north-fjord); border-left: 1px solid var(--north-fjord); box-shadow: 15px 15px 0 #8ea5ae; }
+.norse-world-card { min-width: 0; border-right: 1px solid var(--north-fjord); border-bottom: 1px solid var(--north-fjord); background: rgba(238,242,238,.93); }
+.norse-world-card:nth-child(2),
+.norse-world-card:nth-child(8) { background: var(--north-fjord); color: #eef2ed; }
+.norse-world-card summary { min-height: 360px; padding: 30px; display: grid; grid-template-columns: 1fr auto; align-content: start; list-style: none; cursor: pointer; }
+.norse-world-card summary::-webkit-details-marker { display: none; }
+.norse-world-card summary > div { display: flex; align-items: center; gap: 14px; }
+.norse-world-card summary span,
+.norse-world-card summary small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.norse-world-card summary small { color: #78909e; }
+.norse-world-card summary > b { color: rgba(38,63,80,.23); font-family: Georgia, serif; font-size: 52px; font-weight: 400; line-height: .8; }
+.norse-world-card:nth-child(2) summary > b,
+.norse-world-card:nth-child(8) summary > b { color: rgba(238,242,237,.23); }
+.norse-world-card summary h3 { grid-column: 1 / -1; margin: 72px 0 18px; font-family: Georgia, "Songti SC", serif; font-size: clamp(38px, 3.6vw, 56px); font-weight: 500; line-height: 1; letter-spacing: -.05em; }
+.norse-world-card summary > p { grid-column: 1 / -1; margin: 0; color: #59656b; font-size: 13px; line-height: 1.85; }
+.norse-world-card:nth-child(2) summary > p,
+.norse-world-card:nth-child(8) summary > p { color: rgba(238,242,237,.62); }
+.norse-world-card summary em { grid-column: 1 / -1; margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; border-top: 1px solid currentColor; font-style: normal; opacity: .65; }
+.norse-world-card summary em i { font-size: 22px; font-style: normal; transition: transform 180ms ease; }
+.norse-world-card[open] summary em i { transform: rotate(45deg); }
+.norse-world-card[open] { grid-column: span 2; background: var(--north-gold); color: var(--north-night); }
+.norse-world-card[open] summary { min-height: 250px; }
+.norse-world-card[open] summary > p { color: rgba(13,27,39,.68); }
+.norse-world-card-detail { padding: 0 30px 34px; border-top: 1px solid rgba(38,63,80,.36); }
+.norse-world-card-detail > span { display: block; padding: 22px 0; color: rgba(13,27,39,.58); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.norse-world-card-detail > p { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(17px, 1.8vw, 23px); line-height: 1.9; }
+.norse-world-card-detail aside { margin-top: 28px; padding: 20px; border-left: 4px solid var(--north-fjord); background: rgba(238,242,237,.28); }
+.norse-world-card-detail aside b { font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: .14em; }
+.norse-world-card-detail aside p { margin: 10px 0 0; font-size: 12px; line-height: 1.9; }
 .norse-hub-gates { padding: 126px clamp(22px, 7vw, 108px); background: #dce4e3; }
 .norse-hub-gates > header { display: grid; grid-template-columns: .3fr 1fr .58fr; gap: 44px; align-items: end; margin-bottom: 58px; }
 .norse-hub-gates > header > span { align-self: start; color: #718998; }
@@ -3423,15 +3470,28 @@ footer > p {
 .norse-hero-page > section article:nth-child(3) p { color: rgba(255,255,255,.66); }
 .norse-hero-page > section article small { padding-top: 16px; border-top: 1px solid currentColor; opacity: .5; }
 .norse-hero-back { margin: 0 clamp(22px, 7vw, 108px); padding: 25px 30px; display: flex; justify-content: space-between; background: var(--north-night); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-myth-empty-page { min-height: 100svh; background: var(--north-night, #0d1b27); color: #eef2ed; }
+.norse-myth-empty-page .myth-atlas-nav { background: rgba(9,21,31,.92); border-bottom-color: rgba(220,231,232,.2); }
+.norse-myth-empty-page > section { position: relative; min-height: 100svh; padding: 130px clamp(22px, 10vw, 160px) 90px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.norse-myth-empty-page > section::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(rgba(220,231,232,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(220,231,232,.5) 1px, transparent 1px); background-size: 88px 88px; }
+.norse-myth-empty-page > section > span { position: relative; z-index: 1; color: #c5aa6b; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.norse-myth-empty-page > section > b { position: absolute; top: 9%; right: 8%; color: rgba(220,231,232,.08); font-family: Georgia, serif; font-size: min(39vw, 540px); font-weight: 400; }
+.norse-myth-empty-page h1 { position: relative; z-index: 1; max-width: 1060px; margin: 34px 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(74px, 10vw, 148px); font-weight: 500; line-height: .94; letter-spacing: -.075em; }
+.norse-myth-empty-page p { position: relative; z-index: 1; max-width: 700px; margin: 0 0 42px auto; color: rgba(238,242,237,.66); font-size: 15px; line-height: 2.1; }
+.norse-myth-empty-page section > a { position: relative; z-index: 1; width: min(360px, 100%); margin-left: auto; padding: 18px 2px; display: flex; justify-content: space-between; border-top: 1px solid #c5aa6b; color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+.norse-myth-empty-page section > a i { color: #c5aa6b; font-size: 22px; font-style: normal; }
 
 @media (max-width: 900px) {
   .norse-hub-hero { min-height: 980px; grid-template-columns: 1fr; align-content: end; }
   .norse-hub-lead { max-width: 640px; }
   .norse-hub-world > header,
+  .norse-hub-opening,
+  .norse-nine-worlds > header,
   .norse-hub-gates > header { grid-template-columns: 1fr; align-items: start; }
   .norse-hub-world > header p,
   .norse-hub-gates > header p { max-width: 620px; }
   .norse-hub-sources > div { grid-template-columns: 1fr; }
+  .norse-nine-worlds-grid { grid-template-columns: repeat(2, 1fr); }
   .norse-hub-sources article { min-height: 260px; }
   .norse-hub-sources article h3 { margin-top: 56px; }
   .norse-hub-gates > div { grid-template-columns: 1fr; }
@@ -3442,6 +3502,10 @@ footer > p {
 
 @media (max-width: 620px) {
   .norse-hub-hero { min-height: 880px; padding: 116px 22px 72px; gap: 48px; }
+  .norse-hub-title-hero { min-height: 860px; }
+  .norse-hub-opening { padding: 82px 22px; gap: 18px; }
+  .norse-hub-opening h2 { font-size: 54px; line-height: 1.12; }
+  .norse-hub-opening p { font-size: 14px; line-height: 2; }
   .norse-hub-heading h1 { font-size: 65px; line-height: 1.02; }
   .norse-hub-heading p { font-size: 8px; line-height: 1.8; }
   .norse-hub-lead { padding-left: 20px; }
@@ -3450,10 +3514,13 @@ footer > p {
   .norse-hub-method { grid-template-columns: 1fr; gap: 12px; }
   .norse-hub-world,
   .norse-hub-sources,
+  .norse-nine-worlds,
   .norse-hub-gates { padding: 86px 22px; }
   .norse-hub-world > header,
+  .norse-nine-worlds > header,
   .norse-hub-gates > header { gap: 18px; margin-bottom: 44px; }
   .norse-hub-world > header h2,
+  .norse-nine-worlds > header h2,
   .norse-hub-gates > header h2,
   .norse-hub-sources header h2 { font-size: 50px; line-height: 1.12; }
   .norse-hub-world-list { grid-template-columns: 1fr; box-shadow: 8px 8px 0 #9baeb5; }
@@ -3465,6 +3532,12 @@ footer > p {
   .norse-hub-sources header { align-items: start; flex-direction: column; }
   .norse-hub-sources article { min-height: 0; padding: 30px 24px 36px; }
   .norse-hub-sources article h3 { margin: 52px 0 20px; font-size: 34px; }
+  .norse-nine-worlds-grid { grid-template-columns: 1fr; box-shadow: 8px 8px 0 #8ea5ae; }
+  .norse-world-card[open] { grid-column: auto; }
+  .norse-world-card summary { min-height: 330px; padding: 28px 24px; }
+  .norse-world-card summary h3 { margin-top: 58px; font-size: 42px; }
+  .norse-world-card-detail { padding: 0 24px 30px; }
+  .norse-nine-worlds-map { display: none; }
   .norse-hub-gates > div { box-shadow: 8px 8px 0 #91a6b0; }
   .norse-hub-gate { min-height: 530px; padding: 30px 24px; }
   .norse-hub-gate h3 { font-size: 62px; }
@@ -3479,6 +3552,9 @@ footer > p {
   .norse-hero-page > section article { min-height: 330px; padding: 28px 24px; }
   .norse-hero-page > section article h2 { font-size: 44px; line-height: 1.12; }
   .norse-hero-back { margin-inline: 22px; }
+  .norse-myth-empty-page > section { padding: 110px 22px 70px; }
+  .norse-myth-empty-page h1 { font-size: 64px; line-height: 1; }
+  .norse-myth-empty-page p { font-size: 14px; line-height: 2; }
 }
 
 /* Horus and Seth independent case file */
