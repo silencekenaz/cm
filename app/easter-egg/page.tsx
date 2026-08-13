@@ -32,8 +32,8 @@ const fragments = [
   {
     no: "04",
     code: "MASCOT UNIT / 毛绒密使",
-    title: "小沙沙与小红毛执行夜航",
-    text: "女王的吉祥物小沙沙平日伏在王座上方的旧旗穗间，入夜后便沿城墙巡行，能从石砖的震动与风声中分辨蛮夷车队的方向；公主的吉祥物小红毛像一团会奔跑的火，专门追踪伪人无法复制的影子。两位小小密使在地下腌菜窖交换情报，把敌军地图缝进红围巾，再赶在天亮前送回王宫。",
+    title: "小沙沙巡城，小红毛布局",
+    text: "女王的吉祥物小沙沙平日伏在王座上方的旧旗穗间，入夜后便沿城墙巡行，能从石砖的震动与风声中分辨蛮夷车队的方向。公主的吉祥物小红毛则是纯粹的脑力派：不擅长正面作战，却精于设局、伪造情报与反向推演，常在所有人看懂棋盘以前改变胜负。它名义上跟随公主，阵营却从未固定；有时替酸菜国诱敌深入，有时又会为自己的计划反坑酸菜。因此王室采纳小红毛的计谋时，总会同时准备一份防备小红毛的备用方案。",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function EasterEggPage() {
       <section className="easter-archive-terminal">
         <span>ROYAL SIGNAL / LAST INTERCEPT</span>
         <p><b>princess@pickle-kingdom</b>:~$ identify --allies false-men barbarians</p>
-        <p className="easter-terminal-answer">warning: 伪神已越过枯河；小沙沙听见了铁轮声，小红毛正在返回。</p>
+        <p className="easter-terminal-answer">warning: 伪神已越过枯河；小沙沙听见了铁轮声；小红毛递交了三份互相矛盾的作战方案。</p>
         <i aria-hidden="true" />
       </section>
 

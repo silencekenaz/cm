@@ -26,7 +26,7 @@ test("exports the hidden command archive as static HTML", async () => {
   assert.match(html, /ROOM 24/);
   assert.match(html, /你找到了[\s\S]*酸菜国/);
   assert.match(html, /这里是酸菜鱼的国度，太阳已经堕落，一切分崩离析。但是好在，这里将是酸菜鱼永恒的土地。/);
-  for (const phrase of ["伪神", "武力惊人", "酸菜国女王", "酸菜国公主", "黄焖鸡丞相", "只比女王小一岁", "不是母女", "小沙沙", "小红毛", "伪人与蛮夷在枯河订盟"]) {
+  for (const phrase of ["伪神", "武力惊人", "酸菜国女王", "酸菜国公主", "黄焖鸡丞相", "只比女王小一岁", "不是母女", "小沙沙", "小红毛", "纯粹的脑力派", "阵营却从未固定", "反坑酸菜", "伪人与蛮夷在枯河订盟"]) {
     assert.match(html, new RegExp(phrase));
   }
   assert.match(html, /太阳可以堕落，城墙可以碎裂/);
