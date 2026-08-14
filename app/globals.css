@@ -4435,11 +4435,17 @@ footer > p {
 .scrap-globe-chart svg { width: 100%; height: auto; display: block; background: linear-gradient(rgba(20,37,52,.075) 1px, transparent 1px), linear-gradient(90deg, rgba(20,37,52,.075) 1px, transparent 1px), #d8ded9; background-size: 80px 80px; }
 .scrap-map-link { cursor: pointer; }
 .scrap-map-link .scrap-land path,
-.scrap-map-link .scrap-earth circle { transform-box: fill-box; transform-origin: center; transition: transform .2s ease, filter .2s ease, stroke-width .2s ease; }
+.scrap-map-link .scrap-earth circle,
+.scrap-map-link .scrap-happy-world circle,
+.scrap-map-link .scrap-tavern circle { transform-box: fill-box; transform-origin: center; transition: transform .2s ease, filter .2s ease, stroke-width .2s ease; }
 .scrap-map-link:hover .scrap-land path,
 .scrap-map-link:focus .scrap-land path,
 .scrap-map-link:hover .scrap-earth circle,
-.scrap-map-link:focus .scrap-earth circle { transform: scale(1.035); filter: brightness(1.08); stroke-width: 9px; }
+.scrap-map-link:focus .scrap-earth circle,
+.scrap-map-link:hover .scrap-happy-world circle,
+.scrap-map-link:focus .scrap-happy-world circle,
+.scrap-map-link:hover .scrap-tavern circle,
+.scrap-map-link:focus .scrap-tavern circle { transform: scale(1.08); filter: brightness(1.12); stroke-width: 9px; }
 .scrap-map-link:focus { outline: none; }
 .scrap-orbits { fill: none; stroke: rgba(20,37,52,.16); stroke-width: 3; stroke-dasharray: 12 18; }
 .scrap-sun circle { fill: var(--scrap-gold); stroke: var(--scrap-ink); stroke-width: 5; }
@@ -4458,6 +4464,17 @@ footer > p {
 .scrap-earth > path:not(.scrap-earth-line) { fill: none; stroke: #d9e3df; stroke-width: 3; }
 .scrap-earth-line { fill: none; stroke: var(--scrap-red); stroke-width: 3; stroke-dasharray: 10 14; }
 .scrap-earth text { fill: var(--scrap-ink); font-family: Georgia, "Songti SC", serif; font-size: 25px; text-anchor: middle; }
+.scrap-tavern-route { fill: none; stroke: var(--scrap-red); stroke-width: 5; stroke-dasharray: 7 8; }
+.scrap-tavern circle { fill: #f0ece1; stroke: var(--scrap-ink); stroke-width: 5; }
+.scrap-tavern-house { fill: none; stroke: var(--scrap-red); stroke-width: 3; stroke-linejoin: round; }
+.scrap-tavern text { fill: var(--scrap-ink); font-family: Georgia, "Songti SC", serif; font-size: 21px; text-anchor: middle; }
+.scrap-tavern .scrap-map-code { font-family: var(--font-geist-mono), monospace; font-size: 11px; font-weight: 850; letter-spacing: .1em; }
+.scrap-happy-line { fill: none; stroke: #8b5c8e; stroke-width: 3; stroke-dasharray: 7 13; }
+.scrap-happy-world ellipse { fill: none; stroke: #8b5c8e; stroke-width: 5; }
+.scrap-happy-world circle { fill: #dfbb66; stroke: var(--scrap-ink); stroke-width: 5; }
+.scrap-happy-face { fill: none; stroke: var(--scrap-ink); stroke-width: 4; stroke-linecap: round; }
+.scrap-happy-world text { fill: var(--scrap-ink); font-family: Georgia, "Songti SC", serif; font-size: 25px; text-anchor: middle; }
+.scrap-happy-world .scrap-map-code { font-family: var(--font-geist-mono), monospace; font-size: 12px; font-weight: 850; letter-spacing: .1em; }
 .scrap-map-notes { fill: rgba(20,37,52,.54); font-family: var(--font-geist-mono), monospace; font-size: 15px; font-weight: 850; letter-spacing: .12em; }
 .scrap-globe-chart figcaption { padding: 30px 34px; display: grid; grid-template-columns: .3fr 1fr; gap: 34px; border-top: 1px solid var(--scrap-ink); }
 .scrap-globe-chart figcaption span { color: #856a36; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
@@ -4473,6 +4490,71 @@ footer > p {
 .scrap-territory-page > header > span { color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
 .scrap-territory-page > header h1 { margin: 40px 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(96px, 18vw, 270px); font-weight: 500; line-height: .88; letter-spacing: -.08em; }
 .scrap-territory-page > header p { margin: 0; color: rgba(238,240,233,.58); font-size: 15px; line-height: 2; }
+
+.suancai-country-page { --sour-night: #0b1823; --sour-cream: #e7e4da; --sour-gold: #c6aa65; --sour-red: #a9604e; --sour-blue: #7893a4; min-height: 100svh; overflow: hidden; background: var(--sour-night); color: #eef0e9; }
+.suancai-country-page > nav,
+.border-tavern-page > nav { min-height: 74px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(238,240,233,.18); color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.suancai-country-page > nav a,
+.border-tavern-page > nav a { color: #eef0e9; }
+.suancai-country-hero { min-height: 850px; padding: 130px clamp(22px, 8vw, 126px) 80px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(198,170,101,.2), transparent 26%), linear-gradient(125deg, var(--sour-night) 0 69%, #344b58 69% 84%, var(--sour-red) 84%); background-size: 72px 72px, 72px 72px, auto, auto; }
+.suancai-country-hero > span,
+.suancai-origin-note > span,
+.suancai-cast header > span,
+.suancai-mascots header > span,
+.suancai-mascots article > span,
+.suancai-tavern-callout > span { color: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.suancai-country-hero h1 { position: relative; margin: 40px 0 42px; font-family: Georgia, "Songti SC", serif; font-size: clamp(130px, 20vw, 310px); font-weight: 500; line-height: .83; letter-spacing: -.09em; }
+.suancai-country-hero > p { position: relative; max-width: 760px; margin: 0 0 0 auto; color: rgba(238,240,233,.7); font-size: 15px; line-height: 2.1; }
+.suancai-country-seal { position: absolute; top: 11%; right: 7%; width: clamp(190px, 25vw, 360px); aspect-ratio: 1; display: grid; place-items: center; border: 2px solid var(--sour-gold); border-radius: 50%; box-shadow: 0 0 0 24px rgba(198,170,101,.08), 0 0 0 48px rgba(198,170,101,.045); color: var(--sour-gold); opacity: .38; transform: rotate(8deg); }
+.suancai-country-seal b { font-family: Georgia, "Songti SC", serif; font-size: clamp(90px, 13vw, 180px); font-weight: 500; }
+.suancai-country-seal i { position: absolute; right: 17%; bottom: 15%; font-family: var(--font-geist-mono), monospace; font-size: 12px; font-style: normal; font-weight: 900; }
+.suancai-origin-note { padding: 124px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .3fr 1fr; gap: 50px; background: var(--sour-gold); color: #142534; }
+.suancai-origin-note > span { color: #684b25; }
+.suancai-origin-note > div { display: grid; grid-template-columns: .8fr 1fr; gap: clamp(34px, 6vw, 96px); align-items: end; }
+.suancai-origin-note h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 8vw, 118px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.suancai-origin-note p { margin: 0; font-size: 15px; line-height: 2.15; }
+.suancai-cast { padding: 126px clamp(22px, 5vw, 76px); background: var(--sour-cream); color: #142534; }
+.suancai-cast > header { display: grid; grid-template-columns: .25fr 1fr .55fr; gap: 42px; align-items: end; margin-bottom: 66px; }
+.suancai-cast header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 7vw, 104px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.suancai-cast header p { margin: 0; color: #5c6266; font-size: 14px; line-height: 2.05; }
+.suancai-cast > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #142534; border-left: 1px solid #142534; }
+.suancai-cast article { min-height: 540px; padding: 38px; display: flex; flex-direction: column; border-right: 1px solid #142534; border-bottom: 1px solid #142534; }
+.suancai-cast article:nth-child(2) { background: var(--sour-blue); color: #fff; }
+.suancai-cast article:nth-child(3) { background: var(--sour-red); color: #fff; }
+.suancai-cast small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.suancai-cast article > b { align-self: flex-end; font-family: Georgia, serif; font-size: 70px; font-weight: 400; opacity: .56; }
+.suancai-cast h3 { margin: auto 0 16px; font-family: Georgia, "Songti SC", serif; font-size: clamp(46px, 5vw, 72px); font-weight: 500; line-height: 1; letter-spacing: -.06em; }
+.suancai-cast h4 { margin: 0 0 30px; font-size: 13px; }
+.suancai-cast article p { margin: 0; font-size: 14px; line-height: 2.05; opacity: .76; }
+.suancai-mascots { padding: 126px clamp(22px, 7vw, 108px); background: var(--sour-night); }
+.suancai-mascots > header { display: grid; grid-template-columns: .3fr 1fr; gap: 42px; align-items: end; margin-bottom: 70px; }
+.suancai-mascots header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(68px, 8vw, 120px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.suancai-mascots > div { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(198,170,101,.48); border-left: 1px solid rgba(198,170,101,.48); }
+.suancai-mascots article { min-height: 480px; padding: clamp(34px, 5vw, 70px); display: flex; flex-direction: column; border-right: 1px solid rgba(198,170,101,.48); border-bottom: 1px solid rgba(198,170,101,.48); }
+.suancai-mascots article:nth-child(2) { background: rgba(169,96,78,.18); }
+.suancai-mascots h3 { margin: auto 0 30px; font-family: Georgia, "Songti SC", serif; font-size: clamp(62px, 7vw, 106px); font-weight: 500; line-height: 1; }
+.suancai-mascots article p { max-width: 650px; margin: 0 0 34px; color: rgba(238,240,233,.7); font-size: 14px; line-height: 2.1; }
+.suancai-mascots strong { padding-top: 20px; border-top: 1px solid rgba(238,240,233,.2); color: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.8; letter-spacing: .1em; }
+.suancai-tavern-callout { padding: 126px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .3fr 1fr; gap: 46px; background: #d9d8d0; color: #142534; }
+.suancai-tavern-callout > div { display: grid; grid-template-columns: 1fr .7fr; gap: 44px; align-items: end; }
+.suancai-tavern-callout h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 8vw, 116px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.suancai-tavern-callout p { margin: 0; font-size: 14px; line-height: 2.1; }
+.suancai-tavern-callout a { grid-column: 2; width: fit-content; padding: 18px 24px; border: 1px solid #142534; background: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .1em; }
+.suancai-country-page > footer { min-height: 120px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; color: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.suancai-country-page > footer a { color: #eef0e9; }
+
+.border-tavern-page { min-height: 100svh; background: #101c28; color: #eef0e9; }
+.border-tavern-page > header { min-height: 760px; padding: 120px clamp(22px, 8vw, 126px) 82px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(90deg, rgba(198,170,101,.12) 50%, rgba(120,147,164,.13) 50%), linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), #101c28; background-size: auto, 100% 72px, auto; }
+.border-tavern-page > header > span,
+.border-tavern-page > section > span { color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.border-tavern-page > header h1 { margin: 38px 0 44px; font-family: Georgia, "Songti SC", serif; font-size: clamp(100px, 16vw, 240px); font-weight: 500; line-height: .84; letter-spacing: -.08em; }
+.border-tavern-page > header h1 b { color: #c6aa65; font-weight: 500; }
+.border-tavern-page > header p { max-width: 720px; margin: 0 0 0 auto; color: rgba(238,240,233,.7); font-size: 15px; line-height: 2.1; }
+.border-tavern-page > section { padding: 126px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .3fr 1fr; gap: 46px; background: #e4e1d7; color: #142534; }
+.border-tavern-page > section > div { display: grid; grid-template-columns: 1fr .7fr; gap: 44px; }
+.border-tavern-page > section h2 { grid-row: 1 / 3; margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(66px, 8vw, 116px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.border-tavern-page > section p { margin: 0; font-size: 14px; line-height: 2.1; }
+.border-tavern-page > footer { min-height: 150px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; background: #c6aa65; color: #142534; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
 
 @media (max-width: 900px) {
   .scrap-globe-chart figure { overflow: hidden; }
@@ -4500,4 +4582,37 @@ footer > p {
   .scrap-territory-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
   .scrap-territory-page > header { padding: 90px 22px 48px; }
   .scrap-territory-page > header h1 { font-size: 84px; line-height: 1.04; }
+  .suancai-country-page > nav,
+  .border-tavern-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
+  .suancai-country-hero { min-height: 760px; padding: 108px 22px 64px; }
+  .suancai-country-hero h1 { font-size: 98px; line-height: .96; }
+  .suancai-country-hero > p { font-size: 14px; line-height: 2; }
+  .suancai-country-seal { top: 8%; right: -12%; width: 210px; }
+  .suancai-origin-note,
+  .suancai-tavern-callout,
+  .border-tavern-page > section { padding: 84px 22px; grid-template-columns: 1fr; gap: 32px; }
+  .suancai-origin-note > div,
+  .suancai-tavern-callout > div,
+  .border-tavern-page > section > div { grid-template-columns: 1fr; gap: 30px; }
+  .suancai-origin-note h2,
+  .suancai-tavern-callout h2,
+  .border-tavern-page > section h2 { grid-row: auto; font-size: 54px; line-height: 1.08; }
+  .suancai-tavern-callout a { grid-column: auto; }
+  .suancai-cast,
+  .suancai-mascots { padding: 88px 22px; }
+  .suancai-cast > header,
+  .suancai-mascots > header { grid-template-columns: 1fr; gap: 24px; }
+  .suancai-cast header h2,
+  .suancai-mascots header h2 { font-size: 56px; line-height: 1.08; }
+  .suancai-cast > div,
+  .suancai-mascots > div { grid-template-columns: 1fr; }
+  .suancai-cast article,
+  .suancai-mascots article { min-height: 430px; padding: 34px 24px; }
+  .suancai-cast h3,
+  .suancai-mascots h3 { font-size: 56px; }
+  .suancai-country-page > footer { min-height: 150px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; }
+  .border-tavern-page > header { min-height: 720px; padding: 100px 22px 64px; }
+  .border-tavern-page > header h1 { font-size: 82px; line-height: 1.02; }
+  .border-tavern-page > header p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .border-tavern-page > footer { min-height: 150px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 18px; }
 }
