@@ -218,8 +218,18 @@ test("exports separate Norse myth and heroic paths", async () => {
   const scrapMap = await readFile(new URL("../dist/client/myths/norse/sun-map.html", import.meta.url), "utf8");
   assert.match(scrapMap, /<h1>屑球<br\/><b>地图<\/b><\/h1>/);
   for (const place of ["酸菜国", "伪国", "蛮夷国", "神之境", "很远的地球"]) assert.match(scrapMap, new RegExp(place));
+  for (const slug of ["suancai", "weiguo", "manyi", "god-realm", "earth"]) assert.match(scrapMap, new RegExp(`href="/cm/myths/norse/sun-map/${slug}\\.html"`));
+  assert.doesNotMatch(scrapMap, /scrap-globe-ledger/);
   assert.match(scrapMap, /href="\/cm\/myths\/norse\/myths\/morning\.html"/);
   assert.doesNotMatch(scrapMap, /\/api\//);
+
+  for (const [slug, name] of [["suancai", "酸菜国"], ["weiguo", "伪国"], ["manyi", "蛮夷国"], ["god-realm", "神之境"], ["earth", "很远的地球"]]) {
+    const territory = await readFile(new URL(`../dist/client/myths/norse/sun-map/${slug}.html`, import.meta.url), "utf8");
+    assert.match(territory, new RegExp(`<h1>${name}</h1>`));
+    assert.match(territory, /详细档案尚未展开。/);
+    assert.match(territory, /href="\/cm\/myths\/norse\/sun-map\.html"/);
+    assert.doesNotMatch(territory, /\/api\//);
+  }
 
   const noon = await readFile(new URL("../dist/client/myths/norse/myths/noon.html", import.meta.url), "utf8");
   for (const section of ["预言的孩子们", "乌特加德的五场比赛", "特里姆的婚宴", "希米尔的巨锅", "布里辛项链残篇"]) assert.match(noon, new RegExp(section));
