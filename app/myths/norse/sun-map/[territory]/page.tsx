@@ -45,9 +45,9 @@ function SuancaiPage() {
     <section className="suancai-cast">
       <header><span>COURT / 03</span><h2>王国的主要成员</h2><p>三个人，各自负责一部分秩序；凑在一起时，通常还能额外制造一点秩序之外的东西。</p></header>
       <div>
-        <article><small>01 / THE QUEEN</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-queen-line-v3.png`} alt="黑白线条画：戴左眼单片镜、扎着高小辫，飒爽而秀美的酸菜女王" /></figure><h3>酸菜女王</h3><h4>王国的决策者</h4><p>与公主并肩对抗伪人与蛮夷。她负责拍板、守住国土，以及在所有人都有第二套计划时，决定究竟执行哪一套。</p></article>
-        <article><small>02 / THE PRINCESS</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-princess-line-v2.png`} alt="黑白线条画：长发、笑容天真的酸菜公主" /></figure><h3>酸菜公主</h3><h4>被巡逻队带回的公主</h4><p>只比女王小一岁，不是女王的女儿。她与女王共同守国，也必须时常处理自己那位阵营不太稳定的吉祥物。</p></article>
-        <article><small>03 / THE CHANCELLOR</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/huangmenji-chancellor-line-v1.png`} alt="黑白线条画：戴眼镜、梳低马尾且神情严肃的黄焖鸡女丞相" /></figure><h3>黄焖鸡丞相</h3><h4>女丞相 · 巡逻者</h4><p>她在巡逻途中捡到了后来的酸菜公主。她崇拜阿耳忒弥斯女神，厌恶爱情；在她看来，月光、弓箭和按时交报告都比恋爱可靠。</p></article>
+        <article><small>01 / THE QUEEN</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-queen-transparent-v1.png`} alt="透明底黑白线条画：戴左眼单片镜、扎着高小辫，飒爽而秀美的酸菜女王" /></figure><h3>酸菜女王</h3><h4>王国的决策者</h4><p>与公主并肩对抗伪人与蛮夷。她负责拍板、守住国土，以及在所有人都有第二套计划时，决定究竟执行哪一套。</p></article>
+        <article><small>02 / THE PRINCESS</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-princess-transparent-v1.png`} alt="透明底黑白线条画：长发、笑容天真的酸菜公主" /></figure><h3>酸菜公主</h3><h4>被巡逻队带回的公主</h4><p>只比女王小一岁，不是女王的女儿。她与女王共同守国，也必须时常处理自己那位阵营不太稳定的吉祥物。</p></article>
+        <article><small>03 / THE CHANCELLOR</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/huangmenji-chancellor-transparent-v1.png`} alt="透明底黑白线条画：戴眼镜、梳低马尾且神情严肃的黄焖鸡女丞相" /></figure><h3>黄焖鸡丞相</h3><h4>女丞相 · 巡逻者</h4><p>她在巡逻途中捡到了后来的酸菜公主。她崇拜阿耳忒弥斯女神，厌恶爱情；在她看来，月光、弓箭和按时交报告都比恋爱可靠。</p></article>
       </div>
     </section>
 
