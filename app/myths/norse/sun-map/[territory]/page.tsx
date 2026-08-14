@@ -66,6 +66,70 @@ function SuancaiPage() {
   </main>;
 }
 
+function InvertedPentagram({ className = "" }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M50 95 23.5 13.6 92.8 63.9 7.2 63.9 76.5 13.6 50 95Z" />
+  </svg>;
+}
+
+function WeiguoPage() {
+  return <main className="weiguo-country-page">
+    <ArchiveNav number="02" />
+    <header className="weiguo-country-hero">
+      <div className="weiguo-sigil-orbit" aria-hidden="true"><InvertedPentagram /><i /><i /><i /></div>
+      <span>MIMIC / PUBLIC RECORD</span>
+      <h1><span>伪</span>国</h1>
+      <p>伪人擅长成为任何人。他们能学会语气、步伐和开门时的停顿，却总会留下某种说不清的异样——像一张过分准确的脸，忽然忘了人为什么要眨眼。</p>
+      <div className="weiguo-hero-index"><b>02</b><span>COMBAT / MIMICRY / UNCANNY</span></div>
+    </header>
+
+    <section className="weiguo-two-files">
+      <header><span>ONE THRONE / TWO NAMES</span><h2><b>传说写着昀昀。</b><br /><b>真相写着晚霞。</b></h2><p>伪国的档案很少直接撒谎。它们更喜欢把真的那页压在假的下面，再等读者自己决定要不要继续翻。</p></header>
+      <div>
+        <article className="weiguo-yunyun-file">
+          <small>PUBLIC FILE / 伪神传说</small>
+          <span aria-hidden="true">01</span>
+          <h3>昀昀</h3>
+          <h4>传说中的伪神</h4>
+          <p>人人都听说伪神名叫昀昀。她的智商很 <b>good</b>，看局势比大多数伪人快得多；武力同样不弱，只是与晚霞相比，仍要稍逊一筹。</p>
+          <strong>判断力 / 很 good<br />武力 / 略低于晚霞</strong>
+        </article>
+        <article className="weiguo-wanxia-file">
+          <small>SEALED FILE / 真实更正</small>
+          <InvertedPentagram className="weiguo-card-sigil" />
+          <h3>晚霞</h3>
+          <h4>真正的伪神</h4>
+          <p>被藏起来的答案是晚霞。她的武力值极高，智识也高于普通伪人；更麻烦的是，她并不只存在于边境报告里——晚霞与酸菜公主是好友，两国最危险的名字有时会坐在一张桌前聊天。</p>
+          <strong>武力 / 极高<br />智识 / 高于普通伪人<br />关系 / 酸菜公主的好友</strong>
+        </article>
+      </div>
+    </section>
+
+    <section className="weiguo-mimic-field">
+      <div className="weiguo-mimic-echo" aria-hidden="true"><i>人</i><i>伪</i><i>人</i><i>伪</i></div>
+      <header><span>SPECIES NOTE / MIMICS</span><h2>他们很像人。<br />问题是，<em>太像了。</em></h2></header>
+      <div className="weiguo-traits">
+        <article><small>01 / FORCE</small><h3>普遍高武力</h3><p>伪人的身体素质普遍强悍。即使没有神位、头衔或专属档案，普通伪人也很少是适合正面硬碰的对象。</p></article>
+        <article><small>02 / MIMICRY</small><h3>善于伪装</h3><p>他们观察人类，再把神态、动作和说话习惯一件件穿到身上。技术往往没有问题，问题出在他们偶尔会把所有细节同时做得过于正确。</p></article>
+        <article><small>03 / UNCANNY</small><h3>非人的余味</h3><p>你可能说不出哪里不对，却会本能地再看一眼。也许是笑容停得太准，也许是沉默时完全没有多余动作——总之，那张人脸下面还有别的东西。</p></article>
+      </div>
+    </section>
+
+    <section className="weiguo-goose-file">
+      <span>COMPANION FILE / GOOSE</span>
+      <div className="weiguo-goose-mark" aria-hidden="true"><b>鹅</b><i>!</i></div>
+      <div><h2>大鹅</h2><h3>伪神的随行宠物</h3><p>伪神有一只宠物，名字没有任何伪装，直接叫大鹅。它不负责解释王位传闻，也不参与真假档案的校对；它只负责跟着伪神，并以一种理直气壮的姿态，让所有想靠近的人重新考虑距离。</p><strong>权限 / 不详<br />威慑方式 / 注视、逼近，以及可能的啄</strong></div>
+    </section>
+
+    <section className="weiguo-emblem-file">
+      <div><span>STATE EMBLEM / INVERTED PENTAGRAM</span><h2>一颗向下的星，<br />是伪神留下的签名。</h2><p>倒置五芒星是伪神的标志。它出现在封存档案、边境记号与不该被打开的门上；看到它时，至少有一件事是真的：有人希望你怀疑眼前的一切。</p></div>
+      <InvertedPentagram className="weiguo-emblem-star" />
+    </section>
+
+    <footer><a href={mapHref}>← 返回屑球地图</a><a href={territoryHref("border-tavern")}>前往交界小酒馆 ↗</a></footer>
+  </main>;
+}
+
 function BorderTavernPage() {
   return <main className="border-tavern-page">
     <ArchiveNav number="↔" />
@@ -80,6 +144,7 @@ export default async function Page({ params }: { params: Promise<{ territory: st
   const territory = territories.find((item) => item.slug === slug);
   if (!territory) return null;
   if (slug === "suancai") return <SuancaiPage />;
+  if (slug === "weiguo") return <WeiguoPage />;
   if (slug === "border-tavern") return <BorderTavernPage />;
   return <main className={`scrap-territory-page scrap-territory-${territory.slug}`}>
     <ArchiveNav number={territory.number} />

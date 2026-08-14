@@ -4493,8 +4493,10 @@ footer > p {
 
 .suancai-country-page { --sour-night: #0b1823; --sour-cream: #e7e4da; --sour-gold: #c6aa65; --sour-red: #a9604e; --sour-blue: #7893a4; min-height: 100svh; overflow: hidden; background: var(--sour-night); color: #eef0e9; }
 .suancai-country-page > nav,
+.weiguo-country-page > nav,
 .border-tavern-page > nav { min-height: 74px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(238,240,233,.18); color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
 .suancai-country-page > nav a,
+.weiguo-country-page > nav a,
 .border-tavern-page > nav a { color: #eef0e9; }
 .suancai-country-hero { min-height: 850px; padding: 130px clamp(22px, 8vw, 126px) 80px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(198,170,101,.2), transparent 26%), linear-gradient(125deg, var(--sour-night) 0 69%, #344b58 69% 84%, var(--sour-red) 84%); background-size: 72px 72px, 72px 72px, auto, auto; }
 .suancai-country-hero > span,
@@ -4551,6 +4553,83 @@ footer > p {
 .suancai-country-page > footer { min-height: 120px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; color: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
 .suancai-country-page > footer a { color: #eef0e9; }
 
+.weiguo-country-page { --mimic-night: #111922; --mimic-paper: #e6e2d9; --mimic-red: #a65649; --mimic-violet: #625d70; --mimic-ash: #879397; --mimic-gold: #c5a965; min-height: 100svh; overflow: hidden; background: var(--mimic-night); color: #edf0e9; }
+.weiguo-country-hero { min-height: 850px; padding: 132px clamp(22px, 8vw, 126px) 82px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(166,86,73,.22), transparent 25%), linear-gradient(132deg, #111922 0 68%, #292b39 68% 82%, #a65649 82%); background-size: 68px 68px, 68px 68px, auto, auto; }
+.weiguo-country-hero::before { content: "MIMIC MIMIC MIMIC"; position: absolute; left: -1vw; bottom: -.12em; color: rgba(237,240,233,.025); font-family: var(--font-geist-mono), monospace; font-size: clamp(90px, 14vw, 210px); font-weight: 900; line-height: .8; white-space: nowrap; transform: scaleX(-1); }
+.weiguo-country-hero > span,
+.weiguo-two-files header > span,
+.weiguo-mimic-field header > span,
+.weiguo-goose-file > span,
+.weiguo-emblem-file span { position: relative; color: var(--mimic-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.weiguo-country-hero h1 { position: relative; margin: 38px 0 44px; font-family: Georgia, "Songti SC", serif; font-size: clamp(138px, 21vw, 320px); font-weight: 500; line-height: .8; letter-spacing: -.1em; }
+.weiguo-country-hero h1 span { position: relative; display: inline-block; color: #f0eee6; text-shadow: 11px 8px 0 rgba(166,86,73,.46), -8px -5px 0 rgba(98,93,112,.42); }
+.weiguo-country-hero > p { position: relative; max-width: 720px; margin: 0 0 0 auto; color: rgba(237,240,233,.72); font-size: 15px; line-height: 2.15; }
+.weiguo-hero-index { position: absolute; top: 15%; left: 7%; display: grid; gap: 12px; color: rgba(237,240,233,.26); font-family: var(--font-geist-mono), monospace; }
+.weiguo-hero-index b { font-size: 84px; line-height: 1; }
+.weiguo-hero-index span { font-size: 7px; font-weight: 850; letter-spacing: .13em; writing-mode: vertical-rl; }
+.weiguo-sigil-orbit { position: absolute; top: 9%; right: 7%; width: clamp(220px, 29vw, 420px); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(197,169,101,.34); border-radius: 50%; box-shadow: 0 0 0 26px rgba(197,169,101,.045), 0 0 0 54px rgba(197,169,101,.025); transform: rotate(-7deg); }
+.weiguo-sigil-orbit svg { width: 58%; }
+.weiguo-sigil-orbit path,
+.weiguo-card-sigil path,
+.weiguo-emblem-star path { fill: none; stroke: currentColor; stroke-width: 3.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.weiguo-sigil-orbit { color: rgba(197,169,101,.52); }
+.weiguo-sigil-orbit i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--mimic-red); }
+.weiguo-sigil-orbit i:nth-of-type(1) { top: -5px; left: 50%; }
+.weiguo-sigil-orbit i:nth-of-type(2) { right: 5%; bottom: 22%; }
+.weiguo-sigil-orbit i:nth-of-type(3) { left: 7%; bottom: 24%; }
+
+.weiguo-two-files { padding: 126px clamp(22px, 6vw, 92px); background: var(--mimic-paper); color: #15232d; }
+.weiguo-two-files > header { display: grid; grid-template-columns: .24fr 1fr .55fr; gap: 42px; align-items: end; margin-bottom: 72px; }
+.weiguo-two-files header > span { color: #7a4943; }
+.weiguo-two-files header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(54px, 5vw, 76px); font-weight: 500; line-height: 1.08; letter-spacing: -.07em; }
+.weiguo-two-files header h2 b { font-weight: 500; white-space: nowrap; }
+.weiguo-two-files header p { margin: 0; color: #5e6162; font-size: 14px; line-height: 2.08; }
+.weiguo-two-files > div { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #15232d; border-left: 1px solid #15232d; }
+.weiguo-two-files article { min-height: 660px; padding: clamp(34px, 5vw, 72px); position: relative; display: flex; flex-direction: column; border-right: 1px solid #15232d; border-bottom: 1px solid #15232d; overflow: hidden; }
+.weiguo-two-files article small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.weiguo-two-files article > span { align-self: flex-end; color: rgba(21,35,45,.16); font-family: Georgia, serif; font-size: 130px; font-weight: 700; line-height: .8; }
+.weiguo-wanxia-file { background: var(--mimic-red); color: #fff; }
+.weiguo-card-sigil { width: 160px; margin: 24px 0 0 auto; color: rgba(255,255,255,.34); transform: rotate(4deg); }
+.weiguo-two-files h3 { margin: auto 0 10px; font-family: Georgia, "Songti SC", serif; font-size: clamp(74px, 8vw, 126px); font-weight: 500; line-height: .9; letter-spacing: -.07em; }
+.weiguo-two-files h4 { margin: 0 0 34px; font-size: 13px; }
+.weiguo-two-files p { margin: 0 0 42px; font-size: 15px; line-height: 2.1; opacity: .78; }
+.weiguo-two-files strong { padding-top: 22px; border-top: 1px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 2.05; letter-spacing: .08em; opacity: .78; }
+
+.weiguo-mimic-field { min-height: 980px; padding: 132px clamp(22px, 7vw, 108px); position: relative; overflow: hidden; background: linear-gradient(90deg, transparent 49.9%, rgba(237,240,233,.05) 50%, transparent 50.1%), linear-gradient(rgba(237,240,233,.04) 1px, transparent 1px), var(--mimic-night); background-size: auto, 100% 74px, auto; }
+.weiguo-mimic-field > header { position: relative; z-index: 1; display: grid; grid-template-columns: .28fr 1fr; gap: 46px; align-items: end; }
+.weiguo-mimic-field h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 9vw, 134px); font-weight: 500; line-height: .98; letter-spacing: -.07em; }
+.weiguo-mimic-field h2 em { color: var(--mimic-red); font-style: normal; }
+.weiguo-traits { position: relative; z-index: 1; margin-top: 96px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(237,240,233,.3); border-left: 1px solid rgba(237,240,233,.3); }
+.weiguo-traits article { min-height: 380px; padding: 38px; display: flex; flex-direction: column; border-right: 1px solid rgba(237,240,233,.3); border-bottom: 1px solid rgba(237,240,233,.3); background: rgba(237,240,233,.025); }
+.weiguo-traits article:nth-child(2) { transform: translateY(38px); background: rgba(98,93,112,.22); }
+.weiguo-traits small { color: var(--mimic-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
+.weiguo-traits h3 { margin: auto 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(38px, 4vw, 58px); font-weight: 500; line-height: 1; }
+.weiguo-traits p { margin: 0; color: rgba(237,240,233,.65); font-size: 14px; line-height: 2.05; }
+.weiguo-mimic-echo { position: absolute; inset: 0; pointer-events: none; }
+.weiguo-mimic-echo i { position: absolute; color: rgba(237,240,233,.025); font-family: Georgia, "Songti SC", serif; font-size: clamp(170px, 24vw, 350px); font-style: normal; font-weight: 700; transform: scaleX(-1); }
+.weiguo-mimic-echo i:nth-child(1) { top: 5%; right: -2%; }
+.weiguo-mimic-echo i:nth-child(2) { bottom: -4%; left: 8%; transform: none; }
+.weiguo-mimic-echo i:nth-child(3) { bottom: 6%; right: 14%; }
+.weiguo-mimic-echo i:nth-child(4) { top: 28%; left: -3%; transform: none; }
+
+.weiguo-goose-file { padding: 126px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .24fr .55fr 1fr; gap: clamp(34px, 6vw, 92px); align-items: center; background: var(--mimic-gold); color: #15232d; }
+.weiguo-goose-file > span { color: #6d4d28; align-self: start; }
+.weiguo-goose-mark { width: min(100%, 360px); aspect-ratio: 1; display: grid; place-items: center; border: 2px solid #15232d; border-radius: 50% 48% 46% 52%; box-shadow: 14px 14px 0 rgba(21,35,45,.13); transform: rotate(-5deg); }
+.weiguo-goose-mark b { font-family: Georgia, "Songti SC", serif; font-size: clamp(100px, 13vw, 190px); font-weight: 500; }
+.weiguo-goose-mark i { position: absolute; margin: -34% 0 0 45%; font-family: Georgia, serif; font-size: 72px; font-style: normal; }
+.weiguo-goose-file h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(88px, 12vw, 176px); font-weight: 500; line-height: .86; letter-spacing: -.08em; }
+.weiguo-goose-file h3 { margin: 24px 0 36px; font-size: 16px; }
+.weiguo-goose-file p { margin: 0 0 40px; font-size: 15px; line-height: 2.15; }
+.weiguo-goose-file strong { font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 2; letter-spacing: .08em; }
+
+.weiguo-emblem-file { min-height: 760px; padding: 126px clamp(22px, 8vw, 126px); display: grid; grid-template-columns: 1fr .7fr; gap: clamp(52px, 9vw, 150px); align-items: center; background: var(--mimic-paper); color: #15232d; }
+.weiguo-emblem-file span { color: #7a4943; }
+.weiguo-emblem-file h2 { margin: 40px 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(60px, 7vw, 108px); font-weight: 500; line-height: 1.03; letter-spacing: -.07em; }
+.weiguo-emblem-file p { max-width: 720px; margin: 0; color: #5d6162; font-size: 15px; line-height: 2.15; }
+.weiguo-emblem-star { width: 100%; color: var(--mimic-red); filter: drop-shadow(14px 14px 0 rgba(21,35,45,.1)); transform: rotate(3deg); }
+.weiguo-country-page > footer { min-height: 140px; padding: 0 clamp(22px, 6vw, 92px); display: flex; align-items: center; justify-content: space-between; background: var(--mimic-red); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.weiguo-country-page > footer a { color: #fff; }
+
 .border-tavern-page { min-height: 100svh; background: #101c28; color: #eef0e9; }
 .border-tavern-page > header { min-height: 760px; padding: 120px clamp(22px, 8vw, 126px) 82px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(90deg, rgba(198,170,101,.12) 50%, rgba(120,147,164,.13) 50%), linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), #101c28; background-size: auto, 100% 72px, auto; }
 .border-tavern-page > header > span,
@@ -4591,6 +4670,7 @@ footer > p {
   .scrap-territory-page > header { padding: 90px 22px 48px; }
   .scrap-territory-page > header h1 { font-size: 84px; line-height: 1.04; }
   .suancai-country-page > nav,
+  .weiguo-country-page > nav,
   .border-tavern-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
   .suancai-country-hero { min-height: 760px; padding: 108px 22px 64px; }
   .suancai-country-hero h1 { font-size: 98px; line-height: .96; }
@@ -4623,6 +4703,37 @@ footer > p {
   .suancai-cast h3,
   .suancai-mascots h3 { font-size: 56px; }
   .suancai-country-page > footer { min-height: 150px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; }
+  .weiguo-country-hero { min-height: 780px; padding: 110px 22px 66px; }
+  .weiguo-country-hero h1 { font-size: 112px; line-height: .9; }
+  .weiguo-country-hero > p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .weiguo-hero-index { top: 12%; left: 22px; }
+  .weiguo-hero-index b { font-size: 52px; }
+  .weiguo-sigil-orbit { top: 9%; right: -24%; width: 240px; }
+  .weiguo-two-files,
+  .weiguo-mimic-field,
+  .weiguo-goose-file,
+  .weiguo-emblem-file { padding: 88px 22px; }
+  .weiguo-two-files > header,
+  .weiguo-mimic-field > header { grid-template-columns: 1fr; gap: 24px; }
+  .weiguo-two-files header h2,
+  .weiguo-mimic-field h2,
+  .weiguo-emblem-file h2 { font-size: 54px; line-height: 1.08; }
+  .weiguo-two-files > div,
+  .weiguo-traits { grid-template-columns: 1fr; }
+  .weiguo-two-files article { min-height: 570px; padding: 34px 24px; }
+  .weiguo-two-files h3 { font-size: 76px; }
+  .weiguo-card-sigil { width: 110px; }
+  .weiguo-mimic-field { min-height: auto; }
+  .weiguo-traits { margin-top: 60px; }
+  .weiguo-traits article { min-height: 300px; padding: 30px 24px; }
+  .weiguo-traits article:nth-child(2) { transform: none; }
+  .weiguo-traits h3 { font-size: 40px; }
+  .weiguo-goose-file { grid-template-columns: 1fr; }
+  .weiguo-goose-mark { width: min(74vw, 270px); margin: 10px auto 26px; }
+  .weiguo-goose-file h2 { font-size: 94px; }
+  .weiguo-emblem-file { min-height: auto; grid-template-columns: 1fr; }
+  .weiguo-emblem-star { width: min(76vw, 300px); margin: 12px auto 0; }
+  .weiguo-country-page > footer { min-height: 170px; padding: 42px 22px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 22px; }
   .border-tavern-page > header { min-height: 720px; padding: 100px 22px 64px; }
   .border-tavern-page > header h1 { font-size: 82px; line-height: 1.02; }
   .border-tavern-page > header p { margin-left: 0; font-size: 14px; line-height: 2; }
