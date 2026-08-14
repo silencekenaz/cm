@@ -212,6 +212,13 @@ test("exports separate Norse myth and heroic paths", async () => {
 
   const morning = await readFile(new URL("../dist/client/myths/norse/myths/morning.html", import.meta.url), "utf8");
   for (const section of ["世界从尤弥尔身上醒来", "旧誓与和约", "诗蜜酒", "阿斯加德的城墙", "希芙的金发", "伊登与夏基"]) assert.match(morning, new RegExp(section));
+  for (const hiddenSunMarker of ["norse-sun-wordmark", "norse-morning-secret-sun", "酸菜国的太阳", "SUN SPELL"]) assert.match(morning, new RegExp(hiddenSunMarker));
+
+  const scrapMap = await readFile(new URL("../dist/client/myths/norse/sun-map.html", import.meta.url), "utf8");
+  assert.match(scrapMap, /<h1>屑球<br\/><b>地图<\/b><\/h1>/);
+  for (const place of ["酸菜国", "伪国", "蛮夷国", "神之境", "很远的地球"]) assert.match(scrapMap, new RegExp(place));
+  assert.match(scrapMap, /href="\/cm\/myths\/norse\/myths\/morning\.html"/);
+  assert.doesNotMatch(scrapMap, /\/api\//);
 
   const noon = await readFile(new URL("../dist/client/myths/norse/myths/noon.html", import.meta.url), "utf8");
   for (const section of ["预言的孩子们", "乌特加德的五场比赛", "特里姆的婚宴", "希米尔的巨锅", "布里辛项链残篇"]) assert.match(noon, new RegExp(section));
