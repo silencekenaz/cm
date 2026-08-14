@@ -18,6 +18,7 @@ export default function MorningSunEasterEgg({ cycle, storyCount, indexHref }: { 
   const [command, setCommand] = useState("");
   const [error, setError] = useState(false);
   const armed = useRef(false);
+  const gridStep = useRef(0);
   const lastSunClick = useRef(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -40,6 +41,7 @@ export default function MorningSunEasterEgg({ cycle, storyCount, indexHref }: { 
     if (!armed.current) return;
     setOpen(true);
     armed.current = false;
+    gridStep.current = 0;
     setCommand("");
     setError(false);
   };
@@ -50,6 +52,16 @@ export default function MorningSunEasterEgg({ cycle, storyCount, indexHref }: { 
     lastSunClick.current = now;
     if (!armed.current || !isDouble) return;
     summonSun();
+  };
+
+  const touchFirstGrid = () => {
+    gridStep.current = 1;
+    armed.current = false;
+  };
+
+  const touchSecondGrid = () => {
+    armed.current = gridStep.current === 1;
+    gridStep.current = 0;
   };
 
   const submitCommand = (event: FormEvent<HTMLFormElement>) => {
@@ -65,10 +77,12 @@ export default function MorningSunEasterEgg({ cycle, storyCount, indexHref }: { 
   return <>
     <nav className="myth-atlas-nav" aria-label={`${cycle.title}卷导航`}>
       <a href={indexHref}>← 返回神话的一日</a>
-      <button className="myth-atlas-wordmark norse-sun-wordmark" type="button" onClick={() => { armed.current = true; }} aria-label="神人 cm">神人<span>cm</span></button>
+      <a className="myth-atlas-wordmark" href={`${siteBasePath}/`} aria-label="返回神人 cm 首页">神人<span>cm</span></a>
     </nav>
     <header className="norse-cycle-hero">
       <span>{cycle.kicker} / {storyCount} STORIES</span>
+      <button className="norse-sun-grid-key norse-sun-grid-key-first" type="button" onClick={touchFirstGrid} tabIndex={-1} aria-label="第一行第四格" />
+      <button className="norse-sun-grid-key norse-sun-grid-key-second" type="button" onClick={touchSecondGrid} tabIndex={-1} aria-label="第二行第二格" />
       <button className="norse-morning-secret-sun" type="button" onClick={touchSun} onDoubleClick={summonSun} aria-label="清晨的太阳">{cycle.mark}</button>
       <h1>{cycle.title}</h1><h2>{cycle.subtitle}</h2><p>{cycle.intro}</p><a href="#stories">翻开目录 <i>↓</i></a>
     </header>

@@ -4396,7 +4396,10 @@ footer > p {
 }
 
 /* Hidden morning sun sequence and the Scrap Globe map */
-.norse-sun-wordmark { padding: 0; border: 0; background: transparent; font-family: inherit; cursor: default; }
+.norse-sun-grid-key { position: absolute; z-index: 3; width: 92px; height: 92px; padding: 0; border: 0; background: transparent; cursor: default; }
+.norse-sun-grid-key:focus { outline: 0; }
+.norse-sun-grid-key-first { top: 0; left: 276px; }
+.norse-sun-grid-key-second { top: 92px; left: 92px; }
 .norse-morning-secret-sun { position: absolute; z-index: 1; right: 5%; top: 12%; padding: 0; border: 0; background: transparent; color: inherit; font-family: Georgia, serif; font-size: clamp(260px, 38vw, 560px); font-weight: 400; line-height: .8; opacity: .16; cursor: default; touch-action: manipulation; }
 .norse-morning-secret-sun:focus { outline: 0; }
 .norse-sun-gate-overlay[hidden] { display: none; }

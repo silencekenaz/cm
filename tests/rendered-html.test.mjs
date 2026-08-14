@@ -212,7 +212,8 @@ test("exports separate Norse myth and heroic paths", async () => {
 
   const morning = await readFile(new URL("../dist/client/myths/norse/myths/morning.html", import.meta.url), "utf8");
   for (const section of ["世界从尤弥尔身上醒来", "旧誓与和约", "诗蜜酒", "阿斯加德的城墙", "希芙的金发", "伊登与夏基"]) assert.match(morning, new RegExp(section));
-  for (const hiddenSunMarker of ["norse-sun-wordmark", "norse-morning-secret-sun", "酸菜国的太阳", "SUN SPELL"]) assert.match(morning, new RegExp(hiddenSunMarker));
+  for (const hiddenSunMarker of ["norse-sun-grid-key-first", "norse-sun-grid-key-second", "norse-morning-secret-sun", "酸菜国的太阳", "SUN SPELL"]) assert.match(morning, new RegExp(hiddenSunMarker));
+  assert.match(morning, /href="\/cm\/"[^>]*aria-label="返回神人 cm 首页"/);
 
   const scrapMap = await readFile(new URL("../dist/client/myths/norse/sun-map.html", import.meta.url), "utf8");
   assert.match(scrapMap, /<h1>屑球<br\/><b>地图<\/b><\/h1>/);
