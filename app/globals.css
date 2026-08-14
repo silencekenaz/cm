@@ -4518,11 +4518,14 @@ footer > p {
 .suancai-cast header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(64px, 7vw, 104px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
 .suancai-cast header p { margin: 0; color: #5c6266; font-size: 14px; line-height: 2.05; }
 .suancai-cast > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #142534; border-left: 1px solid #142534; }
-.suancai-cast article { min-height: 540px; padding: 38px; display: flex; flex-direction: column; border-right: 1px solid #142534; border-bottom: 1px solid #142534; }
+.suancai-cast article { min-height: 760px; padding: 38px; display: flex; flex-direction: column; border-right: 1px solid #142534; border-bottom: 1px solid #142534; }
 .suancai-cast article:nth-child(2) { background: var(--sour-blue); color: #fff; }
 .suancai-cast article:nth-child(3) { background: var(--sour-red); color: #fff; }
 .suancai-cast small { font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
-.suancai-cast article > b { align-self: flex-end; font-family: Georgia, serif; font-size: 70px; font-weight: 400; opacity: .56; }
+.suancai-cast-portrait { width: min(100%, 330px); aspect-ratio: 4 / 5; margin: 24px auto 38px; overflow: hidden; border: 1px solid currentColor; background: #fff; box-shadow: 9px 9px 0 rgba(20,37,52,.12); transform: rotate(-1.2deg); }
+.suancai-cast article:nth-child(2) .suancai-cast-portrait { transform: rotate(1.4deg); }
+.suancai-cast article:nth-child(3) .suancai-cast-portrait { transform: rotate(-.6deg); }
+.suancai-cast-portrait img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
 .suancai-cast h3 { margin: auto 0 16px; font-family: Georgia, "Songti SC", serif; font-size: clamp(46px, 5vw, 72px); font-weight: 500; line-height: 1; letter-spacing: -.06em; }
 .suancai-cast h4 { margin: 0 0 30px; font-size: 13px; }
 .suancai-cast article p { margin: 0; font-size: 14px; line-height: 2.05; opacity: .76; }
@@ -4532,6 +4535,11 @@ footer > p {
 .suancai-mascots > div { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(198,170,101,.48); border-left: 1px solid rgba(198,170,101,.48); }
 .suancai-mascots article { min-height: 480px; padding: clamp(34px, 5vw, 70px); display: flex; flex-direction: column; border-right: 1px solid rgba(198,170,101,.48); border-bottom: 1px solid rgba(198,170,101,.48); }
 .suancai-mascots article:nth-child(2) { background: rgba(169,96,78,.18); }
+.suancai-mascot-portrait { width: min(62%, 290px); margin: 24px 0 28px auto; transform: rotate(2deg); }
+.suancai-mascot-portrait img { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 12px rgba(198,170,101,.18)); }
+.suancai-no-portrait { min-height: 250px; margin: 28px 0 34px; display: grid; place-content: center; gap: 12px; border: 1px dashed rgba(198,170,101,.45); color: rgba(238,240,233,.38); text-align: center; transform: rotate(-1deg); }
+.suancai-no-portrait b { font-family: Georgia, "Songti SC", serif; font-size: 34px; font-weight: 500; }
+.suancai-no-portrait small { font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .14em; }
 .suancai-mascots h3 { margin: auto 0 30px; font-family: Georgia, "Songti SC", serif; font-size: clamp(62px, 7vw, 106px); font-weight: 500; line-height: 1; }
 .suancai-mascots article p { max-width: 650px; margin: 0 0 34px; color: rgba(238,240,233,.7); font-size: 14px; line-height: 2.1; }
 .suancai-mascots strong { padding-top: 20px; border-top: 1px solid rgba(238,240,233,.2); color: var(--sour-gold); font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.8; letter-spacing: .1em; }
@@ -4608,6 +4616,10 @@ footer > p {
   .suancai-mascots > div { grid-template-columns: 1fr; }
   .suancai-cast article,
   .suancai-mascots article { min-height: 430px; padding: 34px 24px; }
+  .suancai-cast article { min-height: 0; }
+  .suancai-cast-portrait { width: min(100%, 340px); margin-block: 28px 36px; }
+  .suancai-mascot-portrait { width: min(76%, 260px); margin: 32px auto; }
+  .suancai-no-portrait { min-height: 180px; }
   .suancai-cast h3,
   .suancai-mascots h3 { font-size: 56px; }
   .suancai-country-page > footer { min-height: 150px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; }

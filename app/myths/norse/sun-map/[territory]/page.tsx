@@ -45,17 +45,17 @@ function SuancaiPage() {
     <section className="suancai-cast">
       <header><span>COURT / 03</span><h2>王国的主要成员</h2><p>三个人，各自负责一部分秩序；凑在一起时，通常还能额外制造一点秩序之外的东西。</p></header>
       <div>
-        <article><small>01 / THE QUEEN</small><b aria-hidden="true">♛</b><h3>酸菜女王</h3><h4>王国的决策者</h4><p>与公主并肩对抗伪人与蛮夷。她负责拍板、守住国土，以及在所有人都有第二套计划时，决定究竟执行哪一套。</p></article>
-        <article><small>02 / THE PRINCESS</small><b aria-hidden="true">✦</b><h3>酸菜公主</h3><h4>被巡逻队带回的公主</h4><p>只比女王小一岁，不是女王的女儿。她与女王共同守国，也必须时常处理自己那位阵营不太稳定的吉祥物。</p></article>
-        <article><small>03 / THE CHANCELLOR</small><b aria-hidden="true">☽</b><h3>黄焖鸡丞相</h3><h4>女丞相 · 巡逻者</h4><p>她在巡逻途中捡到了后来的酸菜公主。她崇拜阿耳忒弥斯女神，厌恶爱情；在她看来，月光、弓箭和按时交报告都比恋爱可靠。</p></article>
+        <article><small>01 / THE QUEEN</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-queen-line-v3.png`} alt="黑白线条画：戴左眼单片镜、扎着高小辫，飒爽而秀美的酸菜女王" /></figure><h3>酸菜女王</h3><h4>王国的决策者</h4><p>与公主并肩对抗伪人与蛮夷。她负责拍板、守住国土，以及在所有人都有第二套计划时，决定究竟执行哪一套。</p></article>
+        <article><small>02 / THE PRINCESS</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-princess-line-v2.png`} alt="黑白线条画：长发、笑容天真的酸菜公主" /></figure><h3>酸菜公主</h3><h4>被巡逻队带回的公主</h4><p>只比女王小一岁，不是女王的女儿。她与女王共同守国，也必须时常处理自己那位阵营不太稳定的吉祥物。</p></article>
+        <article><small>03 / THE CHANCELLOR</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/huangmenji-chancellor-line-v1.png`} alt="黑白线条画：戴眼镜、梳低马尾且神情严肃的黄焖鸡女丞相" /></figure><h3>黄焖鸡丞相</h3><h4>女丞相 · 巡逻者</h4><p>她在巡逻途中捡到了后来的酸菜公主。她崇拜阿耳忒弥斯女神，厌恶爱情；在她看来，月光、弓箭和按时交报告都比恋爱可靠。</p></article>
       </div>
     </section>
 
     <section className="suancai-mascots">
       <header><span>MASCOT FILES / 02</span><h2>两位吉祥物，<br />两种麻烦。</h2></header>
       <div>
-        <article><span>QUEEN&apos;S MASCOT</span><h3>小沙沙</h3><p>他是酸菜女王的吉祥物，不住在盐罐里。小沙沙演技极好，能力也远不止一项：当档案员试图列出完整清单时，他通常已经换了一个身份、一个表情，并让在场所有人开始怀疑刚才看见的版本。</p><strong>专长 / 演技与尚未登记完的能力</strong></article>
-        <article><span>PRINCESS&apos;S MASCOT · KENAZ?</span><h3>小红毛</h3><p>他传说来自神之境，喜欢恶搞，纯靠脑力制定计划。小红毛没有稳定阵营：有时替酸菜国解围，有时顺手把酸菜国也坑进去；他坚持这不叫背叛，只叫“给方案增加压力测试”。</p><strong>专长 / 智谋、恶作剧与立场漂移</strong></article>
+        <article><span>QUEEN&apos;S MASCOT</span><div className="suancai-no-portrait" aria-label="小沙沙拒绝出镜"><b>肖像缺席</b><small>TOO HANDSOME TO ARCHIVE</small></div><h3>小沙沙</h3><p>他是酸菜女王的吉祥物。小沙沙演技极好，能力也远不止一项：当档案员试图列出完整清单时，他通常已经换了一个身份、一个表情，并让在场所有人开始怀疑刚才看见的版本。</p><strong>专长 / 演技与尚未登记完的能力</strong></article>
+        <article><span>PRINCESS&apos;S MASCOT · KENAZ?</span><figure className="suancai-mascot-portrait"><img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色线条画下的滑稽自画像，耳后低低扎着一小撮头发" /></figure><h3>小红毛</h3><p>他传说来自神之境，喜欢恶搞，纯靠脑力制定计划。小红毛没有稳定阵营：有时替酸菜国解围，有时顺手把酸菜国也坑进去；他坚持这不叫背叛，只叫“给方案增加压力测试”。</p><strong>专长 / 智谋、恶作剧与立场漂移</strong></article>
       </div>
     </section>
 
