@@ -55,7 +55,7 @@ function SuancaiPage() {
     <section className="suancai-mascots">
       <header><span>MASCOT FILES / 02</span><h2>一个负责演，<br />一个负责闹。</h2></header>
       <div>
-        <article><span>QUEEN&apos;S MASCOT</span><div className="suancai-no-portrait" aria-label="小沙沙拒绝出镜"><b>肖像缺席</b><small>TOO HANDSOME TO ARCHIVE</small></div><h3>小沙沙</h3><p>他是酸菜女王的吉祥物，也是王宫最难统计的战力。小沙沙演什么像什么：使者、证人、路过群众，必要时甚至能演成“今天绝对没有发生任何事”。档案员每次以为摸清了他的能力，第二天都会发现那只是第一幕。</p><strong>专长 / 演技、能力很多，以及拒绝剧透</strong></article>
+        <article><span>QUEEN&apos;S MASCOT</span><figure className="suancai-mascot-portrait suancai-xiaoshasha-portrait"><img src={`${siteBasePath}/xiaoshasha-simple-transparent-v1.png`} alt="小沙沙低头侧望的简笔线稿肖像，半扎长发并戴着细圆框眼镜" /></figure><h3>小沙沙</h3><p>他是酸菜女王的吉祥物，也是王宫最难统计的战力。小沙沙演什么像什么：使者、证人、路过群众，必要时甚至能演成“今天绝对没有发生任何事”。档案员每次以为摸清了他的能力，第二天都会发现那只是第一幕。</p><strong>专长 / 演技、能力很多，以及拒绝剧透</strong></article>
         <article><span>PRINCESS&apos;S MASCOT · KENAZ?</span><figure className="suancai-mascot-portrait"><img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色线条画下的滑稽自画像，耳后低低扎着一小撮头发" /></figure><h3>小红毛</h3><p>他传说来自神之境，靠智谋生活，靠恶作剧保持精神健康。如果酸菜国连续三天风平浪静，小红毛就会怀疑国家机器出了故障，并亲自启动一点事情。他有时帮酸菜国解决危机，有时就是危机本人。</p><strong>专长 / 启动、搞事，以及给自己制造的麻烦收尾</strong></article>
       </div>
     </section>

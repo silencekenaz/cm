@@ -4543,6 +4543,8 @@ footer > p {
 .suancai-mascots article:nth-child(2) { background: rgba(169,96,78,.18); }
 .suancai-mascot-portrait { width: min(45%, 220px); margin: 24px 0 28px auto; transform: rotate(2deg); }
 .suancai-mascot-portrait img { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 12px rgba(198,170,101,.18)); }
+.suancai-xiaoshasha-portrait { width: min(42%, 210px); margin-right: auto; margin-left: 0; transform: rotate(-1.5deg); }
+.suancai-xiaoshasha-portrait img { filter: drop-shadow(9px 11px 0 rgba(198,170,101,.12)); }
 .suancai-no-portrait { min-height: 250px; margin: 28px 0 34px; display: grid; place-content: center; gap: 12px; border: 1px dashed rgba(198,170,101,.45); color: rgba(238,240,233,.38); text-align: center; transform: rotate(-1deg); }
 .suancai-no-portrait b { font-family: Georgia, "Songti SC", serif; font-size: 34px; font-weight: 500; }
 .suancai-no-portrait small { font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .14em; }
@@ -4847,6 +4849,7 @@ footer > p {
   .suancai-cast article { min-height: 0; }
   .suancai-cast-portrait { width: min(54%, 190px); margin-block: 28px 30px; }
   .suancai-mascot-portrait { width: min(52%, 190px); margin: 32px auto; }
+  .suancai-xiaoshasha-portrait { width: min(50%, 180px); }
   .suancai-no-portrait { min-height: 180px; }
   .suancai-cast h3,
   .suancai-mascots h3 { font-size: 56px; }

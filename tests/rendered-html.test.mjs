@@ -249,7 +249,8 @@ test("exports separate Norse myth and heroic paths", async () => {
 
   const suancai = await readFile(new URL("../dist/client/myths/norse/sun-map/suancai.html", import.meta.url), "utf8");
   for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁", "傻白甜", "先拍板", "绝不拖延", "启动一点事情"]) assert.match(suancai, new RegExp(detail));
-  for (const portrait of ["suancai-queen-transparent-v1.png", "suancai-princess-transparent-v1.png", "huangmenji-chancellor-transparent-v1.png", "kenaz-doodle-light.png"]) assert.match(suancai, new RegExp(portrait));
+  for (const portrait of ["suancai-queen-transparent-v1.png", "suancai-princess-transparent-v1.png", "huangmenji-chancellor-transparent-v1.png", "xiaoshasha-simple-transparent-v1.png", "kenaz-doodle-light.png"]) assert.match(suancai, new RegExp(portrait));
+  assert.doesNotMatch(suancai, /肖像缺席|TOO HANDSOME TO ARCHIVE/);
   assert.doesNotMatch(suancai, /不住在盐罐/);
   assert.match(suancai, /href="\/cm\/myths\/norse\/sun-map\/border-tavern\.html"/);
 
