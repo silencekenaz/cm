@@ -138,6 +138,58 @@ function WeiguoPage() {
   </main>;
 }
 
+function GodRealmPage() {
+  return <main className="godrealm-country-page">
+    <ArchiveNav number="04" />
+    <header className="godrealm-country-hero">
+      <div className="godrealm-orbits" aria-hidden="true"><i>ᚨ</i><i>Ω</i><i>𒀭</i><i>☥</i><i>☼</i></div>
+      <span>GOD REALM / INTER-PANTHEON INCIDENT DESK</span>
+      <h1>神之境</h1>
+      <p>传说这里是神生活的地方。实际考察表明，这里更像一座把阿斯加德、奥林匹斯、两河神殿、德尔斐和埃及王庭塞进同一栋楼的大型公共休息室——权能通天，情绪稳定者暂未发现。</p>
+      <strong>今日记录 / 五起事件，零起解决</strong>
+    </header>
+
+    <section className="godrealm-incident-board">
+      <header><span>DIVINE STATUS / LIVE</span><h2>今日神明<br />仍未消停。</h2><p>诸神本来各有自己的宇宙、谱系和仪式。来到神之境以后，他们获得了同一条走廊，以及互相听见隔壁吵架的机会。</p></header>
+      <div>
+        <article className="godrealm-scene-odin" data-glyph="ᚨ">
+          <small>01 / NORSE WING</small><h3>奥丁还在找人</h3>
+          <p>奥丁坐在高椅上愁眉苦脸，像是刚刚又知道了一个不想知道的预言。他反复问自己的血兄弟洛基究竟去了哪里；西格恩翻过边境记录，平静地回答：“他好像去了酸菜国。”</p>
+          <p>奥丁的眉头于是又往下压了一点。神之境没有人敢提醒他：以洛基的习惯，如果酸菜国这几天没有出事，可能只是事情还没被发现。</p>
+          <a href={territoryHref("suancai")}>查看疑似目的地：酸菜国 ↗</a>
+        </article>
+        <article className="godrealm-scene-zeus" data-glyph="ϟ">
+          <small>02 / OLYMPUS HALL</small><h3>宙斯提出新计划</h3>
+          <p>宙斯大声宣布自己还要再找几个美女，语气庄严得像在发布神谕。赫拉只用了几句话就让这项计划、发言人和附近的天气一起失去体面。</p>
+          <strong>计划状态 / 已被骂死<br />重启可能 / 宙斯本人表示很高</strong>
+        </article>
+        <article className="godrealm-scene-enki" data-glyph="𒀭">
+          <small>03 / ERIDU OFFICE</small><h3>恩基正在救场</h3>
+          <p>恩利尔又准备毁灭人类。恩基没有时间加入走廊里的争吵，他正伏在水与泥板之间，思考怎样既不正面违抗命令，又能及时给人类递出一份足够明显的生存提示。</p>
+          <strong>当前任务 / 阻止人类灭绝<br />常用方法 / 规则边缘精准操作</strong>
+        </article>
+        <article className="godrealm-scene-apollo" data-glyph="☼">
+          <small>04 / LAUREL COURT</small><h3>阿波罗又哭了</h3>
+          <p>阿波罗一手抱着月桂，一手抱着风信子，哭得光明之神本人都显得天气不佳。阿耳忒弥斯从旁经过，看了他一眼，给出今日最短也最准确的诊断：“恋爱脑。”</p>
+          <p>阿波罗试图反驳，开口以后却只是换了一个更适合大哭的姿势。</p>
+          <strong>眼泪来源 / 达芙妮与雅辛托斯<br />姐姐评价 / 不予安慰</strong>
+        </article>
+        <article className="godrealm-scene-duel" data-glyph="☥">
+          <small>05 / EGYPTIAN COURT</small><h3>塞特与荷鲁斯仍在争</h3>
+          <p>继承权、王位、旧怨和尊严照例摆满了桌面。塞特说一句，荷鲁斯顶一句；两边都坚持自己绝不会让步，语气却不知从什么时候开始变得有点甜蜜蜜。旁听诸神逐渐分不清这是庭审、决斗，还是某种谁先承认就算输的奇怪约会。</p>
+          <p>他们当然坚称仍在认真争斗。至于为什么越吵离得越近，档案员决定尊重神秘。</p>
+          <a href={`${siteBasePath}/myths/egyptian/horus-seth${staticPageSuffix}`}>翻阅荷塞之争档案 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section className="godrealm-chaos-note">
+      <span>ORDER REPORT / NOT FOUND</span><div><h2>真是混乱的<br />地方啊！</h2><p>有人寻兄弟，有人寻美女，有人忙着拯救人类，有人抱着植物哭，还有两位把王位之争吵出了粉红色。神之境今日照常运转——这里所谓的秩序，大概就是所有混乱都能准时发生。</p></div>
+    </section>
+    <footer><a href={mapHref}>← 返回屑球地图</a><span>GOD REALM / EVERYONE IS FINE*</span></footer>
+  </main>;
+}
+
 function ManyiPage() {
   return <main className="manyi-country-page">
     <ArchiveNav number="03" />
@@ -194,6 +246,7 @@ export default async function Page({ params }: { params: Promise<{ territory: st
   if (slug === "suancai") return <SuancaiPage />;
   if (slug === "weiguo") return <WeiguoPage />;
   if (slug === "manyi") return <ManyiPage />;
+  if (slug === "god-realm") return <GodRealmPage />;
   if (slug === "border-tavern") return <BorderTavernPage />;
   return <main className={`scrap-territory-page scrap-territory-${territory.slug}`}>
     <ArchiveNav number={territory.number} />
