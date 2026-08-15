@@ -200,6 +200,60 @@ function BorderTavernPage() {
   </main>;
 }
 
+function HappyWorldPage() {
+  return <main className="happy-world-page">
+    <ArchiveNav number="☆" />
+
+    <header className="happy-world-hero">
+      <span>HAPPY WORLD / REMOTE ORBIT FILE</span>
+      <div className="happy-world-orbit" aria-hidden="true"><i>H</i><b>₂</b><em>SO₄</em></div>
+      <h1>欢乐<br /><b>世界</b></h1>
+      <p>欢乐世界由大欢乐掌握。此地离屑球很远，远到一般消息传过来已经不新鲜；但欢乐喝完一杯浓硫酸、做完两道理科题以后，通常仍有精力把消息重新变得危险。</p>
+      <strong>RULER / 大欢乐<br />COMMON NAME / 欢乐<br />PLANETARY MOOD / HIGHLY REACTIVE</strong>
+    </header>
+
+    <section className="happy-world-ruler">
+      <span>RULER FILE / ACID-POWERED</span>
+      <div>
+        <h2>他喝浓硫酸，<br />然后获得了超能力。</h2>
+        <article>
+          <p>大欢乐简称欢乐。别人早晨靠咖啡恢复意识，他习惯给自己倒一杯浓硫酸；杯沿冒烟时，他才会满意地点点头，宣布今天的精神状态终于达到可计算范围。</p>
+          <p>没有人说得清超能力究竟是哪一次喝出来的。欢乐本人认为这是长期坚持理科生活的必然成果，并要求档案员把“奇迹”改写为“可重复但不建议旁人验证的实验现象”。</p>
+          <blockquote>“先别问疼不疼。你看这个反应，多漂亮。”</blockquote>
+        </article>
+      </div>
+    </section>
+
+    <section className="happy-world-succession">
+      <header><span>FORMER OWNER / REINCARNATION ROUTE</span><h2>前任主人<br />已经退出欢乐。</h2></header>
+      <div className="happy-world-route">
+        <article><small>01 / BEFORE</small><b>陈学渣</b><p>欢乐说，欢乐世界的前任主人叫陈学渣。陈学渣有一天看遍自己的领土，忽然觉得连欢乐也欢乐得很累，于是把世界留在原地，自己申请转生。</p></article>
+        <i aria-hidden="true">→</i>
+        <article><small>02 / TRANSFER</small><b>酸菜国</b><p>转生路线直达酸菜国。交接文件很可能丢在半路，她似乎也失去了记忆；等旧档案追过去时，陈学渣已经完全不记得欢乐世界，更不记得自己曾经当过主人。</p></article>
+        <i aria-hidden="true">→</i>
+        <article><small>03 / NOW</small><b>酸菜公主</b><p>她如今成了酸菜国那位长发、傻白甜、会把埋伏理解成惊喜的公主。欢乐坚持这就是陈学渣转生后的样子；公主听完认真问：“陈学渣是谁？听起来学习不太好。”</p></article>
+      </div>
+    </section>
+
+    <section className="happy-world-science">
+      <div className="happy-world-formula" aria-hidden="true">H<sub>2</sub>SO<sub>4</sub></div>
+      <header><span>SUBJECT BIAS / SCIENCE ONLY</span><h2>理科梦男，<br />拒绝文科解释。</h2><p>欢乐非常喜欢理科。物理让他安心，化学让他快乐，数学让他相信任何混乱都只是还没列完式子。有人试图用文学解释他的感情，他当场要求对方先给出变量定义。</p></header>
+      <div>
+        <article><small>PHYSICS / 01</small><h3>物理</h3><p>遇事先画受力图。若仍然解决不了，就认为图画得不够大。</p></article>
+        <article><small>CHEMISTRY / 02</small><h3>化学</h3><p>最喜欢会冒烟、放热和让桌面失去原貌的反应。</p></article>
+        <article><small>MATH / 03</small><h3>数学</h3><p>浪漫并不可靠，配平至少会告诉你左右两边哪里不对。</p></article>
+      </div>
+    </section>
+
+    <section className="happy-world-baojing">
+      <span>OFF-WORLD SNACK ROUTE / ↔</span>
+      <div><h2>无聊的时候，<br />去宝井的小店。</h2><p>欢乐世界有时安静得过分。欢乐做完题、检查完反应装置，仍找不到新的东西可以爆炸，便会离开遥远轨道，去酸菜国与伪国交界处找宝井小姐。</p><p>宝井的小店会给他留一份 H<sub>2</sub>SO<sub>4</sub> 制品。别人问那到底是饮料、甜点还是危险品，宝井只把账单往前一推：“他吃得下，你结账吗？”</p><a href={territoryHref("border-tavern")}>前往宝井的小店 ↗</a></div>
+    </section>
+
+    <footer><a href={mapHref}>← 返回屑球地图</a><span>HAPPY WORLD / STILL REACTING</span></footer>
+  </main>;
+}
+
 export default async function Page({ params }: { params: Promise<{ territory: string }> }) {
   const { territory: slug } = await params;
   const territory = territories.find((item) => item.slug === slug);
@@ -209,6 +263,7 @@ export default async function Page({ params }: { params: Promise<{ territory: st
   if (slug === "manyi") return <ManyiPage />;
   if (slug === "god-realm") return <GodRealmPage />;
   if (slug === "border-tavern") return <BorderTavernPage />;
+  if (slug === "happy-world") return <HappyWorldPage />;
   return <main className={`scrap-territory-page scrap-territory-${territory.slug}`}>
     <ArchiveNav number={territory.number} />
     <header><span>{territory.code} / ARCHIVE PENDING</span><h1>{territory.name}</h1><p>详细档案尚未展开。</p></header>

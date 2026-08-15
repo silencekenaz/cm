@@ -223,13 +223,17 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.match(scrapMap, /href="\/cm\/myths\/norse\/myths\/morning\.html"/);
   assert.doesNotMatch(scrapMap, /\/api\//);
 
-  for (const [slug, name] of [["earth", "很远的地球"], ["happy-world", "欢乐世界"]]) {
-    const territory = await readFile(new URL(`../dist/client/myths/norse/sun-map/${slug}.html`, import.meta.url), "utf8");
-    assert.match(territory, new RegExp(`<h1>${name}</h1>`));
-    assert.match(territory, /详细档案尚未展开。/);
-    assert.match(territory, /href="\/cm\/myths\/norse\/sun-map\.html"/);
-    assert.doesNotMatch(territory, /\/api\//);
-  }
+  const earth = await readFile(new URL("../dist/client/myths/norse/sun-map/earth.html", import.meta.url), "utf8");
+  assert.match(earth, /<h1>很远的地球<\/h1>/);
+  assert.match(earth, /详细档案尚未展开。/);
+  assert.match(earth, /href="\/cm\/myths\/norse\/sun-map\.html"/);
+  assert.doesNotMatch(earth, /\/api\//);
+
+  const happyWorld = await readFile(new URL("../dist/client/myths/norse/sun-map/happy-world.html", import.meta.url), "utf8");
+  for (const detail of ["欢乐世界", "大欢乐", "浓硫酸", "超能力", "陈学渣", "酸菜公主", "失去了记忆", "傻白甜", "理科梦男", "H<sub>2</sub>SO<sub>4</sub>", "宝井的小店"]) assert.match(happyWorld, new RegExp(detail));
+  assert.match(happyWorld, /href="\/cm\/myths\/norse\/sun-map\/border-tavern\.html"/);
+  assert.match(happyWorld, /href="\/cm\/myths\/norse\/sun-map\.html"/);
+  assert.doesNotMatch(happyWorld, /详细档案尚未展开。|\/api\//);
 
   const godRealm = await readFile(new URL("../dist/client/myths/norse/sun-map/god-realm.html", import.meta.url), "utf8");
   for (const detail of ["神之境", "奥丁", "血兄弟洛基", "西格恩", "酸菜国", "宙斯", "赫拉", "恩基", "恩利尔", "阿波罗", "月桂", "风信子", "阿耳忒弥斯", "恋爱脑", "塞特", "荷鲁斯", "甜蜜蜜", "真是混乱的"]) assert.match(godRealm, new RegExp(detail));
