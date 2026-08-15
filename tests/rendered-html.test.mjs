@@ -233,9 +233,14 @@ test("exports separate Norse myth and heroic paths", async () => {
 
   const godRealm = await readFile(new URL("../dist/client/myths/norse/sun-map/god-realm.html", import.meta.url), "utf8");
   for (const detail of ["神之境", "奥丁", "血兄弟洛基", "西格恩", "酸菜国", "宙斯", "赫拉", "恩基", "恩利尔", "阿波罗", "月桂", "风信子", "阿耳忒弥斯", "恋爱脑", "塞特", "荷鲁斯", "甜蜜蜜", "真是混乱的"]) assert.match(godRealm, new RegExp(detail));
+  assert.match(godRealm, /点击大标题 \/ 随机调取一份神明事故/);
+  assert.equal((godRealm.match(/OPEN ↗/g) ?? []).length, 5);
   assert.match(godRealm, /href="\/cm\/myths\/norse\/sun-map\/suancai\.html"/);
   assert.match(godRealm, /href="\/cm\/myths\/egyptian\/horus-seth\.html"/);
   assert.doesNotMatch(godRealm, /详细档案尚未展开。|\/api\//);
+
+  const godRealmArchive = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmArchive.tsx", import.meta.url), "utf8");
+  for (const record of ["失踪血兄弟与一张酸味入境单", "一场没有通过家庭委员会的雷霆计划", "神明禁止泄密，所以墙开始说话", "光明之神拒绝保持光明", "王位之争出现了不在卷宗里的气氛", "酸菜国的位置非常确定，并且正在冒烟", "墙因卓越情报工作获得年度表彰", "甜蜜气氛不具备法律效力"]) assert.match(godRealmArchive, new RegExp(record));
 
   const manyi = await readFile(new URL("../dist/client/myths/norse/sun-map/manyi.html", import.meta.url), "utf8");
   for (const detail of ["蛮夷国", "龟", "蛆", "沉迷做题", "打台球", "起义", "国家一片混乱", "堕日之子", "我不信", "红温"]) assert.match(manyi, new RegExp(detail));
