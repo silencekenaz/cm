@@ -240,7 +240,13 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.doesNotMatch(godRealm, /详细档案尚未展开。|\/api\//);
 
   const godRealmArchive = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmArchive.tsx", import.meta.url), "utf8");
-  for (const record of ["失踪血兄弟与一张酸味入境单", "一场没有通过家庭委员会的雷霆计划", "神明禁止泄密，所以墙开始说话", "光明之神拒绝保持光明", "王位之争出现了不在卷宗里的气氛", "酸菜国的位置非常确定，并且正在冒烟", "墙因卓越情报工作获得年度表彰", "甜蜜气氛不具备法律效力"]) assert.match(godRealmArchive, new RegExp(record));
+  for (const record of ["LONG-FORM NERVOUS RECORD", "卷内目录", "再随机抽一卷", "失踪血兄弟与一张酸味入境单", "一场没有通过家庭委员会的雷霆计划", "神明禁止泄密，所以墙开始说话", "光明之神拒绝保持光明", "王位之争出现了不在卷宗里的气氛"]) assert.match(godRealmArchive, new RegExp(record));
+
+  const godRealmStories = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmStories.ts", import.meta.url), "utf8");
+  for (const chapter of ["旧誓不是召回令", "西格恩拒绝留在门外", "赫拉不是只会生气", "神明禁止泄密，所以墙开始说话", "月桂不是爱情纪念品", "谁先承认在意谁就算输", "甜蜜气氛不具备法律效力"]) assert.match(godRealmStories, new RegExp(chapter));
+  assert.match(godRealmStories, /胡吉与穆宁/);
+  assert.match(godRealmStories, /“小红毛”只是公主随口取的外号/);
+  assert.doesNotMatch(godRealmStories, /福金|雾尼/);
 
   const manyi = await readFile(new URL("../dist/client/myths/norse/sun-map/manyi.html", import.meta.url), "utf8");
   for (const detail of ["蛮夷国", "龟", "蛆", "沉迷做题", "打台球", "起义", "国家一片混乱", "堕日之子", "我不信", "红温"]) assert.match(manyi, new RegExp(detail));
@@ -248,7 +254,7 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.doesNotMatch(manyi, /详细档案尚未展开。|\/api\//);
 
   const suancai = await readFile(new URL("../dist/client/myths/norse/sun-map/suancai.html", import.meta.url), "utf8");
-  for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁", "傻白甜", "先拍板", "绝不拖延", "启动一点事情"]) assert.match(suancai, new RegExp(detail));
+  for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁", "傻白甜", "先拍板", "绝不拖延", "真名 / 本人拒绝回答", "启动、搞事"]) assert.match(suancai, new RegExp(detail));
   for (const portrait of ["suancai-queen-transparent-v1.png", "suancai-princess-transparent-v1.png", "huangmenji-chancellor-transparent-v1.png", "xiaoshasha-simple-transparent-v1.png", "kenaz-doodle-light.png"]) assert.match(suancai, new RegExp(portrait));
   assert.doesNotMatch(suancai, /肖像缺席|TOO HANDSOME TO ARCHIVE/);
   assert.doesNotMatch(suancai, /不住在盐罐/);

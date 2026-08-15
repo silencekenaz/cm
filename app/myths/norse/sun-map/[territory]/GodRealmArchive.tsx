@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
+import { godRealmStories } from "./GodRealmStories";
+import type { GodRealmStoryId } from "./GodRealmStories";
 
 type Incident = {
-  id: string;
+  id: GodRealmStoryId;
   code: string;
   title: string;
   glyph: string;
@@ -35,7 +37,7 @@ export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancai
       detail: [
         "奥丁已经在高椅上坐了三个早晨。第一天，乌鸦带回一根红头发；第二天，乌鸦带回半张写着“只是压力测试”的纸；第三天，两只乌鸦拒绝继续出差，并建议众神之父亲自面对现实。奥丁把长矛往地上一顿，现实没有出现，眉间的皱纹倒是又多了一道。",
         "“他去哪了？”奥丁第五次问。西格恩站在门边，手里拿着一张边境回执。回执上有酸菜汁留下的圆形水印，背面还有人用很快的笔迹写着：本人没有制造事故，事故是自愿发生的。她看了看那张纸，又看了看奥丁，选择了最节省时间的说法：“他好像去了酸菜国。”",
-        "大厅立刻安静。索尔把锤子从桌上拿了下来，海尼尔假装自己突然对窗外的天气很感兴趣。奥丁闭上仅剩的那只眼，试图从命运里找出答案；命运给他看见一口锅、一只路过的小红毛，以及有人正在把王宫的值班表改成藏宝图。",
+        "大厅立刻安静。索尔把锤子从桌上拿了下来，海尼尔假装自己突然对窗外的天气很感兴趣。奥丁闭上仅剩的那只眼，试图从命运里找出答案；命运给他看见一口锅、一个自称“小红毛”的红发旅客，以及有人正在把王宫的值班表改成藏宝图。",
         "“备马。”奥丁说。西格恩提醒他，酸菜国离神之境很远。奥丁又沉默了一会儿，把“备马”改成了“先备一封措辞严厉但保留兄弟情谊的信”。那封信写到第十四版时，酸菜国方向传来一声不太像自然形成的巨响。"
       ],
       ending: "档案结论：洛基的位置仍未确定；酸菜国的位置非常确定，并且正在冒烟。"
@@ -129,6 +131,8 @@ export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancai
     setActive(pool[Math.floor(Math.random() * pool.length)]);
   };
 
+  const activeStory = active ? godRealmStories[active.id] : [];
+
   return <>
     <header className="godrealm-country-hero">
       <div className="godrealm-orbits" aria-hidden="true"><i>ᚨ</i><i>Ω</i><i>𒀭</i><i>☥</i><i>☼</i></div>
@@ -154,10 +158,13 @@ export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancai
 
     {active && <div className="godrealm-story-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}>
       <article className={`godrealm-story-dialog godrealm-story-${active.id}`} role="dialog" aria-modal="true" aria-labelledby="godrealm-story-title">
-        <header><span>{active.code} / EXTENDED NERVOUS RECORD</span><button type="button" onClick={() => setActive(null)} aria-label="关闭神明事故档案">×</button></header>
-        <div className="godrealm-story-heading"><i aria-hidden="true">{active.glyph}</i><div><small>{active.title}</small><h2 id="godrealm-story-title">{active.chapter}</h2></div></div>
-        <div className="godrealm-story-copy">{active.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-        <footer><strong>{active.ending}</strong><button type="button" onClick={openRandom}>再随机抽一份 ↻</button></footer>
+        <header><span>{active.code} / LONG-FORM NERVOUS RECORD</span><button type="button" onClick={() => setActive(null)} aria-label="关闭神明事故档案">×</button></header>
+        <div className="godrealm-story-heading"><i aria-hidden="true">{active.glyph}</i><div><small>{active.title} · {activeStory.length} CHAPTERS</small><h2 id="godrealm-story-title">{active.chapter}</h2><p>长篇事故卷宗 / 请从头读，诸神拒绝提供摘要。</p></div></div>
+        <div className="godrealm-story-layout">
+          <nav aria-label={`${active.title}卷内目录`}><span>CONTENTS / 卷内目录</span>{activeStory.map((section, index) => <a key={section.title} href={`#godrealm-${active.id}-${index + 1}`}><small>{String(index + 1).padStart(2, "0")}</small>{section.title}</a>)}</nav>
+          <div className="godrealm-story-copy">{activeStory.map((section, index) => <section id={`godrealm-${active.id}-${index + 1}`} key={section.title}><small>{section.kicker}</small><h3>{section.title}</h3>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>)}</div>
+        </div>
+        <footer><strong>{active.ending}</strong><button type="button" onClick={openRandom}>再随机抽一卷 ↻</button></footer>
       </article>
     </div>}
   </>;

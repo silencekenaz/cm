@@ -80,7 +80,7 @@ export default function EasterEggPage() {
             {fragment.no === "04" && (
               <figure className="kenaz-self-portrait">
                 <img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色笔画下的滑稽自画像，耳后低低扎着一小撮头发" />
-                <figcaption>小红毛 / 又名 ᚲ KENAZ / 本人比画像可靠一点</figcaption>
+                <figcaption>小红毛 / 公主所取外号 / 真名已被本人涂黑</figcaption>
               </figure>
             )}
             <b aria-hidden="true">✦</b>

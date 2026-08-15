@@ -4692,7 +4692,7 @@ footer > p {
 .godrealm-scene-duel p { max-width: 900px; }
 
 .godrealm-story-overlay { position: fixed; inset: 0; z-index: 1000; padding: clamp(18px, 4vw, 64px); display: grid; place-items: center; overflow-y: auto; background: rgba(10,11,22,.84); backdrop-filter: blur(12px); }
-.godrealm-story-dialog { width: min(1120px, 100%); max-height: calc(100svh - clamp(36px, 8vw, 128px)); overflow-y: auto; border: 1px solid var(--god-gold); background: var(--god-paper); color: var(--god-ink); box-shadow: 22px 22px 0 rgba(208,174,97,.23); }
+.godrealm-story-dialog { width: min(1240px, 100%); max-height: calc(100svh - clamp(36px, 8vw, 128px)); overflow-y: auto; scroll-behavior: smooth; border: 1px solid var(--god-gold); background: var(--god-paper); color: var(--god-ink); box-shadow: 22px 22px 0 rgba(208,174,97,.23); }
 .godrealm-story-dialog > header { position: sticky; top: 0; z-index: 4; min-height: 62px; padding: 0 22px 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--god-night); color: var(--god-gold); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .13em; }
 .godrealm-story-dialog > header button { width: 38px; height: 38px; padding: 0 0 3px; display: grid; place-items: center; border: 1px solid rgba(245,240,231,.54); border-radius: 50%; background: transparent; color: #f5f0e7; font: 300 24px/1 Arial, sans-serif; cursor: pointer; }
 .godrealm-story-dialog > header button:hover,
@@ -4701,8 +4701,19 @@ footer > p {
 .godrealm-story-heading i { width: min(100%, 190px); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: Georgia, serif; font-size: clamp(74px, 10vw, 142px); font-style: normal; line-height: 1; opacity: .34; }
 .godrealm-story-heading small { display: block; margin-bottom: 20px; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
 .godrealm-story-heading h2 { max-width: 780px; margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(58px, 7vw, 100px); font-weight: 500; line-height: 1.05; letter-spacing: -.07em; }
-.godrealm-story-copy { padding: clamp(46px, 7vw, 92px); columns: 2; column-gap: clamp(42px, 7vw, 86px); column-rule: 1px solid rgba(32,34,54,.2); }
-.godrealm-story-copy p { margin: 0 0 2em; break-inside: avoid; color: rgba(32,34,54,.78); font-size: 15px; line-height: 2.15; }
+.godrealm-story-heading p { max-width: 580px; margin: 26px 0 0; color: currentColor; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; line-height: 1.8; letter-spacing: .1em; opacity: .58; }
+.godrealm-story-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); border-bottom: 1px solid rgba(32,34,54,.25); }
+.godrealm-story-layout > nav { position: sticky; top: 62px; align-self: start; max-height: calc(100svh - 62px); padding: 58px 30px; overflow-y: auto; border-right: 1px solid rgba(32,34,54,.22); background: rgba(32,34,54,.035); }
+.godrealm-story-layout > nav > span { display: block; margin-bottom: 32px; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.godrealm-story-layout > nav a { padding: 16px 0; display: grid; grid-template-columns: 28px 1fr; gap: 10px; border-top: 1px solid rgba(32,34,54,.18); color: rgba(32,34,54,.7); font-family: Georgia, "Songti SC", serif; font-size: 13px; line-height: 1.55; }
+.godrealm-story-layout > nav a small { padding-top: 3px; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; }
+.godrealm-story-layout > nav a:hover { color: var(--god-rose); transform: translateX(3px); }
+.godrealm-story-copy { min-width: 0; padding: clamp(56px, 8vw, 104px); }
+.godrealm-story-copy section { max-width: 760px; margin: 0 auto clamp(94px, 10vw, 150px); scroll-margin-top: 86px; }
+.godrealm-story-copy section:last-child { margin-bottom: 0; }
+.godrealm-story-copy section > small { display: block; margin-bottom: 22px; color: var(--god-rose); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.godrealm-story-copy h3 { margin: 0 0 42px; font-family: Georgia, "Songti SC", serif; font-size: clamp(44px, 5vw, 72px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
+.godrealm-story-copy p { margin: 0 0 1.65em; color: rgba(32,34,54,.78); font-size: 16px; line-height: 2.18; }
 .godrealm-story-dialog > footer { min-height: 118px; padding: 28px clamp(28px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 32px; background: var(--god-gold); color: var(--god-ink); }
 .godrealm-story-dialog > footer strong { max-width: 720px; font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.9; letter-spacing: .08em; }
 .godrealm-story-dialog > footer button { flex: 0 0 auto; padding: 12px 0 8px; border: 0; border-bottom: 1px solid currentColor; background: none; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .1em; cursor: pointer; }
@@ -4915,8 +4926,16 @@ footer > p {
   .godrealm-story-heading i { position: absolute; right: -26px; top: -12px; width: 180px; color: currentColor; opacity: .12; }
   .godrealm-story-heading small { position: relative; z-index: 1; margin-bottom: 16px; line-height: 1.7; }
   .godrealm-story-heading h2 { position: relative; z-index: 1; font-size: 48px; line-height: 1.12; letter-spacing: -.06em; }
-  .godrealm-story-copy { padding: 46px 22px; columns: 1; }
-  .godrealm-story-copy p { font-size: 14px; line-height: 2.05; }
+  .godrealm-story-heading p { position: relative; z-index: 1; }
+  .godrealm-story-layout { grid-template-columns: 1fr; }
+  .godrealm-story-layout > nav { position: static; max-height: none; padding: 34px 22px 18px; display: flex; gap: 10px; overflow-x: auto; overflow-y: hidden; border-right: 0; border-bottom: 1px solid rgba(32,34,54,.22); }
+  .godrealm-story-layout > nav > span { min-width: 104px; margin: 0 4px 0 0; padding-top: 15px; }
+  .godrealm-story-layout > nav a { min-width: 172px; padding: 12px; border: 1px solid rgba(32,34,54,.18); grid-template-columns: 24px 1fr; background: rgba(255,255,255,.3); }
+  .godrealm-story-copy { padding: 58px 22px; }
+  .godrealm-story-copy section { margin-bottom: 92px; scroll-margin-top: 74px; }
+  .godrealm-story-copy section > small { line-height: 1.7; }
+  .godrealm-story-copy h3 { margin-bottom: 32px; font-size: 38px; line-height: 1.18; }
+  .godrealm-story-copy p { font-size: 15px; line-height: 2.08; }
   .godrealm-story-dialog > footer { min-height: 170px; padding: 32px 22px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 20px; }
   .godrealm-incident-board h3 { font-size: 54px; line-height: 1.06; }
   .godrealm-incident-board p,
