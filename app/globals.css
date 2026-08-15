@@ -4714,6 +4714,10 @@ footer > p {
 .godrealm-story-copy section > small { display: block; margin-bottom: 22px; color: var(--god-rose); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
 .godrealm-story-copy h3 { margin: 0 0 42px; font-family: Georgia, "Songti SC", serif; font-size: clamp(44px, 5vw, 72px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
 .godrealm-story-copy p { margin: 0 0 1.65em; color: rgba(32,34,54,.78); font-size: 16px; line-height: 2.18; }
+.godrealm-novel-copy { max-width: 860px; margin: 0 auto; padding-block: clamp(72px, 9vw, 126px); }
+.godrealm-novel-copy p { margin-bottom: 2.05em; text-indent: 2em; }
+.godrealm-novel-copy p:first-child { text-indent: 0; }
+.godrealm-novel-copy p:first-child::first-letter { float: left; margin: .06em .13em 0 0; color: var(--god-rose); font-family: Georgia, "Songti SC", serif; font-size: 4.2em; line-height: .78; }
 .godrealm-story-dialog > footer { min-height: 118px; padding: 28px clamp(28px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 32px; background: var(--god-gold); color: var(--god-ink); }
 .godrealm-story-dialog > footer strong { max-width: 720px; font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 1.9; letter-spacing: .08em; }
 .godrealm-story-dialog > footer button { flex: 0 0 auto; padding: 12px 0 8px; border: 0; border-bottom: 1px solid currentColor; background: none; color: inherit; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .1em; cursor: pointer; }
@@ -4936,6 +4940,8 @@ footer > p {
   .godrealm-story-copy section > small { line-height: 1.7; }
   .godrealm-story-copy h3 { margin-bottom: 32px; font-size: 38px; line-height: 1.18; }
   .godrealm-story-copy p { font-size: 15px; line-height: 2.08; }
+  .godrealm-novel-copy { padding: 62px 24px 74px; }
+  .godrealm-novel-copy p { margin-bottom: 1.9em; text-indent: 2em; }
   .godrealm-story-dialog > footer { min-height: 170px; padding: 32px 22px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 20px; }
   .godrealm-incident-board h3 { font-size: 54px; line-height: 1.06; }
   .godrealm-incident-board p,

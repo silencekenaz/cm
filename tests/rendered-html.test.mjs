@@ -240,12 +240,17 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.doesNotMatch(godRealm, /详细档案尚未展开。|\/api\//);
 
   const godRealmArchive = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmArchive.tsx", import.meta.url), "utf8");
-  for (const record of ["LONG-FORM NERVOUS RECORD", "卷内目录", "再随机抽一卷", "失踪血兄弟与一张酸味入境单", "一场没有通过家庭委员会的雷霆计划", "神明禁止泄密，所以墙开始说话", "光明之神拒绝保持光明", "王位之争出现了不在卷宗里的气氛"]) assert.match(godRealmArchive, new RegExp(record));
+  for (const record of ["NOVEL INCIDENT RECORD", "再随机抽一卷", "godrealm-novel-copy", "失踪血兄弟与一张酸味入境单", "一场没有通过家庭委员会的雷霆计划", "神明禁止泄密，所以墙开始说话", "光明之神拒绝保持光明", "王位之争出现了不在卷宗里的气氛"]) assert.match(godRealmArchive, new RegExp(record));
+  assert.doesNotMatch(godRealmArchive, /卷内目录|CHAPTERS/);
 
   const godRealmStories = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmStories.ts", import.meta.url), "utf8");
   for (const chapter of ["旧誓不是召回令", "西格恩拒绝留在门外", "赫拉不是只会生气", "神明禁止泄密，所以墙开始说话", "月桂不是爱情纪念品", "谁先承认在意谁就算输", "甜蜜气氛不具备法律效力"]) assert.match(godRealmStories, new RegExp(chapter));
   assert.match(godRealmStories, /胡吉与穆宁/);
   assert.match(godRealmStories, /“小红毛”只是公主随口取的外号/);
+  assert.match(godRealmStories, /我无聊。/);
+  assert.match(godRealmStories, /在奥丁养乌鸦以前，他们靠扔鞋决定方向/);
+  assert.match(godRealmStories, /赫尔墨斯带着赃物和早餐从窗户进来/);
+  assert.match(godRealmStories, /第二次不算偷袭，所以谁也没有借口/);
   assert.doesNotMatch(godRealmStories, /福金|雾尼/);
 
   const manyi = await readFile(new URL("../dist/client/myths/norse/sun-map/manyi.html", import.meta.url), "utf8");

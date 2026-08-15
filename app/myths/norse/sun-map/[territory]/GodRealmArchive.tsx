@@ -158,12 +158,9 @@ export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancai
 
     {active && <div className="godrealm-story-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}>
       <article className={`godrealm-story-dialog godrealm-story-${active.id}`} role="dialog" aria-modal="true" aria-labelledby="godrealm-story-title">
-        <header><span>{active.code} / LONG-FORM NERVOUS RECORD</span><button type="button" onClick={() => setActive(null)} aria-label="关闭神明事故档案">×</button></header>
-        <div className="godrealm-story-heading"><i aria-hidden="true">{active.glyph}</i><div><small>{active.title} · {activeStory.length} CHAPTERS</small><h2 id="godrealm-story-title">{active.chapter}</h2><p>长篇事故卷宗 / 请从头读，诸神拒绝提供摘要。</p></div></div>
-        <div className="godrealm-story-layout">
-          <nav aria-label={`${active.title}卷内目录`}><span>CONTENTS / 卷内目录</span>{activeStory.map((section, index) => <a key={section.title} href={`#godrealm-${active.id}-${index + 1}`}><small>{String(index + 1).padStart(2, "0")}</small>{section.title}</a>)}</nav>
-          <div className="godrealm-story-copy">{activeStory.map((section, index) => <section id={`godrealm-${active.id}-${index + 1}`} key={section.title}><small>{section.kicker}</small><h3>{section.title}</h3>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>)}</div>
-        </div>
+        <header><span>{active.code} / NOVEL INCIDENT RECORD</span><button type="button" onClick={() => setActive(null)} aria-label="关闭神明事故档案">×</button></header>
+        <div className="godrealm-story-heading"><i aria-hidden="true">{active.glyph}</i><div><small>{active.title}</small><h2 id="godrealm-story-title">{active.chapter}</h2></div></div>
+        <div className="godrealm-story-copy godrealm-novel-copy">{activeStory.flatMap((section) => section.paragraphs).map((paragraph, index) => <p key={`${active.id}-${index}`}>{paragraph}</p>)}</div>
         <footer><strong>{active.ending}</strong><button type="button" onClick={openRandom}>再随机抽一卷 ↻</button></footer>
       </article>
     </div>}
