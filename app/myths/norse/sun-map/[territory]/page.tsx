@@ -34,33 +34,33 @@ function SuancaiPage() {
       <span>SUANCAI / ROYAL ARCHIVE</span>
       <div className="suancai-country-seal" aria-hidden="true"><b>酸</b><i>01</i></div>
       <h1>酸菜国</h1>
-      <p>太阳虽然堕落，王国仍照常开会。酸菜女王、酸菜公主与黄焖鸡丞相守着这片土地，也负责在伪人与蛮夷来敲门时，把门重新关上。</p>
+      <p>酸菜国的政务效率高得近乎可疑：女王拍板，丞相执行，通常一顿饭前就能把边境、财政和闯门的伪人一起处理完。唯一无法写进流程的是公主和小红毛——前者会认真相信恶作剧，后者会更认真地策划下一场。</p>
     </header>
 
     <section className="suancai-origin-note">
       <span>THE CROWN IS NOT A FAMILY TREE</span>
-      <div><h2>王座不是<br />一张家谱。</h2><p>酸菜女王和酸菜公主不是母女。公主只比女王小一岁，是女王派黄焖鸡丞相外出巡逻时捡到的孩子。丞相把孩子带回国，从此王宫多了一位公主，也多了一段每逢正式场合都必须重新解释的关系。</p></div>
+      <div><h2>王座不是<br />一张家谱。</h2><p>酸菜女王和酸菜公主不是母女，公主只比女王小一岁。当年女王派黄焖鸡丞相外出巡逻，丞相按计划带回了边境报告，顺便捡回一个孩子。女王看了看报告，又看了看孩子，最后两样都签收了：王宫从此多了一位公主，户籍部门从此少睡一点。</p></div>
     </section>
 
     <section className="suancai-cast">
-      <header><span>COURT / 03</span><h2>王国的主要成员</h2><p>三个人，各自负责一部分秩序；凑在一起时，通常还能额外制造一点秩序之外的东西。</p></header>
+      <header><span>COURT / 03</span><h2>两位行动派，<br />和一位傻白甜</h2><p>女王决定今天该做什么，丞相确保今天一定做完，公主则负责问一句：“他们看起来很友善，真的会打我们吗？”</p></header>
       <div>
-        <article><small>01 / THE QUEEN</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-queen-transparent-v1.png`} alt="透明底黑白线条画：戴左眼单片镜、扎着高小辫，飒爽而秀美的酸菜女王" /></figure><h3>酸菜女王</h3><h4>王国的决策者</h4><p>与公主并肩对抗伪人与蛮夷。她负责拍板、守住国土，以及在所有人都有第二套计划时，决定究竟执行哪一套。</p></article>
-        <article><small>02 / THE PRINCESS</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-princess-transparent-v1.png`} alt="透明底黑白线条画：长发、笑容天真的酸菜公主" /></figure><h3>酸菜公主</h3><h4>被巡逻队带回的公主</h4><p>只比女王小一岁，不是女王的女儿。她与女王共同守国，也必须时常处理自己那位阵营不太稳定的吉祥物。</p></article>
-        <article><small>03 / THE CHANCELLOR</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/huangmenji-chancellor-transparent-v1.png`} alt="透明底黑白线条画：戴眼镜、梳低马尾且神情严肃的黄焖鸡女丞相" /></figure><h3>黄焖鸡丞相</h3><h4>女丞相 · 巡逻者</h4><p>她在巡逻途中捡到了后来的酸菜公主。她崇拜阿耳忒弥斯女神，厌恶爱情；在她看来，月光、弓箭和按时交报告都比恋爱可靠。</p></article>
+        <article><small>01 / THE QUEEN</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-queen-transparent-v1.png`} alt="透明底黑白线条画：戴左眼单片镜、扎着高小辫，飒爽而秀美的酸菜女王" /></figure><h3>酸菜女王</h3><h4>先拍板，后解释</h4><p>她说“处理一下”，通常意味着事情已经处理完了。别人还在讨论要不要开会，她已经宣布散会；敌人若想发表战前宣言，最好控制在三十秒内，因为女王的耐心和边境预算一样按季度结算。</p></article>
+        <article><small>02 / THE PRINCESS</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/suancai-princess-transparent-v1.png`} alt="透明底黑白线条画：长发、笑容天真的酸菜公主" /></figure><h3>酸菜公主</h3><h4>对世界抱有过量善意</h4><p>她傻白甜得十分真诚。敌军只要说一句“我们没有恶意”，她就会先点头，再被女王从城门口拎回来。她并不缺勇气，只是常把阴谋理解成惊喜，把埋伏理解成大家想一起玩。</p></article>
+        <article><small>03 / THE CHANCELLOR</small><figure className="suancai-cast-portrait"><img src={`${siteBasePath}/huangmenji-chancellor-transparent-v1.png`} alt="透明底黑白线条画：戴眼镜、梳低马尾且神情严肃的黄焖鸡女丞相" /></figure><h3>黄焖鸡丞相</h3><h4>女丞相 · 绝不拖延</h4><p>她的巡逻路线直、报告结论直、拒绝爱情时说话更直。她崇拜阿耳忒弥斯女神，相信月光、弓箭和按时交报告都比恋爱可靠；人生唯一一次偏离路线，就是出门巡逻时顺手捡回了公主。</p></article>
       </div>
     </section>
 
     <section className="suancai-mascots">
-      <header><span>MASCOT FILES / 02</span><h2>两位吉祥物，<br />两种麻烦。</h2></header>
+      <header><span>MASCOT FILES / 02</span><h2>一个负责演，<br />一个负责闹。</h2></header>
       <div>
-        <article><span>QUEEN&apos;S MASCOT</span><div className="suancai-no-portrait" aria-label="小沙沙拒绝出镜"><b>肖像缺席</b><small>TOO HANDSOME TO ARCHIVE</small></div><h3>小沙沙</h3><p>他是酸菜女王的吉祥物。小沙沙演技极好，能力也远不止一项：当档案员试图列出完整清单时，他通常已经换了一个身份、一个表情，并让在场所有人开始怀疑刚才看见的版本。</p><strong>专长 / 演技与尚未登记完的能力</strong></article>
-        <article><span>PRINCESS&apos;S MASCOT · KENAZ?</span><figure className="suancai-mascot-portrait"><img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色线条画下的滑稽自画像，耳后低低扎着一小撮头发" /></figure><h3>小红毛</h3><p>他传说来自神之境，喜欢恶搞，纯靠脑力制定计划。小红毛没有稳定阵营：有时替酸菜国解围，有时顺手把酸菜国也坑进去；他坚持这不叫背叛，只叫“给方案增加压力测试”。</p><strong>专长 / 智谋、恶作剧与立场漂移</strong></article>
+        <article><span>QUEEN&apos;S MASCOT</span><div className="suancai-no-portrait" aria-label="小沙沙拒绝出镜"><b>肖像缺席</b><small>TOO HANDSOME TO ARCHIVE</small></div><h3>小沙沙</h3><p>他是酸菜女王的吉祥物，也是王宫最难统计的战力。小沙沙演什么像什么：使者、证人、路过群众，必要时甚至能演成“今天绝对没有发生任何事”。档案员每次以为摸清了他的能力，第二天都会发现那只是第一幕。</p><strong>专长 / 演技、能力很多，以及拒绝剧透</strong></article>
+        <article><span>PRINCESS&apos;S MASCOT · KENAZ?</span><figure className="suancai-mascot-portrait"><img src={`${siteBasePath}/kenaz-doodle-light.png`} alt="小红毛用亮色线条画下的滑稽自画像，耳后低低扎着一小撮头发" /></figure><h3>小红毛</h3><p>他传说来自神之境，靠智谋生活，靠恶作剧保持精神健康。如果酸菜国连续三天风平浪静，小红毛就会怀疑国家机器出了故障，并亲自启动一点事情。他有时帮酸菜国解决危机，有时就是危机本人。</p><strong>专长 / 启动、搞事，以及给自己制造的麻烦收尾</strong></article>
       </div>
     </section>
 
     <section className="suancai-tavern-callout">
-      <span>NEUTRAL-ish STOP / ↔</span><div><h2>边界线上，<br />有人还在卖吃的。</h2><p>酸菜国与伪国之间有一间小酒馆。宝井小姐在那里卖吃的，至于国界究竟穿过门口、柜台还是某张桌子，地图员至今没有统一意见。</p><a href={territoryHref("border-tavern")}>前往交界小酒馆 ↗</a></div>
+      <span>NEUTRAL-ish STOP / ↔</span><div><h2>边界线上，<br />有人还在卖吃的。</h2><p>酸菜国与伪国之间有一间小酒馆。两国为边界吵了很久，宝井小姐只问了一句“还点不点菜”，于是争端暂时休庭。国界究竟穿过门口、柜台还是某张桌子仍无定论，饭倒是已经上了。</p><a href={territoryHref("border-tavern")}>前往交界小酒馆 ↗</a></div>
     </section>
     <footer><a href={mapHref}>← 返回屑球地图</a><span>SUANCAI FILE / OPEN</span></footer>
   </main>;
@@ -79,12 +79,12 @@ function WeiguoPage() {
       <div className="weiguo-sigil-orbit" aria-hidden="true"><InvertedPentagram /><i /><i /><i /></div>
       <span>MIMIC / PUBLIC RECORD</span>
       <h1><span>伪</span>国</h1>
-      <p>伪人擅长成为任何人。他们能学会语气、步伐和开门时的停顿，却总会留下某种说不清的异样——像一张过分准确的脸，忽然忘了人为什么要眨眼。</p>
-      <div className="weiguo-hero-index"><b>02</b><span>COMBAT / MIMICRY / UNCANNY</span></div>
+      <p>伪国被外宾评为屑球上最和谐、最文明的国家。街上人人衣冠整齐，见面微笑，说话轻声——因为所有伪人都在努力扮演人类。礼貌通常能维持到第一个人忘记眨眼，或者第二个人问出那句：“你瞅啥？”</p>
+      <div className="weiguo-hero-index"><b>02</b><span>POLITE / MIMIC / FIGHT</span></div>
     </header>
 
     <section className="weiguo-two-files">
-      <header><span>ONE THRONE / TWO NAMES</span><h2><b>传说写着昀昀。</b><br /><b>真相写着晚霞。</b></h2><p>伪国的档案很少直接撒谎。它们更喜欢把真的那页压在假的下面，再等读者自己决定要不要继续翻。</p></header>
+      <header><span>ONE THRONE / TWO NAMES</span><h2><b>传说写着昀昀。</b><br /><b>真相写着晚霞。</b></h2><p>伪国的档案没有撒谎，只是把真话放在最后一页。更重要的是，昀昀与晚霞是少数真身也很好看的伪人——这项事实令全国其余人口一致要求继续封存档案。</p></header>
       <div>
         <article className="weiguo-yunyun-file">
           <small>PUBLIC FILE / 伪神传说</small>
@@ -94,8 +94,8 @@ function WeiguoPage() {
           </figure>
           <h3>昀昀</h3>
           <h4>传说中的伪神</h4>
-          <p>人人都听说伪神名叫昀昀。她的智商很 <b>good</b>，看局势比大多数伪人快得多；武力同样不弱，只是与晚霞相比，仍要稍逊一筹。</p>
-          <strong>判断力 / 很 good<br />武力 / 略低于晚霞</strong>
+          <p>人人都听说伪神名叫昀昀。她的智商很 <b>good</b>，这在伪国是极其显眼的优点：当别人准备直接开打时，她至少会先问清楚要打谁。武力同样不弱，只是与晚霞相比，仍要稍逊一筹。</p>
+          <strong>判断力 / 很 good<br />开打前思考 / 会<br />武力 / 略低于晚霞</strong>
         </article>
         <article className="weiguo-wanxia-file">
           <small>SEALED FILE / 真实更正</small>
@@ -105,7 +105,7 @@ function WeiguoPage() {
           </figure>
           <h3>晚霞</h3>
           <h4>真正的伪神</h4>
-          <p>被藏起来的答案是晚霞。她的武力值极高，智识也高于普通伪人；更麻烦的是，她并不只存在于边境报告里——晚霞与酸菜公主是好友，两国最危险的名字有时会坐在一张桌前聊天。</p>
+          <p>被藏起来的答案是晚霞。她的武力值极高，智识也高于普通伪人，因此通常不必参与伪国漫长的互殴流程：她看一眼，流程就可以结束。晚霞还是酸菜公主的好友，两国最危险与最天真的名字有时会坐在一张桌前聊天。</p>
           <strong>武力 / 极高<br />智识 / 高于普通伪人<br />关系 / 酸菜公主的好友</strong>
         </article>
       </div>
@@ -113,11 +113,11 @@ function WeiguoPage() {
 
     <section className="weiguo-mimic-field">
       <div className="weiguo-mimic-echo" aria-hidden="true"><i>人</i><i>伪</i><i>人</i><i>伪</i></div>
-      <header><span>SPECIES NOTE / MIMICS</span><h2>他们很像人。<br />问题是，<em>太像了。</em></h2></header>
+      <header><span>SPECIES NOTE / MIMICS</span><h2>全国都很文明。<br /><em>至少还没动手时。</em></h2></header>
       <div className="weiguo-traits">
-        <article><small>01 / FORCE</small><h3>普遍高武力</h3><p>伪人的身体素质普遍强悍。即使没有神位、头衔或专属档案，普通伪人也很少是适合正面硬碰的对象。</p></article>
-        <article><small>02 / MIMICRY</small><h3>善于伪装</h3><p>他们观察人类，再把神态、动作和说话习惯一件件穿到身上。技术往往没有问题，问题出在他们偶尔会把所有细节同时做得过于正确。</p></article>
-        <article><small>03 / UNCANNY</small><h3>非人的余味</h3><p>你可能说不出哪里不对，却会本能地再看一眼。也许是笑容停得太准，也许是沉默时完全没有多余动作——总之，那张人脸下面还有别的东西。</p></article>
+        <article><small>01 / CIVILIZATION</small><h3>表面和谐</h3><p>为了像人，伪人认真学习握手、让路、排队和微笑，于是意外建成了屑球上表面最文明的国家。至于人皮下面的真身，大多不宜在饭前公开；昀昀和晚霞是罕见例外。</p></article>
+        <article><small>02 / BRAINS</small><h3>智力节约</h3><p>大部分伪人把脑力用在维持人设上，剩下的一点只够判断“是不是他先瞪我”。复杂争议很少需要辩论，因为大家通常还没理解问题，就已经同意用拳头简化题目。</p></article>
+        <article><small>03 / COMBAT</small><h3>撕脸即开打</h3><p>伪人的武力普遍很高，脾气也很配套。只要有人拆穿伪装、踩到尾巴，或者单纯把礼貌用完，和谐社会便会当场休息；打完以后，双方整理衣领，重新互道您好。</p></article>
       </div>
     </section>
 
@@ -126,11 +126,11 @@ function WeiguoPage() {
       <figure className="weiguo-goose-portrait">
         <img src={`${siteBasePath}/weiguo-goose-transparent-v1.png`} alt="昂着头、佩戴倒五芒星项圈的大鹅线条画" />
       </figure>
-      <div><h2>大鹅</h2><h3>伪神的随行宠物</h3><p>伪神有一只宠物，名字没有任何伪装，直接叫大鹅。它不负责解释王位传闻，也不参与真假档案的校对；它只负责跟着伪神，并以一种理直气壮的姿态，让所有想靠近的人重新考虑距离。</p><strong>权限 / 不详<br />威慑方式 / 注视、逼近，以及可能的啄</strong></div>
+      <div><h2>大鹅</h2><h3>全境唯一懒得伪装的居民</h3><p>伪神的宠物直接叫大鹅。全国都忙着扮演人类，只有它坦然做鹅，昂着头巡视街道，对任何可疑人物实施注视、逼近和啄。奇怪的是，它反而成了伪国最容易理解的公民。</p><strong>人类伪装 / 拒绝<br />执法方式 / 注视、逼近，以及啄<br />文明程度 / 视心情而定</strong></div>
     </section>
 
     <section className="weiguo-emblem-file">
-      <div><span>STATE EMBLEM / INVERTED PENTAGRAM</span><h2>一颗向下的星，<br />是伪神留下的签名。</h2><p>倒置五芒星是伪神的标志。它出现在封存档案、边境记号与不该被打开的门上；看到它时，至少有一件事是真的：有人希望你怀疑眼前的一切。</p></div>
+      <div><span>STATE EMBLEM / INVERTED PENTAGRAM</span><h2>一颗向下的星，<br />提醒大家继续装。</h2><p>倒置五芒星是伪神的标志。它出现在封存档案、边境记号和刚修好的公共设施上，象征伪国的共同理想：无论真身长成什么样，出门以前请先把人类外表穿好。</p></div>
       <InvertedPentagram className="weiguo-emblem-star" />
     </section>
 

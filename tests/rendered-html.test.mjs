@@ -237,13 +237,13 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.doesNotMatch(manyi, /详细档案尚未展开。|\/api\//);
 
   const suancai = await readFile(new URL("../dist/client/myths/norse/sun-map/suancai.html", import.meta.url), "utf8");
-  for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁"]) assert.match(suancai, new RegExp(detail));
+  for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁", "傻白甜", "先拍板", "绝不拖延", "启动一点事情"]) assert.match(suancai, new RegExp(detail));
   for (const portrait of ["suancai-queen-transparent-v1.png", "suancai-princess-transparent-v1.png", "huangmenji-chancellor-transparent-v1.png", "kenaz-doodle-light.png"]) assert.match(suancai, new RegExp(portrait));
   assert.doesNotMatch(suancai, /不住在盐罐/);
   assert.match(suancai, /href="\/cm\/myths\/norse\/sun-map\/border-tavern\.html"/);
 
   const weiguo = await readFile(new URL("../dist/client/myths/norse/sun-map/weiguo.html", import.meta.url), "utf8");
-  for (const detail of ["伪国", "昀昀", "晚霞", "真正的伪神", "酸菜公主是好友", "武力值极高", "智商很", "普遍高武力", "善于伪装", "非人的余味", "大鹅", "倒置五芒星"]) assert.match(weiguo, new RegExp(detail));
+  for (const detail of ["伪国", "昀昀", "晚霞", "真正的伪神", "酸菜公主的好友", "武力值极高", "智商很", "表面最文明", "真身", "智力节约", "撕脸即开打", "大鹅", "倒置五芒星"]) assert.match(weiguo, new RegExp(detail));
   assert.match(weiguo, /MIMIC \/ PUBLIC RECORD/);
   assert.match(weiguo, /weiguo-yunyun-transparent-v1\.png/);
   assert.match(weiguo, /weiguo-wanxia-transparent-v1\.png/);
