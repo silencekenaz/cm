@@ -240,6 +240,9 @@ test("exports separate Norse myth and heroic paths", async () => {
   const weiguo = await readFile(new URL("../dist/client/myths/norse/sun-map/weiguo.html", import.meta.url), "utf8");
   for (const detail of ["伪国", "昀昀", "晚霞", "真正的伪神", "酸菜公主是好友", "武力值极高", "智商很", "普遍高武力", "善于伪装", "非人的余味", "大鹅", "倒置五芒星"]) assert.match(weiguo, new RegExp(detail));
   assert.match(weiguo, /MIMIC \/ PUBLIC RECORD/);
+  assert.match(weiguo, /weiguo-yunyun-transparent-v1\.png/);
+  assert.match(weiguo, /weiguo-wanxia-transparent-v1\.png/);
+  assert.match(weiguo, /weiguo-goose-transparent-v1\.png/);
   assert.match(weiguo, /href="\/cm\/myths\/norse\/sun-map\/border-tavern\.html"/);
   assert.doesNotMatch(weiguo, /详细档案尚未展开。|\/api\//);
 

@@ -89,6 +89,9 @@ function WeiguoPage() {
         <article className="weiguo-yunyun-file">
           <small>PUBLIC FILE / 伪神传说</small>
           <span aria-hidden="true">01</span>
+          <figure className="weiguo-person-portrait weiguo-yunyun-portrait">
+            <img src={`${siteBasePath}/weiguo-yunyun-transparent-v1.png`} alt="短发、戴方框眼镜的昀昀线条胸像" />
+          </figure>
           <h3>昀昀</h3>
           <h4>传说中的伪神</h4>
           <p>人人都听说伪神名叫昀昀。她的智商很 <b>good</b>，看局势比大多数伪人快得多；武力同样不弱，只是与晚霞相比，仍要稍逊一筹。</p>
@@ -97,6 +100,9 @@ function WeiguoPage() {
         <article className="weiguo-wanxia-file">
           <small>SEALED FILE / 真实更正</small>
           <InvertedPentagram className="weiguo-card-sigil" />
+          <figure className="weiguo-person-portrait weiguo-wanxia-portrait">
+            <img src={`${siteBasePath}/weiguo-wanxia-transparent-v1.png`} alt="高马尾、神情奶凶的晚霞线条胸像" />
+          </figure>
           <h3>晚霞</h3>
           <h4>真正的伪神</h4>
           <p>被藏起来的答案是晚霞。她的武力值极高，智识也高于普通伪人；更麻烦的是，她并不只存在于边境报告里——晚霞与酸菜公主是好友，两国最危险的名字有时会坐在一张桌前聊天。</p>
@@ -117,7 +123,9 @@ function WeiguoPage() {
 
     <section className="weiguo-goose-file">
       <span>COMPANION FILE / GOOSE</span>
-      <div className="weiguo-goose-mark" aria-hidden="true"><b>鹅</b><i>!</i></div>
+      <figure className="weiguo-goose-portrait">
+        <img src={`${siteBasePath}/weiguo-goose-transparent-v1.png`} alt="昂着头、佩戴倒五芒星项圈的大鹅线条画" />
+      </figure>
       <div><h2>大鹅</h2><h3>伪神的随行宠物</h3><p>伪神有一只宠物，名字没有任何伪装，直接叫大鹅。它不负责解释王位传闻，也不参与真假档案的校对；它只负责跟着伪神，并以一种理直气壮的姿态，让所有想靠近的人重新考虑距离。</p><strong>权限 / 不详<br />威慑方式 / 注视、逼近，以及可能的啄</strong></div>
     </section>
 
