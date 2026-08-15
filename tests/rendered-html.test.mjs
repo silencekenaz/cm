@@ -248,6 +248,9 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.match(godRealmStories, /胡吉与穆宁/);
   assert.match(godRealmStories, /“小红毛”只是公主随口取的外号/);
   assert.match(godRealmStories, /我无聊。/);
+  assert.match(godRealmStories, /红发旅客已正式续任王室吉祥物/);
+  assert.match(godRealmStories, /小红毛今天也不许跑/);
+  assert.match(godRealmStories, /众神之父探视吉祥物，须提前预约/);
   assert.match(godRealmStories, /在奥丁养乌鸦以前，他们靠扔鞋决定方向/);
   assert.match(godRealmStories, /赫尔墨斯带着赃物和早餐从窗户进来/);
   assert.match(godRealmStories, /第二次不算偷袭，所以谁也没有借口/);
