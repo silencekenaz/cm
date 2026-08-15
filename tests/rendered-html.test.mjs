@@ -246,8 +246,9 @@ test("exports separate Norse myth and heroic paths", async () => {
   const godRealmStories = await readFile(new URL("../app/myths/norse/sun-map/[territory]/GodRealmStories.ts", import.meta.url), "utf8");
   for (const chapter of ["旧誓不是召回令", "西格恩拒绝留在门外", "赫拉不是只会生气", "神明禁止泄密，所以墙开始说话", "月桂不是爱情纪念品", "谁先承认在意谁就算输", "甜蜜气氛不具备法律效力"]) assert.match(godRealmStories, new RegExp(chapter));
   assert.match(godRealmStories, /胡吉与穆宁/);
-  assert.match(godRealmStories, /“小红毛”只是公主随口取的外号/);
-  assert.match(godRealmStories, /我无聊。/);
+  assert.match(godRealmStories, /小红毛才不是可疑旅客/);
+  assert.match(godRealmStories, /我感觉他在炫耀/);
+  assert.match(godRealmStories, /我无聊，可以了吧/);
   assert.match(godRealmStories, /红发旅客已正式续任王室吉祥物/);
   assert.match(godRealmStories, /小红毛今天也不许跑/);
   assert.match(godRealmStories, /众神之父探视吉祥物，须提前预约/);
@@ -255,6 +256,9 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.match(godRealmStories, /赫尔墨斯带着赃物和早餐从窗户进来/);
   assert.match(godRealmStories, /第二次不算偷袭，所以谁也没有借口/);
   assert.doesNotMatch(godRealmStories, /福金|雾尼/);
+
+  assert.match(godRealmArchive, /splitNovelBeats/);
+  assert.match(godRealmArchive, /is-dialogue/);
 
   const manyi = await readFile(new URL("../dist/client/myths/norse/sun-map/manyi.html", import.meta.url), "utf8");
   for (const detail of ["蛮夷国", "龟", "蛆", "沉迷做题", "打台球", "起义", "国家一片混乱", "堕日之子", "我不信", "红温"]) assert.match(manyi, new RegExp(detail));

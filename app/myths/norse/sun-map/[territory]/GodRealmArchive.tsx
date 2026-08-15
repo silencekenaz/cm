@@ -21,6 +21,18 @@ type Incident = {
   ending: string;
 };
 
+function splitNovelBeats(paragraph: string) {
+  const beats = paragraph.match(/.*?(?:[。！？][”’]?|$)/g)?.map((beat) => beat.trim()).filter(Boolean) ?? [paragraph];
+  if (beats.length < 2) return beats;
+  return beats.flatMap((beat) => {
+    const dialogueAt = beat.search(/[“]/);
+    if (dialogueAt <= 0) return [beat];
+    const lead = beat.slice(0, dialogueAt).trim();
+    const dialogue = beat.slice(dialogueAt).trim();
+    return lead && dialogue ? [lead, dialogue] : [beat];
+  });
+}
+
 export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancaiHref: string; conflictHref: string }) {
   const incidents: Incident[] = [
     {
@@ -160,7 +172,7 @@ export default function GodRealmArchive({ suancaiHref, conflictHref }: { suancai
       <article className={`godrealm-story-dialog godrealm-story-${active.id}`} role="dialog" aria-modal="true" aria-labelledby="godrealm-story-title">
         <header><span>{active.code} / NOVEL INCIDENT RECORD</span><button type="button" onClick={() => setActive(null)} aria-label="关闭神明事故档案">×</button></header>
         <div className="godrealm-story-heading"><i aria-hidden="true">{active.glyph}</i><div><small>{active.title}</small><h2 id="godrealm-story-title">{active.chapter}</h2></div></div>
-        <div className="godrealm-story-copy godrealm-novel-copy">{activeStory.flatMap((section) => section.paragraphs).map((paragraph, index) => <p key={`${active.id}-${index}`}>{paragraph}</p>)}</div>
+        <div className="godrealm-story-copy godrealm-novel-copy">{activeStory.flatMap((section) => section.paragraphs).flatMap(splitNovelBeats).map((paragraph, index) => <p className={paragraph.startsWith("“") ? "is-dialogue" : undefined} key={`${active.id}-${index}`}>{paragraph}</p>)}</div>
         <footer><strong>{active.ending}</strong><button type="button" onClick={openRandom}>再随机抽一卷 ↻</button></footer>
       </article>
     </div>}

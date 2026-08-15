@@ -4716,6 +4716,7 @@ footer > p {
 .godrealm-story-copy p { margin: 0 0 1.65em; color: rgba(32,34,54,.78); font-size: 16px; line-height: 2.18; }
 .godrealm-novel-copy { max-width: 860px; margin: 0 auto; padding-block: clamp(72px, 9vw, 126px); }
 .godrealm-novel-copy p { margin-bottom: 2.05em; text-indent: 2em; }
+.godrealm-novel-copy p.is-dialogue { padding-left: clamp(12px, 2vw, 26px); border-left: 2px solid rgba(166, 84, 71, .2); text-indent: 0; }
 .godrealm-novel-copy p:first-child { text-indent: 0; }
 .godrealm-novel-copy p:first-child::first-letter { float: left; margin: .06em .13em 0 0; color: var(--god-rose); font-family: Georgia, "Songti SC", serif; font-size: 4.2em; line-height: .78; }
 .godrealm-story-dialog > footer { min-height: 118px; padding: 28px clamp(28px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 32px; background: var(--god-gold); color: var(--god-ink); }
