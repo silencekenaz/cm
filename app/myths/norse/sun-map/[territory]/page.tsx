@@ -138,6 +138,46 @@ function WeiguoPage() {
   </main>;
 }
 
+function ManyiPage() {
+  return <main className="manyi-country-page">
+    <ArchiveNav number="03" />
+    <header className="manyi-country-hero">
+      <div className="manyi-hero-balls" aria-hidden="true"><i>8</i><i>3</i><i>?</i></div>
+      <span>MANYI / DISORDER REGISTER</span>
+      <h1><em>蛮</em>夷国</h1>
+      <p>这里的子民不是龟，就是蛆。有人伏案做题，有人趴在台球桌边瞄准，还有人刚写完半张卷子便宣布起义——三件事时常在同一间屋里发生。</p>
+      <div className="manyi-hero-index"><b>03</b><span>TURTLES / MAGGOTS / REVOLT</span></div>
+    </header>
+
+    <section className="manyi-king-file">
+      <span>THRONE FILE / THE PROBLEM SET</span>
+      <figure><img src={`${siteBasePath}/manyi-king-transparent-v2.png`} alt="戴着歪眼镜、同时握着两支笔做题的丑萌蛮夷龟王" /></figure>
+      <div><h2>蛮夷国王<br />沉迷做题。</h2><p>国王醒来做题，开会时做题，听见殿外传来起义的脚步声，先把当前小问写完再说。他的王冠很小，题册却堆得像城墙；大臣递来的军报若背面空白，也会立刻获得一道辅助线。</p><p>这份执念意外成了国家最后的秩序。战乱每次闹到王宫门口，国王便抬起头，用做题时练出的拆解、排除与反证手法，把叛军的计划逐项算错、逐层击破。等他重新低头，起义已经被镇压，只剩下一张卷子还没写完。</p><strong>统治方式 / 审题、列式、镇压<br />停笔条件 / 暂未发现</strong></div>
+    </section>
+
+    <section className="manyi-citizen-file">
+      <header><span>POPULATION / TURTLES &amp; MAGGOTS</span><h2>做题，台球，<br />以及随时起义。</h2><p>龟与蛆构成了蛮夷国全部人口。物种不同，爱好倒很统一；因此任何安静的下午，都可能在一声球响后变成临时革命。</p></header>
+      <figure><img src={`${siteBasePath}/manyi-citizens-transparent-v1.png`} alt="龟与蛆一边打台球、做题，一边举起破布旗起义的混乱线条画" /></figure>
+      <div className="manyi-habits">
+        <article><small>01 / BILLIARDS</small><h3>打台球</h3><p>球桌是娱乐设施、会议现场，也是争论谁先开球时最容易爆发冲突的地方。</p></article>
+        <article><small>02 / PROBLEMS</small><h3>做题</h3><p>从王宫到街口，到处都有人埋头计算。答不出来不丢脸，承认不会才比较危险。</p></article>
+        <article><small>03 / REVOLT</small><h3>起义</h3><p>起义通常没有统一口号，也没有统一时间；参与者甚至可能先打一局，再决定推翻谁。</p></article>
+      </div>
+    </section>
+
+    <section className="manyi-disorder-note">
+      <span>PUBLIC ORDER / UNSTABLE</span><div><h2>国家一片混乱。<br />但题目有标准答案。</h2><p>蛮夷国的战乱从不缺少热情，只缺少计划。所幸国王做题手法过于高明：他把战场当成一道条件冗余的大题，把每支队伍当成未知数，算着算着，就把所有人重新送回了座位。</p></div>
+    </section>
+
+    <section className="manyi-sun-son-file">
+      <div><span>FALLEN SUN / DESCENDANT</span><h2>堕日之子</h2><h3>住在蛮夷国的台球爱好者</h3><p>传说堕落的太阳有一个儿子，后来住进蛮夷国。他喜欢台球，也喜欢在任何证据面前先说一句“我不信”。若局势继续不利，他便会迅速红温：脸上虽然看不出颜色，头顶的热气却足以替他完成说明。</p><p>没有人知道他为何离太阳那么远。蛮夷国只知道，他来之后，球桌旁多了一位永远要求重赛的选手。</p><strong>常用语 / 我不信<br />升温速度 / 极快<br />主要爱好 / 台球与要求重赛</strong></div>
+      <figure><img src={`${siteBasePath}/fallen-sun-son-transparent-v2.png`} alt="背着龟壳、抱着台球杆，头顶破损太阳环且正在红温的丑萌堕日之子" /></figure>
+    </section>
+
+    <footer><a href={mapHref}>← 返回屑球地图</a><span>MANYI FILE / STILL REVOLTING</span></footer>
+  </main>;
+}
+
 function BorderTavernPage() {
   return <main className="border-tavern-page">
     <ArchiveNav number="↔" />
@@ -153,6 +193,7 @@ export default async function Page({ params }: { params: Promise<{ territory: st
   if (!territory) return null;
   if (slug === "suancai") return <SuancaiPage />;
   if (slug === "weiguo") return <WeiguoPage />;
+  if (slug === "manyi") return <ManyiPage />;
   if (slug === "border-tavern") return <BorderTavernPage />;
   return <main className={`scrap-territory-page scrap-territory-${territory.slug}`}>
     <ArchiveNav number={territory.number} />

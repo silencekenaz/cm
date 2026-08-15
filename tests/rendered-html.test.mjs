@@ -223,13 +223,18 @@ test("exports separate Norse myth and heroic paths", async () => {
   assert.match(scrapMap, /href="\/cm\/myths\/norse\/myths\/morning\.html"/);
   assert.doesNotMatch(scrapMap, /\/api\//);
 
-  for (const [slug, name] of [["manyi", "蛮夷国"], ["god-realm", "神之境"], ["earth", "很远的地球"], ["happy-world", "欢乐世界"]]) {
+  for (const [slug, name] of [["god-realm", "神之境"], ["earth", "很远的地球"], ["happy-world", "欢乐世界"]]) {
     const territory = await readFile(new URL(`../dist/client/myths/norse/sun-map/${slug}.html`, import.meta.url), "utf8");
     assert.match(territory, new RegExp(`<h1>${name}</h1>`));
     assert.match(territory, /详细档案尚未展开。/);
     assert.match(territory, /href="\/cm\/myths\/norse\/sun-map\.html"/);
     assert.doesNotMatch(territory, /\/api\//);
   }
+
+  const manyi = await readFile(new URL("../dist/client/myths/norse/sun-map/manyi.html", import.meta.url), "utf8");
+  for (const detail of ["蛮夷国", "龟", "蛆", "沉迷做题", "打台球", "起义", "国家一片混乱", "堕日之子", "我不信", "红温"]) assert.match(manyi, new RegExp(detail));
+  for (const illustration of ["manyi-king-transparent-v2.png", "manyi-citizens-transparent-v1.png", "fallen-sun-son-transparent-v2.png"]) assert.match(manyi, new RegExp(illustration));
+  assert.doesNotMatch(manyi, /详细档案尚未展开。|\/api\//);
 
   const suancai = await readFile(new URL("../dist/client/myths/norse/sun-map/suancai.html", import.meta.url), "utf8");
   for (const detail of ["酸菜女王", "酸菜公主", "黄焖鸡丞相", "女丞相", "阿耳忒弥斯", "小沙沙", "小红毛", "不是母女", "只比女王小一岁"]) assert.match(suancai, new RegExp(detail));

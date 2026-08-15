@@ -4486,7 +4486,7 @@ footer > p {
 .scrap-territory-page { min-height: 100svh; background: #091622; color: #eef0e9; }
 .scrap-territory-page > nav { min-height: 74px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(238,240,233,.18); color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
 .scrap-territory-page > nav a { color: #eef0e9; }
-.scrap-territory-page > header { min-height: calc(100svh - 74px); padding: 110px clamp(22px, 8vw, 126px) 72px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 24%, rgba(198,170,101,.2), transparent 28%), #091622; background-size: 72px 72px, 72px 72px, auto, auto; }
+.scrap-territory-page > header { min-height: calc(100svh - 74px); padding: 110px clamp(22px, 8vw, 126px) 72px; display: flex; flex-direction: column; justify-content: flex-start; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 24%, rgba(198,170,101,.2), transparent 28%), #091622; background-size: 72px 72px, 72px 72px, auto, auto; }
 .scrap-territory-page > header > span { color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
 .scrap-territory-page > header h1 { margin: 40px 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(96px, 18vw, 270px); font-weight: 500; line-height: .88; letter-spacing: -.08em; }
 .scrap-territory-page > header p { margin: 0; color: rgba(238,240,233,.58); font-size: 15px; line-height: 2; }
@@ -4494,11 +4494,13 @@ footer > p {
 .suancai-country-page { --sour-night: #0b1823; --sour-cream: #e7e4da; --sour-gold: #c6aa65; --sour-red: #a9604e; --sour-blue: #7893a4; min-height: 100svh; overflow: hidden; background: var(--sour-night); color: #eef0e9; }
 .suancai-country-page > nav,
 .weiguo-country-page > nav,
+.manyi-country-page > nav,
 .border-tavern-page > nav { min-height: 74px; padding: 0 clamp(22px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(238,240,233,.18); color: #c6aa65; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .14em; }
 .suancai-country-page > nav a,
 .weiguo-country-page > nav a,
+.manyi-country-page > nav a,
 .border-tavern-page > nav a { color: #eef0e9; }
-.suancai-country-hero { min-height: 850px; padding: 130px clamp(22px, 8vw, 126px) 80px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(198,170,101,.2), transparent 26%), linear-gradient(125deg, var(--sour-night) 0 69%, #344b58 69% 84%, var(--sour-red) 84%); background-size: 72px 72px, 72px 72px, auto, auto; }
+.suancai-country-hero { min-height: 850px; padding: 130px clamp(22px, 8vw, 126px) 80px; position: relative; display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(198,170,101,.2), transparent 26%), linear-gradient(125deg, var(--sour-night) 0 69%, #344b58 69% 84%, var(--sour-red) 84%); background-size: 72px 72px, 72px 72px, auto, auto; }
 .suancai-country-hero > span,
 .suancai-origin-note > span,
 .suancai-cast header > span,
@@ -4554,7 +4556,7 @@ footer > p {
 .suancai-country-page > footer a { color: #eef0e9; }
 
 .weiguo-country-page { --mimic-night: #111922; --mimic-paper: #e6e2d9; --mimic-red: #a65649; --mimic-violet: #625d70; --mimic-ash: #879397; --mimic-gold: #c5a965; min-height: 100svh; overflow: hidden; background: var(--mimic-night); color: #edf0e9; }
-.weiguo-country-hero { min-height: 850px; padding: 132px clamp(22px, 8vw, 126px) 82px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(166,86,73,.22), transparent 25%), linear-gradient(132deg, #111922 0 68%, #292b39 68% 82%, #a65649 82%); background-size: 68px 68px, 68px 68px, auto, auto; }
+.weiguo-country-hero { min-height: 850px; padding: 132px clamp(22px, 8vw, 126px) 82px; position: relative; display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), radial-gradient(circle at 78% 28%, rgba(166,86,73,.22), transparent 25%), linear-gradient(132deg, #111922 0 68%, #292b39 68% 82%, #a65649 82%); background-size: 68px 68px, 68px 68px, auto, auto; }
 .weiguo-country-hero::before { content: "MIMIC MIMIC MIMIC"; position: absolute; left: -1vw; bottom: -.12em; color: rgba(237,240,233,.025); font-family: var(--font-geist-mono), monospace; font-size: clamp(90px, 14vw, 210px); font-weight: 900; line-height: .8; white-space: nowrap; transform: scaleX(-1); }
 .weiguo-country-hero > span,
 .weiguo-two-files header > span,
@@ -4635,6 +4637,65 @@ footer > p {
 .weiguo-country-page > footer { min-height: 140px; padding: 0 clamp(22px, 6vw, 92px); display: flex; align-items: center; justify-content: space-between; background: var(--mimic-red); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
 .weiguo-country-page > footer a { color: #fff; }
 
+.manyi-country-page { --manyi-night: #1e211d; --manyi-paper: #ded9c5; --manyi-yellow: #c4a84f; --manyi-moss: #8c9954; --manyi-rust: #984d3d; --manyi-ink: #1b1b18; min-height: 100svh; overflow: hidden; background: var(--manyi-night); color: #f1eee3; }
+.manyi-country-hero { min-height: 850px; padding: 124px clamp(22px, 8vw, 126px) 76px; position: relative; display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; background: radial-gradient(circle at 82% 24%, rgba(196,168,79,.2), transparent 24%), repeating-linear-gradient(-18deg, transparent 0 112px, rgba(255,255,255,.035) 113px 114px), linear-gradient(123deg, #20231f 0 69%, #5f6742 69% 84%, var(--manyi-rust) 84%); }
+.manyi-country-hero::before { content: "03 03 03"; position: absolute; right: -2vw; bottom: -.12em; color: rgba(241,238,227,.035); font-family: var(--font-geist-mono), monospace; font-size: clamp(130px, 20vw, 300px); font-weight: 900; line-height: .75; white-space: nowrap; }
+.manyi-country-hero > span,
+.manyi-king-file > span,
+.manyi-citizen-file header > span,
+.manyi-disorder-note > span,
+.manyi-sun-son-file span { position: relative; z-index: 1; color: var(--manyi-yellow); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .15em; }
+.manyi-country-hero h1 { position: relative; z-index: 1; margin: 34px 0 38px; font-family: Georgia, "Songti SC", serif; font-size: clamp(130px, 20vw, 300px); font-weight: 500; line-height: .82; letter-spacing: -.1em; }
+.manyi-country-hero h1 em { color: var(--manyi-yellow); font-style: normal; text-shadow: 10px 8px 0 rgba(152,77,61,.5); }
+.manyi-country-hero > p { position: relative; z-index: 1; max-width: 760px; margin: 0 0 0 auto; color: rgba(241,238,227,.72); font-size: 15px; line-height: 2.12; }
+.manyi-hero-index { position: absolute; top: 10%; right: 7%; z-index: 1; display: flex; gap: 20px; align-items: flex-start; color: rgba(241,238,227,.28); }
+.manyi-hero-index b { font-family: Georgia, serif; font-size: 86px; line-height: .85; }
+.manyi-hero-index span { font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .12em; writing-mode: vertical-rl; }
+.manyi-hero-balls { position: absolute; inset: 0; pointer-events: none; }
+.manyi-hero-balls i { position: absolute; display: grid; place-items: center; border: 2px solid rgba(241,238,227,.18); border-radius: 50%; color: rgba(241,238,227,.12); font-family: Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-style: normal; }
+.manyi-hero-balls i:nth-child(1) { width: 150px; aspect-ratio: 1; top: 25%; right: 20%; transform: rotate(12deg); }
+.manyi-hero-balls i:nth-child(2) { width: 92px; aspect-ratio: 1; bottom: 12%; left: 45%; transform: rotate(-8deg); }
+.manyi-hero-balls i:nth-child(3) { width: 230px; aspect-ratio: 1; top: 8%; left: -5%; transform: rotate(7deg); }
+
+.manyi-king-file { min-height: 900px; padding: 126px clamp(22px, 7vw, 108px); display: grid; grid-template-columns: .23fr .72fr 1fr; gap: clamp(34px, 6vw, 96px); align-items: center; background: var(--manyi-paper); color: var(--manyi-ink); }
+.manyi-king-file > span { color: #6e5b2d; align-self: start; }
+.manyi-king-file figure { width: min(100%, 430px); margin: 0; position: relative; transform: rotate(-2deg); }
+.manyi-king-file figure::before { content: "KING / STILL SOLVING"; position: absolute; inset: 8% auto auto -8%; z-index: 1; padding: 10px 14px; background: var(--manyi-rust); color: #fff; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 850; letter-spacing: .12em; transform: rotate(-6deg); }
+.manyi-king-file img { width: 100%; display: block; filter: drop-shadow(14px 16px 0 rgba(27,27,24,.11)); }
+.manyi-king-file h2 { margin: 0 0 42px; font-family: Georgia, "Songti SC", serif; font-size: clamp(68px, 7.6vw, 116px); font-weight: 500; line-height: .96; letter-spacing: -.07em; }
+.manyi-king-file p { margin: 0 0 28px; color: rgba(27,27,24,.72); font-size: 15px; line-height: 2.15; }
+.manyi-king-file strong { display: block; margin-top: 42px; padding-top: 22px; border-top: 1px solid currentColor; font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 2.05; letter-spacing: .08em; }
+
+.manyi-citizen-file { padding: 126px clamp(22px, 7vw, 108px); background: var(--manyi-night); color: #f1eee3; }
+.manyi-citizen-file > header { display: grid; grid-template-columns: .25fr 1fr .65fr; gap: 46px; align-items: end; }
+.manyi-citizen-file header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(66px, 8vw, 120px); font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.manyi-citizen-file header p { margin: 0; color: rgba(241,238,227,.64); font-size: 14px; line-height: 2.1; }
+.manyi-citizen-file > figure { max-width: 1180px; margin: 88px auto 72px; padding: 26px; position: relative; border: 1px solid rgba(241,238,227,.3); background: linear-gradient(rgba(241,238,227,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(241,238,227,.035) 1px, transparent 1px); background-size: 54px 54px; box-shadow: 18px 18px 0 var(--manyi-rust); transform: rotate(.5deg); }
+.manyi-citizen-file > figure::after { content: "ORDER NOT FOUND"; position: absolute; right: 24px; bottom: 20px; padding: 9px 13px; background: var(--manyi-yellow); color: var(--manyi-ink); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; letter-spacing: .12em; transform: rotate(-3deg); }
+.manyi-citizen-file img { width: 100%; display: block; }
+.manyi-habits { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(241,238,227,.34); border-left: 1px solid rgba(241,238,227,.34); }
+.manyi-habits article { min-height: 330px; padding: 36px; display: flex; flex-direction: column; border-right: 1px solid rgba(241,238,227,.34); border-bottom: 1px solid rgba(241,238,227,.34); }
+.manyi-habits article:nth-child(2) { background: var(--manyi-moss); color: var(--manyi-ink); transform: translateY(24px); }
+.manyi-habits small { color: var(--manyi-yellow); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.manyi-habits article:nth-child(2) small { color: #453b20; }
+.manyi-habits h3 { margin: auto 0 24px; font-family: Georgia, "Songti SC", serif; font-size: clamp(48px, 5vw, 76px); font-weight: 500; line-height: 1; }
+.manyi-habits p { margin: 0; font-size: 14px; line-height: 2; opacity: .72; }
+
+.manyi-disorder-note { min-height: 620px; padding: 120px clamp(22px, 8vw, 126px); display: grid; grid-template-columns: .24fr 1fr; gap: 48px; align-items: start; background: var(--manyi-yellow); color: var(--manyi-ink); }
+.manyi-disorder-note > span { color: #5f4b20; }
+.manyi-disorder-note h2 { margin: 0 0 48px; font-family: Georgia, "Songti SC", serif; font-size: clamp(70px, 9vw, 136px); font-weight: 500; line-height: 1.02; letter-spacing: -.08em; }
+.manyi-disorder-note p { max-width: 820px; margin: 0 0 0 auto; font-size: 15px; line-height: 2.16; }
+
+.manyi-sun-son-file { min-height: 880px; padding: 126px clamp(22px, 8vw, 126px); display: grid; grid-template-columns: 1fr .72fr; gap: clamp(54px, 9vw, 150px); align-items: center; background: linear-gradient(118deg, #873f35 0 42%, #24231e 42%); }
+.manyi-sun-son-file h2 { margin: 34px 0 12px; font-family: Georgia, "Songti SC", serif; font-size: clamp(78px, 10vw, 154px); font-weight: 500; line-height: .9; letter-spacing: -.08em; }
+.manyi-sun-son-file h3 { margin: 0 0 42px; color: var(--manyi-yellow); font-size: 16px; }
+.manyi-sun-son-file p { max-width: 720px; margin: 0 0 26px; color: rgba(241,238,227,.72); font-size: 15px; line-height: 2.14; }
+.manyi-sun-son-file strong { display: block; margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(241,238,227,.5); font-family: var(--font-geist-mono), monospace; font-size: 9px; line-height: 2.05; letter-spacing: .08em; }
+.manyi-sun-son-file figure { width: min(100%, 480px); margin: 0 auto; position: relative; }
+.manyi-sun-son-file figure::after { content: "I DON'T BELIEVE IT"; position: absolute; right: -6%; bottom: 12%; padding: 10px 14px; background: var(--manyi-yellow); color: var(--manyi-ink); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 900; letter-spacing: .1em; transform: rotate(5deg); }
+.manyi-sun-son-file img { width: 100%; display: block; filter: drop-shadow(16px 18px 0 rgba(0,0,0,.16)); transform: rotate(2deg); }
+.manyi-country-page > footer { min-height: 150px; padding: 0 clamp(22px, 6vw, 92px); display: flex; align-items: center; justify-content: space-between; background: var(--manyi-moss); color: var(--manyi-ink); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+
 .border-tavern-page { min-height: 100svh; background: #101c28; color: #eef0e9; }
 .border-tavern-page > header { min-height: 760px; padding: 120px clamp(22px, 8vw, 126px) 82px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(90deg, rgba(198,170,101,.12) 50%, rgba(120,147,164,.13) 50%), linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), #101c28; background-size: auto, 100% 72px, auto; }
 .border-tavern-page > header > span,
@@ -4676,6 +4737,7 @@ footer > p {
   .scrap-territory-page > header h1 { font-size: 84px; line-height: 1.04; }
   .suancai-country-page > nav,
   .weiguo-country-page > nav,
+  .manyi-country-page > nav,
   .border-tavern-page > nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
   .suancai-country-hero { min-height: 760px; padding: 108px 22px 64px; }
   .suancai-country-hero h1 { font-size: 98px; line-height: .96; }
@@ -4740,6 +4802,37 @@ footer > p {
   .weiguo-emblem-file { min-height: auto; grid-template-columns: 1fr; }
   .weiguo-emblem-star { width: min(76vw, 300px); margin: 12px auto 0; }
   .weiguo-country-page > footer { min-height: 170px; padding: 42px 22px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 22px; }
+  .manyi-country-hero { min-height: 780px; padding: 104px 22px 62px; }
+  .manyi-country-hero h1 { margin-top: 30px; font-size: 102px; line-height: .9; }
+  .manyi-country-hero > p { margin-left: 0; font-size: 14px; line-height: 2; }
+  .manyi-hero-index { top: 8%; right: 20px; }
+  .manyi-hero-index b { font-size: 52px; }
+  .manyi-hero-balls i:nth-child(1) { width: 108px; right: -12%; }
+  .manyi-hero-balls i:nth-child(2) { width: 68px; left: 68%; }
+  .manyi-hero-balls i:nth-child(3) { width: 150px; left: -24%; }
+  .manyi-king-file,
+  .manyi-disorder-note,
+  .manyi-sun-son-file { padding: 86px 22px; grid-template-columns: 1fr; gap: 34px; }
+  .manyi-king-file figure { width: min(82vw, 340px); margin: 0 auto; }
+  .manyi-king-file h2,
+  .manyi-disorder-note h2,
+  .manyi-sun-son-file h2 { font-size: 58px; line-height: 1.06; }
+  .manyi-king-file p,
+  .manyi-disorder-note p,
+  .manyi-sun-son-file p { font-size: 14px; line-height: 2; }
+  .manyi-citizen-file { padding: 88px 22px; }
+  .manyi-citizen-file > header { grid-template-columns: 1fr; gap: 24px; }
+  .manyi-citizen-file header h2 { font-size: 54px; line-height: 1.08; }
+  .manyi-citizen-file > figure { margin: 58px 0 52px; padding: 12px; box-shadow: 9px 9px 0 var(--manyi-rust); }
+  .manyi-citizen-file > figure::after { right: 8px; bottom: 8px; }
+  .manyi-habits { grid-template-columns: 1fr; }
+  .manyi-habits article { min-height: 280px; padding: 30px 24px; }
+  .manyi-habits article:nth-child(2) { transform: none; }
+  .manyi-habits h3 { font-size: 50px; }
+  .manyi-disorder-note { min-height: auto; }
+  .manyi-sun-son-file figure { grid-row: 1; width: min(78vw, 340px); }
+  .manyi-sun-son-file figure::after { right: -2%; bottom: 8%; }
+  .manyi-country-page > footer { min-height: 170px; padding: 42px 22px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 20px; }
   .border-tavern-page > header { min-height: 720px; padding: 100px 22px 64px; }
   .border-tavern-page > header h1 { font-size: 82px; line-height: 1.02; }
   .border-tavern-page > header p { margin-left: 0; font-size: 14px; line-height: 2; }
